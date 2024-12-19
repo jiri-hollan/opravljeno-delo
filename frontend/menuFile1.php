@@ -3,12 +3,12 @@ require_once('administrace.php');
 include_once "../skupne/pregledovalciKomb.php";
 class MenuAnestiz  {
    public function __construct() {
-   require_once('../skupne/menu-items.php');          
+   require_once('../skupne/menuDelo.php');          
 echo '
 <nav id= "glavnaNav">
 <ul>';
   if (isset($_SESSION["upstatus"]))  {
-	  //require_once('../skupne/menu-items.php'); 
+	  //require_once('../skupne/menuDelo.php'); 
 	   switch ($_SESSION["upstatus"]) {		   
 	case 0:
 	  echo $a0;
