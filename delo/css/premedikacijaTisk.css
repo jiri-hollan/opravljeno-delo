@@ -1,0 +1,225 @@
+/* CSS za premedikacijaTisk*/
+
+div.celaStran {
+    height: 29.7cm;
+    width: 21cm;
+	position: relative;    
+} 
+#logo {
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    height: 2.5cm;
+    width: 5.5cm;
+    /*border-width:1px;  
+    border-style:solid;
+    padding: 12px;*/
+} 
+h1 {
+  position: absolute;
+  top: -15px;
+  right: 40px;
+}
+#nalepkaR {
+    position: absolute;
+    top: 50px;
+   right: 2px;
+    height: 2.5cm;
+    margin: 3px;
+     width: 8cm;
+    border-width:1px;  
+    border-style:solid;
+    padding: 12px;
+}
+#obravnavaR {
+    position: absolute;
+    top: 110px;
+    left: 2px;
+    height: 1cm;
+    width: 10cm;
+    text-align: left;
+   /* border-width:1px;  
+    border-style:solid;
+    margin: 3px; */
+}
+.paragrafi {
+position: relative;	
+top: 170px;
+}
+.prvigrafi p {
+position: relative;
+    top: 0px;
+    left: 2px;
+	/*background-color: Tomato;*/
+	text-align: left;
+    height: 0.6cm;
+    /*height: 1cm;*/
+    width: 98%;
+  /*  border-width:1px;  
+    border-style:solid;  
+    margin: 1px; */
+}
+/*
+#diagnozaR {
+  
+    top: 4px;
+    border-bottom-width:1px; 
+    border-bottom-style:solid;
+    
+}*/
+
+#diagnozaR {
+    /*  position: relative;*/ 
+    top: 10px;
+    border-width:1px; 
+    border-style:solid;
+    padding: 5px; 
+}
+
+#operacijaR {
+  
+   border-width:1px;  
+   border-style:solid; 
+   padding: 5px; 
+}
+.meritveR {
+   
+}
+.nadpis{
+ font-size:110%;
+ font-weight: bold; 
+ padding-bottom: 0px;
+ margin-bottom:0px;
+ margin-left:0px;
+}
+.labR {
+   /*  position: relative;
+    top: 2px;
+    left: 2px;
+    height: 1cm;
+    width: 98%;
+    border-width:1px;  
+    border-style:solid; 
+    margin: 3px;  */
+}
+ /* #ekgR {
+  position: relative;
+    top: 0px;
+    left: 2px;
+    height: 1cm;
+    width: 98%;
+    border-width:1px;  
+    border-style:solid; 
+    margin: 3px;  
+}
+#rtgR {
+   position: relative;
+    top: 0px;
+    left: 2px;
+    height: 1cm;
+    width: 98%;
+    border-width:1px;  
+    border-style:solid; 
+    margin: 3px; 
+}*/ 
+
+.asmalR {
+     position: relative;
+    top: 0px;
+    left: 2px;
+    height: 0.8cm;
+    width: 98%;
+    /*border-width:1px;  
+    border-style:solid; */
+    margin: 3px;  
+}
+
+#izvidiR{
+    background-color: transparent;
+    position: relative;
+    word-wrap: break-word;
+    top: 1px;
+    left: 2px;
+    height: 15cm;
+    width: 98%;
+    /*border-width:1px;  
+    border-style:solid; */
+    margin: 1px;  
+}
+
+#izvidiR hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: dotted;
+  border-width: 1px;
+  color: LightGray;
+}
+/*
+#izvidiR .nadpis{
+ font-size:100%;
+ font-weight: bold; 
+ padding-bottom: 0px;
+ margin-bottom:0px;
+ margin-left:0px;
+}
+*/
+#izvidiR .besedilo{
+ padding-left: 20px;
+ /*text-indent: 20px;*/
+}
+
+#izvidiR  p {
+/*position: relative;*/
+  /*  top: 0px;
+    left: 2px;*/
+	background-color: blue;
+	text-align: left;
+    height: 0.6cm;  
+    width: 98%;
+  /* text-indent: 20px;*/
+   padding-left: 5px;
+/* margin-top: 5px;
+ margin-bottom:0px;*/
+}
+
+
+#premedikacijaR {
+    position: absolute;
+    bottom: 1.5cm;
+    left: 1px;
+    height: 2.5cm;
+    width: 9cm;
+     margin-left:1px;
+    border-width:1px;  
+    border-style:solid;
+    padding: 12px;
+} 
+#navodilaR {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    height: 4cm;
+    width: 10cm;
+    border-width:1px;  
+    border-style:solid;
+    padding: 12px;
+}
+#zdravnikR {
+    position: absolute;
+    bottom: 2px;
+    left: 1px;
+    height: 0.6cm;
+    width: 7cm;
+    border-width:1px;  
+    border-style:solid;
+    padding: 12px;
+} 
+
+#imgBol {
+	width: 200px;
+	height: 100px;
+}
+
