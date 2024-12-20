@@ -11,7 +11,16 @@
     <label for="priimek">Priimek:</label>
     <input id="priimek" type="text" name="priimek" pattern="[A-Za-zŽžšŠđĐćĆčČ]{1,}" required><br>     
    
-    
+    <label>Delo:<input id="delo"  list="dela" name="delo" required></label> 
+  <datalist id="dela">
+   <option value="delo">
+  </datalist>
+ <script>
+// alert("delo Json:" + deloJson);
+  var deloList = JSON.parse(deloJson);
+//alert(deloList);
+  listadeloovFunction(deloList);
+  </script>
 
     <br>
     <br>  
