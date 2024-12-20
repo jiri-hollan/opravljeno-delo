@@ -1,0 +1,1 @@
+V ta folder pridejo datoteke, ki jih uporablja eč raznih programov

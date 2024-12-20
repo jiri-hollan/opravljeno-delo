@@ -1,0 +1,5 @@
+poskus izbire iz baze
+array(3) { 
+[0]=> array(4) { ["id"]=> string(1) "1" ["naslov"]=> string(15) "SARS hitri test" ["direktorij"]=> string(12) "besedila/" ["fajl"]=> string(13) "hitriTest.pdf" } 
+[1]=> array(4) { ["id"]=> string(1) "2" ["naslov"]=> string(19) "Diagram hitri testi" ["direktorij"]=> string(12) "besedila/" ["fajl"]=> string(15) "diagramTest.pdf" } 
+[2]=> array(4) { ["id"]=> string(1) "3" ["naslov"]=> string(15) "Hitri testi UCI" ["direktorij"]=> string(12) "besedila/" ["fajl"]=> string(24) "diagramHitriTestiUci.pdf" } }

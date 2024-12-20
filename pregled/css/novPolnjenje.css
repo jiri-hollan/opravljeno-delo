@@ -1,0 +1,366 @@
+/* CSS za novPolnjenje.HTML*/
+
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center; 
+}
+.levo {
+	  text-align: left; 
+}
+.desno {
+	  align: right;
+      background-color: yellow; 
+	  color: red;
+	  border-style: none; 
+}
+
+input:required:invalid{
+  background-color: yellow;
+}
+#druga input:hover {
+  /*border: 3px solid #555;*/
+  background-color: LightYellow;
+}
+#druga input:focus {
+  border: 3px solid #555;
+  /*background-color: LightYellow;*/
+}
+#druga select:hover {
+  border: 3px solid #555;
+  background-color: LightYellow;
+}
+#druga select:focus {
+  border: 3px solid #555;
+  /*background-color: LightYellow;*/
+}
+
+fieldset {
+  padding: 20px 2px;
+  width:99%; 
+}
+
+fieldset.novBolnik  {
+   padding: 20px 20px;
+  width:500px; 
+  margin-top: 80px;
+  background-color: lightblue; 
+
+}
+fieldset.novBolnik legend {
+   background-color: navy;
+   color: yellow; 
+   font-size: 2.0em;
+}    
+
+fieldset.novBolnik label {
+  width:180px;
+  display: inline-block;
+  text-align: right;
+}
+
+fieldset.novBolnik input {
+
+ font-size: 20px;
+ padding: 5px 5px;
+ margin: 5px 5px;
+ box-sizing: border-box;
+ border: 3px solid #ccc;
+ webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+fieldset.novBolnik input:hover {
+  border: 3px solid #555;
+  background-color: LightYellow;
+}
+
+#naprej  {
+width: 100%;
+padding: 25px 0px;
+background-color:blue; 
+color:white;
+}
+
+#naprej:hover  {
+background-color:SlateBlue; 
+color:red;
+font-size: 1.5em;
+}
+
+fieldset.zacetek  {
+  padding: 20px 2px;
+      
+}
+
+div.glavna {
+  position: relative;
+  margin-top: 50px;
+  padding: 0px 20px;
+  max-width:1000px; 
+  background-color: lightblue;  
+
+  
+}
+
+fieldset.zacetek  label  {
+  width:auto;
+  display: inline-block;
+  text-align: right;
+}
+
+
+fieldset.diagnoze {
+  padding: 1px 2px;    
+}
+
+fieldset.diagnoze  label  {
+  width:150px;
+  display: inline-block;
+  text-align: right;
+}
+
+fieldset.diagnoze  input  {
+  width:80%;
+
+}
+fieldset.meritve {
+  padding: 20px 2px;   
+}
+
+fieldset.meritve  label  {
+  width:auto;
+  display: inline-block;
+  text-align: right;   
+  padding: 1px 0px 1px 20px;
+}
+fieldset.meritve  input  {
+  width:50px; 
+}
+
+fieldset.labor {
+
+  padding: 20px 2px;  
+  height: auto;  
+}
+
+fieldset.labor label  {
+  width:100px;
+  display: inline-block;
+  text-align: right;   
+  padding: 1px 1px 1px 2px;
+}
+
+fieldset.labor input  {
+  width:80px;
+}
+
+#stolpec1  {
+	float: left;
+    width:220px;  
+}
+
+#stolpec2  {
+	float: left;
+  left: 250px;
+  width:220px; 
+}
+#stolpec3  {
+	float: left;
+  
+  max-width:400px; 
+}
+
+fieldset.labor textarea {
+  width: 100%;
+  height: 120px;
+  float: left;
+  padding: 4px 2px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  
+}
+
+
+ #asamal {
+  position: relative;
+  padding: 5px 2px 5px 1px;  
+  height: auto;  
+} 
+.zacetekAsa {
+	padding: 1px 10px 1px 18px;
+}
+
+.ocenaOvisnosti select{
+display: none;
+}
+
+ 
+fieldset.alergija label {
+  width:auto;
+  display: inline-block;
+  text-align: left;    
+  /*padding: 1px 1px 1px 10px;*/
+ }
+ 
+#alergija {
+  width:70%;
+  /*display: inline-box;*/
+  text-align: left;   
+  /*padding: 1px 1px 1px 20px;*/
+ }
+ 
+ .kvadrat{
+  border: 1px solid black; 
+  padding-left:5px; 
+  padding-right:5px;
+ }
+ 
+fieldset.zaklucek  {
+  padding: 5px 2px;   
+}
+
+
+
+textarea.mala {
+  width: 100%;
+  height: 50px;
+
+    padding: 4px 2px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+textarea.mikro {
+  width: 60%;
+  height: 80x;
+  rows: 3;
+  padding: 4px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+textarea.velka {
+  width: 100%;
+  height: 200px;
+  padding: 4px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+#navodila {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
+#sklep {
+width:95%;	
+}	
+
+#zaklucek {
+  position: relative;
+  top: 5px;
+  right: 2px;
+  
+}
+
+
+
+.navbar {
+ /* overflow: hidden;*/
+  background-color: blue;
+  position: fixed;
+  top: 0;
+  max-width:1000px;
+  ​​z-index: 60;
+  
+}
+
+.navbar span {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar span:hover {
+  background: #ddd;
+  color: black;
+  max-width:1000px; 
+}
+
+.dropbtn {
+  background-color: blue;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  
+}
+
+.dropdown {
+	float: left;
+  /*position: relative;*/
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 80;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#buttonDomov {
+	
+  float: left;
+  border: none;
+  color: white;
+  background-color:red;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+    //outline: #4CAF50 solid 3px;
+border-radius: 12%;  
+}
+#buttonDomov:hover {
+background-color: black;	
+}

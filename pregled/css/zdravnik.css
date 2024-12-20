@@ -1,0 +1,73 @@
+#prijava {
+position: relative;
+  top: 1cm;
+height: 7cm;
+width: 10cm;
+background-color: wheat;
+padding: 40px;
+}
+
+#x {
+    position: absolute;
+    top: 1px;
+    right: 2px;
+   background-color: yellow;
+   color: red; 
+   font-size: 2.0em;
+   width: 25px;
+}
+
+
+.navbar {
+	  float: left;
+  overflow: hidden;
+  background-color: blue;
+  position: fixed;
+  top: 0;
+  width:200px;
+  ​​z-index: 60;
+  
+}
+
+.navbar span {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar span:hover {
+  background: #ddd;
+  color: black;
+  max-width:1000px; 
+}
+
+#buttonDomov {
+	
+  float: left;
+  border: none;
+  color: white;
+  background-color:red;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+    //outline: #4CAF50 solid 3px;
+border-radius: 12%;  
+}
+
+#bolnisnica {
+	position: relative;
+	left: 11px;
+}
+
+#zdravnik {
+	position: relative;
+    left: 20px;
+}

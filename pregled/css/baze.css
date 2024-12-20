@@ -1,0 +1,41 @@
+#kontejner {
+border-style: solid;
+padding: 25px 50px 75px 100px;
+height: 120px;
+width: 250px; 
+background-color: powderblue;
+font-size: 30px;
+		}
+		
+#ustanova {
+width: 50px; 	
+}		
+		
+#buttonNazaj {
+	float: left;
+  border: none;
+  color: white;
+  background-color:red;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+    //outline: #4CAF50 solid 3px;
+border-radius: 12%;  
+
+}
+#buttonNazaj:hover {
+background-color: black;	
+}
+
+	table {
+		border: 1px solid black;
+		max_width:500px;		
+	}
+	
+  tr:hover 
+ {background-color: yellow;
+	}
