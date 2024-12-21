@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once '../skupne/database.php';
 require_once('../skupne/aktivace.php');
+require_once('sabloni/izkaz.php');
 
 
 Class VpisDela {
