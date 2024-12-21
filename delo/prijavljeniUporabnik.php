@@ -3,7 +3,7 @@ session_start();
 require_once '../skupne/sabloni/zahlavi.php';
 
 ?>
-<h2>prijavljen</h2>
+
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <input type="hidden" id="akceId" name="akce" value="">
@@ -30,12 +30,12 @@ function vyberFunction($podminka){
  //  echo count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
-echo "<br>";
+//echo "<br>";
 if(count($vybrano)>0){
 
   echo "<table id='osebe' style='border: solid 1px black;'>";
 
-
+$identifikace="";
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
@@ -47,18 +47,15 @@ class TableRows extends RecursiveIteratorIterator {
         echo "<tr>";
     }
     function endChildren() {
-	/*	$a = 'onclick="' . "izborFunction('uredi')" . '"';
-		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
-        echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
-		<!--<td onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>-->		
-		</tr>" . "\n";*/
+
 }//od endChildren
 }// od class TableRows
 
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
-        echo $v;
-
+       // echo $v;
+$identifikace= $identifikace . $v;
 }//od foreach
+echo $identifikace;
 }//od if(cout)
 else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
