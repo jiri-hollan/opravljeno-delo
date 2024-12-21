@@ -66,9 +66,14 @@ else{
 <script src="js/delo.js?<?php echo time(); ?>"></script>
 
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  $akce = test_input($_GET["akce"]);
+}
+
+
 echo"
 <script>
-izborFunction('vloz');
+izborFunction(".$akce.");
 </script>";
 require_once '../skupne/sabloni/zapati.php';
 ?>
