@@ -63,8 +63,12 @@ else{
 }//od vyberFunction  
 
 ?>
-<script src="js/manipulaceUporabniki.js?<?php echo time(); ?>"></script>
+<script src="js/delo.js?<?php echo time(); ?>"></script>
 
 <?php
+echo"
+<script>
+izborFunction('vloz');
+</script>";
 require_once '../skupne/sabloni/zapati.php';
 ?>
