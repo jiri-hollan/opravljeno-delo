@@ -160,7 +160,7 @@ function editFunction($podminka){
    for ($i = 0; $i < $dolzina; $i++) {
      foreach ($vybrano[$i] as $key => $value) {
       if($key=="id"||$key=="bolnisnica"||$key=="ime"||$key=="priimek"){
-	   echo " $key: <input name=$key value=$value readonly style='background-color:ivory;'\n></input>";	
+	   echo " $key: <input name=$key value=$value  style='background-color:ivory;'\n></input>";	
 }	 
      if($key=="upstatus"||$key=="pristop"){	
 	  echo " $key: <input name=$key value=$value \n></input>";
