@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../skupne/sabloni/zahlavi.php';
+
 ?>
 <h2>prijavljen</h2>
 
@@ -20,11 +21,11 @@ require_once '../skupne/database.php';
 	
 function vyberFunction($podminka){
    $tabulka="uporabnikiTbl";
-   $stolpci=["bolnisnica","ime","priimek"];
+   $stolpci=["ime","priimek","bolnisnica"];
    $vyber = new database();
    $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
-//echo var_dump($vybrano);
+//echo var_dump($vybrano);,
  //  echo "<br>";
  //  echo count($vybrano);
 //$dolzina=count($vybrano);

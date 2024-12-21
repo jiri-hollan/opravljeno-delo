@@ -47,6 +47,6 @@ if("<?= $uname ?>"==""){
 
 	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "<?= $uname ?>";
 	}
-	document.getElementById("dom").innerHTML = "doma";		
+	document.getElementById("dom").innerHTML = "domov";		
 </script>
 
