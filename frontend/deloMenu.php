@@ -2,12 +2,12 @@
 require_once('administrace.php');
 class MenuDelo  {
    public function __construct() {
-   require_once('../skupne/menuDelo-items.php');          
+   require_once('../delo/menuDelo-items.php');          
 echo '
 <nav id= "glavnaNav">
 <ul>';
   if (isset($_SESSION["upstatus"]))  {
-	  //require_once('../skupne/MenuDelo-items.php'); 
+
 	   switch ($_SESSION["upstatus"]) {		   
 	case 0:
 	  echo $a0;
