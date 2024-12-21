@@ -40,5 +40,13 @@ $adminAnestiz = new MenuDelo();
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 require_once('sabloni/vkladane/zapati.php'); 
 ?>
-	
-?>
+<script>	
+if("<?= $uname ?>"==""){
+	document.getElementById("uname").innerHTML = "niste prijavljeni ";	
+}else{
+
+	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "<?= $uname ?>";
+	}
+	document.getElementById("dom").innerHTML = "doma";		
+</script>
+
