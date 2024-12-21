@@ -32,11 +32,16 @@ $omejitevGdpr=$gdpr[0];
 echo'<script>';
 echo 'localStorage.setItem("gdpr",'.$gdpr.');';
 echo'</script>';
+}//od if cout
+else{
+echo'aktivace linija 37';	
 }
-}else{
+}//od if database obstaja
+else{
 $gdpr=0;
 echo'<script>';
 echo 'localStorage.setItem("gdpr",'.$gdpr.');';
 echo'</script>';
 }
+
 ?>
