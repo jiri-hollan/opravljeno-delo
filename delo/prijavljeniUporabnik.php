@@ -2,9 +2,8 @@
 session_start();
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
-<h2>pregledovalci</h2>
-<button onclick="izborFunction('vyber')">izberi</button>
-<button onclick="izborFunction('vloz')">vlož</button>
+<h2>prijavljen</h2>
+
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <input type="hidden" id="akceId" name="akce" value="">
 <p id="demo"></p>
@@ -13,18 +12,12 @@ require_once '../skupne/sabloni/zahlavi.php';
 <p id="demo3"></p>
 <?php 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
-/* V tom failu so funkcije za spreminjanje tabele databaze*/
-require_once '../skupne/database.php';
 
-	 echo $uname;  
-	   
-	   
+require_once '../skupne/database.php';
 
 	$podminka = array("uname"=>$uname);
 	vyberFunction($podminka);
 	
-	
-
 function vyberFunction($podminka){
    $tabulka="uporabnikiTbl";
    $stolpci=["bolnisnica","ime","priimek"];
@@ -32,8 +25,8 @@ function vyberFunction($podminka){
    $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
-   echo "<br>";
-   echo count($vybrano);
+ //  echo "<br>";
+ //  echo count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 echo "<br>";
