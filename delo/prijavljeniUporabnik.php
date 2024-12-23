@@ -53,24 +53,28 @@ class TableRows extends RecursiveIteratorIterator {
 
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
        // echo $v;
-$identifikace= $identifikace . $v;
+$identifikace = $identifikace . $v;
+$GLOBALS['identifikace']=$identifikace;
 }//od foreach
-echo $identifikace;
+echo $GLOBALS['identifikace'];
 }//od if(cout)
 else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
 }//od else
-echo'<script>
-alert("<?= $identifikac ?>"=="");
-</script>';
+
 }//od vyberFunction  
 
 ?>
-<script>
-alert("<?= $identifikace ?>"=="");
-</script>
 <script src="js/delo.js?<?php echo time(); ?>"></script>
+<script>	
+if("<?= $identifikace ?>"==""){
+	document.getElementById("poPotrebi").innerHTML = "niste prijavljeni ";	
+}else{
 
+	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + "<?= $identifikace ?>";
+	}
+	document.getElementById("dom").innerHTML = "domov";		
+</script>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
