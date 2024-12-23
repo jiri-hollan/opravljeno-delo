@@ -11,6 +11,7 @@ require_once '../skupne/sabloni/zahlavi.php';
 <p id="posli"></p>
 </form>
 <p id="demo3"></p>
+
 <?php 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 
@@ -33,7 +34,7 @@ function vyberFunction($podminka){
 //echo "<br>";
 if(count($vybrano)>0){
 
-  echo "<table id='osebe' style='border: solid 1px black;'>";
+  //echo "<table id='osebe' style='border: solid 1px black;'>";
 
 $identifikace="";
 class TableRows extends RecursiveIteratorIterator {
@@ -41,10 +42,10 @@ class TableRows extends RecursiveIteratorIterator {
         parent::__construct($it, self::LEAVES_ONLY);
     }
     function current() { 
-		 return "<td  >"  . parent::current() . "</td>";
+		 return "<b> "  . parent::current() . " </>";
     }
     function beginChildren() {
-        echo "<tr>";
+        echo "";
     }
     function endChildren() {
 
@@ -56,7 +57,7 @@ foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
 $identifikace = $identifikace . $v;
 $GLOBALS['identifikace']=$identifikace;
 }//od foreach
-echo $GLOBALS['identifikace'];
+//echo $GLOBALS['identifikace'];
 }//od if(cout)
 else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
