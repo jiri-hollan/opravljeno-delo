@@ -60,9 +60,15 @@ echo $identifikace;
 else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
 }//od else
+echo'<script>
+alert("<?= $identifikac ?>"=="");
+</script>';
 }//od vyberFunction  
 
 ?>
+<script>
+alert("<?= $identifikace ?>"=="");
+</script>
 <script src="js/delo.js?<?php echo time(); ?>"></script>
 
 <?php
