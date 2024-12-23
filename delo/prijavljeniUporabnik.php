@@ -42,14 +42,9 @@ class TableRows extends RecursiveIteratorIterator {
         parent::__construct($it, self::LEAVES_ONLY);
     }
     function current() { 
-		 return "<b> "  . parent::current() . " </>";
+		 return "<b>  "  . parent::current() . " </>";
     }
-    function beginChildren() {
-        echo "";
-    }
-    function endChildren() {
 
-}//od endChildren
 }// od class TableRows
 
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
