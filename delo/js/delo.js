@@ -7,11 +7,11 @@ switch(akce) {
     break; 
 
   case "vloz":
-    bolnisnica= '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica" required>';
-    ime= '<input type="text" id="imeId" name="ime" value="" placeholder="ime" required>';
-    priimek= '<input type="text" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
-    casPosega= '<input type="int" id="casId" name="casPosega" value="" placeholder="čas" required>';
-    document.getElementById("demo").innerHTML = bolnisnica + ime + priimek +  casPosega ;
+    datum= '<input type="text" id="datumId" name="datum" value="" placeholder="Datum" required>';
+    sifra= '<input type="text" id="sifraId" name="sifra" value="" placeholder="Šifra" required>';
+    opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
+    casPosega= '<input type="int" id="casId" name="casPosega" value="" placeholder="minute" required>';
+    document.getElementById("demo").innerHTML = datum + sifra + opravilo +  casPosega ;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
     break;
 
