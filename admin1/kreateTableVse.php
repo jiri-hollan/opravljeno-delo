@@ -29,6 +29,10 @@ echo '
       
    <label for="bolnik"><span class="imenaFilov">bolnik</span></label>
    <input type="radio" id="bolnik" name="name" value="bolnik"> 
+   
+   <label for="delo"><span class="imenaFilov">delo</span></label>
+   <input type="radio" id="delo" name="name" value="delo">  
+   
    <input type="hidden" name="nazaj" value='. $nazaj.'>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
@@ -168,6 +172,17 @@ premedikacija VARCHAR(255),
 sklep VARCHAR(255),
 bolnikStatus CHARACTER(15)";
 $databaseGloboka->naredi('bolnikTbl', $definice);
+break; 
+
+case "delo":
+$definice= "
+    id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    vpis_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	stevilkaZdrav` int(3),
+	opravilo VARCHAR(255),
+	opraviloSifra` int(3)
+";
+$databaseGloboka->naredi('', $definice);
 break;
 
 /*
