@@ -175,14 +175,12 @@ $databaseGloboka->naredi('bolnikTbl', $definice);
 break; 
 
 case "delo":
-$definice= "
-    id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    vpis_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-	stevilkaZdrav` int(3),
-	opravilo VARCHAR(255),
-	opraviloSifra` int(3)
-";
-$databaseGloboka->naredi('', $definice);
+$definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    vpis_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	 stevilkaZdrav  int(3),
+	 opravilo  VARCHAR(255),
+	 opraviloSifra  int(3)";
+$databaseGloboka->naredi('delo', $definice);
 break;
 
 /*
