@@ -74,12 +74,12 @@ if("<?= $identifikace ?>"==""){
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
-}
 
 
 echo"
 <script>
 izborFunction(".$akce.");
 </script>";
+}
 require_once '../skupne/sabloni/zapati.php';
 ?>
