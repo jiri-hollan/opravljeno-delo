@@ -1,3 +1,12 @@
+function identifikaceFunction() {
+if("<?= $identifikace ?>"==""){
+	document.getElementById("poPotrebi").innerHTML = "niste prijavljeni ";	
+}else{
+	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + "<?= $identifikace ?>";
+	}
+	document.getElementById("dom").innerHTML = "domov";		
+} // od identifikaceFunction
+
 function izborFunction(akce) {
   document.getElementById("akceId").value = akce;
 switch(akce) {

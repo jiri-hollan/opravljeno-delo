@@ -6,6 +6,7 @@ require_once 'sabloni/forma.php';
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 
 require_once '../skupne/database.php';
+echo'<script src="js/delo.js?<?php echo time(); ?>"></script>';
 
 	$podminka = array("uname"=>$uname);
 	vyberUporabnikaFunction($podminka);
@@ -50,14 +51,12 @@ else{
 
 }//od vyberUporabnikaFunction  
 
-?>
-<script src="js/delo.js?<?php echo time(); ?>"></script>
-<script src="js/identifikace.js?<?php echo time(); ?>"></script>
+echo'<script>
+identifikaceFunction();
+</script>';
 
-<?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
-
 
 echo"
 <script>
