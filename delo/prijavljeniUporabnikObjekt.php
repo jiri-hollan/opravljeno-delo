@@ -9,7 +9,7 @@ require_once '../skupne/database.php';
 	$podminka = array("uname"=>$uname);
 	///vyberUporabnikaFunction($podminka);
 echo'<script src="js/delo.js?<?php echo time(); ?>"></script>';	
-	  new VyberUporabnika ($podminka);
+
 	  
 class VyberUporabnika {
 public $podminka;
@@ -43,7 +43,7 @@ identifikaceFunction(identifikace);
 		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
-
+new VyberUporabnika ($podminka);
 echo"
 <script>
 izborFunction(".$akce.");
