@@ -49,14 +49,7 @@ else{
 }//od vyberUporabnikaFunction  
 echo"
 <script>
-izborFunction(".$identifikace.");
-</script>";
-?>
-<script src="js/delo.js?<?php echo time(); ?>"></script>
 
-
-
-<script>
 function identifikaceFunction(identifikace){	
 if("identifikace"==""){
 	document.getElementById("poPotrebi").innerHTML = "niste prijavljeni ";	
@@ -65,7 +58,14 @@ if("identifikace"==""){
 	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + identifikace;
 	}
 	}	
-</script>
+identifikaceFunction('".$identifikace."');
+</script>";
+?>
+<script src="js/delo.js?<?php echo time(); ?>"></script>
+
+
+
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
