@@ -50,7 +50,9 @@ else{
 
 ?>
 <script src="js/delo.js?<?php echo time(); ?>"></script>
-
+<script>
+identifikaceFunction();
+</script>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);

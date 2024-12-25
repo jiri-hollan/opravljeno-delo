@@ -1,4 +1,4 @@
-identifikaceFunction();
+//identifikaceFunction();
 function identifikaceFunction(){	
 if("<?= $identifikace ?>"==""){
 	document.getElementById("poPotrebi").innerHTML = "niste prijavljeni ";	
