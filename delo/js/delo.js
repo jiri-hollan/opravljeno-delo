@@ -7,11 +7,12 @@ switch(akce) {
     break; 
 
   case "vloz":
+    stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="" placeholder="_____" readonly >';
     datum= '<input type="text" id="datumId" name="datum" value="" placeholder="Datum" required>';
     sifra= '<input type="text" id="sifraId" name="sifra" value="" placeholder="Šifra" required>';
     opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
     casPosega= '<input type="int" id="casId" name="casPosega" value="" placeholder="minute" required>';
-    document.getElementById("demo").innerHTML = datum + sifra + opravilo +  casPosega ;
+    document.getElementById("demo").innerHTML = stevilkaZdravnika + datum + sifra + opravilo +  casPosega ;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
     break;
 
