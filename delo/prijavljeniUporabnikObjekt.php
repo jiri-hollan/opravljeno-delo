@@ -40,6 +40,12 @@ identifikaceFunction(identifikace);
 </script>';
 	}//od construct
 		}//od class vyber uporabnika
+class Cosi {
+public $kva;
+function __construct($kva="") {		
+		
+	}//od construct
+		}//od class Cosi		
 		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
