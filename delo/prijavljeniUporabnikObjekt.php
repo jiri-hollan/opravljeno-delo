@@ -21,15 +21,14 @@ function __construct($podminka="") {
 	    $vybrano=$this->vyber->vyber($this->tabulka, $this->stolpci, $this->podminka );
 //echo($vybrano[0]["stevilkaZdravnika"]);		
 if(count($vybrano)>0){
-$identifikace="";
-echo($vybrano[0]["stevilkaZdravnika"]);	
-$GLOBALS['stevilkaZdravnika']=($vybrano[0]["stevilkaZdravnika"]);	
-foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
-       // echo $v;
-$identifikace =$identifikace . $v;
-//echo $identifikace;
+//echo($vybrano[0]["stevilkaZdravnika"]);	
+$stevilkaZdravnika=($vybrano[0]["stevilkaZdravnika"]);
+$ime=($vybrano[0]["ime"]);	
+$priimek=($vybrano[0]["priimek"]);
+$bolnisnica=($vybrano[0]["bolnisnica"]);	
+$identifikace=' '.$stevilkaZdravnika.' '.$ime.' '.$priimek.' '.$bolnisnica;
+$GLOBALS['stevilkaZdravnika']=$stevilkaZdravnika;
 $GLOBALS['identifikace']=$identifikace;
-}//od foreach
 //echo $GLOBALS['identifikace'];
 }//od if(cout)
 	else{
@@ -48,21 +47,8 @@ echo"
 izborFunction(".$akce.");
 </script>";
 }//od if GET	
-
-
 	}//od construct
-	
+		}//od class vyber uporabnika
 
-
-	}//od class vyber uporabnika
-	class TableRows extends RecursiveIteratorIterator {
-    function __construct($it) {
-        parent::__construct($it, self::LEAVES_ONLY);
-    }
-    function current() { 
-		 return "<b>  "  . parent::current() . " </>";
-    }
-
-}// od class TableRows	
 require_once '../skupne/sabloni/zapati.php';
 ?>
