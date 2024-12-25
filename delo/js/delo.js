@@ -1,10 +1,9 @@
-//identifikaceFunction();
 function identifikaceFunction(){	
-if("<?= $identifikace ?>"==""){
+if(identifikace==""){
 	document.getElementById("poPotrebi").innerHTML = "niste prijavljeni ";	
 }else{
 
-	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + "<?= $identifikace ?>";
+	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + identifikace;
 	}
 }
 function izborFunction(akce) {
