@@ -22,7 +22,7 @@ function __construct($podminka="") {
 //echo($vybrano[0]["stevilkaZdravnika"]);		
 if(count($vybrano)>0){
 $identifikace="";
-echo($vybrano[0]["stevilkaZdravnika"]);	
+//echo($vybrano[0]["stevilkaZdravnika"]);	
 $GLOBALS['stevilkaZdravnika']=($vybrano[0]["stevilkaZdravnika"]);	
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
        // echo $v;
