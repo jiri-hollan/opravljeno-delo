@@ -18,9 +18,9 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 require_once '../skupne/database.php';
 
 	$podminka = array("uname"=>$uname);
-	vyberFunction($podminka);
+	vyberUporabnikaFunction($podminka);
 	
-function vyberFunction($podminka){
+function vyberUporabnikaFunction($podminka){
    $tabulka="uporabnikiTbl";
    $stolpci=["ime","priimek","bolnisnica"];
    $vyber = new database();
@@ -58,7 +58,7 @@ else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
 }//od else
 
-}//od vyberFunction  
+}//od vyberUporabnikaFunction  
 
 ?>
 <script src="js/delo.js?<?php echo time(); ?>"></script>
