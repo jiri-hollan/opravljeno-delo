@@ -52,15 +52,8 @@ else{
 
 ?>
 <script src="js/delo.js?<?php echo time(); ?>"></script>
-<script>	
-if("<?= $identifikace ?>"==""){
-	document.getElementById("poPotrebi").innerHTML = "niste prijavljeni ";	
-}else{
+<script src="js/identifikace.js?<?php echo time(); ?>"></script>
 
-	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + "<?= $identifikace ?>";
-	}
-	document.getElementById("dom").innerHTML = "domov";		
-</script>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
