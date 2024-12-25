@@ -57,7 +57,7 @@ if("<?= $identifikace ?>"==""){
 
 	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + "<?= $identifikace ?>";
 	}
-	document.getElementById("dom").innerHTML = "domov";		
+//	document.getElementById("dom").innerHTML = "domov";		
 </script>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
