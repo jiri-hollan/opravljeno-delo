@@ -28,7 +28,7 @@ $identifikace =$identifikace . $v;
 //echo $identifikace;
 $GLOBALS['identifikace']=$identifikace;
 }//od foreach
-echo $GLOBALS['identifikace'];
+//echo $GLOBALS['identifikace'];
 }//od if(cout)
 	else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
