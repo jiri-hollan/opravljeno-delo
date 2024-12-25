@@ -4,11 +4,11 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 require_once '../skupne/sabloni/zahlavi.php';
 require_once 'sabloni/forma.php';
 require_once '../skupne/database.php';
-echo'<script src="js/delo.js?<?php echo time(); ?>"></script>';
+
 
 	$podminka = array("uname"=>$uname);
 	///vyberUporabnikaFunction($podminka);
-	
+echo'<script src="js/delo.js?<?php echo time(); ?>"></script>';	
 	  new VyberUporabnika ($podminka);
 	class VyberUporabnika {
 	public $podminka;
@@ -34,7 +34,8 @@ echo $GLOBALS['identifikace'];
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
 }//od else
 echo'<script>
-identifikaceFunction();
+identifikace='$GLOBALS['identifikace']';
+identifikaceFunction(identifikace);
 </script>';
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
