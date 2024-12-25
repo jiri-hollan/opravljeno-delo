@@ -22,13 +22,13 @@ function __construct($podminka="") {
 if(count($vybrano)>0){
 $identifikace="";
 
-
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
        // echo $v;
-$identifikace = $identifikace . $v;
+$identifikace =$identifikace . $v;
+//echo $identifikace;
 $GLOBALS['identifikace']=$identifikace;
 }//od foreach
-//echo $GLOBALS['identifikace'];
+echo $GLOBALS['identifikace'];
 }//od if(cout)
 	else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
