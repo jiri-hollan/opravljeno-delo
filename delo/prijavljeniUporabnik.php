@@ -45,18 +45,14 @@ $GLOBALS['identifikace']=$identifikace;
 else{
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
 }//od else
-
 }//od vyberUporabnikaFunction  
 
-?>
-<script>
-identifikace="<?= $GLOBALS['identifikace']?>";
+echo'<script>identifikace="'.$GLOBALS['identifikace'].'";
 identifikaceFunction(identifikace);
-</script>
-<?php
+</script>';
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
-
 
 echo"
 <script>
