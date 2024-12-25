@@ -40,10 +40,10 @@ identifikaceFunction(identifikace);
 </script>';
 	}//od construct
 		}//od class vyber uporabnika
-class Cosi {
+class Cosi extends VyberUporabnika{
 public $kva;
 function __construct($kva="") {		
-		
+		    parent::__construct();	
 	}//od construct
 		}//od class Cosi		
 		
