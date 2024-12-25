@@ -30,7 +30,7 @@ class TableRows extends RecursiveIteratorIterator {
         parent::__construct($it, self::LEAVES_ONLY);
     }
     function current() { 
-		 return "<b>  "  . parent::current() . " </>";
+		 return "<b>  "  . parent::current() ;
     }
 
 }// od class TableRows
@@ -47,17 +47,24 @@ else{
 }//od else
 
 }//od vyberUporabnikaFunction  
-
+echo"
+<script>
+izborFunction(".$identifikace.");
+</script>";
 ?>
 <script src="js/delo.js?<?php echo time(); ?>"></script>
-<script>	
-if("<?= $identifikace ?>"==""){
+
+
+
+<script>
+function identifikaceFunction(identifikace){	
+if("identifikace"==""){
 	document.getElementById("poPotrebi").innerHTML = "niste prijavljeni ";	
 }else{
 
-	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + "<?= $identifikace ?>";
+	document.getElementById("poPotrebi").innerHTML = "prijavljen je: " + " " + identifikace;
 	}
-//	document.getElementById("dom").innerHTML = "domov";		
+	}	
 </script>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
