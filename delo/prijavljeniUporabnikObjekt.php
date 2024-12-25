@@ -10,9 +10,9 @@ require_once '../skupne/database.php';
 	///vyberUporabnikaFunction($podminka);
 echo'<script src="js/delo.js?<?php echo time(); ?>"></script>';	
 	  new VyberUporabnika ($podminka);
-	class VyberUporabnika {
-	public $podminka;
-
+	  
+class VyberUporabnika {
+public $podminka;
 function __construct($podminka="") {
 	    $this->podminka=$podminka;
 	    $this->tabulka="uporabnikiTbl";
@@ -38,7 +38,9 @@ echo'<script>
 identifikace="'.$GLOBALS['identifikace'].'";
 identifikaceFunction(identifikace);
 </script>';
-
+	}//od construct
+		}//od class vyber uporabnika
+		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
 
@@ -47,8 +49,7 @@ echo"
 izborFunction(".$akce.");
 </script>";
 }//od if GET	
-	}//od construct
-		}//od class vyber uporabnika
+
 
 require_once '../skupne/sabloni/zapati.php';
 ?>
