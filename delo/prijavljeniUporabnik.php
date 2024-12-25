@@ -22,7 +22,7 @@ require_once '../skupne/database.php';
 	
 function vyberUporabnikaFunction($podminka){
    $tabulka="uporabnikiTbl";
-   $stolpci=["ime","priimek","bolnisnica"];
+   $stolpci=["stevilkaZdravnika","ime","priimek","bolnisnica"];
    $vyber = new database();
    $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
