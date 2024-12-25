@@ -4,7 +4,7 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 require_once '../skupne/sabloni/zahlavi.php';
 require_once 'sabloni/forma.php';
 require_once '../skupne/database.php';
-
+echo'<script src="js/delo.js?<?php echo time(); ?>"></script>';
 	$podminka = array("uname"=>$uname);
 	vyberUporabnikaFunction($podminka);
 	
@@ -49,8 +49,9 @@ else{
 }//od vyberUporabnikaFunction  
 
 ?>
-<script src="js/delo.js?<?php echo time(); ?>"></script>
+
 <script>
+identifikace=$GLOBALS['identifikace'];
 identifikaceFunction();
 </script>
 <?php
