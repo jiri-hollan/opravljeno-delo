@@ -1,10 +1,8 @@
 <?php
 session_start();
+$uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 require_once '../skupne/sabloni/zahlavi.php';
 require_once 'sabloni/forma.php';
-
-$uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
-
 require_once '../skupne/database.php';
 
 	$podminka = array("uname"=>$uname);
