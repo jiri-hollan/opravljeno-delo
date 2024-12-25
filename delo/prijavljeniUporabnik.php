@@ -1,18 +1,8 @@
 <?php
 session_start();
 require_once '../skupne/sabloni/zahlavi.php';
+require_once 'sabloni/forma.php';
 
-?>
-
-
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<input type="hidden" id="akceId" name="akce" value="">
-<p id="demo"></p>
-<p id="posli"></p>
-</form>
-<p id="demo3"></p>
-
-<?php 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 
 require_once '../skupne/database.php';
