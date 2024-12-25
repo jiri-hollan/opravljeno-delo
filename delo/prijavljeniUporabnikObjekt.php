@@ -34,7 +34,7 @@ echo $GLOBALS['identifikace'];
    echo "Za izbrano bolnisnico ni zapisa v bazi";	
 }//od else
 echo'<script>
-identifikace='$GLOBALS['identifikace']';
+identifikace="'.$GLOBALS['identifikace'].'";
 identifikaceFunction(identifikace);
 </script>';
 
