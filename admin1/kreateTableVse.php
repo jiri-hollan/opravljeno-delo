@@ -69,7 +69,7 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci NOT NULL,
 	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
 	`priimek` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
-	`stevilkaZdrav` int(3),
+	`stevilkaZdrav` int(11),
     `upstatus` int(3) NOT NULL,
     `pristop` int(3) NOT NULL,	
 	UNIQUE (email, uname)";
