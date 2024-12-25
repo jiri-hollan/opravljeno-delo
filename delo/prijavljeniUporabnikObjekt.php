@@ -40,20 +40,25 @@ identifikaceFunction(identifikace);
 </script>';
 	}//od construct
 		}//od class vyber uporabnika
-class Cosi extends VyberUporabnika{
-public $kva;
-function __construct($kva="") {		
-		    parent::__construct();	
+class Vloz extends VyberUporabnika{
+public $podminka;
+function __construct($podminka="") {		
+		    parent::__construct();
+	echo"
+<script>
+izborFunction('vloz');
+</script>";		
 	}//od construct
-		}//od class Cosi		
+		}//od class Vloz		
 		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);
-new VyberUporabnika ($podminka);
-echo"
+  
+new Vloz($podminka);
+/*echo"
 <script>
 izborFunction(".$akce.");
-</script>";
+</script>";*/
 }//od if GET	
 
 
