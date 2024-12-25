@@ -19,9 +19,11 @@ function __construct($podminka="") {
 	    $this->stolpci=["stevilkaZdravnika","ime","priimek","bolnisnica"];
 	    $this->vyber=new database();
 	    $vybrano=$this->vyber->vyber($this->tabulka, $this->stolpci, $this->podminka );
+//echo($vybrano[0]["stevilkaZdravnika"]);		
 if(count($vybrano)>0){
 $identifikace="";
-
+echo($vybrano[0]["stevilkaZdravnika"]);	
+$GLOBALS['stevilkaZdravnika']=($vybrano[0]["stevilkaZdravnika"]);	
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
        // echo $v;
 $identifikace =$identifikace . $v;
