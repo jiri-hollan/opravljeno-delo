@@ -49,10 +49,10 @@ else{
 }//od vyberUporabnikaFunction  
 
 ?>
-
+"<?= $identifikace ?>"
 <script>
-identifikace=$GLOBALS['identifikace'];
-identifikaceFunction();
+identifikace="<?= $GLOBALS['identifikace']?>";
+identifikaceFunction(identifikace);
 </script>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
