@@ -49,7 +49,6 @@ else{
 }//od vyberUporabnikaFunction  
 
 ?>
-"<?= $identifikace ?>"
 <script>
 identifikace="<?= $GLOBALS['identifikace']?>";
 identifikaceFunction(identifikace);
