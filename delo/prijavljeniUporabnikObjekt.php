@@ -8,7 +8,7 @@ require_once '../skupne/database.php';
 
 	$podminka = array("uname"=>$uname);
 	///vyberUporabnikaFunction($podminka);
-echo'<script src="js/delo.js?<?php echo time(); ?>"></script>';	
+echo'<script src="js/delo.js?time=<?php echo time(); ?>"></script>';	
 
 	  
 class VyberUporabnika {
@@ -44,21 +44,18 @@ class Vloz extends VyberUporabnika{
 public $podminka;
 function __construct($podminka="") {		
 		    parent::__construct();
-	echo"
+			
+echo"
 <script>
-izborFunction('vloz');
+stevilkaZdravnika='".json_encode($GLOBALS['stevilkaZdravnika'])."';
+izborFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
 		}//od class Vloz		
 		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  $akce = test_input($_GET["akce"]);
-  
-new Vloz($podminka);
-/*echo"
-<script>
-izborFunction(".$akce.");
-</script>";*/
+  $akce = test_input($_GET["akce"]); 
+ new Vloz($podminka);
 }//od if GET	
 
 

@@ -7,7 +7,9 @@ if(identifikace==""){
 	}
 } // od identifikaceFunction
 
-function izborFunction(akce) {
+function izborFunction(akce,stevilkaZdravnika) {
+	alert("izbor function");
+  alert(stevilkaZdravnika);
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
@@ -16,6 +18,7 @@ switch(akce) {
     break; 
 
   case "vloz":
+
     stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="" placeholder="_____" readonly >';
     datum= '<input type="text" id="datumId" name="datum" value="" placeholder="Datum" required>';
     sifra= '<input type="text" id="sifraId" name="sifra" value="" placeholder="Šifra" required>';
