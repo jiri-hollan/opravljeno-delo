@@ -7,9 +7,8 @@ if(identifikace==""){
 	}
 } // od identifikaceFunction
 
-function izborFunction(akce,stevilkaZdravnika) {
-	alert("izbor function");
-  alert(stevilkaZdravnika);
+function izborFunction(akce,stevilkaZd) {
+
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
@@ -18,8 +17,7 @@ switch(akce) {
     break; 
 
   case "vloz":
-
-    stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="" placeholder="_____" readonly >';
+    stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
     datum= '<input type="text" id="datumId" name="datum" value="" placeholder="Datum" required>';
     sifra= '<input type="text" id="sifraId" name="sifra" value="" placeholder="Šifra" required>';
     opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';

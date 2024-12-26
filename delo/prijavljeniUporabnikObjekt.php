@@ -47,7 +47,7 @@ function __construct($podminka="") {
 			
 echo"
 <script>
-stevilkaZdravnika='".json_encode($GLOBALS['stevilkaZdravnika'])."';
+stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
 izborFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
