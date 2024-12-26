@@ -70,7 +70,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);  	
 switch ($akce) {  
 case "vloz":
-echo 'odziv še ni napisan';
+    $stevilkaZdravnika = test_input($_POST["stevilkaZdravnika"]);
+    $datum = test_input($_POST["datum"]);
+    $sifra = test_input($_POST["sifra"]);
+    $opravilo = test_input($_POST["opravilo"]);  
+    $casPosega = test_input($_POST["casPosega"]);  	
+    $data= array("stevilkaZdravnika"=>$stevilkaZdravnika, "datum"=>$datum, "sifra"=>$sifra, "opravilo"=>$opravilo, "casPosega"=>$casPosega );
+    vlozFunction($data);
  //new NovZapis($podminka);
 break;
 
