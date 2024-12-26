@@ -117,7 +117,7 @@ default:
 
   function __construct($tabulka="deloTbl") {
 	parent::__construct($tabulka="deloTbl");
-	echo $tabulka;
+	//echo $tabulka;
 	$this->tabulka = $tabulka;
 	$data=array();
  function array_push_assoc($data, $key, $value){
@@ -134,11 +134,12 @@ foreach (json_decode($this->dataDelo) as $key) {
      $vloz = new database();
      $vlozeno=$vloz->vloz($this->tabulka,$this->data);
     //echo $vlozeno[1];
-     echo "<br>";
+   /*  echo "<br>";
      print_r($vlozeno);
      echo "<br>";
      echo count($vlozeno);
-     echo "<br>";	 
+     echo "<br>";	*/
+	 echo "Opravilo vpisano v bazo";
   }	    
 }// od class Vloz
 
