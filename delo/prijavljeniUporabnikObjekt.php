@@ -53,8 +53,17 @@ izborFunction('vloz',stevilkaZdravnika);
 		}//od class Vloz		
 		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  $akce = test_input($_GET["akce"]); 
+  $akce = test_input($_GET["akce"]);  
+
+switch ($akce) {  
+case "novZapis":
  new NovZapis($podminka);
+break;
+
+default:
+  echo $akce;
+ echo "<br>ni izvelo case";	
+}
 }//od if GET	
 
 
