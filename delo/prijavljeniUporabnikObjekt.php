@@ -8,9 +8,26 @@ require_once '../skupne/database.php';
 
 	$podminka = array("uname"=>$uname);
 	///vyberUporabnikaFunction($podminka);
-echo'<script src="js/delo.js?time=<?php echo time(); ?>"></script>';	
+?>
+<script src="js/delo.js?<?php echo time(); ?>"></script>	 
+<?php
+//_________________________________
+ 
+ 	class Test_input {
+	public $test;	
+  function __construct($test) {
+	//parent::__construct($test);
+   $test = trim($test);
+  $test = stripslashes($test);
+  $this->test = htmlspecialchars($test);
+  }//od construct
+  function get_test() {
+    return $this->test;
+  }  
+}//od class Test_input
 
-	  
+//____________________________________________________________________________________________
+ 	  
 class VyberUporabnika {
 public $podminka;
 function __construct($podminka="") {
@@ -71,11 +88,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 switch ($akce) {  
 case "vloz":
     $stevilkaZdravnika = test_input($_POST["stevilkaZdravnika"]);
-    $datum = test_input($_POST["datum"]);
-    $sifra = test_input($_POST["sifra"]);
+    $datumOpravila = test_input($_POST["datumOpravila"]);
+    $sifraOpravila = test_input($_POST["sifraOpravila"]);
     $opravilo = test_input($_POST["opravilo"]);  
-    $casPosega = test_input($_POST["casPosega"]);  	
-    $data= array("stevilkaZdravnika"=>$stevilkaZdravnika, "datum"=>$datum, "sifra"=>$sifra, "opravilo"=>$opravilo, "casPosega"=>$casPosega );
+    $casOpravila = test_input($_POST["casOpravila"]);  	
+    $data= array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$datumOpravila, "sifraOpravila"=>$sifraOpravila, "opravilo"=>$opravilo, "casOpravila"=>$casOpravila );
     //vlozFunction($data);
  new Vloz($data);
 break;
@@ -90,7 +107,7 @@ default:
 	  public $tabulka;
   function __construct($tabulka="deloTbl") {
       $this->tabulka = $tabulka; 
-	  $this->dataDelo= '["stevilkaZdravnika", "datum", "sifra", "opravilo", "casPosega"]';
+	  $this->dataDelo= '["stevilkaZdravnika", "datumOpravila", "sifraOpravila", "opravilo", "casOpravila"]';
   
 		
   } //od construct

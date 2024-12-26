@@ -18,11 +18,11 @@ switch(akce) {
 
   case "vloz":
     stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
-    datum= '<input type="text" id="datumId" name="datum" value="" placeholder="Datum" required>';
-    sifra= '<input type="text" id="sifraId" name="sifra" value="" placeholder="Šifra" required>';
+    datumOpravila= '<input type="text" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
+    sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
     opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
-    casPosega= '<input type="int" id="casId" name="casPosega" value="" placeholder="minute" required>';
-    document.getElementById("demo").innerHTML = stevilkaZdravnika + datum + sifra + opravilo +  casPosega ;
+    casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
+    document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
     break;
 
