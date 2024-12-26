@@ -18,7 +18,7 @@ switch(akce) {
 
   case "vloz":
     stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
-    datumOpravila= '<input type="text" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
+    datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
     opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
     casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
