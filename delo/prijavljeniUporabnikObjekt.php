@@ -50,7 +50,7 @@ stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
 izborFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
-		}//od class Vloz		
+		}//od class NovZapis		
 		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);  
@@ -85,5 +85,18 @@ default:
  echo "<br>ni izvelo case";	
 }
 }//od if POST
+
+ class DeloPost{
+	  public $tabulka;
+  function __construct($tabulka="deloTbl") {
+      $this->tabulka = $tabulka; 
+	  $this->dataDelo= '["stevilkaZdravnika", "datum", "sifra", "opravilo", "casPosega"]';
+  }
+		
+  } //od construct
+}//od class DeloPost
+
+
+
 require_once '../skupne/sabloni/zapati.php';
 ?>
