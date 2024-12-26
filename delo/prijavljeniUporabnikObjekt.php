@@ -40,11 +40,10 @@ identifikaceFunction(identifikace);
 </script>';
 	}//od construct
 		}//od class vyber uporabnika
-class Vloz extends VyberUporabnika{
+class NovZapis extends VyberUporabnika{
 public $podminka;
 function __construct($podminka="") {		
 		    parent::__construct();
-			
 echo"
 <script>
 stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
@@ -55,7 +54,7 @@ izborFunction('vloz',stevilkaZdravnika);
 		
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]); 
- new Vloz($podminka);
+ new NovZapis($podminka);
 }//od if GET	
 
 
