@@ -76,8 +76,8 @@ case "vloz":
     $opravilo = test_input($_POST["opravilo"]);  
     $casPosega = test_input($_POST["casPosega"]);  	
     $data= array("stevilkaZdravnika"=>$stevilkaZdravnika, "datum"=>$datum, "sifra"=>$sifra, "opravilo"=>$opravilo, "casPosega"=>$casPosega );
-    vlozFunction($data);
- //new NovZapis($podminka);
+    //vlozFunction($data);
+ new Vloz($data);
 break;
 
 default:
@@ -91,11 +91,39 @@ default:
   function __construct($tabulka="deloTbl") {
       $this->tabulka = $tabulka; 
 	  $this->dataDelo= '["stevilkaZdravnika", "datum", "sifra", "opravilo", "casPosega"]';
-  }
+  
 		
   } //od construct
 }//od class DeloPost
+//________________________________________________________________________________________	
+	class Vloz extends DeloPost {
 
+  function __construct($tabulka="deloTbl") {
+	parent::__construct($tabulka="deloTbl");
+	echo $tabulka;
+	$this->tabulka = $tabulka;
+	$data=array();
+ function array_push_assoc($data, $key, $value){
+   $data[$key] = $value;
+   return $data;
+}
+foreach (json_decode($this->dataDelo) as $key) {
+ //echo "$key <br>";
+    $value= new Test_input($_REQUEST[$key]); 
+	$value= $value->get_test();	
+    $data =array_push_assoc($data, $key, $value);
+}
+     $this->data = $data;
+     $vloz = new database();
+     $vlozeno=$vloz->vloz($this->tabulka,$this->data);
+    //echo $vlozeno[1];
+     echo "<br>";
+     print_r($vlozeno);
+     echo "<br>";
+     echo count($vlozeno);
+     echo "<br>";	 
+  }	    
+}// od class Vloz
 
 
 require_once '../skupne/sabloni/zapati.php';
