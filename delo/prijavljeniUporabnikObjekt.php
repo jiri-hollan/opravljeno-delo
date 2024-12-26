@@ -64,8 +64,20 @@ default:
   echo $akce;
  echo "<br>ni izvelo case";	
 }
-}//od if GET	
+}//od if GET
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $akce = test_input($_POST["akce"]);  	
+switch ($akce) {  
+case "vloz":
+echo 'odziv še ni napisan';
+ //new NovZapis($podminka);
+break;
 
+default:
+  echo $akce.' post';
+ echo "<br>ni izvelo case";	
+}
+}//od if POST
 require_once '../skupne/sabloni/zapati.php';
 ?>
