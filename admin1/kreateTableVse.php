@@ -32,7 +32,10 @@ echo '
    
    <label for="delo"><span class="imenaFilov">delo</span></label>
    <input type="radio" id="delo" name="name" value="delo">  
-   
+ 
+   <label for="opravilo"><span class="imenaFilov">opravilo</span></label>
+   <input type="radio" id="opravilo" name="name" value="opravilo"> 
+ 
    <input type="hidden" name="nazaj" value='. $nazaj.'>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
@@ -178,10 +181,19 @@ break;
 case "delo":
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     vpis_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-	 stevilkaZdrav  int(3),
+	 stevilkaZdravnika  int(3),
 	 opravilo  VARCHAR(255),
-	 opraviloSifra  int(3)";
-$databaseGloboka->naredi('delo', $definice);
+	 sifraOpravila int(3),
+	 datumOpravila date,
+	 casOpravila int(11)";
+$databaseGloboka->naredi('deloTbl', $definice);
+break;
+
+case "opravilo":
+$definice= " id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	sifraOpravila int(3),
+	opravilo VARCHAR(225)";
+$databaseGloboka->naredi('opraviloTbl', $definice);	
 break;
 
 /*
