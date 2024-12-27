@@ -20,8 +20,20 @@ switch(akce) {
     stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
-    opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
-    casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
+	
+opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <datalist id="opravila"><option value="opravilo"></datalist>';
+  
+
+// alert("sklep Json:" + sklepJson);
+  var opraviloList = JSON.parse(opraviloJson);
+//alert(sklepList);
+  listaOpravilFunction(opraviloList);
+
+
+   
+   //opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
+ 
+ casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
     document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
     break;

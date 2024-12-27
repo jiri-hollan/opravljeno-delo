@@ -4,28 +4,28 @@ require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
 	public $zaklad;
-	public $sklepiStatus;
+	public $opravilaStatus;
 	public $pristop;
 	public function __construct($bolnisnica) {
- $this->sklepiStatus = '1';
+ $this->opravilaStatus = '1';
  $this->conn = new Database();	
- $this->nameTable = 'sklepiTbl';
+ $this->nameTable = 'opravilaTbl';
  $stolpci = array('*');
  $poradi = "";
 //bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
  $podminka = array(""); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
- $sklep=array();
+ $opravilo=array();
  for ($i = 0; $i < count($prebrano); $i++) {
-//echo $prebrano[$i]["sklep"].'<br>';	
-   $sklep1= $prebrano[$i]["sklep"];
-//echo $sklep1.'<br>';//izpiše  sklep na zaslon
-   array_push($sklep,$sklep1);	
+//echo $prebrano[$i]["opravilo"].'<br>';	
+   $opravilo1= $prebrano[$i]["opravilo"];
+//echo $opravilo1.'<br>';//izpiše  opravilo na zaslon
+   array_push($opravilo,$opravilo1);	
 }//od for 
-//var_dump($sklep);
-  $sklepJson = json_encode($sklep, JSON_UNESCAPED_UNICODE);
+//var_dump($opravilo);
+  $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
   echo '<script>';
-  echo 'var sklepJson= ' . json_encode( $sklepJson, JSON_UNESCAPED_UNICODE) . ';';
+  echo 'var opraviloJson= ' . json_encode( $opraviloJson, JSON_UNESCAPED_UNICODE) . ';';
   echo '</script>';
 }//od construct	
 }//od class PoberZapis
