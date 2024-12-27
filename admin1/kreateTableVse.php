@@ -193,7 +193,7 @@ case "opravilo":
 $definice= " id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	sifraOpravila int(3),
 	opravilo VARCHAR(225)";
-$databaseGloboka->naredi('opraviloTbl', $definice);	
+$databaseGloboka->naredi('opravilaTbl', $definice);	
 break;
 
 /*
