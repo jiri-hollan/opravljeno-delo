@@ -24,14 +24,10 @@ switch(akce) {
 opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <datalist id="opravila"><option value="opravilo"></datalist>';
   
 
-// alert("sklep Json:" + sklepJson);
+// alert("opravilo Json:" + opraviloJson);
   var opraviloList = JSON.parse(opraviloJson);
-//alert(sklepList);
-
-
-
-   
-   //opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
+//alert(opraviloList);
+  //opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
  
  casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
     document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
