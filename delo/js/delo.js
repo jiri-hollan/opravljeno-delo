@@ -84,3 +84,18 @@ row_value = y.cells[0].innerHTML;
  window.location.href = "manipulacePregledovalci.php?akce=" + x.innerHTML + "&id=" + row_value;
   
 }//od function(e)
+//-----------------------------------------------------------------------------
+
+function listaOpravilFunction(opraviloList) {
+//alert ("lista opravil function");
+console.log("opravila.js");
+var text = "";
+var i;
+for (i = 0; i < opraviloList.length; i++) {
+ // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
+  text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
+  console.log(text);
+}
+//console.log(text);
+document.getElementById("opravila").innerHTML = text;
+}
