@@ -21,7 +21,8 @@ switch(akce) {
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
 	
-opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <select id="opravilaId"><option value="opravilo"></select>';
+opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required>' 
+izbira= '<select id="opravilaId"><option value="opravilo" onkeyup="myFunction()">opravilo</select>';
   
 
 // alert("opravilo Json:" + opraviloJson);
@@ -30,9 +31,11 @@ opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <sel
   //opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
  
  casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
-    document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
+    document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila;
+    document.getElementById("klik").innerHTML =	izbira;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
 	  listaOpravilFunction(opraviloList);
+
     break;
 
   case "uredi":
@@ -96,7 +99,7 @@ for (i = 0; i < opraviloList.length; i++) {
 }
 //console.log(text);
 document.getElementById("opravilaId").innerHTML = text;
-myFunction();
+
 }//konec listaOpravilFunction
 //----------------------------------------------------------------------------
 function myFunction() {
