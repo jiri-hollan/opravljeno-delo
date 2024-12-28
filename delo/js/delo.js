@@ -21,7 +21,7 @@ switch(akce) {
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
 	
-opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <datalist id="opravila"><option value="opravilo"></datalist>';
+opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <select id="opravilaId"><option value="opravilo"></select>';
   
 
 // alert("opravilo Json:" + opraviloJson);
@@ -92,7 +92,15 @@ for (i = 0; i < opraviloList.length; i++) {
  // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
   text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
   console.log(text);
+  
 }
 //console.log(text);
-document.getElementById("opravila").innerHTML = text;
+document.getElementById("opravilaId").innerHTML = text;
+myFunction();
+}//konec listaOpravilFunction
+//----------------------------------------------------------------------------
+function myFunction() {
+  var x = document.getElementById("opravilaId").selectedIndex;
+  var y = document.getElementById("opravilaId").options;
+  alert("Index: " + y[x].index + " is " + y[x].text);
 }
