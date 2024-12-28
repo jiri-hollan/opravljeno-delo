@@ -22,7 +22,7 @@ switch(akce) {
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
 	
 opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required>' 
-izbira= '<select id="opravilaId"><option value="opravilo" onkeyup="myFunction()">opravilo</select>';
+izbira= '<select id="opravilaId"><option>opravilo</select>';
   
 
 // alert("opravilo Json:" + opraviloJson);
@@ -93,7 +93,8 @@ var text = "";
 var i;
 for (i = 0; i < opraviloList.length; i++) {
  // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
-  text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
+ // text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
+    text += "<option value=>'" +  opraviloList[i] + "'</option>"  +"<br>";
   console.log(text);
   
 }
