@@ -8,11 +8,7 @@ require_once('opraviloVsi.php');
 
 	$podminka = array("uname"=>$uname);
 	///vyberUporabnikaFunction($podminka);
-?>
-<script src="js/delo.js?<?php echo time(); ?>"></script>	 
-<?php
-//_________________________________
- 
+ echo'<script src="js/delo.js?'.time().'"></script>';	
  	class Test_input {
 	public $test;	
   function __construct($test) {
