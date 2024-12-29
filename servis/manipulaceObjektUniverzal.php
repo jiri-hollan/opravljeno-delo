@@ -272,18 +272,18 @@ if (isset($_REQUEST["tabulka"])){
 
 switch($_REQUEST["tabulka"]){
 case "sklepiTbl":
-echo '<script src="js/manipulaceSklepi.js?<?php echo time(); ?>"></script>'; 
+echo '<script src="js/manipulaceSklepi.js?'.time().'"></script>'; 
 break;
 case "pregledovalciTbl":
-echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
+echo '<script src="js/manipulacePregledovalci.js?'.time().'"></script>'; 
 break;
 
 case "ocenaTbl":
-echo '<script src="js/manipulaceOcena.js?<?php echo time(); ?>"></script>'; 
+echo '<script src="js/manipulaceOcena.js?'.time().'"></script>'; 
 break;
 
 case "limitiTbl":
-echo '<script src="js/manipulaceLimiti.js?<?php echo time(); ?>"></script>'; 
+echo '<script src="js/manipulaceLimiti.js?'.time().'"></script>'; 
 break;
 }
 }
