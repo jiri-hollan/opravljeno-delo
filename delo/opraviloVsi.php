@@ -17,12 +17,13 @@ var_dump($prebrano);
  $opravilo=array();
  for ($i = 0; $i < count($prebrano); $i++) {
 //echo $prebrano[$i]["opravilo"].'<br>';	
-   $opravilo1= $prebrano[$i]["opravilo"];
-//echo $opravilo1.'<br>';//izpiše  opravilo na zaslon
+   $opravilo1= $prebrano[$i]["sifraOpravila"].'=>'.$prebrano[$i]["opravilo"];
+echo '<br>'.$opravilo1.'<br>';//izpiše  opravilo na zaslon
    array_push($opravilo,$opravilo1);	
 }//od for 
-//var_dump($opravilo);
+var_dump($opravilo);
   $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
+ echo $opraviloJson;
   echo '<script>';
   echo 'var opraviloJson= ' . json_encode( $opraviloJson, JSON_UNESCAPED_UNICODE) . ';';
   echo '</script>';
