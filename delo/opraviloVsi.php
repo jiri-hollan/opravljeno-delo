@@ -12,7 +12,8 @@ Class PoberZapis{
  $poradi = "";
 //bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
  $podminka = array(""); 
- $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
+ $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);  
+var_dump($prebrano); 
  $opravilo=array();
  for ($i = 0; $i < count($prebrano); $i++) {
 //echo $prebrano[$i]["opravilo"].'<br>';	
