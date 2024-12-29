@@ -8,7 +8,7 @@ Class PoberZapis{
 	public function __construct($bolnisnica) {
  $this->conn = new Database();	
  $this->nameTable = 'opravilaTbl';
- $stolpci = array('*');
+ $stolpci = array('sifraOpravila','opravilo');
  $poradi = "";
 //bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
  $podminka = array(""); 
