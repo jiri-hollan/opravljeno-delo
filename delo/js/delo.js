@@ -90,7 +90,9 @@ var text = "";
 var i;
 for (i = 0; i < opraviloList.length; i++) {
  // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
-  text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
+  //text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
+  text += "<option id='" +  i + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
+  
   console.log(text);
 }
 //console.log(text);
