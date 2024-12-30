@@ -24,15 +24,15 @@ switch(akce) {
 opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <datalist id="opravila"><option value="opravilo"></datalist>';
   
 
- alert("opravilo Json:" + opraviloJson);
+// alert("opravilo Json:" + opraviloJson);
   var opraviloList = JSON.parse(opraviloJson);
-//alert(opraviloList);
+alert(opraviloList);
   //opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
  
  casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
     document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
-	  listaOpravilFunction(opraviloList);
+	listaOpravilFunction(opraviloList);
     break;
 
   case "uredi":
@@ -91,7 +91,7 @@ var i;
 for (i = 0; i < opraviloList.length; i++) {
  // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
   //text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
-  text += "<option id='" +  opraviloList[i][0] + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
+  text += "<option id='" +  opraviloList[i][1] + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
   
   console.log(text);
 }

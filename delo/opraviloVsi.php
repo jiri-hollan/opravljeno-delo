@@ -19,16 +19,20 @@ Class PoberZapis{
 //echo $prebrano[$i]["opravilo"].'<br>';	
  //$opravilo1= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
  $sifra=$prebrano[$i]["sifraOpravila"];
+ //echo'šifra= '.$sifra;
  $oprav=$prebrano[$i]["opravilo"];
-  $opravilo1=[$sifra]=$oprav;
+  $opravilo1[$sifra]=$oprav;
 //echo '<br>'.$opravilo1.'<br>';//izpiše  opravilo na zaslon
+echo'<br>';
 //var_dump ($opravilo);
-   array_push($opravilo,$opravilo1);	
+  // array_push($opravilo,$opravilo1);
+ $opravilo=$opravilo1; 
 }//od for 
+echo'<br>';
 var_dump($opravilo);
 echo'<br>';
   $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
- echo $opraviloJson;
+// echo $opraviloJson;
   echo '<script>';
   echo 'var opraviloJson= ' . json_encode( $opraviloJson, JSON_UNESCAPED_UNICODE) . ';';
   echo '</script>';
