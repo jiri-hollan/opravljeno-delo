@@ -13,14 +13,36 @@ Class PoberZapis{
 //bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
  $podminka = array(""); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);  
-var_dump($prebrano); 
+echo '$prebrano: ---';
+var_dump($prebrano);
+echo '<br>-----------------------<br>';
  $opravilo=array();
- for ($i = 0; $i < count($prebrano); $i++) {
+/* for ($i = 0; $i < count($prebrano); $i++) {
 //echo $prebrano[$i]["opravilo"].'<br>';	
  $opravilo1= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
 echo '<br>'.$opravilo1.'<br>';//izpiše  opravilo na zaslon
    array_push($opravilo,$opravilo1);	
-}//od for 
+}//od for */
+foreach ($prebrano as $x => $vrstica) {
+	//$x je številka (index) araya vrstice 0=prva vrstica
+//echo 'forič: --';
+//echo'<br> x= '.$x;
+// $vrstica je array v vrstici
+echo'<br>vrstica= ';
+var_dump($vrstica);
+echo'<br>';
+foreach ($vrstica as $x => $y) {
+//var_dump($x);	
+echo'<br>';
+//var_dump($y);	
+echo $x.'=';
+echo $y;
+}
+echo'<br>';
+}//od prvega forič
+
+
+
 var_dump($opravilo);
   $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
  echo $opraviloJson;
