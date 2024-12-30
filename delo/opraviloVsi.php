@@ -14,7 +14,7 @@ Class PoberZapis{
  $podminka = array(""); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);  
 echo '$prebrano: ---';
-var_dump($prebrano);
+//var_dump($prebrano);
 echo '<br>-----------------------<br>';
  $opravilo=array();
 /* for ($i = 0; $i < count($prebrano); $i++) {
@@ -28,9 +28,9 @@ foreach ($prebrano as $x => $vrstica) {
 //echo 'forič: --';
 //echo'<br> x= '.$x;
 // $vrstica je array v vrstici
-echo'<br>vrstica= ';
-var_dump($vrstica);
-echo'<br>';
+//echo'<br>vrstica= ';
+//var_dump($vrstica);
+//echo'<br>';
 foreach ($vrstica as $x => $y) {
 //var_dump($x);	
 echo'<br>';
@@ -43,9 +43,9 @@ echo'<br>';
 
 
 
-var_dump($opravilo);
+//var_dump($opravilo);
   $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
- echo $opraviloJson;
+ //echo $opraviloJson;
   echo '<script>';
   echo 'var opraviloJson= ' . json_encode( $opraviloJson, JSON_UNESCAPED_UNICODE) . ';';
   echo '</script>';
