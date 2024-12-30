@@ -17,6 +17,7 @@ echo '$prebrano: ---';
 //var_dump($prebrano);
 echo '<br>-----------------------<br>';
  $opravilo=array();
+ $opravilo1="";
 /* for ($i = 0; $i < count($prebrano); $i++) {
 //echo $prebrano[$i]["opravilo"].'<br>';	
  $opravilo1= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
@@ -33,14 +34,18 @@ foreach ($prebrano as $x => $vrstica) {
 //echo'<br>';
 foreach ($vrstica as $x => $y) {
 //var_dump($x);	
-echo'<br>';
+//echo'<br>';
 //var_dump($y);	
-echo $x.'=';
-echo $y;
-}
-echo'<br>';
-}//od prvega forič
+//echo $x.'=';
+//echo $y;
+ $opravilo1=$opravilo1.$y;
 
+}
+
+//echo'<br>';
+}//od prvega forič
+$opravilo=$opravilo1;
+ echo $opravilo;
 
 
 //var_dump($opravilo);
