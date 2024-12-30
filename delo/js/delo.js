@@ -85,7 +85,7 @@ row_value = y.cells[0].innerHTML;
 
 function listaOpravilFunction(opraviloList) {
 //alert ("lista opravil function");
-console.log("opravila.js");
+console.log("opravila.js"+opraviloList);
 var text = "";
 var i;
 for (i = 0; i < opraviloList.length; i++) {
