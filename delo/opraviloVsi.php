@@ -13,15 +13,20 @@ Class PoberZapis{
 //bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
  $podminka = array(""); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);  
-var_dump($prebrano); 
- $opravilo=array();
+//var_dump($prebrano); 
+ $opravilo=[];
  for ($i = 0; $i < count($prebrano); $i++) {
 //echo $prebrano[$i]["opravilo"].'<br>';	
- $opravilo1= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
-echo '<br>'.$opravilo1.'<br>';//izpiše  opravilo na zaslon
+ //$opravilo1= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
+ $sifra=$prebrano[$i]["sifraOpravila"];
+ $oprav=$prebrano[$i]["opravilo"];
+  $opravilo1=[$sifra]=$oprav;
+//echo '<br>'.$opravilo1.'<br>';//izpiše  opravilo na zaslon
+//var_dump ($opravilo);
    array_push($opravilo,$opravilo1);	
 }//od for 
 var_dump($opravilo);
+echo'<br>';
   $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
  echo $opraviloJson;
   echo '<script>';
