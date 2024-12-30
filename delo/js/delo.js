@@ -33,6 +33,7 @@ alert(opraviloList);
     document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
 	listaOpravilFunction(opraviloList);
+	
     break;
 
   case "uredi":
@@ -66,7 +67,9 @@ alert(opraviloList);
   default:
     // code block
  }//od switch
+ 
 } // od izborFunction
+
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
 var x = e.target;
@@ -103,4 +106,10 @@ var i;
   alert (text);
 //console.log(text);
 document.getElementById("opravila").innerHTML = text;
+}
+
+//_____________________________________________________
+function zadnjiAlertFunction() {
+x= document.getElementById("opravila").innerHTML;
+	alert(x);	
 }
