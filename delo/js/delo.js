@@ -21,7 +21,7 @@ switch(akce) {
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
 	
-opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <datalist id="opravila"><option value="opravilo"></datalist>';
+opravilo= '<input id="opraviloId" value="" list="opravila" name="opravilo" required  onchange="zadnjiAlertFunction()"> <datalist id="opravila"><option value="opravilo"></datalist>';
   
 
 alert("opravilo Json:" + opraviloJson);
@@ -110,6 +110,6 @@ document.getElementById("opravila").innerHTML = text;
 
 //_____________________________________________________
 function zadnjiAlertFunction() {
-x= document.getElementById("opravila").innerHTML;
+x= document.getElementById("demo").innerHTML;
 	alert(x);	
 }
