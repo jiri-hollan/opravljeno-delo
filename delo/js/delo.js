@@ -24,7 +24,7 @@ switch(akce) {
 opravilo= '<input id="opraviloId" list="opravila" name="opravilo" required> <datalist id="opravila"><option value="opravilo"></datalist>';
   
 
-// alert("opravilo Json:" + opraviloJson);
+alert("opravilo Json:" + opraviloJson);
   var opraviloList = JSON.parse(opraviloJson);
 alert(opraviloList);
   //opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
@@ -93,7 +93,7 @@ var i;
   //text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
   
  for (let [sifra, value] of Object.entries(opraviloList)) {
-  text +=  "<option id='" +  sifra + ": " + "'value='" + value + "<br>"; 
+  text +=  "<option id='" +  sifra  + "'value='" + value + "<br>"; 
 
   
  // text += "<option id='" +  opraviloList[i][1] + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
