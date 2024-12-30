@@ -75,7 +75,8 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`stevilkaZdrav` int(11),
     `upstatus` int(3) NOT NULL,
     `pristop` int(3) NOT NULL,	
-	UNIQUE (email, uname)";
+	UNIQUE (email, uname),
+	 stevilkaZdravnika  int(3)";	
 $databaseGloboka->naredi('uporabnikiTbl', $definice);
 break;
 

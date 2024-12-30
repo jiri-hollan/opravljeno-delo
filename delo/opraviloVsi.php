@@ -17,7 +17,7 @@ var_dump($prebrano);
  $opravilo=array();
  for ($i = 0; $i < count($prebrano); $i++) {
 //echo $prebrano[$i]["opravilo"].'<br>';	
- $opravilo1= $prebrano[$i]["sifraOpravila"].'=>'.$prebrano[$i]["opravilo"];
+ $opravilo1= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
 echo '<br>'.$opravilo1.'<br>';//izpiše  opravilo na zaslon
    array_push($opravilo,$opravilo1);	
 }//od for 
