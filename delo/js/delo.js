@@ -86,15 +86,21 @@ row_value = y.cells[0].innerHTML;
 function listaOpravilFunction(opraviloList) {
 //alert ("lista opravil function");
 console.log("opravila.js"+opraviloList);
-var text = "";
+let text = "";
 var i;
-for (i = 0; i < opraviloList.length; i++) {
+//for (i = 0; i < opraviloList.length; i++) {
  // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
   //text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
-  text += "<option id='" +  opraviloList[i][1] + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
+  
+ for (let [sifra, value] of Object.entries(opraviloList)) {
+  text +=  "<option id='" +  sifra + ": " + "'value='" + value + "<br>"; 
+
+  
+ // text += "<option id='" +  opraviloList[i][1] + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
   
   console.log(text);
 }
+  alert (text);
 //console.log(text);
 document.getElementById("opravila").innerHTML = text;
 }
