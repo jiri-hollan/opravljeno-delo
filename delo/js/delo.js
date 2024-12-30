@@ -93,7 +93,7 @@ var i;
   //text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
   
  for (let [sifra, value] of Object.entries(opraviloList)) {
-  text +=  "<option id='" +  sifra  + "'value='" + value + "<br>"; 
+  text +=  "<option id='" +  sifra  + "' value='" + value + "<br>"; 
 
   
  // text += "<option id='" +  opraviloList[i][1] + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
