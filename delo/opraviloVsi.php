@@ -38,6 +38,8 @@ foreach ($vrstica as $x => $y) {
 //var_dump($y);	
 //echo $x.'=';
 //echo $y;
+echo $opravilo1;
+echo'<br>';
  $opravilo1=$opravilo1.$y;
 
 }
