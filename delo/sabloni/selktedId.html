@@ -6,7 +6,8 @@
 
 <form>
   <select id="mySelect" onchange="myFunction()">
-    <option id="jablko">Apple</option>
+    <option id="" value=""></option> 
+    <option id="jablko" value="mela">Apple</option>
     <option id="pomeranc">Orange</option>
     <option>Pineapple</option>
     <option>Banana</option>
@@ -14,12 +15,15 @@
 </form>
 
 <p id="demo"></p>
+<br><br><br><br><br>
+<p id="demo2"></p>
 
 <script>
 function myFunction() {
   var x = document.getElementById("mySelect");
   var i = x.selectedIndex;
   document.getElementById("demo").innerHTML = x.options[i].id;
+  document.getElementById("demo2").innerHTML = x.options[i].value;
 }
 </script>
 
