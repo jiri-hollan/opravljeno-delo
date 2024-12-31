@@ -110,6 +110,6 @@ document.getElementById("opravila").innerHTML = text;
 
 //_____________________________________________________
 function zadnjiAlertFunction() {
-x= document.getElementById("demo").innerHTML;
+x= document.getElementById("opraviloId").value;
 	alert(x);	
 }
