@@ -102,3 +102,10 @@ function zadnjiAlertFunction() {
 x= document.getElementById("opraviloId").value;
 	alert(x);	
 }
+	  
+	 //----------------------------------------------------------------------------
+function myFunction() {
+  var x = document.getElementById("opravilaId").selectedIndex;
+  var y = document.getElementById("opravilaId").options;
+  alert("Index: " + y[x].index + " is " + y[x].text);
+} 
