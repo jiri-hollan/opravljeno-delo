@@ -22,7 +22,7 @@ switch(akce) {
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
 	
     opravilo= '<input id="opraviloId" value="" list="opravila" name="opravilo" required  onchange="zadnjiAlertFunction()">'
-	izbira= '<select id="opravilaId"><option>opravilo</select>';
+	izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
 	//<datalist id="opravila"><option value="opravilo"></datalist>'; 
 	
     casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';	
