@@ -17,9 +17,9 @@ switch(akce) {
     break; 
 
   case "vloz":
-    stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
-    datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
-    sifraOpravila= '<input type="text" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
+    stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
+    datumOpravila= '<label for="datumId">datum opravila: </label><input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
+    sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
     opravilo= '<input id="opraviloId" value="" name="opravilo" required  onchange="zadnjiAlertFunction()">'
 	izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
 	
