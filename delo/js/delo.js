@@ -21,7 +21,9 @@ switch(akce) {
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
 	
-    opravilo= '<input id="opraviloId" value="" list="opravila" name="opravilo" required  onchange="zadnjiAlertFunction()"> <datalist id="opravila"><option value="opravilo"></datalist>'; 
+    opravilo= '<input id="opraviloId" value="" list="opravila" name="opravilo" required  onchange="zadnjiAlertFunction()">'
+	izbira= '<select id="opravilaId"><option>opravilo</select>';
+	//<datalist id="opravila"><option value="opravilo"></datalist>'; 
 	
     casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';	
     var opraviloList = JSON.parse(opraviloJson);
@@ -30,6 +32,7 @@ alert("opravilo Json:" + opraviloJson);
 alert(opraviloList);
   
     document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
+	    document.getElementById("klik").innerHTML =	izbira;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
 	
 	listaOpravilFunction(opraviloList);
