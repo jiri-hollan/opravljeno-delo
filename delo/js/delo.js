@@ -89,12 +89,12 @@ let text = "";
 var i;
  
  for (let [sifra, value] of Object.entries(opraviloList)) {
-  text += "<option id='" +  sifra  + "' value='" + value + "'>" + "<br>"; 
+  text += "<option id='" +  sifra  + "' value='" + value + "'>"; 
   console.log(text);
 }
   alert (text);
 //console.log(text);
-document.getElementById("opravila").innerHTML = text;
+document.getElementById("opravilaId").innerHTML = text;
 }
 
 //_____________________________________________________
