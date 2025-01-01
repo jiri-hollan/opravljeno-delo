@@ -88,9 +88,8 @@ console.log("opravila.js"+opraviloList);
 let text = "";
 var i;
  
- for (let [sifra, value] of Object.entries(opraviloList)) {
-  text += "<option value='" + value+ "'>"; 	 
-  //text += "<option id='" +  sifra  + "' value='" + value+ "'>"; 
+ for (let [sifra, value] of Object.entries(opraviloList)) { 	 
+  text += "<option id='" +  sifra  + "' value='" + value + "'>"+value; 
   console.log(text);
 }
   alert (text);
