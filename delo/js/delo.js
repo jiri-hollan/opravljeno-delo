@@ -20,18 +20,16 @@ switch(akce) {
     stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
+    opravilo= '<input id="opraviloId" value="" list="opravila" name="opravilo" required  onchange="zadnjiAlertFunction()"> <datalist id="opravila"><option value="opravilo"></datalist>'; 
+    casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';	
+    var opraviloList = JSON.parse(opraviloJson);
 	
-opravilo= '<input id="opraviloId" value="" list="opravila" name="opravilo" required  onchange="zadnjiAlertFunction()"> <datalist id="opravila"><option value="opravilo"></datalist>';
-  
-
 alert("opravilo Json:" + opraviloJson);
-  var opraviloList = JSON.parse(opraviloJson);
 alert(opraviloList);
-  //opravilo= '<input type="text" id="opraviloId" name="opravilo" value="" placeholder="Opravilo" required>';
- 
- casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';
+  
     document.getElementById("demo").innerHTML = stevilkaZdravnika + datumOpravila + sifraOpravila + opravilo +  casOpravila ;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
+	
 	listaOpravilFunction(opraviloList);
 	
     break;
@@ -45,29 +43,22 @@ alert(opraviloList);
     break;
 
   case "odstrani":
-
-  
-  if ( confirm("v funkciji JS odstrani\odstranim en zapis?") == true) {
+    if ( confirm("v funkciji JS odstrani\odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
     document.getElementById("osebe").addEventListener("click", functionOver);
       }
 } else {
   text = "You canceled!";
 }
-  
-  
- /* if(document.getElementById("osebe")!=null){
+  /* if(document.getElementById("osebe")!=null){
  document.getElementById("osebe").addEventListener("click", functionOver);
- 
-}*/
-
-    // code block
+ }*/
+   // code block
 
     break;	
   default:
     // code block
  }//od switch
- 
 } // od izborFunction
 
 //----------------------------------------------------------------------------------------
@@ -91,16 +82,9 @@ function listaOpravilFunction(opraviloList) {
 console.log("opravila.js"+opraviloList);
 let text = "";
 var i;
-//for (i = 0; i < opraviloList.length; i++) {
- // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
-  //text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
-  
+ 
  for (let [sifra, value] of Object.entries(opraviloList)) {
   text += "<option id='" +  sifra  + "' value='" + value + "'>" + "<br>"; 
-
-  
- // text += "<option id='" +  opraviloList[i][1] + "'  value='" +  opraviloList[i] + "'>"  +"<br>";
-  
   console.log(text);
 }
   alert (text);
