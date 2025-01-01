@@ -92,8 +92,6 @@ console.log("opravila.js");
 var text = "";
 var i;
 for (i = 0; i < opraviloList.length; i++) {
- // text += "<option value=" +  opraviloList[i] + ">"  +"<br>";
- // text += "<option value='" +  opraviloList[i] + "'>"  +"<br>";
     text += "<option value=>" +  opraviloList[i] + "</option>";
   console.log(text);
   
