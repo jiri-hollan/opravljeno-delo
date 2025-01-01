@@ -20,7 +20,9 @@ switch(akce) {
     stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" required>';
+	
     opravilo= '<input id="opraviloId" value="" list="opravila" name="opravilo" required  onchange="zadnjiAlertFunction()"> <datalist id="opravila"><option value="opravilo"></datalist>'; 
+	
     casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';	
     var opraviloList = JSON.parse(opraviloJson);
 	
