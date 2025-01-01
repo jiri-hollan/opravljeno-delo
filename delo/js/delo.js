@@ -109,8 +109,4 @@ function myFunction() {
       var i = a.selectedIndex;
 	  //alert(i);
     document.getElementById("opraviloId").value = a.options[i].value;
-  var x = document.getElementById("opravilaId").selectedIndex;
-  var y = document.getElementById("opravilaId").options;
-  //alert("Index: " + y[x].index + " is " + y[x].text);
-  //document.getElementById("opraviloId").value="s";
 } 
