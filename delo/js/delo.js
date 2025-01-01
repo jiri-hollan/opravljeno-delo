@@ -99,7 +99,8 @@ document.getElementById("opravilaId").innerHTML = text;
 //_____________________________________________________
 function zadnjiAlertFunction() {
 x= document.getElementById("opraviloId").value;
-	alert(x);	
+	alert(x);
+	document.getElementById("sifraId").value = "";	
 }
 	  
 	 //----------------------------------------------------------------------------
