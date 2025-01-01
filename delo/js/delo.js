@@ -84,7 +84,7 @@ row_value = y.cells[0].innerHTML;
 function listaOpravilFunction(opraviloList) {
 //alert ("lista opravil function");
 console.log("opravila.js"+opraviloList);
-let text = "";
+let text = "<option id='' value=''>";
 var i;
  
  for (let [sifra, value] of Object.entries(opraviloList)) { 	 
@@ -108,4 +108,5 @@ function myFunction() {
       var i = a.selectedIndex;
 	  //alert(i);
     document.getElementById("opraviloId").value = a.options[i].value;
+	document.getElementById("sifraId").value = a.options[i].id;
 } 
