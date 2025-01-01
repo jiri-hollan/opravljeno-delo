@@ -108,4 +108,5 @@ function myFunction() {
   var x = document.getElementById("opravilaId").selectedIndex;
   var y = document.getElementById("opravilaId").options;
   alert("Index: " + y[x].index + " is " + y[x].text);
+  document.getElementById("opraviloId").value="s";
 } 
