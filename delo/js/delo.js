@@ -17,14 +17,13 @@ switch(akce) {
     break; 
 
   case "vloz":
-    stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
+    stevilkaZdravnika= '<input type="text" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
     datumOpravila= '<input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
-    sifraOpravila= '<input type="text" id="sifraId" name="sifraOpravila" value="" placeholder="Šifra" readonly required>';
-	
+    sifraOpravila= '<input type="text" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
     opravilo= '<input id="opraviloId" value="" name="opravilo" required  onchange="zadnjiAlertFunction()">'
 	izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
 	
-    casOpravila= '<input type="int" id="casId" name="casOpravila" value="" placeholder="minute" required>';	
+    casOpravila= '<input type="int" id="casId" class="kratke"  name="casOpravila" value="" placeholder="minute" required>';	
     var opraviloList = JSON.parse(opraviloJson);
 	
 //alert("opravilo Json:" + opraviloJson);
