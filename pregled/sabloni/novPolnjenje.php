@@ -1,4 +1,3 @@
-
 <form id="frm" name="bolnikForma" method="post" action="vnosVrstice.php" autocomplete="off"> 
 <fieldset class="novBolnik" id="prva">
     <legend id="novBLegend">Nov bolnik</legend>

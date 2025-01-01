@@ -28,7 +28,7 @@ $omejitevGdpr=$gdpr[0];
 	
     default:
     echo "ni izvelo case";			
-	}
+	}//od switch
 echo'<script>';
 echo 'localStorage.setItem("gdpr",'.$gdpr.');';
 echo'</script>';
@@ -43,5 +43,4 @@ echo'<script>';
 echo 'localStorage.setItem("gdpr",'.$gdpr.');';
 echo'</script>';
 }
-
 ?>
