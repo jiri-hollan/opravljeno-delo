@@ -29,7 +29,7 @@ echo'<br>';
  $opravilo=$opravilo1; 
 }//od for 
 echo'<br>';
-var_dump($opravilo);
+//var_dump($opravilo);
 echo'<br>';
   $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
 // echo $opraviloJson;
