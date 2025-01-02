@@ -20,7 +20,7 @@ switch(akce) {
     stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
     datumOpravila= '<label for="datumId">datum opravila: </label><input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
-    opravilo= '<input id="opraviloId" value="" name="opravilo" required  onchange="zadnjiAlertFunction()">'
+    opravilo= '<input id="opraviloId" value="" name="opravilo" required autocomplete="off" onchange="zadnjiAlertFunction()">'
 	izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
 	
     casOpravila= '<input type="number" id="casId" class="kratke"  name="casOpravila" min="0" step="1" value="" placeholder="minute" required>';	
