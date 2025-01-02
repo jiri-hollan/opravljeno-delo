@@ -23,7 +23,7 @@ switch(akce) {
     opravilo= '<input id="opraviloId" value="" name="opravilo" required autocomplete="off" onchange="zadnjiAlertFunction()">'
 	izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
 	
-    casOpravila= '<input type="number" id="casId" class="kratke"  name="casOpravila" min="0" step="1" value="" placeholder="minute" required>';	
+    casOpravila= '<input type="number" id="casId" class="kratke"  name="casOpravila" min="0" step="1" value="" placeholder="minute" autocomplete="off"  required>';	
     var opraviloList = JSON.parse(opraviloJson);
 	
 //alert("opravilo Json:" + opraviloJson);
