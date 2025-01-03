@@ -74,6 +74,11 @@ if (isset($_REQUEST["akce"])) {
 	  case "limitiTbl":
 	  $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
 	  break;
+	  
+	   case "deloTbl":
+	  $this->dataPreg= '["vpis_date", "stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
+	  break;
+	  
 	  default:
 	  echo "tabulka ni določena";
   }
@@ -285,6 +290,11 @@ break;
 case "limitiTbl":
 echo '<script src="js/manipulaceLimiti.js?'.time().'"></script>'; 
 break;
+
+case "deloTbl":
+echo '<script src="js/manipulaceDelo.js?'.time().'"></script>'; 
+break;
+
 }
 }
 ?>
