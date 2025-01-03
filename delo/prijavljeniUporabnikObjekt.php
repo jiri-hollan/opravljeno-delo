@@ -1,6 +1,7 @@
 <?php
 session_start();
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
+$nazaj="../frontend/deloMenu.php";
 require_once '../skupne/sabloni/zahlavi.php';
 require_once 'sabloni/forma.php';
 require_once '../skupne/database.php';

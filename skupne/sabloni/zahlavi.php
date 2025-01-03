@@ -12,7 +12,9 @@
 <div class="topnav">
   <span id="poPotrebi"></span>
 <?php
-if (isset($_GET['nazaj'])){
+if (isset($nazaj)){
+	$nazaj=$nazaj;
+}elseif (isset($_GET['nazaj'])){
 //$nazaj = $_GET['nazaj'];
       $nazaj = test_input($_GET['nazaj']);	
 }elseif (isset($_POST['nazaj'])){		  
