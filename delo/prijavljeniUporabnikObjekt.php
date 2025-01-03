@@ -65,13 +65,31 @@ izborFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
 		}//od class NovZapis		
-		
+//-------------------------------------------------------------------------------------------
+class DnevniZapis extends VyberUporabnika{
+public $podminka;
+function __construct($podminka="") {		
+		    parent::__construct();
+echo"
+<script>
+stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
+
+//izborFunction('vloz',stevilkaZdravnika);
+</script>";		
+	}//od construct
+		}//od DnevniZapis		
+//_______________________________________________________________________________________
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);  
 
 switch ($akce) {  
 case "novZapis":
  new NovZapis($podminka);
+break;
+
+case "dnevni":
+echo "koda še ni zapisana";
+ new DnevniZapis($podminka);
 break;
 
 default:
