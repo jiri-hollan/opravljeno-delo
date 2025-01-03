@@ -13,3 +13,22 @@
 #casId[type=number] {
   -moz-appearance: textfield;
 }
+div.glavni {
+  position: relative;
+  width: 600px;
+ /* height: 100px;*/
+ /* border: 3px solid #73AD21;*/
+} 
+
+div.notranji {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 300px;
+  /*height: 100px;*/
+  /*border: 3px solid #73AD21;*/
+}
+
+#opravilaId{
+  width: 200px;	
+}

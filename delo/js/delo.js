@@ -20,8 +20,7 @@ switch(akce) {
     stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
     datumOpravila= '<label for="datumId">datum opravila: </label><input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
     sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
-    opravilo= '<input id="opraviloId" value="" name="opravilo" required autocomplete="off" onchange="zadnjiAlertFunction()">';
-		
+    opravilo= '<input id="opraviloId" value="" name="opravilo" required autocomplete="off" onchange="zadnjiAlertFunction()">';		
     casOpravila= '<input type="number" id="casId" class="kratke"  name="casOpravila" min="0" step="1" value="" placeholder="minute" autocomplete="off"  required>';
 	izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
     var opraviloList = JSON.parse(opraviloJson);
@@ -29,7 +28,7 @@ switch(akce) {
 //alert("opravilo Json:" + opraviloJson);
 //alert(opraviloList);
   
-    document.getElementById("demo").innerHTML = "<div class='glavni'>"+stevilkaZdravnika + datumOpravila + sifraOpravila +"</div><div class='notranji'>"+ opravilo + izbira +  casOpravila+"</div>" ;
+    document.getElementById("demo").innerHTML = "<div class='glavni'>"+stevilkaZdravnika + datumOpravila + sifraOpravila +"<div class='notranji'>"+ opravilo + casOpravila +"<br>"+ izbira +"</div></div>" ;
 	   // document.getElementById("klik").innerHTML =	izbira;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
 	
