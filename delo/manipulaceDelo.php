@@ -13,12 +13,16 @@ require_once '../skupne/sabloni/zahlavi.php';
 <?php 
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['akce'])){	
   $akce = test_input($_POST["akce"]);
+}
+if (isset($_POST['bolnisnica'])){	
   $bolnisnica = test_input($_POST["bolnisnica"]);
- // echo strtoupper($akce) .': ';
-  echo strtoupper($bolnisnica) .'<br>';
-//echo var_dump($pregledovalciStatus) .'<br>';
+    echo strtoupper($bolnisnica) .'<br>';
+}
+
 switch ($akce) {
   case "vyber":
 // echo "to je vyber.<br>";
@@ -40,12 +44,14 @@ case "vloz":
 case "uredi":
     $tabulka="deloTbl";
     $id=test_input($_POST["id"]);
-    $bolnisnica=test_input($_POST["bolnisnica"]);
-    $ime = test_input($_POST["ime"]);
-	$priimek = test_input($_POST["priimek"]);
-	$pregledovalciStatus = test_input($_POST["pregledovalciStatus"]); 
+    $vpis_date=test_input($_POST["vpis_date"]);
+    $stevilkaZdravnika = test_input($_POST["stevilkaZdravnika"]);
+	$opravilo = test_input($_POST["opravilo"]);
+	$sifraOpravila = test_input($_POST["sifraOpravila"]); 
+	$datumOpravila = test_input($_POST["datumOpravila"]); 	
+	$casOpravila = test_input($_POST["casOpravila"]);	
 	$podminka = array("id"=>$id);
-    $data= array("bolnisnica"=>$bolnisnica, "ime"=>$ime, "priimek"=>$priimek, "pregledovalciStatus"=>$pregledovalciStatus);
+    $data= array("vpis_date"=>$vpis_date, "stevilkaZdravnika"=>$stevilkaZdravnika, "opravilo"=>$opravilo, "sifraOpravila"=>$sifraOpravila, "datumOpravila"=>$datumOpravila, "casOpravila"=>$casOpravila);
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
     break;
