@@ -10,6 +10,7 @@ require_once('opraviloVsi.php');
 	$podminka = array("uname"=>$uname);
 	///vyberUporabnikaFunction($podminka);
  echo'<script src="js/delo.js?'.time().'"></script>';	
+ //_______________________________________________________________________________________
  	class Test_input {
 	public $test;	
   function __construct($test) {
@@ -77,7 +78,7 @@ stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
 //izborFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
-		}//od DnevniZapis		
+		}// od class DnevniZapis		
 //_______________________________________________________________________________________
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $akce = test_input($_GET["akce"]);  
