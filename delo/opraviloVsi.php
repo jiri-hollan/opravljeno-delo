@@ -28,9 +28,9 @@ echo'<br>';
   // array_push($opravilo,$opravilo1);
  $opravilo=$opravilo1; 
 }//od for 
-echo'<br>';
+//echo'<br>';
 //var_dump($opravilo);
-echo'<br>';
+//echo'<br>';
   $opraviloJson = json_encode($opravilo, JSON_UNESCAPED_UNICODE);
 // echo $opraviloJson;
   echo '<script>';

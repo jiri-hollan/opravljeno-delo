@@ -130,13 +130,20 @@ foreach (json_decode($this->dataDelo) as $key) {
      $this->data = $data;
      $vloz = new database();
      $vlozeno=$vloz->vloz($this->tabulka,$this->data);
-    //echo $vlozeno[1];
-   /*  echo "<br>";
-     print_r($vlozeno);
+   //echo $vlozeno['pocetVlozenych'];
+  // echo'<br>';
+   //var_dump ($vlozeno);
+ //echo "<br>";
+    // print_r($vlozeno);
+	
+	if ($vlozeno['pocetVlozenych']==1){
+     //echo "<br>";
+	 echo 'število vloženih zapisov: '.$vlozeno['pocetVlozenych'];
      echo "<br>";
-     echo count($vlozeno);
-     echo "<br>";	*/
 	 echo "Opravilo vpisano v bazo";
+	}else{
+		echo'nekaj je narobe!';
+	}
   }	    
 }// od class Vloz
 
