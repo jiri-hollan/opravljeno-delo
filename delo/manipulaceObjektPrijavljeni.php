@@ -9,13 +9,7 @@
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
-  if (isset($_REQUEST["bolnisnica"])){
-	  $bolnisnica = new Test_input($_REQUEST['bolnisnica']); 
-      $bolnisnica = $bolnisnica->get_test();
-	  
-  }else {
-	 $bolnisnica = "";   
-  }
+
   //______________________________________________________
    if (isset($_REQUEST["datumVpisa"])){
 	  $datumOpravila = new Test_input($_REQUEST['datumVpisa']); 
@@ -35,9 +29,9 @@ if (isset($_REQUEST["akce"])) {
   }
   //var_dump($akce);
     echo strtoupper($akce) .': ';
-  echo strtoupper($bolnisnica) .'<br>';
+
  
-  new $akce($bolnisnica, $tabulka);
+  new $akce( $tabulka);
 
 	  
 }//od if
@@ -62,16 +56,14 @@ if (isset($_REQUEST["akce"])) {
 <?php 
  class DostopPost{
   public $datumOpravila;		 
-  public $bolnisnica;		
+	
   public $tabulka;
-  function __construct($bolnisnica="", $tabulka="",$datumOpravila="") {
-	    $bolnisnica=strtolower($bolnisnica); 
-        $bolnisnica=ucfirst($bolnisnica); 
-	    $this->bolnisnica = $bolnisnica;
+  function __construct($tabulka="",$datumOpravila="") {
+
         $this->tabulka = $tabulka; 
 		$this->datumOpravila = $datumOpravila;
 		 switch($this->tabulka){
-	  case "pregledovalciTbl":
+	/*  case "pregledovalciTbl":
 	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "pregledovalciStatus"]';
 	  break;
 	  case "sklepiTbl":
@@ -84,7 +76,7 @@ if (isset($_REQUEST["akce"])) {
 	  
 	  case "limitiTbl":
 	  $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
-	  break;
+	  break;*/
 	  
 	   case "deloTbl":
 	  $this->dataPreg= '["vpis_date", "stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
@@ -103,8 +95,8 @@ if (isset($_REQUEST["akce"])) {
   public $ime;
   public $priimek;
   //public $status; 
-  public function __construct($bolnisnica, $tabulka) {
-	parent::__construct($bolnisnica, $tabulka);	
+  public function __construct($tabulka) {
+	parent::__construct($tabulka);	
 	echo "case uredi <br>";
 print_r($_POST);
 echo "<br>";
@@ -135,18 +127,14 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 	class Vyber extends DostopPost{
   public $stolpci;
-  public $bolnisnica; 
+
   public $tabulka;
   public $poradi;
-  function __construct($bolnisnica, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($bolnisnica, $tabulka);
+  function __construct($tabulka, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
-	if ($this->bolnisnica == "") {
-	$this->podminka = NULL;
-   } else {
-    $this->podminka = array("bolnisnica"=>$this->bolnisnica);
-   }//od else
+
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
 $vyber = new database();
@@ -168,8 +156,8 @@ echo "Za izbrano bolnisnico ni zapisa v bazi";
 //________________________________________________________________________________________	
 	class Vloz extends DostopPost {
 
-  function __construct($bolnisnica, $tabulka) {
-	parent::__construct($bolnisnica, $tabulka);
+  function __construct($tabulka) {
+	parent::__construct($tabulka);
 	echo $tabulka;
 	$this->tabulka = $tabulka;
 	$data=array();
@@ -201,17 +189,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
 	switch ($_REQUEST["tabulka"]){
-		  case "pregledovalciTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>pregledovalciStatus</th></tr>";
-    break;
-	case "sklepiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>sklepiStatus</th></tr>";
-    break;
-	
-	case "ocenaTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>ocena</th><th>ocenaStatus</th></tr>";
-    break;
-	
+		 
 	
 	case "limitiTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>skupina</th><th>ime</th><th>min</th><th>max</th></tr>";
