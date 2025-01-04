@@ -190,8 +190,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 	switch ($_REQUEST["tabulka"]){
 		
 	
-	case "limitiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>skupina</th><th>ime</th><th>min</th><th>max</th></tr>";
+	case "deloTbl":
+    echo "<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>datumOpravila</th><th>casOpravila</th></tr>";
     break;
 	default:
 	echo "";
