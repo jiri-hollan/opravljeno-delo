@@ -71,20 +71,7 @@ if (isset($_REQUEST["akce"])) {
         $this->tabulka = $tabulka; 
 		$this->datumOpravila = $datumOpravila;
 		 switch($this->tabulka){
-	  case "pregledovalciTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "pregledovalciStatus"]';
-	  break;
-	  case "sklepiTbl":
-	  $this->dataPreg= '["bolnisnica", "sklep", "sklepiStatus"]';
-	  break;
-	  
-	  case "ocenaTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "ocena", "ocenaStatus"]';
-	  break;
-	  
-	  case "limitiTbl":
-	  $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
-	  break;
+	 
 	  
 	   case "deloTbl":
 	  $this->dataPreg= '["vpis_date", "stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
@@ -125,7 +112,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	
 	
     $this->podminka = array("id"=>$this->id);
-	//$this->data = array("bolnisnica"=>$this->bolnisnica, "ime"=>$this->ime, "priimek"=>$this->priimek, "status"=>$this->status);
+
 	    $this->data = $data;
     	$aktualizuj = new database();
 		$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
@@ -201,17 +188,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
 	switch ($_REQUEST["tabulka"]){
-		  case "pregledovalciTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>pregledovalciStatus</th></tr>";
-    break;
-	case "sklepiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>sklepiStatus</th></tr>";
-    break;
-	
-	case "ocenaTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>ocena</th><th>ocenaStatus</th></tr>";
-    break;
-	
+		
 	
 	case "limitiTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>skupina</th><th>ime</th><th>min</th><th>max</th></tr>";
