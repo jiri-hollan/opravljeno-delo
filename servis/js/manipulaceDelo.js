@@ -5,12 +5,14 @@ function izborFunction(akce, tabulka) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
-// omogoči izbiro bolnišnice 	
+// omogoči izbiro bolnišnice 
+const d= new Date();
+alert(d);	
  document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date" name="datumVpisa" value="2025-01-03" >';
  
-text = document.getElementById("datumVpisaId").innerHTML;
+text = document.getElementById("datumVpisaId").value;
 alert(text);
-  document.getElementById("bolnisnice").innerHTML = text;
+  //document.getElementById("datumVpisaId").value = text;
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
