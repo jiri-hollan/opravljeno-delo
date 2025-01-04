@@ -12,7 +12,7 @@ let text = d.toISOString();
 const actD = text.substr(0, 10);
 //alert(actD);
 document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date" name="datumVpisa" value="'+actD+'" >';
-text = document.getElementById("datumVpisaId").value;
+//text = document.getElementById("datumVpisaId").value;
 //alert(text);
 //document.getElementById("datumVpisaId").value = text;
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';

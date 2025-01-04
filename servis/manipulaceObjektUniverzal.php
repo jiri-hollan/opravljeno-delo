@@ -16,6 +16,15 @@ if (isset($_REQUEST["akce"])) {
   }else {
 	 $bolnisnica = "";   
   }
+  //______________________________________________________
+   if (isset($_REQUEST["datumVpisa"])){
+	  $vpis_date = new Test_input($_REQUEST['datumVpisa']); 
+      $vpis_date = $vpis_date->get_test();
+	  
+  }else {
+	 $vpis_date = "";   
+  }
+  //------------------------------------------------------
  if (isset($tabulka)){
 	  $tabulka= $tabulka; 
   }else if (isset($_REQUEST["tabulka"])){
@@ -52,13 +61,15 @@ if (isset($_REQUEST["akce"])) {
  ?>
 <?php 
  class DostopPost{
+  public $vpis_date;		 
   public $bolnisnica;		
   public $tabulka;
-  function __construct($bolnisnica="", $tabulka="") {
+  function __construct($bolnisnica="", $tabulka="",$vpis_date="") {
 	    $bolnisnica=strtolower($bolnisnica); 
         $bolnisnica=ucfirst($bolnisnica); 
 	    $this->bolnisnica = $bolnisnica;
         $this->tabulka = $tabulka; 
+		$this->vpis_date = $vpis_date;
 		 switch($this->tabulka){
 	  case "pregledovalciTbl":
 	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "pregledovalciStatus"]';
@@ -87,12 +98,13 @@ if (isset($_REQUEST["akce"])) {
 }//od class dostopPost
 //____________________________________________________________________________________________
 	class Uredi extends DostopPost{
+  public $vpis_date;	
   public $id;
   public $ime;
   public $priimek;
   //public $status; 
-  public function __construct($bolnisnica, $tabulka) {
-	parent::__construct($bolnisnica, $tabulka);	
+  public function __construct($bolnisnica, $tabulka, $vpis_date) {
+	parent::__construct($bolnisnica, $tabulkan, $vpis_date);	
 	echo "case uredi <br>";
 print_r($_POST);
 echo "<br>";
