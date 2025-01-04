@@ -63,12 +63,13 @@ if (isset($_REQUEST["akce"])) {
  class DostopPost{
   public $datumOpravila;		 		
   public $tabulka;
-  function __construct($tabulka="",$datumOpravila="") {
+  function __construct($datumOpravila="",$tabulka="") {
 	    $datumOpravila=strtolower($datumOpravila); 
         $datumOpravila=ucfirst($datumOpravila); 
 	    $this->datumOpravila = $datumOpravila;
         $this->tabulka = $tabulka; 
-		$this->datumOpravila = $datumOpravila;
+
+		echo 'Tabulka= '.$this->tabulka;
 		 switch($this->tabulka){
 	 
 	  
@@ -146,7 +147,7 @@ foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
 }//od foreach
 }//od if(cout)
 else{
-echo "Za izbrano bolnisnico ni zapisa v bazi";	
+echo "Za izbrani datum ni zapisa v bazi";	
 }//od else
 }//od vyberFunction  
 }//od class vyber
