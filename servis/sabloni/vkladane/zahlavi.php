@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 <link rel="stylesheet" href="../frontend/sabloni/css/zahlavi.css?<?php echo time(); ?>">
-<link rel="stylesheet" href="css/pregledovalci.css?<?php echo time(); ?>">
+<link rel="stylesheet" href="../servis/css/pregledovalci.css?<?php echo time(); ?>">
 <title>Anestiz</title>
 </head>
 <body>

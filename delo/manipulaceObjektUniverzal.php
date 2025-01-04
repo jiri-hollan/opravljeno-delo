@@ -1,6 +1,5 @@
  <?php 
  require_once('../servis/sabloni/vkladane/zahlavi.php');
- //require_once '../skupne/sabloni/zahlavi.php';
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('../servis/sabloni/formBaze.php');
  require_once '../skupne/database.php';
