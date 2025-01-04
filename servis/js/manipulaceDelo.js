@@ -7,19 +7,7 @@ switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice 	
  document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date" name="datumVpisa" value="*" >';
- /*
- <datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
-	var bolList  =[
-	"Izola",
-	"Jesenice",
-	];
-	var text = "";
-var i;
-for (i = 0; i < bolList.length; i++) {
-
-  text += "<option value='" +  bolList[i] + "'>"  +"<br>";
-}
-*/
+ 
 text = document.getElementById("demo").value;
 alert(text);
   document.getElementById("bolnisnice").innerHTML = text;
