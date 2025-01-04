@@ -9,13 +9,13 @@
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
-  if (isset($_REQUEST["bolnisnica"])){
+/*  if (isset($_REQUEST["bolnisnica"])){
 	  $bolnisnica = new Test_input($_REQUEST['bolnisnica']); 
       $bolnisnica = $bolnisnica->get_test();
 	  
   }else {
 	 $bolnisnica = "";   
-  }
+  }*/
   //______________________________________________________
    if (isset($_REQUEST["datumVpisa"])){
 	  $datumOpravila = new Test_input($_REQUEST['datumVpisa']); 
@@ -35,9 +35,9 @@ if (isset($_REQUEST["akce"])) {
   }
   //var_dump($akce);
     echo strtoupper($akce) .': ';
-  echo strtoupper($bolnisnica) .'<br>';
+  echo strtoupper($datumOpravila) .'<br>';
  
-  new $akce($bolnisnica, $tabulka);
+  new $akce($datumOpravila, $tabulka);
 
 	  
 }//od if
@@ -61,13 +61,12 @@ if (isset($_REQUEST["akce"])) {
  ?>
 <?php 
  class DostopPost{
-  public $datumOpravila;		 
-  public $bolnisnica;		
+  public $datumOpravila;		 		
   public $tabulka;
-  function __construct($bolnisnica="", $tabulka="",$datumOpravila="") {
-	    $bolnisnica=strtolower($bolnisnica); 
-        $bolnisnica=ucfirst($bolnisnica); 
-	    $this->bolnisnica = $bolnisnica;
+  function __construct($tabulka="",$datumOpravila="") {
+	    $datumOpravila=strtolower($datumOpravila); 
+        $datumOpravila=ucfirst($datumOpravila); 
+	    $this->datumOpravila = $datumOpravila;
         $this->tabulka = $tabulka; 
 		$this->datumOpravila = $datumOpravila;
 		 switch($this->tabulka){
@@ -90,8 +89,8 @@ if (isset($_REQUEST["akce"])) {
   public $ime;
   public $priimek;
   //public $status; 
-  public function __construct($bolnisnica, $tabulka) {
-	parent::__construct($bolnisnica, $tabulka);	
+  public function __construct($datumOpravila, $tabulka) {
+	parent::__construct($datumOpravila, $tabulka);	
 	echo "case uredi <br>";
 print_r($_POST);
 echo "<br>";
@@ -122,17 +121,17 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 	class Vyber extends DostopPost{
   public $stolpci;
-  public $bolnisnica; 
+  public $datumOpravila; 
   public $tabulka;
   public $poradi;
-  function __construct($bolnisnica, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($bolnisnica, $tabulka);
+  function __construct($datumOpravila, $tabulka, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($datumOpravila, $tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
-	if ($this->bolnisnica == "") {
+	if ($this->datumOpravila == "") {
 	$this->podminka = NULL;
    } else {
-    $this->podminka = array("bolnisnica"=>$this->bolnisnica);
+    $this->podminka = array("datumOpravila"=>$this->datumOpravila);
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
@@ -155,8 +154,8 @@ echo "Za izbrano bolnisnico ni zapisa v bazi";
 //________________________________________________________________________________________	
 	class Vloz extends DostopPost {
 
-  function __construct($bolnisnica, $tabulka) {
-	parent::__construct($bolnisnica, $tabulka);
+  function __construct($datumOpravila, $tabulka) {
+	parent::__construct($datumOpravila, $tabulka);
 	echo $tabulka;
 	$this->tabulka = $tabulka;
 	$data=array();
