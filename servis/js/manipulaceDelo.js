@@ -21,17 +21,19 @@ for (i = 0; i < bolList.length; i++) {
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
-/*
+
   case "vloz":
-    bolnisnica= '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica" required>';
+ // <a href="../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis">
+    location.replace("../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis");
+   /* bolnisnica= '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica" required>';
     ime= '<input type="text" id="imeId" name="ime" value="" placeholder="ime" required>';
     priimek= '<input type="text" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
     pregledovalciStatus= '<input type="int" id="pregledovalciStatusId" name="pregledovalciStatus" value="" placeholder="pregledovalciStatus" required>';
     document.getElementById("demo").innerHTML = bolnisnica + ime + priimek + pregledovalciStatus;
 	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
+	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset*/
     break;
-*/
+
   case "edit":
 //alert("v JS case edit");
    if(document.getElementById("osebe")!=null){
