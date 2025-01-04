@@ -6,8 +6,12 @@ function izborFunction(akce, tabulka) {
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice 
-const d= new Date();
-alert(d);	
+const d = new Date();
+let year = d.getFullYear();
+let month = d.getMonth()+1;
+let day = d.getDay()+1;
+const actD =year+"-0"+month+"-0"+day;
+alert(actD);	
  document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date" name="datumVpisa" value="2025-01-03" >';
  
 text = document.getElementById("datumVpisaId").value;
