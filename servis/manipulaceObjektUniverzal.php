@@ -103,8 +103,8 @@ if (isset($_REQUEST["akce"])) {
   public $ime;
   public $priimek;
   //public $status; 
-  public function __construct($bolnisnica, $tabulka, $datumOpravila) {
-	parent::__construct($bolnisnica, $tabulkan, $datumOpravila);	
+  public function __construct($bolnisnica, $tabulka) {
+	parent::__construct($bolnisnica, $tabulka);	
 	echo "case uredi <br>";
 print_r($_POST);
 echo "<br>";

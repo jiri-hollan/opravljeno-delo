@@ -16,6 +16,7 @@ echo '
 <li><a href="manipulaceObjektUniverzal.php?tabulka=sklepiTbl">pripravljeni sklepi</a></li>
 <li><a href="manipulaceObjektUniverzal.php?tabulka=ocenaTbl">ocena tveganj</a></li>
 <li><a href="manipulaceObjektUniverzal.php?tabulka=limitiTbl">nastavitve mejnih vrednosti</a></li>
+<li><a href="manipulaceObjektUniverzal.php?tabulka=deloTbl">upravljanje z delom</a></li>
 </ul>
 </div>
 ';
