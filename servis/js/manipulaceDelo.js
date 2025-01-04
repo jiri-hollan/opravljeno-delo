@@ -6,7 +6,9 @@ function izborFunction(akce, tabulka) {
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice 	
- document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onfocusout="bolnisnicaFunction()" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
+ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date" name="datumVpisa" value="*" >';
+ /*
+ <datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
 	var bolList  =[
 	"Izola",
 	"Jesenice",
@@ -17,6 +19,9 @@ for (i = 0; i < bolList.length; i++) {
 
   text += "<option value='" +  bolList[i] + "'>"  +"<br>";
 }
+*/
+text = document.getElementById("demo").value;
+alert(text);
   document.getElementById("bolnisnice").innerHTML = text;
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
@@ -25,13 +30,7 @@ for (i = 0; i < bolList.length; i++) {
   case "vloz":
  // <a href="../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis">
     location.replace("../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis");
-   /* bolnisnica= '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica" required>';
-    ime= '<input type="text" id="imeId" name="ime" value="" placeholder="ime" required>';
-    priimek= '<input type="text" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
-    pregledovalciStatus= '<input type="int" id="pregledovalciStatusId" name="pregledovalciStatus" value="" placeholder="pregledovalciStatus" required>';
-    document.getElementById("demo").innerHTML = bolnisnica + ime + priimek + pregledovalciStatus;
-	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset*/
+   
     break;
 
   case "edit":
