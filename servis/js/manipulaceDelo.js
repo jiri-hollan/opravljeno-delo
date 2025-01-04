@@ -6,9 +6,9 @@ function izborFunction(akce, tabulka) {
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice 	
- document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date" name="datumVpisa" value="*" >';
+ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date" name="datumVpisa" value="2025-01-03" >';
  
-text = document.getElementById("demo").value;
+text = document.getElementById("datumVpisaId").innerHTML;
 alert(text);
   document.getElementById("bolnisnice").innerHTML = text;
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
