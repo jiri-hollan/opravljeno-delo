@@ -30,11 +30,14 @@ class VyberUporabnika {
 public $podminka;
 function __construct($podminka="") {
 	    $this->podminka=$podminka;
+
+echo'<br>'.var_dump($podminka);
 	    $this->tabulka="uporabnikiTbl";
 	    $this->stolpci=["stevilkaZdravnika","ime","priimek","bolnisnica"];
+echo'<br>'.var_dump($this->stolpci);
 	    $this->vyber=new database();
 	    $vybrano=$this->vyber->vyber($this->tabulka, $this->stolpci, $this->podminka );
-//echo($vybrano[0]["stevilkaZdravnika"]);		
+echo'<br>'.($vybrano[0]["stevilkaZdravnika"]);		
 if(count($vybrano)>0){
 //echo($vybrano[0]["stevilkaZdravnika"]);	
 $stevilkaZdravnika=($vybrano[0]["stevilkaZdravnika"]);
