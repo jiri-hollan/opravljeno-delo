@@ -34,8 +34,8 @@ if (isset($_REQUEST["akce"])) {
 	  echo "ni tabulke v post";
   }
   //var_dump($akce);
-    echo strtoupper($akce) .': ';
-  echo strtoupper($datumOpravila) .'<br>';
+ // echo strtoupper($akce) .': ';
+  echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //$stevilkaZdravnika=11111;
   new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
 
@@ -73,7 +73,7 @@ if (isset($_REQUEST["akce"])) {
 	    $this->datumOpravila = $datumOpravila;
         $this->tabulka = $tabulka; 
 
-		echo 'Tabulka= '.$this->tabulka;
+		//echo 'Tabulka= '.$this->tabulka;
 		 switch($this->tabulka){
 	 
 	  
@@ -168,7 +168,7 @@ echo'opravljeni čas: ';
 echo intdiv($sestevek, 60).'h';
 echo(fmod($sestevek, 60) ).'min';
 echo'</b>';
-
+echo'<br><br>';
 //..............................................
 }//od if(cout)
 else{
