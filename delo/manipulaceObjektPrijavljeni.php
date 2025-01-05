@@ -14,13 +14,8 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
-/*  if (isset($_REQUEST["bolnisnica"])){
-	  $bolnisnica = new Test_input($_REQUEST['bolnisnica']); 
-      $bolnisnica = $bolnisnica->get_test();
-	  
-  }else {
-	 $bolnisnica = "";   
-  }*/
+
+  
   //______________________________________________________
    if (isset($_REQUEST["datumVpisa"])){
 	  $datumOpravila = new Test_input($_REQUEST['datumVpisa']); 
@@ -45,7 +40,10 @@ if (isset($_REQUEST["akce"])) {
   new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
-}//od if
+}//od if akce
+/*else {
+	 echo'akce ni določena'; 
+  }*/
 //_________________________________
  
  	class Test_input {
