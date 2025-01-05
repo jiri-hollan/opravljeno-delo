@@ -8,7 +8,7 @@ if(identifikace==""){
 } // od identifikaceFunction
 
 function izborFunction(akce,stevilkaZd) {
-
+alert('izborFunction: '+akce+stevilkaZd);
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":

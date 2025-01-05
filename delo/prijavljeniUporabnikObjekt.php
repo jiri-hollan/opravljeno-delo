@@ -6,10 +6,11 @@ require_once '../skupne/sabloni/zahlavi.php';
 require_once 'sabloni/forma.php';
 require_once '../skupne/database.php';
 require_once('opraviloVsi.php');
-
+echo'<script src="js/delo.js?'.time().'"></script>';
+ 
 	$podminka = array("uname"=>$uname);
-	///vyberUporabnikaFunction($podminka);
- echo'<script src="js/delo.js?'.time().'"></script>';	
+echo'$podminka= '.(var_dump($podminka).'<br>');	
+	//vyberUporabnikaFunction($podminka);
  //_______________________________________________________________________________________
  	class Test_input {
 	public $test;	
@@ -30,7 +31,6 @@ class VyberUporabnika {
 public $podminka;
 function __construct($podminka="") {
 	    $this->podminka=$podminka;
-
 echo'<br>'.var_dump($podminka);
 	    $this->tabulka="uporabnikiTbl";
 	    $this->stolpci=["stevilkaZdravnika","ime","priimek","bolnisnica"];
