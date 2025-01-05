@@ -3,8 +3,8 @@
  require_once('../skupne/sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('../servis/sabloni/formBaze.php');
- require_once '../skupne/database.php';
-
+ require_once ('../skupne/database.php');
+ require_once ('identifikace.php');
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
@@ -58,8 +58,7 @@ if (isset($_REQUEST["akce"])) {
 
 //____________________________________________________________________________________________
  
- ?>
-<?php 
+
  class DostopPost{
   public $datumOpravila;		 		
   public $tabulka;
@@ -129,6 +128,9 @@ foreach (json_decode($this->dataPreg) as $key) {
 	parent::__construct($datumOpravila, $tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
+	
+	
+	
 	if ($this->datumOpravila == "") {
 	$this->podminka = NULL;
    } else {

@@ -6,6 +6,7 @@ require_once '../skupne/sabloni/zahlavi.php';
 require_once 'sabloni/forma.php';
 require_once '../skupne/database.php';
 require_once('opraviloVsi.php');
+require_once('identifikace.php');
 echo'<script src="js/delo.js?'.time().'"></script>';
  
 //echo('<br>uname= '.$uname);
@@ -28,7 +29,7 @@ echo'<script src="js/delo.js?'.time().'"></script>';
 }//od class Test_input
 
 //____________________________________________________________________________________________
- 	  
+ /*	  
 class VyberUporabnika {
 public $podminka;
 function __construct($podminka="") {
@@ -54,14 +55,15 @@ $GLOBALS['identifikace']=$identifikace;
 //echo $GLOBALS['identifikace'];
 }//od if(cout)
 	else{
-   echo "Za izbrano bolnisnico ni zapisa v bazi";	
+   echo "Za izbranega uporabnika ni zapisa v bazi";	
 }//od else
 echo'<script>
 identifikace="'.$GLOBALS['identifikace'].'";
 identifikaceFunction(identifikace);
 </script>';
 	}//od construct
-		}//od class vyber uporabnika
+		}//od class vyber uporabnika*/
+//________________________________________________________________________________________		
 class NovZapis extends VyberUporabnika{
 public $podminka;
 function __construct($podminka) {		
