@@ -39,8 +39,8 @@ if (isset($_REQUEST["akce"])) {
   //var_dump($akce);
     echo strtoupper($akce) .': ';
   echo strtoupper($datumOpravila) .'<br>';
- 
-  new $akce($datumOpravila, $tabulka);
+ $stevilkaZdravnika=11111;
+  new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
 }//od if
@@ -65,9 +65,10 @@ if (isset($_REQUEST["akce"])) {
  
 
  class DostopPost{
+  public $stevilkaZdravnika;
   public $datumOpravila;		 		
   public $tabulka;
-  function __construct($datumOpravila="",$tabulka="") {
+  function __construct($stevilkaZdravnika, $datumOpravila="",$tabulka="") {
 	    $datumOpravila=strtolower($datumOpravila); 
         $datumOpravila=ucfirst($datumOpravila); 
 	    $this->datumOpravila = $datumOpravila;
@@ -89,13 +90,14 @@ if (isset($_REQUEST["akce"])) {
 }//od class dostopPost
 //____________________________________________________________________________________________
 	class Uredi extends DostopPost{
+  public $stevilkaZdravnika;		
   public $datumOpravila;	
   public $id;
   public $ime;
   public $priimek;
   //public $status; 
-  public function __construct($datumOpravila, $tabulka) {
-	parent::__construct($datumOpravila, $tabulka);	
+  public function __construct($stevilkaZdravnika, $datumOpravila, $tabulka) {
+	parent::__construct($stevilkaZdravnika, $datumOpravila, $tabulka);	
 	echo "case uredi <br>";
 print_r($_POST);
 echo "<br>";
@@ -113,10 +115,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     $data =array_push_assoc($data, $key, $value);
 }
 
-	
-	
     $this->podminka = array("id"=>$this->id);
-
 	    $this->data = $data;
     	$aktualizuj = new database();
 		$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
@@ -126,11 +125,12 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 	class Vyber extends DostopPost{
   public $stolpci;
-  public $datumOpravila; 
+  public $datumOpravila;
+  public $stevilkaZdravnika;  
   public $tabulka;
   public $poradi;
-  function __construct($datumOpravila, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($datumOpravila, $tabulka);
+  function __construct($stevilkaZdravnika, $datumOpravila, $tabulka, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($stevilkaZdravnika, $datumOpravila, $tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
 	
@@ -139,7 +139,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	if ($this->datumOpravila == "") {
 	$this->podminka = NULL;
    } else {
-    $this->podminka = array("datumOpravila"=>$this->datumOpravila);
+    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
@@ -162,8 +162,8 @@ echo "Za izbrani datum ni zapisa v bazi";
 //________________________________________________________________________________________	
 	class Vloz extends DostopPost {
 
-  function __construct($datumOpravila, $tabulka) {
-	parent::__construct($datumOpravila, $tabulka);
+  function __construct($stevilkaZdravnika, $datumOpravila, $tabulka) {
+	parent::__construct($stevilkaZdravnika, $datumOpravila, $tabulka);
 	echo $tabulka;
 	$this->tabulka = $tabulka;
 	$data=array();
