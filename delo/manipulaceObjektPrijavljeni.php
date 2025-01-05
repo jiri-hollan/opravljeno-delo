@@ -58,7 +58,7 @@ if (isset($_REQUEST["akce"])) {
     return $this->test;
   }  
 }//od class Test_input
-echo($uname);
+//echo($uname);
 	$podminka = array("uname"=>$uname);
 	   new VyberUporabnika($podminka);
 //____________________________________________________________________________________________
