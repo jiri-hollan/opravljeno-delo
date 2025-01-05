@@ -6,10 +6,13 @@ require_once '../skupne/sabloni/zahlavi.php';
 require_once 'sabloni/forma.php';
 require_once '../skupne/database.php';
 require_once('opraviloVsi.php');
-
+echo'<script src="js/delo.js?'.time().'"></script>';
+ 
+//echo('<br>uname= '.$uname);
 	$podminka = array("uname"=>$uname);
-	///vyberUporabnikaFunction($podminka);
- echo'<script src="js/delo.js?'.time().'"></script>';	
+//echo('<br>na začetku kode $podminka= ');	
+//var_dump($podminka);	
+	//vyberUporabnikaFunction($podminka);
  //_______________________________________________________________________________________
  	class Test_input {
 	public $test;	
@@ -30,11 +33,15 @@ class VyberUporabnika {
 public $podminka;
 function __construct($podminka="") {
 	    $this->podminka=$podminka;
+//echo('<br>VyberUporabnika podminka= ');		
+//var_dump($podminka);
 	    $this->tabulka="uporabnikiTbl";
 	    $this->stolpci=["stevilkaZdravnika","ime","priimek","bolnisnica"];
+//echo('<br>VyberUporabnika stolpci= ');
+//var_dump($this->stolpci);
 	    $this->vyber=new database();
 	    $vybrano=$this->vyber->vyber($this->tabulka, $this->stolpci, $this->podminka );
-//echo($vybrano[0]["stevilkaZdravnika"]);		
+//echo'<br>VyberUporabnika $vybrano= '.($vybrano[0]["stevilkaZdravnika"]);		
 if(count($vybrano)>0){
 //echo($vybrano[0]["stevilkaZdravnika"]);	
 $stevilkaZdravnika=($vybrano[0]["stevilkaZdravnika"]);
@@ -57,8 +64,8 @@ identifikaceFunction(identifikace);
 		}//od class vyber uporabnika
 class NovZapis extends VyberUporabnika{
 public $podminka;
-function __construct($podminka="") {		
-		    parent::__construct();
+function __construct($podminka) {		
+		    parent::__construct($podminka);
 echo"
 <script>
 stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
@@ -69,8 +76,8 @@ izborFunction('vloz',stevilkaZdravnika);
 //-------------------------------------------------------------------------------------------
 class DnevniZapis extends VyberUporabnika{
 public $podminka;
-function __construct($podminka="") {		
-		    parent::__construct();
+function __construct($podminka) {		
+		    parent::__construct($podminka);
 echo"
 <script>
 stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
@@ -85,6 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 switch ($akce) {  
 case "novZapis":
+//echo('<br>linija 95 podminka= ');
+//var_dump($podminka);
  new NovZapis($podminka);
 break;
 
