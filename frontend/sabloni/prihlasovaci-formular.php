@@ -8,15 +8,15 @@
   <form class="modal-content animate" autocomplete="off" action="<?php echo $_SERVER['PHP_SELF'] . '?r=singin'?>" method="post">
     <div class="container">
       <h1>Registracija</h1>
-      <label for="bolnisnicaId"><b>Bolnisnica, ime in priimek</b></label><br>
-	  <span>
+      <label for="bolnisnicaId"><b>Bolnisnica, ime, priimek in email</b></label><br>
+
       <input id="bolnisnicaId" type="text" class="imePriimek" placeholder=" Bolnisnica" name="bolnisnica" required>	 	  
       <input type="text" class="imePriimek" placeholder=" Ime" name="ime" required>	  
-      <input type="text" class="imePriimek" placeholder="Priimek" name="priimek" required><br>	  
-	  </span>
-	  <label for="emailId"><b>email</b></label>
-      <input id="emailId" type="text" placeholder=" Email je potreben" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ni veljaven email naslov"  autocomplete="off" required>
-	  
+      <input type="text" class="imePriimek" placeholder="Priimek" name="priimek" required>	  
+      <input type="text" class="imePriimek" placeholder="št. zdravnika" name="stevilkaZdravnika" >	
+      <label for="emailId"><b>email</b></label> 
+      <input id="emailId" type="text"  placeholder=" Email je potreben" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ni veljaven email naslov"  autocomplete="off" required>
+
       <label for="unameId"><b>uname</b></label>
       <input id="unameId" type="text" placeholder=" Uporabniško ime" name="uname" autocomplete="off" required>
 
