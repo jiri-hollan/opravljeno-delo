@@ -151,6 +151,18 @@ foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
 
 }//od foreach
+//..............................................
+	if ($this->datumOpravila == "") {
+	$this->podminka = NULL;
+   } else {
+    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
+   }//od else
+   $this->tabulka=$tabulka;
+$sestej = new database();
+$sesteto=$sestej->suma($this->tabulka, "casOpravila", $this->podminka, $this->poradi );
+echo "<br>";
+
+//..............................................
 }//od if(cout)
 else{
 echo "Za izbrani datum ni zapisa v bazi";	
