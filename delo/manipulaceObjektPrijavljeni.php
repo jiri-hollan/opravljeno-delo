@@ -77,9 +77,7 @@ if (isset($_REQUEST["akce"])) {
 		 switch($this->tabulka){
 	 
 	  
-	   case "deloTbl":
-
-	   var_dump($GLOBALS['identifikace']);
+	   case "deloTbl":	   
 	  $this->dataPreg= '["vpis_date", "stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
 	  break;
 	  
