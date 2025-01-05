@@ -1,4 +1,6 @@
  <?php 
+ session_start();
+$uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  //require_once('../servis/sabloni/vkladane/zahlavi.php');
  require_once('../skupne/sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
@@ -56,7 +58,9 @@ if (isset($_REQUEST["akce"])) {
     return $this->test;
   }  
 }//od class Test_input
-	   new VyberUporabnika;
+echo($uname);
+	$podminka = array("uname"=>$uname);
+	   new VyberUporabnika($podminka);
 //____________________________________________________________________________________________
  
 
