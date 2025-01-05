@@ -261,10 +261,12 @@ catch(PDOException $e) {
 $conn = null;
 }//uzavírací zavorky function testrajBolnik
 //-------------------konec function testraj
-//....................funkcija suma v razvoju
+
+//....................funkcija suma v razvoju.........................................
 public function suma($tabulka, $sloupce, $podminka = NULL){
 	$sloupceSQL = implode(', ', $sloupce);
-	//echo '<br>'.$sloupceSQL;
+	//echo '<br>$sloupceSQL= ';
+	//var_dump($sloupceSQL);
 	$podminkaSQL = '';
 	$parametry = array();
 
@@ -281,11 +283,13 @@ public function suma($tabulka, $sloupce, $podminka = NULL){
 		}
 	}
 
-	// echo '<br>';
-	// echo var_dump($parametry) . "<br>";
-	 // echo var_dump($podminka) . "<br>";
-	 // echo var_dump($podminkaSQL );
-	$dotaz = $this->conn->prepare("SELECT SUM(sloupceSQL)FROM $tabulka". $podminkaSQL);
+	/*echo '<br>parametry= ';
+	var_dump($parametry);
+	 echo "<br>podminka= ";
+	 var_dump($podminka);
+	echo "<br>podminka SQL: ";
+	var_dump($podminkaSQL );*/
+	$dotaz = $this->conn->prepare("SELECT SUM($sloupceSQL)FROM $tabulka". $podminkaSQL);
 	//var_dump($dotaz);
 	try {
 		$dotaz->execute($parametry);		

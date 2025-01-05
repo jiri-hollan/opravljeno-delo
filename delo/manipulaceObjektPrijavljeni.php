@@ -157,10 +157,17 @@ foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
    } else {
     $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
    }//od else
+   $this->stolpec=array("casOpravila");   
    $this->tabulka=$tabulka;
 $sestej = new database();
-$sesteto=$sestej->suma($this->tabulka, "casOpravila", $this->podminka, $this->poradi );
-echo "<br>";
+$sesteto=$sestej->suma($this->tabulka, $this->stolpec, $this->podminka);
+$sestevek= $sesteto[0]["SUM(casOpravila)"];
+//echo "<br>".$sestevek;
+echo'<b>';
+echo'opravljeni čas: ';
+echo intdiv($sestevek, 60).'h';
+echo(fmod($sestevek, 60) ).'min';
+echo'</b>';
 
 //..............................................
 }//od if(cout)
