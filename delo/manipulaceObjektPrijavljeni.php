@@ -8,6 +8,8 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  require_once ('../skupne/database.php');
  require_once ('identifikace.php');
  echo'<script src="js/delo.js?'.time().'"></script>';
+ 	$podminka = array("uname"=>$uname);
+	   new VyberUporabnika($podminka);
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
@@ -39,7 +41,7 @@ if (isset($_REQUEST["akce"])) {
   //var_dump($akce);
     echo strtoupper($akce) .': ';
   echo strtoupper($datumOpravila) .'<br>';
- $stevilkaZdravnika=11111;
+ //$stevilkaZdravnika=11111;
   new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
@@ -59,8 +61,7 @@ if (isset($_REQUEST["akce"])) {
   }  
 }//od class Test_input
 //echo($uname);
-	$podminka = array("uname"=>$uname);
-	   new VyberUporabnika($podminka);
+
 //____________________________________________________________________________________________
  
 
