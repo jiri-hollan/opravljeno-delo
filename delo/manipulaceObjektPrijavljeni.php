@@ -5,6 +5,7 @@
  require_once('../servis/sabloni/formBaze.php');
  require_once ('../skupne/database.php');
  require_once ('identifikace.php');
+ echo'<script src="js/delo.js?'.time().'"></script>';
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
@@ -55,7 +56,7 @@ if (isset($_REQUEST["akce"])) {
     return $this->test;
   }  
 }//od class Test_input
-
+	   new VyberUporabnika;
 //____________________________________________________________________________________________
  
 
@@ -73,6 +74,8 @@ if (isset($_REQUEST["akce"])) {
 	 
 	  
 	   case "deloTbl":
+
+	   var_dump($GLOBALS['identifikace']);
 	  $this->dataPreg= '["vpis_date", "stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
 	  break;
 	  
