@@ -29,7 +29,13 @@ identifikace="'.$GLOBALS['identifikace'].'";
 identifikaceFunction(identifikace);
 </script>';
 	}else{
-		   echo "V bazi ni vaše zdravniške številke";	
+		   echo "V bazi ni vaše zdravniške številke";
+		   echo "<script>
+		   alert('V bazi ni vaše zdravniške številke');		   
+		  window.location.replace('../frontend/deloMenu.php');
+		  </script>";
+		  
+		  // header('Location: ../frontend/deloMenu.php');
 	}
 //..........................................................................................................
 
