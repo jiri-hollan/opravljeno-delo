@@ -18,7 +18,7 @@ $stevilkaZdravnika=($vybrano[0]["stevilkaZdravnika"]);
 $ime=($vybrano[0]["ime"]);	
 $priimek=($vybrano[0]["priimek"]);
 $bolnisnica=($vybrano[0]["bolnisnica"]);	
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//----------------------------------
 if($stevilkaZdravnika>0){
 	$identifikace=' '.$stevilkaZdravnika.' '.$ime.' '.$priimek.' '.$bolnisnica;
 $GLOBALS['stevilkaZdravnika']=$stevilkaZdravnika;
@@ -34,10 +34,7 @@ identifikaceFunction(identifikace);
 		   alert('V bazi ni vaše zdravniške številke');		   
 		  window.location.replace('../frontend/deloMenu.php');
 		  </script>";
-		  
-		  // header('Location: ../frontend/deloMenu.php');
 	}
-//..........................................................................................................
 
 }//od if(cout)
 	else{
