@@ -136,7 +136,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	
 	
 	if ($this->datumOpravila == "") {
-	$this->podminka = NULL;
+	    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika);	
    } else {
     $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
    }//od else
