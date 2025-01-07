@@ -1,6 +1,6 @@
-var tabulka="deloTbl";
+let tabulka="deloTbl";
 function izborFunction(akce, tabulka) {
-	var tabulka=tabulka;
+	let tabulka=tabulka;
 	//alert(tabulka);
   document.getElementById("akceId").value = akce;
 switch(akce) {
@@ -46,9 +46,9 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
 } // od izborFunction
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
-var x = e.target;
+let x = e.target;
 if (x.nodeName == "TD") {
-var y = event.composedPath()[1];
+let y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
