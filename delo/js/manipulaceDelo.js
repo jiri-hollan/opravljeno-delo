@@ -1,4 +1,4 @@
-	alert("MANIPULACE DELO JS");
+	//alert("MANIPULACE DELO JS");
 let tabulka="deloTbl";
 	//alert(tabulka);
 function izborFunction(akce, tabulka) {
