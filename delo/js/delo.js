@@ -17,13 +17,13 @@ switch(akce) {
     break; 
 
   case "vloz":
-    stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
-    datumOpravila= '<label for="datumId">datum opravila: </label><br><input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
-    sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
-    opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo" required autocomplete="off" onchange="zadnjiAlertFunction()">';		
-    casOpravila= '<input type="number" id="casId" class="kratke"  name="casOpravila" min="0" step="1" value="" placeholder="minute" autocomplete="off"  required>';
-	izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
-    var opraviloList = JSON.parse(opraviloJson);
+   let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
+   let datumOpravila= '<label for="datumId">datum opravila: </label><br><input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
+   let sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
+   let opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo" required autocomplete="off" onchange="zadnjiAlertFunction()">';		
+   let casOpravila= '<input type="number" id="casId" class="kratke"  name="casOpravila" min="0" step="1" value="" placeholder="minute" autocomplete="off"  required>';
+   let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
+    const opraviloList = JSON.parse(opraviloJson);
 	
 //alert("opravilo Json:" + opraviloJson);
 //alert(opraviloList);
@@ -50,7 +50,7 @@ switch(akce) {
     document.getElementById("osebe").addEventListener("click", functionOver);
       }
 } else {
-  text = "You canceled!";
+  //alert( "You canceled!");
 }
   /* if(document.getElementById("osebe")!=null){
  document.getElementById("osebe").addEventListener("click", functionOver);
@@ -65,10 +65,10 @@ switch(akce) {
 
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
-var x = e.target;
+let x = e.target;
 if (x.nodeName == "TD") {
-var y = event.composedPath()[1];
-row_value = y.cells[0].innerHTML;
+let y = event.composedPath()[1];
+let row_value = y.cells[0].innerHTML;
  /* document.getElementById("demo1").innerHTML = "Triggered by a " + x.nodeName + " element";
   document.getElementById("demo2").innerHTML = "Triggered by a " + x.innerHTML + " element";  */
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
@@ -83,29 +83,30 @@ function listaOpravilFunction(opraviloList) {
 //alert ("lista opravil function");
 console.log("opravila.js"+opraviloList);
 let text = "<option id='' value=''>";
-var i;
+let i;
  
  for (let [sifra, value] of Object.entries(opraviloList)) { 	 
   text += "<option id='" +  sifra  + "' value='" + value + "'>"+value; 
   console.log(text);
 }
-  //alert (text);
+  //alert ("TEXT="+text);
 //console.log(text);
 document.getElementById("opravilaId").innerHTML = text;
 }
 
 //_____________________________________________________
 function zadnjiAlertFunction() {
-x= document.getElementById("opraviloId").value;
-	//alert(x);
+let x= document.getElementById("opraviloId").value;
+	//alert("X=:"+x);
 	document.getElementById("sifraId").value = "";	
 }
 	  
 	 //----------------------------------------------------------------------------
 function myFunction() {
-	  var a = document.getElementById("opravilaId");
-      var i = a.selectedIndex;
-	  //alert(i);
+	  const a = document.getElementById("opravilaId");
+	  //alert("A:"+a);
+      let i = a.selectedIndex;
+	  //alert("I="+i);
     document.getElementById("opraviloId").value = a.options[i].value;
 	document.getElementById("sifraId").value = a.options[i].id;
 } 

@@ -142,6 +142,7 @@ foreach (json_decode($this->dataPreg) as $key) {
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
+   $this->stolpci= array('id', 'vpis_date', 'opravilo', 'datumOpravila', 'casOpravila');
 $vyber = new database();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
@@ -216,7 +217,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 		
 	
 	case "deloTbl":
-    echo "<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>datumOpravila</th><th>casOpravila</th></tr>";
+    //echo "<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>datumOpravila</th><th>casOpravila</th></tr>";
+	echo "<tr><th>id</><th>vpisano dne</><th>opravilo</th><th>datumOpravila</th><th>casOpravila</th></tr>";
     break;
 	default:
 	echo "";
