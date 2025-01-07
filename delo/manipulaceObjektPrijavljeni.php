@@ -265,8 +265,10 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 $skrito=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
 $result=array_diff_key($vybrano[0],$skrito);
+$vidno=array("opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
+$neopazno=array_diff_key($vybrano[0],$vidno);
 //___________________________	
-	   foreach ($skrito as $key => $value) {
+	   foreach ($neopazno as $key => $value) {
 			   echo "  <input type='hidden' id=$key name=$key value='".$value."'></input>";
       }//od foreach	
 	
@@ -274,23 +276,10 @@ $result=array_diff_key($vybrano[0],$skrito);
 		   
 // echo "$key: $value\n";
 /*--------tu bo koda za izbiro vidnih polj za popravilo vnosa opravila*/
-/*
-$a1=$vybrano[$i];
-print_r($a1);
-echo"<br>";
-$a2=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
-print_r($a2);
-echo"<br>";
-$result=array_diff_key($a1,$a2);
-print_r($result);
-echo"<br>";*/
-/*
-$a1=array("a"=>"red","b"=>"green","c"=>"blue");
-$a2=array("a"=>"","b"=>"");
 
-$result=array_diff_key($a1,$a2);
-print_r($result);
+/*
 
+polja deloTbl
 "id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "opravilo"=>"", "sifraOpravila"=>"", "datumOpravila"=>"", "casOpravila"=>"",
 
 -------*/
