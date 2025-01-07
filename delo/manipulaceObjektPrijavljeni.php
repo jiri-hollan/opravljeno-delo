@@ -260,14 +260,16 @@ foreach (json_decode($this->dataPreg) as $key) {
 //echo "število izbranih zapisov= " . count($vybrano);
      $dolzina=count($vybrano);
      echo "<form  method='post'>";
-  //   for ($i = 0; $i < $dolzina; $i++) {
+
 	//------------------------------------------------------------------------
-$a1=$vybrano[0];
-$a2=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
-$result=array_diff_key($a1,$a2);
 
-
-//------------------------------------------------------------------------------	
+$skrito=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
+$result=array_diff_key($vybrano[0],$skrito);
+//___________________________	
+	   foreach ($skrito as $key => $value) {
+			   echo "  <input type='hidden' id=$key name=$key value='".$value."'></input>";
+      }//od foreach	
+	
        foreach ($result as $key => $value) {
 		   
 // echo "$key: $value\n";
@@ -296,7 +298,7 @@ print_r($result);
       }//od foreach	 
 	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
      echo "</form>";
-    //   }//od for	
+
 	 }//od construct	
 	}//od class edit
 //________________________________________________________________________________________________
