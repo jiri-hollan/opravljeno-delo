@@ -77,7 +77,7 @@ if (isset($_REQUEST["akce"])) {
 	 
 	  
 	   case "deloTbl":	   
-	  $this->dataPreg= '["vpis_date", "stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
+	  $this->dataPreg= '["stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
 	  break;
 	  
 	  default:
@@ -111,6 +111,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
     $data =array_push_assoc($data, $key, $value);
+//var_dump($data);	
 }
 
     $this->podminka = array("id"=>$this->id);
@@ -265,7 +266,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 $skrito=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
 $result=array_diff_key($vybrano[0],$skrito);
-$vidno=array("opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
+$vidno=array("vpis_date"=>"", "opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
 $neopazno=array_diff_key($vybrano[0],$vidno);
 //___________________________	
 	   foreach ($neopazno as $key => $value) {
