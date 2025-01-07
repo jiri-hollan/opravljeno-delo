@@ -1,7 +1,6 @@
  <?php 
  session_start();
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
- //require_once('../servis/sabloni/vkladane/zahlavi.php');
  require_once('../skupne/sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('../servis/sabloni/formBaze.php');
@@ -217,7 +216,10 @@ foreach (json_decode($this->dataPreg) as $key) {
 		
 	
 	case "deloTbl":
-    //echo "<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>datumOpravila</th><th>casOpravila</th></tr>";
+    /*Glava tabele vseh stolpcev  */
+	//echo "<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>datumOpravila</th><th>casOpravila</th></tr>";
+	/* glava za izbrane stolpce */
+	//---------------------------------------------------------
 	echo "<tr><th>id</><th>vpisano dne</><th>opravilo</th><th>datumOpravila</th><th>casOpravila</th></tr>";
     break;
 	default:
@@ -258,14 +260,43 @@ foreach (json_decode($this->dataPreg) as $key) {
 //echo "število izbranih zapisov= " . count($vybrano);
      $dolzina=count($vybrano);
      echo "<form  method='post'>";
-     for ($i = 0; $i < $dolzina; $i++) {
-       foreach ($vybrano[$i] as $key => $value) {
+  //   for ($i = 0; $i < $dolzina; $i++) {
+	//------------------------------------------------------------------------
+$a1=$vybrano[0];
+$a2=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
+$result=array_diff_key($a1,$a2);
+
+
+//------------------------------------------------------------------------------	
+       foreach ($result as $key => $value) {
+		   
 // echo "$key: $value\n";
+/*--------tu bo koda za izbiro vidnih polj za popravilo vnosa opravila*/
+/*
+$a1=$vybrano[$i];
+print_r($a1);
+echo"<br>";
+$a2=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
+print_r($a2);
+echo"<br>";
+$result=array_diff_key($a1,$a2);
+print_r($result);
+echo"<br>";*/
+/*
+$a1=array("a"=>"red","b"=>"green","c"=>"blue");
+$a2=array("a"=>"","b"=>"");
+
+$result=array_diff_key($a1,$a2);
+print_r($result);
+
+"id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "opravilo"=>"", "sifraOpravila"=>"", "datumOpravila"=>"", "casOpravila"=>"",
+
+-------*/
 	   echo " $key:<br> <input id=$key name=$key value='".$value."'></input><br>";
       }//od foreach	 
 	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
      echo "</form>";
-       }//od for	
+    //   }//od for	
 	 }//od construct	
 	}//od class edit
 //________________________________________________________________________________________________
