@@ -283,7 +283,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$sGeslo = md5($_POST["sGeslo"]);
 	$podminka['geslo'] = $sGeslo;
 	
-	
 	if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
     echo "napačen vnos gesla";
 	//$registracija=false;	
@@ -297,19 +296,16 @@ $uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
 //echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
      if ($uporabnikiTbl == 1) {
 		echo 'Vaše geslo je bilo spremenjeno'; 
-	 }
-  }
-	
+	 }// od if $uporabnikiTbl
+  }//od else
 	}//od if isset session
 	else {
 	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
-	}
-
-	
+	}//od else
 }//od if $ server
 else {
 	echo "nekaj je narobe";
-}	
+}//od else	
  }//od construct
 }//od class spremembaG
 //new SpremembaG;
@@ -351,18 +347,14 @@ $uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
 //aktualizuj($tabulka,$data,$podminka);
 //echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
      if ($uporabnikiTbl == 1) {
-		echo 'Vaše novo uporabniško ime je:<bh>'.strtoupper($uname).'</b>';
-; 
-	 }
-  }
-	
+		echo 'Vaše novo uporabniško ime je:<bh>'.strtoupper($uname).'</b>'; 
+	 }//od if $uporabnikiTbl
+  }//od else
 	}//od if isset session
 	else {
 	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
 	}
-
-	
-}//od if $ server
+}//od if $ server request metod
 else {
 	echo "nekaj je narobe";
 }	
@@ -395,14 +387,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_SESSION["uname"]) && !empty($_POST["sStevilkaZdravnika"])) {
 	$podminka['uname'] = $_SESSION["uname"];
 	$sStevilkaZdravnika = $_POST["sStevilkaZdravnika"];
-
-var_dump($podminka);	
-	
+    //var_dump($podminka);
 	//if ($_POST["stevilkaZdravnika"]!=$_POST["unm-repeat"]) {
     //echo "napačen vnos stevilkaZdravnika";
 	//$registracija=false;	
- 
-    $stevilkaZdravnika = $_POST["sStevilkaZdravnika"];
+     $stevilkaZdravnika = $_POST["sStevilkaZdravnika"];
 	//var_dump($stevilkaZdravnika);
 	$data['stevilkaZdravnika'] = $stevilkaZdravnika;
 	//var_dump($data);
@@ -412,16 +401,11 @@ $uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
 //echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
      if ($uporabnikiTbl == 1) {
 		echo 'Vaša številka zdravnika je:<bh>'.strtoupper($stevilkaZdravnika).'</b>';
-; 
-	 }
-  
-	
+	 }// od if uporabniki
 	}//od if isset session
 	else {
 	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
 	}
-
-	
 }//od if $ server
 else {
 	echo "nekaj je narobe";
