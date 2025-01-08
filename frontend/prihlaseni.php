@@ -178,6 +178,10 @@ if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
     $geslo = $this->test_input($_POST["geslo"]);
 	$data['geslo'] = md5($geslo);
   }
+  if (!empty($_POST["stevilkaZdravnika"])) {
+    $data['stevilkaZdravnika'] = $this->test_input($_POST["stevilkaZdravnika"]);
+  } //od if !empty
+  
     $data['upstatus'] = $upstatus;
 	$data['pristop'] = $pristop;
 	$data['gdpr'] = $gdpr;	
