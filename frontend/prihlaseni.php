@@ -375,6 +375,73 @@ else {
 
 
 //ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+//cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+
+class SpremembaZdr extends Prihlaseni  {
+	public $tabulka;
+    public $data;
+    public $podminka;
+
+ public function __construct() {
+		    parent::__construct();
+			
+    $tabulka = 'uporabnikiTbl';
+	$stevilkaZdravnika=0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	//echo 'v server rekvest';
+	//var_dump($_POST["sStevilkaZdravnika"]);
+	//var_dump($_POST["id"]);
+	if (isset($_SESSION["uname"]) && !empty($_POST["sStevilkaZdravnika"])) {
+	$podminka['uname'] = $_SESSION["uname"];
+	$sStevilkaZdravnika = $_POST["sStevilkaZdravnika"];
+
+var_dump($podminka);	
+	
+	//if ($_POST["stevilkaZdravnika"]!=$_POST["unm-repeat"]) {
+    //echo "napačen vnos stevilkaZdravnika";
+	//$registracija=false;	
+ 
+    $stevilkaZdravnika = $_POST["sStevilkaZdravnika"];
+	//var_dump($stevilkaZdravnika);
+	$data['stevilkaZdravnika'] = $stevilkaZdravnika;
+	//var_dump($data);
+	new Database;
+$uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
+//aktualizuj($tabulka,$data,$podminka);
+//echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
+     if ($uporabnikiTbl == 1) {
+		echo 'Vaša številka zdravnika je:<bh>'.strtoupper($stevilkaZdravnika).'</b>';
+; 
+	 }
+  
+	
+	}//od if isset session
+	else {
+	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
+	}
+
+	
+}//od if $ server
+else {
+	echo "nekaj je narobe";
+}	
+ }//od construct
+}//od class SpremembaZdr
+//new SpremembaZdr;
+
+//_____________________konec clas SpremembaZdr___________________________
+
+
+
+//sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+
+
+
+
+
+
+
 //$prihlaseni = new Prihlaseni;
 if (isset($_GET['r'])) {
 	 // echo 'poskus GET' . $_GET['r'];
@@ -411,6 +478,11 @@ case "spremembaG":
     //echo "V profilu"; 
    break;    
    
+ case "spremembaZdr":
+  $prihlaseni = new SpremembaZdr;
+    //echo "V profilu"; 
+   break;    
+      
   default:
     //echo "Your favorite color is neither red, blue, nor green!";
 }

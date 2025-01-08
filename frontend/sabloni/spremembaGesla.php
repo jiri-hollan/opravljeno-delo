@@ -30,3 +30,10 @@
 	  <button type="submit" class="signupbtn" >Spremeni</button> 
    </div>
 </form>
+<form autocomplete="off" action="<?php echo $_SERVER['PHP_SELF'] . '?r=spremembaZdr'?>"  method="post">
+<div class="containerGeslo">
+   <h2>Vpis zdravniške številke</h2>
+       <input type="text" placeholder="številka zdr." name="sStevilkaZdravnika" autocomplete="off" required>  
+  	  <button type="submit" class="signupbtn" >pošli</button>  
+   </div>
+</form>
