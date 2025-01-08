@@ -47,9 +47,11 @@ case "uredi":
     $ime = test_input($_POST["ime"]);
 	$priimek = test_input($_POST["priimek"]);
 	$upstatus = test_input($_POST["upstatus"]);
-	$pristop = test_input($_POST["pristop"]);	
+	$pristop = test_input($_POST["pristop"]);
+	$gdpr = test_input($_POST["gdpr"]);
+	$stevilkaZdravnika = test_input($_POST["stevilkaZdravnika"]);	
 	$podminka = array("id"=>$id);
-    $data= array("bolnisnica"=>$bolnisnica, "ime"=>$ime, "priimek"=>$priimek, "upstatus"=>$upstatus, "pristop"=>$pristop);	
+    $data= array("bolnisnica"=>$bolnisnica, "ime"=>$ime, "priimek"=>$priimek, "upstatus"=>$upstatus, "pristop"=>$pristop, "gdpr"=>$gdpr, "stevilkaZdravnika"=>$stevilkaZdravnika);	
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
    break;
@@ -99,7 +101,7 @@ if(count($vybrano)>0){
 	  echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
   echo'<P><b>pristop:</b>1=na seznamu 2=vlaganje v bazo 3=pogled v bazo</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
-  echo "<tr><th>Id</th><th>e-mail</><th>uporabnik</th><th>geslo</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
+  echo "<tr><th>Id</th><th>e-mail</><th>uporabnik</th><th>geslo</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th><th>GDPR</th><th>stevilkaZdravnika</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
@@ -162,7 +164,7 @@ function editFunction($podminka){
       if($key=="id"||$key=="bolnisnica"||$key=="ime"||$key=="priimek"){
 	   echo " $key: <input name=$key value=$value  style='background-color:ivory;'\n></input>";	
 }	 
-     if($key=="upstatus"||$key=="pristop"){	
+     if($key=="upstatus"||$key=="pristop"||$key=="gdpr"||$key=="stevilkaZdravnika"){	
 	  echo " $key: <input name=$key value=$value \n></input>";
 }	
 }//od foreach
