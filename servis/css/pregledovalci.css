@@ -66,3 +66,9 @@ td {
 th, td {
   padding: 5px;
 }
+
+.glavaTable {
+  position: sticky;
+  top: 6%;	
+  overflow: hidden;	
+}
