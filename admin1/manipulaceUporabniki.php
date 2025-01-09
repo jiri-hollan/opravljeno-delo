@@ -1,6 +1,9 @@
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
-$nazaj="../admin1/vertikalMenu.php";
+$nazaj=__FILE__;
+//$nazaj="../admin1/vertikalMenu.php";
+//echo $nazaj;
+//echo "magic: ". __FILE__;
 ?>
 
 <h2>kompetence uporabnikov</h2>
