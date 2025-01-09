@@ -52,7 +52,7 @@ $conn = null;
 public function ogled($imeTable) { 
 if ($imeTable!=""){
 try {
-$sql = "select column_name from information_schema.columns where table_name =  '$imeTable'";
+$sql = "select column_name from information_schema.columns where `TABLE_SCHEMA`='navodila' and table_name =  '$imeTable'";
 //Prepare our SQL statement,
    $stmtl = $this->conn->prepare($sql);
 // echo "To so stolpci tabele: " . "$imeTable", "<br>";
