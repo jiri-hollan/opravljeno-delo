@@ -180,9 +180,9 @@ function odstraniFunction($podminka){
 	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 }//od odstraniFunction
-?>
-<script src="js/manipulaceUporabniki.js?<?php echo time(); ?>">
+echo'
+<script src="js/manipulaceUporabniki.js?'.time().'">
 </script>
 <?php
 require_once '../skupne/sabloni/zapati.php';
-?>
+';
