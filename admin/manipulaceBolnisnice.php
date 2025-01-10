@@ -165,6 +165,5 @@ echo'
 <script src="js/manipulaceBolnisnice.js?'.time().'">
 </script>
 ';
-
 require_once '../skupne/sabloni/zapati.php';
 ?>

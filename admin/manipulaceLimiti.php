@@ -165,6 +165,5 @@ echo'
 <script src="js/manipulaceLimiti.js?'.time().'">
 </script>
 ';
-
 require_once '../skupne/sabloni/zapati.php';
 ?>
