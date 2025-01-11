@@ -4,17 +4,7 @@ class MenuDelo  {
    public function __construct() {
    require_once('../delo/menuDelo-items.php'); 
 
-echo'
-<script>	
-if("'.$uname.'"==""){
-	document.getElementById("uname").innerHTML = "niste prijavljeni ";	
-}else{
 
-	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "'.$uname.'";
-	}
-	document.getElementById("dom").innerHTML = "domov";		
-</script>
-';
    
 echo '
 <nav id= "glavnaNav">
@@ -51,6 +41,17 @@ echo '
 }//od class MenuDelo  
 $adminAnestiz = new MenuDelo(); 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
+echo'
+<script>	
+if("'.$uname.'"==""){
+	document.getElementById("uname").innerHTML = "niste prijavljeni ";	
+}else{
+
+	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "'.$uname.'";
+	}
+	document.getElementById("dom").innerHTML = "domov";		
+</script>
+';
 require_once('sabloni/vkladane/zapati.php'); 
 
 ?>
