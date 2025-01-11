@@ -21,7 +21,8 @@ $bolnisnica=($vybrano[0]["bolnisnica"]);
 //----------------------------------
 if($stevilkaZdravnika>0){
 	$identifikace=' '.$stevilkaZdravnika.' '.$ime.' '.$priimek.' '.$bolnisnica;
-$GLOBALS['stevilkaZdravnika']=$stevilkaZdravnika;
+$this->stevilkaZdravnika=$stevilkaZdravnika;
+//$GLOBALS['stevilkaZdravnika']=$stevilkaZdravnika;
 $GLOBALS['identifikace']=$identifikace;
 //echo $GLOBALS['identifikace'];
 echo'<script>

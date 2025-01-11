@@ -33,9 +33,10 @@ class NovZapis extends VyberUporabnika{
 public $podminka;
 function __construct($podminka) {		
 		    parent::__construct($podminka);
+//echo"stevilka zdravnika->:".$this->stevilkaZdravnika;
 echo"
 <script>
-stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
+stevilkaZdravnika='".$this->stevilkaZdravnika."';
 izborFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
@@ -47,7 +48,7 @@ function __construct($podminka) {
 		    parent::__construct($podminka);
 echo"
 <script>
-stevilkaZdravnika='".$GLOBALS['stevilkaZdravnika']."';
+stevilkaZdravnika='".$this->stevilkaZdravnika."';
 
 //izborFunction('vloz',stevilkaZdravnika);
 </script>";		
