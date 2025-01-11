@@ -8,7 +8,8 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  require_once ('identifikace.php');
  echo'<script src="js/delo.js?'.time().'"></script>';
  	$podminka = array("uname"=>$uname);
-	   new VyberUporabnika($podminka);
+	$stevilkaZdravnika=new VyberUporabnika($podminka);
+	var_dump ($stevilkaZdravnika->stevilkaZdravnika) ;
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
