@@ -9,7 +9,8 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  echo'<script src="js/delo.js?'.time().'"></script>';
  	$podminka = array("uname"=>$uname);
 	$stevilkaZdravnika=new VyberUporabnika($podminka);
-	var_dump ($stevilkaZdravnika->stevilkaZdravnika) ;
+	$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
+	//var_dump ($stevilkaZdravnika);	
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
@@ -37,7 +38,7 @@ if (isset($_REQUEST["akce"])) {
  // echo strtoupper($akce) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //$stevilkaZdravnika=11111;
-  new $akce($this->stevilkaZdravnika, $datumOpravila, $tabulka);
+  new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
 }//od if akce
