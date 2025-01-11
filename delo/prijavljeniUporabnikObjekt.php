@@ -14,6 +14,7 @@ echo'<script src="js/delo.js?'.time().'"></script>';
 //echo('<br>na začetku kode $podminka= ');	
 //var_dump($podminka);	
 	//vyberUporabnikaFunction($podminka);
+
  //_______________________________________________________________________________________
  	class Test_input {
 	public $test;	
@@ -55,46 +56,7 @@ stevilkaZdravnika='".$this->stevilkaZdravnika."';
 	}//od construct
 		}// od class DnevniZapis		
 //_______________________________________________________________________________________
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  $akce = test_input($_GET["akce"]);  
 
-switch ($akce) {  
-case "novZapis":
-//echo('<br>linija 95 podminka= ');
-//var_dump($podminka);
- new NovZapis($podminka);
-break;
-
-case "dnevni":
-echo "koda še ni zapisana";
- new DnevniZapis($podminka);
-break;
-
-default:
-  echo $akce;
- echo "<br>ni izvelo case";	
-}
-}//od if GET
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $akce = test_input($_POST["akce"]);  	
-switch ($akce) {  
-case "vloz":
-    $stevilkaZdravnika = test_input($_POST["stevilkaZdravnika"]);
-    $datumOpravila = test_input($_POST["datumOpravila"]);
-    $sifraOpravila = test_input($_POST["sifraOpravila"]);
-    $opravilo = test_input($_POST["opravilo"]);  
-    $casOpravila = test_input($_POST["casOpravila"]);  	
-    $data= array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$datumOpravila, "sifraOpravila"=>$sifraOpravila, "opravilo"=>$opravilo, "casOpravila"=>$casOpravila );
-    //vlozFunction($data);
- new Vloz($data);
-break;
-
-default:
-  echo $akce.' post';
- echo "<br>ni izvelo case";	
-}
-}//od if POST
 
  class DeloPost{
 	  public $tabulka;
@@ -142,7 +104,51 @@ foreach (json_decode($this->dataDelo) as $key) {
 	}
   }	    
 }// od class Vloz
+//____________________________________________________________________
+	
+	if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  $akce = test_input($_GET["akce"]);  
 
+switch ($akce) {  
+case "novZapis":
+//echo('<br>linija 95 podminka= ');
+//var_dump($podminka);
+ new NovZapis($podminka);
+break;
+
+case "dnevni":
+echo "koda še ni zapisana";
+ new DnevniZapis($podminka);
+break;
+
+default:
+  echo $akce;
+ echo "<br>ni izvelo case";	
+}
+}//od if GET
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $akce = test_input($_POST["akce"]);  	
+switch ($akce) {  
+case "vloz":
+    $stevilkaZdravnika = test_input($_POST["stevilkaZdravnika"]);
+    $datumOpravila = test_input($_POST["datumOpravila"]);
+    $sifraOpravila = test_input($_POST["sifraOpravila"]);
+    $opravilo = test_input($_POST["opravilo"]);  
+    $casOpravila = test_input($_POST["casOpravila"]);  	
+    $data= array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$datumOpravila, "sifraOpravila"=>$sifraOpravila, "opravilo"=>$opravilo, "casOpravila"=>$casOpravila );
+    //vlozFunction($data);
+ new Vloz($data);
+break;
+
+default:
+  echo $akce.' post';
+ echo "<br>ni izvelo case";	
+}
+}//od if POST
+	
+	
+	
 
 require_once '../skupne/sabloni/zapati.php';
 ?>
