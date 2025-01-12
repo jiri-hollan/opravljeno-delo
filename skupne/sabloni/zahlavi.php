@@ -1,5 +1,5 @@
 <?php
-eco'
+echo'
 <!DOCTYPE html>
 <html lang="cs-SI">
 <head>
