@@ -1,16 +1,18 @@
+<?php
+echo'
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="js/razpisMeseci.js?<?php echo time(); ?>"></script> 
-<link rel="stylesheet" href="../css/razpisMeseci.css?<?php echo time(); ?>">
+<script src="js/razpisMeseci.js?'.time().'"></script> 
+<link rel="stylesheet" href="../css/razpisMeseci.css?'.time().'">
 <title>Dežurstva</title>
-    <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
+    <link rel="shortcut icon" href="../favicon.ico?'.time().'">
 </head>
 <body>
-<?php
+';
 require_once('../skupne/home.php');
 echo '<a id="buttonDomov" href="' . $home . '" >Domov</a>';
 ?>

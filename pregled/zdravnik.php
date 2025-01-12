@@ -1,3 +1,5 @@
+<?php
+echo'
 <!DOCTYPE html>
 <html lang="sl-SI">
 <head>
@@ -5,12 +7,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anestiz-set</title> 
-<link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
-<script src="js/prijava.js?<?php echo time(); ?>"></script> 
-<script src="js/odjava.js?<?php echo time(); ?>"></script>
-<link rel="stylesheet" type="text/css" href="css/zdravnik.css?<?php echo time(); ?>">
+<link rel="shortcut icon" href="../favicon.ico?'.time().'">
+<script src="js/prijava.js?'.time().'"></script> 
+<script src="js/odjava.js?'.time().'"></script>
+<link rel="stylesheet" type="text/css" href="css/zdravnik.css?'.time().'">
 </head>
-<body>
+<body>';
+?>
 <!--_____________________________________________________________________________________________________________________
 ZA DOLOČITEV BOLNIŠNICE JE POTREBNO VPISATI PARAMETR FUNKCIJE sbFunction ZA IZOLO "i" ZA JESENICE "j"
 oziroma to določi izbira NAV bara, če je ta aktivirana

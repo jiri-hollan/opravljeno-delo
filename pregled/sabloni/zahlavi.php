@@ -1,3 +1,5 @@
+<?php
+echo'
 <!DOCTYPE html>
 <html  lang="sl-SI">
 <head>
@@ -5,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>Pregled</title>
-<link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
-<link rel="stylesheet" type="text/css" href="css/baze.css?<?php echo time(); ?>">
-</head>
+<link rel="shortcut icon" href="../favicon.ico?'.time().'">
+<link rel="stylesheet" type="text/css" href="css/baze.css?'.time().'">
+</head>';
+?>
