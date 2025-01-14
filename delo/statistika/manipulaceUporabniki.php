@@ -1,6 +1,6 @@
 <?php
-require_once '../skupne/sabloni/zahlavi.php';
-$nazaj="../admin1/vertikalMenu.php";
+require_once 'sabloni/zahlavi.php';
+$nazaj="../../admin1/vertikalMenu.php";
 ?>
 
 <h2>kompetence uporabnikov</h2>
@@ -16,7 +16,7 @@ $nazaj="../admin1/vertikalMenu.php";
 <?php
  
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
-require_once '../skupne/database.php';
+require_once '../../skupne/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
@@ -183,5 +183,5 @@ function odstraniFunction($podminka){
 echo'
 <script src="js/manipulaceUporabniki.js?'.time().'">
 </script>';
-require_once '../skupne/sabloni/zapati.php';
+require_once '../../skupne/sabloni/zapati.php';
 ?>
