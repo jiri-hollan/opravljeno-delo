@@ -87,7 +87,8 @@ case "odstrani":
 
 function vyberFunction($podminka){
    $tabulka="uporabnikiTbl";
-   $stolpci=["id", "email", "uname", "geslo", "bolnisnica", "ime", "priimek", "stevilkaZdravnika", "upstatus", "pristop", "gdpr"];
+   /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
+   $stolpci=["id", "bolnisnica", "ime", "priimek", "stevilkaZdravnika"];
    $vyber = new database();
    $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
@@ -101,7 +102,8 @@ if(count($vybrano)>0){
 	  echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
   echo'<P><b>pristop:</b>1=na seznamu 2=vlaganje v bazo 3=pogled v bazo</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
-  echo "<tr class='glavaTable'><th>Id</th><th>e-mail</><th>uporabnik</th><th>geslo</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th><th>pristop</th><th>GDPR</th><th>upstatus</th></tr>";
+  /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
+  echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {

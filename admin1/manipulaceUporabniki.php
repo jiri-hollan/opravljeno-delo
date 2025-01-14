@@ -98,8 +98,9 @@ function vyberFunction($podminka){
 //echo $vybrano[1];
 echo "<br>";
 if(count($vybrano)>0){
-	  echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
+  echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
   echo'<P><b>pristop:</b>1=na seznamu 2=vlaganje v bazo 3=pogled v bazo</P>';
+  echo'<P><b>GDPR:</b>0=prevzame nastavitev programa(0 ali 1) 1=baza vedno dostopna 2=baza nedostopna</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
   echo "<tr class='glavaTable'><th>Id</th><th>e-mail</><th>uporabnik</th><th>geslo</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th><th>pristop</th><th>GDPR</th><th>upstatus</th></tr>";
 
