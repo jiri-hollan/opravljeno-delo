@@ -87,7 +87,7 @@ case "odstrani":
 
 function vyberFunction($podminka){
    $tabulka="uporabnikiTbl";
-   $stolpci=["*"];
+   $stolpci=["id", "email", "uname", "geslo", "bolnisnica", "ime", "priimek", "stevilkaZdravnika", "upstatus", "pristop", "gdpr"];
    $vyber = new database();
    $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
