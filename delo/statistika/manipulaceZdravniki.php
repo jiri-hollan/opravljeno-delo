@@ -1,10 +1,10 @@
 <?php
 require_once 'sabloni/zahlavi.php';
-$nazaj="../../admin1/vertikalMenu.php";
+$nazaj="../../frontend/menuFile1.php";
 ?>
 
 <h2>kompetence uporabnikov</h2>
-<button onclick="izborFunction('vyber')">izberi</button>
+<button onclick="izborFunction('vyber')">izberi zdravnika</button>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
  <input type="hidden" id="akceId" name="akce" value="">
  <input type="hidden" id="nazaj" name="nazaj" value="<?php echo $nazaj;?>">
