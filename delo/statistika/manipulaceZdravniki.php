@@ -10,7 +10,7 @@ $nazaj="../../frontend/menuFile1.php";
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["id", "bolnisnica", "ime", "priimek", "stevilkaZdravnika"];
    $vyber = new database();
-   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
+   $vybrano=$vyber->vyberPogoj($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
    echo "<br>";
@@ -59,7 +59,8 @@ $stevilkaZdravnika=6027;
    if ($stevilkaZdravnika == "") {
 	$podminka = NULL;
 } else {
-	    $podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika);
+	    //$podminka = array("stevilkaZdravnika>"=>$stevilkaZdravnika);
+		$podminka = array("stevilkaZdravnika>"=>0);
 }
 new VyberImaStevilko($podminka);
 
