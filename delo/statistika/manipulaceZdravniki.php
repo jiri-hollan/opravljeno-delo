@@ -1,5 +1,6 @@
 <?php
 require_once 'sabloni/zahlavi.php';
+require_once '../../skupne/database.php';
 $nazaj="../../frontend/menuFile1.php";
 /*****************************************************/
 	class VyberImaStevilko {
@@ -33,23 +34,6 @@ if(count($vybrano)>0){
 /*******************************************************/
  
 
-require_once '../../skupne/database.php';
-
-$stevilkaZdravnika=6027;
- 
-
-   // echo "to je vyber.<br>";
-   if ($stevilkaZdravnika == "") {
-	$podminka = NULL;
-} else {
-	    $podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika);
-}
-new VyberImaStevilko($podminka);
-
-
-
-
-	
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
@@ -64,13 +48,22 @@ class TableRows extends RecursiveIteratorIterator {
 		$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
-		<!--<td onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>-->		
+	
 		</tr>" . "\n";
 }//od endChildren
 }// od class TableRows
 
 
+$stevilkaZdravnika=6027;
+ 
+   if ($stevilkaZdravnika == "") {
+	$podminka = NULL;
+} else {
+	    $podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika);
+}
+new VyberImaStevilko($podminka);
 
+	
 
 echo'
 <script src="js/manipulaceUporabniki.js?'.time().'">
