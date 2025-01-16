@@ -1,6 +1,7 @@
 <?php
 require_once 'sabloni/zahlavi.php';
 require_once '../../skupne/database.php';
+require_once 'sabloni/forma.php';
 $nazaj="../../frontend/menuFile1.php";
 /*****************************************************/
 	class VyberImaStevilko {
@@ -45,11 +46,9 @@ class TableRows extends RecursiveIteratorIterator {
         echo "<tr>";
     }
     function endChildren() {
-		//$a = 'onclick="' . "izborFunction('uredi')" . '"';
-		//$b = 'onclick="' . "izborFunction('odstrani')" . '"';
+
         echo "<td onclick=" . '"izberiStevilkoZdravnikaFunction('. "'vyber'".')"'.'"' . ">izberi</td>
-	
-		</tr>" . "\n";
+			</tr>" . "\n";
 }//od endChildren
 }// od class TableRows
 
