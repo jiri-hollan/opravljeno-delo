@@ -29,7 +29,7 @@ echo '
 	   } //od switch
 	 echo
 	'<script>
-    document.getElementById("prij").innerHTML = "Odjava";
+    //document.getElementById("prij").innerHTML = "Odjava";
 	document.getElementById("uname").innerHTML = "prijavljen";	
      </script>';
    }//od if 
