@@ -53,13 +53,13 @@ class TableRows extends RecursiveIteratorIterator {
 }// od class TableRows
 
 
-$stevilkaZdravnika=6027;
+$stevilkaZdravnika="1";
  
-   if ($stevilkaZdravnika == "") {
-	$podminka = NULL;
+   if ($stevilkaZdravnika >0) {
+	$podminka = array("stevilkaZdravnika>"=>0);	   
+//$podminka = array("stevilkaZdravnika>"=>$stevilkaZdravnika);
 } else {
-	    //$podminka = array("stevilkaZdravnika>"=>$stevilkaZdravnika);
-		$podminka = array("stevilkaZdravnika>"=>0);
+	$podminka = NULL;
 }
 new VyberImaStevilko($podminka);
 
