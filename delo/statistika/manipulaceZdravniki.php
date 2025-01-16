@@ -47,7 +47,7 @@ class TableRows extends RecursiveIteratorIterator {
     function endChildren() {
 		//$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		//$b = 'onclick="' . "izborFunction('odstrani')" . '"';
-        echo "<td onclick=" . '"izborFunction('. "'izberiStevilkoZdravnika'".')"'.'"' . ">izberi</td>
+        echo "<td onclick=" . '"izberiStevilkoZdravnikaFunction('. "'vyber'".')"'.'"' . ">izberi</td>
 	
 		</tr>" . "\n";
 }//od endChildren
@@ -67,7 +67,7 @@ new VyberImaStevilko($podminka);
 	
 
 echo'
-<script src="js/manipulaceUporabniki.js?'.time().'">
+<script src="js/manipulaceZdravniki.js?'.time().'">
 </script>';
 require_once '../../skupne/sabloni/zapati.php';
 ?>

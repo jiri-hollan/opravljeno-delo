@@ -1,4 +1,4 @@
-function izborFunction(akce) {
+function izberiStevilkoZdravnikaFunction(akce) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
