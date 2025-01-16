@@ -3,9 +3,7 @@ require_once('administrace.php');
 class MenuDelo  {
    public function __construct() {
    require_once('menuStatistika-items.php'); 
-
-
-   
+  
 echo '
 <nav id= "glavnaNav">
 <ul>';
@@ -29,7 +27,6 @@ echo '
 	   } //od switch
 	 echo
 	'<script>
-    //document.getElementById("prij").innerHTML = "Odjava";
 	document.getElementById("uname").innerHTML = "prijavljen";	
      </script>';
    }//od if 
@@ -46,10 +43,8 @@ echo'
 if("'.$uname.'"==""){
 	document.getElementById("uname").innerHTML = "niste prijavljeni ";	
 }else{
-
 	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "'.$uname.'";
 	}
-	document.getElementById("dom").innerHTML = "domov";		
 </script>
 ';
 require_once('sabloni/zapati.php'); 
