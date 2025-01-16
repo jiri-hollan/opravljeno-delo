@@ -35,7 +35,7 @@ function functionOver (e) {
   if (x.nodeName == "TD") {
    var y = event.composedPath()[1];
    row_value = y.cells[4].innerHTML;
-   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+   document.getElementById("demo3").innerHTML = "izbrana številka zdravnika= " + row_value ;  
  }//od if 
- window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&id=" + row_value;  
+ //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
 }//od function(e)
