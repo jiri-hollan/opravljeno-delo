@@ -14,11 +14,11 @@ $nazaj="../../frontend/menuFile1.php";
    $vybrano=$vyber->vyberPogoj($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
-   echo "<br>";
+ //  echo "<br>";
    echo count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
-echo "<br>";
+//echo "<br>";
 if(count($vybrano)>0){
 	 
   echo "<table id='osebe' style='border: solid 1px black;'>";
