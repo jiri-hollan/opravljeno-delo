@@ -100,8 +100,6 @@ function vyberFunction($podminka){
         echo "<tr>";
     }
     function endChildren() {
-		//$a = 'onclick="' . "izborFunction('uredi')" . '"';
-		//$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
 		<td onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>		
 		</tr>" . "\n";
