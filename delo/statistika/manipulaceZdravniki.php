@@ -45,8 +45,8 @@ class TableRows extends RecursiveIteratorIterator {
         echo "<tr>";
     }
     function endChildren() {
-		$a = 'onclick="' . "izborFunction('uredi')" . '"';
-		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
+		//$a = 'onclick="' . "izborFunction('uredi')" . '"';
+		//$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
 	
 		</tr>" . "\n";
