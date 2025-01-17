@@ -1,9 +1,10 @@
 <?php
 require_once 'administrace.php';
-require_once 'sabloni/zahlavi.php';
+//require_once 'sabloni/zahlavi.php';
 require_once '../../skupne/database.php';
 require_once 'sabloni/forma.php';
-$nazaj="../../frontend/menuFile1.php";
+require_once 'sabloni/prijavljenJe.php';
+$nazaj="statistikaMenu.php.php";
 //CCCCCCCCCCCCCCC CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class VyberImaStevilko {
 public $tabulka;
@@ -48,6 +49,9 @@ class TableRows extends RecursiveIteratorIterator {
     }//od endChildren
 }// od class TableRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+
+
 
 $stevilkaZdravnika="1"; //"= 1"  TO DOLOČI, DA SO ZBRANI LE ZAPISI S ŠTEVILKO >0
 
