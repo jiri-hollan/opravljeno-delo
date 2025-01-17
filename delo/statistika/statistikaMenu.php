@@ -3,13 +3,9 @@ require_once('administrace.php');
 class MenuDelo  {
    public function __construct() {
    require_once('menuStatistika-items.php'); 
-  
-echo '
-<nav id= "glavnaNav">
-<ul>';
+   echo '<nav id= "glavnaNav"><ul>';
   if (isset($_SESSION["upstatus"]))  {
-
-	   switch ($_SESSION["upstatus"]) {		   
+	 switch ($_SESSION["upstatus"]) {		   
 	case 0:
 	  echo $a0;
 	  echo "<p style='color: black;'>vaša registracija še ni overjena</>";
@@ -31,8 +27,8 @@ echo '
      </script>';
    }//od if 
    else{
-	 	  echo $a0; 
-   }
+	 	echo $a0; 
+       }
       echo '</ul></nav>';
    }//od construct
 }//od class MenuDelo  

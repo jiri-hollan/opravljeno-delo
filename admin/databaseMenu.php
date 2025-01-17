@@ -35,9 +35,9 @@ echo '
 </div>
 ';
     } else {
-	   echo	' <h2>za ta del niste pooblaščeni</h2>';
-}
-}//od construct 
+	       echo	' <h2>za ta del niste pooblaščeni</h2>';
+           }
+  }//od construct 
 }//od class Manipulace  
  $adminManipulace = new Manipulace(); 
 require_once('sabloni/vkladane/zapati.php'); 
