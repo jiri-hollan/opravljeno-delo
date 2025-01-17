@@ -1,6 +1,5 @@
 <?php
 require_once('administrace.php');
-require_once 'sabloni/prijavljenJe.php';
 class MenuDelo  {
    public function __construct() {
    require_once('menuStatistika-items.php'); 
@@ -34,16 +33,7 @@ class MenuDelo  {
    }//od construct
 }//od class MenuDelo  
 $adminAnestiz = new MenuDelo(); 
-/*$uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
-echo'
-<script>	
-if("'.$uname.'"==""){
-	document.getElementById("uname").innerHTML = "niste prijavljeni ";	
-}else{
-	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "'.$uname.'";
-	}
-</script>
-';*/
+require_once 'sabloni/prijavljenJe.php';
 require_once('sabloni/zapati.php'); 
 
 ?>
