@@ -18,8 +18,7 @@ echo'
   <a class="active" href="../frontend/menuFile1.php">Domov</a>
   <a href="../frontend/prihlaseni.php?r=logout&stav=odhlasit">Odjava in prijava</a>
 </div>';
-?>
- <?php require_once('../admin/sabloni/oznamovaci-oblast.php');  
+
  function test_input($test) {
   $test = trim($test);
   $test = stripslashes($test);
