@@ -14,9 +14,7 @@ class Administrace {
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
-		  
-      //$this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/';
-	  //echo $this->zaklad->url;
+//echo $this->zaklad->url;
 	  $casoviLimit = 600;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {
 		  $uplinuliCas = time() - $_SESSION["casova_znamka"];
@@ -37,11 +35,8 @@ class Administrace {
 	sessionStorage.removeItem("bolnikId"); 
 	</script>';	  
 		  
-		  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=odhlasit');
-		   
-	// header('Location: localhost/anestiz/frontend/prihlaseni.php?stav=odhlasit');
-		   
-		   exit();
+		  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=odhlasit'); 
+		  exit();
 	  } else {
 		  $this->conn = new Database();
 	  }  
