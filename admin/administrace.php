@@ -4,6 +4,7 @@ require_once('../skupne/database.php');
 class Administrace {
 	public $conn;
 	public $zaklad;	
+
 	public function __construct() {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
@@ -34,3 +35,4 @@ class Administrace {
 	  }	  
 }//od construct	
 }//0d class administrace
+?>

@@ -1,11 +1,10 @@
 <?php
 session_start();
 require_once('../skupne/database.php');
-
 class Administrace {
 	public $conn;
 	public $zaklad;
-	
+
 	public function __construct() {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
@@ -33,6 +32,7 @@ class Administrace {
 		  exit();
 	  } else {
 		  $this->conn = new Database();
+	  }
 	  }//od construct	  
-	}//0d class administrace	
-}
+	}//0d class administrace
+?>	

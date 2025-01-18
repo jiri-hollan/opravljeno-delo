@@ -6,9 +6,9 @@ class Administrace {
 	public $conn;
 	public $zaklad;
 	
-  public function __construct() {
-  $this->conn = new Database();
-  $this->zaklad = new stdClass();
+    public function __construct() {
+     $this->conn = new Database();
+     $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
 	  }else {
@@ -40,4 +40,5 @@ $prihlasen = $_SESSION['uporabnikPrihlasen'];
 		  $this->conn = new Database();
 	  }  
   }//od construct	
-}//0d class administrace	
+}//0d class administrace
+?>	
