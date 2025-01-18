@@ -4,22 +4,23 @@ require_once('../skupne/database.php');
 class Administrace {
 	public $conn;
 	public $zaklad;
-
+	
 	public function __construct() {
-	  $this->conn = new Database();
-      $this->zaklad = new stdClass();
+	 $this->conn = new Database();
+     $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/admin/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/admin/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
+//echo $this->zaklad->url;
 	  $casoviLimit = 600;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {
 		  $uplinuliCas = time() - $_SESSION["casova_znamka"];
 		  if ($uplinuliCas > $casoviLimit) {
 			  session_unset();
 			  session_destroy();
-			  header('Location: ' . $this->zaklad->url . '../frontend/prihlaseni.php?stav=neaktivni');
+			  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=neaktivni');
 			  exit();
 		  }
 	  }
@@ -28,11 +29,16 @@ class Administrace {
 	  if (empty($prihlasen)) {
 		  session_unset();
 		  session_destroy();
-		  header('Location: ' . $this->zaklad->url . '../frontend/prihlaseni.php?stav=odhlasit');		   
+	echo'<script>
+	sessionStorage.removeItem("testJSON");	
+	sessionStorage.removeItem("bolnikId"); 
+	</script>';	  
+		  
+		  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=odhlasit'); 
 		  exit();
 	  } else {
 		  $this->conn = new Database();
-	  }
-	  }//od construct	  
-	}//0d class administrace
+	  }  
+	}//od construct	
+}//0d class administrace
 ?>	
