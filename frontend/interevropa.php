@@ -1,5 +1,6 @@
 <?php
-require_once('administrace.php');
+require_once('../skupne/administrace.php');
+require_once('sabloni/vkladane/zahlavi.php');
 echo'
 
 <li><a href="https://docs.google.com/spreadsheets/d/1kfkIEJ4aj7FlxVslJgg6EyAGyhfAzSkDnNJkkj-BvWk/edit#gid=0">2023</a></li>
