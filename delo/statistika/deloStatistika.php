@@ -10,4 +10,24 @@
 *
 *
 **/
+/**
+variable:
+
+public $tabulka = deloTbl;
+public $zacDatum;
+public $koncDatum;
+public $stevilkaZdravnika;
+public SqlCasDela = '
+
+SELECT datumOpravila, SUM(cas=pravila) AS [Po dnevih]
+FROM $tabulka
+WHERE stevilkaZdravnika = $stevilkaZdravnika;
+GROUP BY datumOpravila;
+
+';
+
+
+
+**/
+
 ?>
