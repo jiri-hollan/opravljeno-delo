@@ -3,7 +3,6 @@
 require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
-	public $zaklad;
 	public $pristop;
 	public function __construct($bolnisnica) {
  $this->conn = new Database();	

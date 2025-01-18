@@ -3,7 +3,6 @@
 require_once '../skupne/database.php';
 Class spisekBolnisnic{
 	public $conn;
-	public $zaklad;
 	public $bolnisnicaStatus; //vključena+baza=2, vljučena=1, nevključena=0
 	public function __construct() {
   $this->bolnisnicaStatus = '1';

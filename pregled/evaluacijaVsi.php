@@ -3,7 +3,6 @@
 require_once '../skupne/database.php';
 Class PoberZapise{
 	public $conn;
-	public $zaklad;
 	public function __construct() {
  $this->conn = new Database();	
  $this->nameTable = 'limitiTbl';
