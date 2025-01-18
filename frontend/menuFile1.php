@@ -1,5 +1,6 @@
 <?php
 require_once('administrace.php');
+require_once('sabloni/vkladane/zahlavi.php');
 include_once "../skupne/pregledovalciKomb.php";
 class MenuAnestiz  {
    public function __construct() {
