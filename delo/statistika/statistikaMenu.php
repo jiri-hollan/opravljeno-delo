@@ -1,5 +1,6 @@
 <?php
 require_once('administrace.php');
+require_once('sabloni/zahlavi.php');
 class MenuDelo  {
    public function __construct() {
    require_once('menuStatistika-items.php'); 
