@@ -31,7 +31,7 @@ public $koncDatum;
 public $stevilkaZdravnika;
 public SqlCasDela = '
 
-SELECT datumOpravila, SUM(cas=pravila) AS [Po dnevih]
+SELECT datumOpravila, SUM(casOpravila) AS [Po dnevih]
 FROM $tabulka
 WHERE stevilkaZdravnika = $stevilkaZdravnika
 AND true
@@ -49,15 +49,15 @@ GROUP BY datumOpravila;
 ';
 
 **/
-//CCCCCCCCCCCCCCC CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-class VyberImaStevilko {
+//CCCCCCCCCCCCCCC CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+class SestevekDela {
 public $tabulka;
  function __construct( $podminka) {
-	    $tabulka="uporabnikiTbl";
+	    $tabulka="deloTbl";
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
-   $stolpci=["id", "bolnisnica", "ime", "priimek", "stevilkaZdravnika"];
-   $vyber = new database();
-   $vybrano=$vyber->vyberPogoj($tabulka, $stolpci, $podminka );
+   $stolpci=["datumOpravila", "SUM(casOpravila)"];
+   $suma = new database();
+   $vybrano=$suma->vyberPogoj($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
  //  echo "<br>";
@@ -68,14 +68,14 @@ public $tabulka;
   if(count($vybrano)>0){
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
-  echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
+  echo "<tr class='glavaTable'><th>datum</th><th>minute</th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
   }//od if(cout) 
  }//od construct  
 }//od class VyberImaStevilko
-//CCCCCCCCCCCCC KONEC  CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCC
+//CCCCCCCCCCCCC KONEC  CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 
 
@@ -105,7 +105,7 @@ $podminka = array("stevilkaZdravnika>"=>0);
 } else {
 	   $podminka = NULL;
        }
-new VyberImaStevilko($podminka);
+new SestevekDela($podminka);
 echo'
 <script src="js/manipulaceZdravniki.js?'.time().'">
 </script>';
