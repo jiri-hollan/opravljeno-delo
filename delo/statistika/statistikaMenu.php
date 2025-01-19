@@ -1,5 +1,5 @@
 <?php
-require_once('../../skupne/administrace.php');
+require_once('administrace.php');
 require_once('sabloni/zahlavi.php');
 class MenuDelo  {
    public function __construct() {
