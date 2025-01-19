@@ -199,7 +199,13 @@ public function suma($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){
 	// echo var_dump($parametry) . "<br>";
 	 // echo var_dump($podminka) . "<br>";
 	 // echo var_dump($podminkaSQL );
-	$dotaz = $this->conn->prepare("SELECT datumOpravila, SUM(casOpravila)  AS [Po dnevih] FROM deloTbl". $podminkaSQL. $poradiSQL. "GROUP BY datumOpravila");
+	 
+//$dotaz = $this->conn->prepare("SELECT  $sloupceSQL  AS [Po dnevih] FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
+
+$dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
+	
+//$dotaz = $this->conn->prepare("SELECT $sloupceSQL FROM $tabulka". $podminkaSQL. $poradiSQL);
+	
 	echo'<br>';
 	var_dump($dotaz);
 	echo'<br>';	

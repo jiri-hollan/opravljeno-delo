@@ -57,7 +57,7 @@ public $tabulka;
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["datumOpravila", "SUM(casOpravila)"];
    $suma = new database();
-   $vybrano=$suma->vyberPogoj($tabulka, $stolpci, $podminka );
+   $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
  //  echo "<br>";
