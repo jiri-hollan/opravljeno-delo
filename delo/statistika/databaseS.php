@@ -200,15 +200,11 @@ public function suma($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){
 	 // echo var_dump($podminka) . "<br>";
 	 // echo var_dump($podminkaSQL );
 	 
-//$dotaz = $this->conn->prepare("SELECT  $sloupceSQL  AS [Po dnevih] FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
-
 $dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
 	
-//$dotaz = $this->conn->prepare("SELECT $sloupceSQL FROM $tabulka". $podminkaSQL. $poradiSQL);
-	
-	echo'<br>';
+/*	echo'<br>';
 	var_dump($dotaz);
-	echo'<br>';	
+	echo'<br>';	*/
 	try {
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
