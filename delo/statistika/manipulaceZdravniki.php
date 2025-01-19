@@ -1,6 +1,6 @@
 <?php
 require_once '../../skupne/administrace.php';
-require_once '../../skupne/database.php';
+require_once 'database.php';
 require_once('sabloni/zahlavi.php');
 require_once 'sabloni/forma.php';
 $nazaj="statistikaMenu.php.php";
