@@ -55,7 +55,7 @@ public $tabulka;
  function __construct( $podminka) {
 	    $tabulka="deloTbl";
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
-   $stolpci=["datumOpravila", "SUM(casOpravila)"];
+   $stolpci=["datumOpravila","SUM(casOpravila)"];
    $suma = new database();
    $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
@@ -97,11 +97,11 @@ class TableRows extends RecursiveIteratorIterator {
 }// od class TableRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-$stevilkaZdravnika="1"; //"= 1"  TO DOLOČI, DA SO ZBRANI LE ZAPISI S ŠTEVILKO >0
+$stevilkaZdravnika="6027"; //"= 1"  TO DOLOČI, DA SO ZBRANI LE ZAPISI S ŠTEVILKO >0
 
 if ($stevilkaZdravnika >0) {
-$podminka = array("stevilkaZdravnika>"=>0);	   
-//$podminka = array("stevilkaZdravnika>"=>$stevilkaZdravnika);
+//$podminka = array("stevilkaZdravnika>"=>0);	   
+$podminka = array("stevilkaZdravnika>"=>$stevilkaZdravnika);
 } else {
 	   $podminka = NULL;
        }
