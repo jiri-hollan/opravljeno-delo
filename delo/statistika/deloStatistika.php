@@ -10,6 +10,13 @@
 *
 *
 **/
+/*/////////////////////////////////////////////
+SELECT OrderID, SUM(Quantity) AS [Total Quantity]
+FROM OrderDetails
+WHERE ProductID <=12
+AND ProductID >=11
+GROUP BY OrderID;
+*//////////////////////////////////////////////*/
 /**
 variable:
 
@@ -21,12 +28,20 @@ public SqlCasDela = '
 
 SELECT datumOpravila, SUM(cas=pravila) AS [Po dnevih]
 FROM $tabulka
-WHERE stevilkaZdravnika = $stevilkaZdravnika;
+WHERE stevilkaZdravnika = $stevilkaZdravnika
+AND true
 GROUP BY datumOpravila;
 
 ';
 
+SELECT datumOpravila, SUM(cas=pravila) AS [Po dnevih]
+FROM $tabulka
+WHERE stevilkaZdravnika = $stevilkaZdravnika
+AND datumOpravila >= $zacDatum
+AND datumOpravila >= $koncDatum
+GROUP BY datumOpravila;
 
+';
 
 **/
 
