@@ -34,7 +34,7 @@ GROUP BY datumOpravila;
 
 ';
 
-SELECT datumOpravila, SUM(cas=pravila) AS [Po dnevih]
+SELECT datumOpravila, SUM(casOpravila) AS [Po dnevih]
 FROM $tabulka
 WHERE stevilkaZdravnika = $stevilkaZdravnika
 AND datumOpravila >= $zacDatum
