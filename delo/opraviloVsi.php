@@ -16,16 +16,14 @@ Class PoberZapis{
  $opravilo=[];
  for ($i = 0; $i < count($prebrano); $i++) {
 //echo $prebrano[$i]["opravilo"].'<br>';	
- //$opravilo1= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
+ //$opravilo= $prebrano[$i]["sifraOpravila"].':'.$prebrano[$i]["opravilo"];
  $sifra=$prebrano[$i]["sifraOpravila"];
  //echo'šifra= '.$sifra;
  $oprav=$prebrano[$i]["opravilo"];
-  $opravilo1[$sifra]=$oprav;
-//echo '<br>'.$opravilo1.'<br>';//izpiše  opravilo na zaslon
-echo'<br>';
-//var_dump ($opravilo);
-  // array_push($opravilo,$opravilo1);
- $opravilo=$opravilo1; 
+  $opravilo[$sifra]=$oprav;
+//echo '<br> $opravilo: '.var_dump($opravilo).'<br>';//izpiše  opravilo na zaslon
+//echo'<br>';
+
 }//od for 
 //echo'<br>';
 //var_dump($opravilo);
