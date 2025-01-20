@@ -56,6 +56,9 @@ class SestevekDela {
 public $tabulka;
  function __construct( $podminka) {
 $tabulka = 'deloTbl';
+//var_dump($podminka);
+ $podminka ["datumOpravila="]='10.01.2025';
+//var_dump($podminka);
 	    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["datumOpravila","SUM(casOpravila)"];
    $suma = new database();
