@@ -57,7 +57,8 @@ public $tabulka;
  function __construct( $podminka) {
 $tabulka = 'deloTbl';
 //var_dump($podminka);
- $podminka ["datumOpravila="]='2025-01-20';
+ $podminka ["datumOpravila<="]='2025-01-20';
+  $podminka ["datumOpravila>="]='2025-01-10';
 //var_dump($podminka);
 	    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["datumOpravila","SUM(casOpravila)"];
