@@ -3,8 +3,8 @@ require_once 'administrace.php';
 require_once 'databaseS.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
-require_once 'sabloni/forma.php';
-
+//require_once 'sabloni/forma.php';
+require_once('sabloni/formaPogoji.php');
 
 /**
 *V prvem bloku pobere iz uporabnikiTbl vse zapise v katerih je vnesena številka zdravnika
@@ -112,7 +112,7 @@ class TableRows extends RecursiveIteratorIterator {
      $stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 	 }
 	 }
-var_dump($stevilkaZdravnika);	 
+echo'<br>Številka zdravnika= '.$stevilkaZdravnika; 
 if ($stevilkaZdravnika >0) {
 //$podminka = array("stevilkaZdravnika>"=>0);	   
 $podminka = array("stevilkaZdravnika="=>$stevilkaZdravnika);

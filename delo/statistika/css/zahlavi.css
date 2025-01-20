@@ -75,3 +75,25 @@ table {
 color: white;
   font-size: 40px;
 }
+
+div.notranji {
+  position: absolute;
+  top: -16px;
+  right: 0;
+  padding: 20px;
+  width: 300px;
+  /*height: 100px;*/
+  /*border: 3px solid #73AD21;*/
+}
+
+div.glavni {
+  position: relative;
+  width: 650px;
+    padding: 20px;
+ /* height: 100px;*/
+ /* border: 3px solid #73AD21;*/
+} 
+
+#opravilaId{
+  width: 200px;	
+}

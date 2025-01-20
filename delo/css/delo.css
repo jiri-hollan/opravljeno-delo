@@ -34,3 +34,12 @@ div.notranji {
 #opravilaId{
   width: 200px;	
 }
+div.statistikaNotranji {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding: 20px;
+  width: 300px;
+  /*height: 100px;*/
+  /*border: 3px solid #73AD21;*/
+}
