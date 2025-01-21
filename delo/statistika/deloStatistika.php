@@ -88,9 +88,6 @@ $tabulka = 'deloTbl';
 }//od class VyberImaStevilko
 //CCCCCCCCCCCCC KONEC  CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-
-
-
 //CCCCCCCCCCCCCCC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
@@ -108,14 +105,36 @@ class TableRows extends RecursiveIteratorIterator {
 }// od class TableRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
+//CCCCCCCCCCCCCCCCCCCCCC CLASS podminka GET  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+class PodminkaGet {
+ function __construct() {
+	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	 
+	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
+//echo'linija 114';
+	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
+echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+if ($this_stevilkaZdravnika >0) {
+$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
+} else {
+	   $podminka = NULL;
+       }
+new SestevekDela($podminka);
+	 }
+ }//od construct  
+}//od class PodminkaGet
+//CCCCCCCCCCCCCCCCCCCC KONEC CLASS PODMINKA GET CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
 //$stevilkaZdravnika="6027"; //"= 1"  TO DOLOČI, DA SO ZBRANI LE ZAPISI S ŠTEVILKO >0
 	 
-	 if ($_SERVER["REQUEST_METHOD"] == "GET") {
+	/* if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		if (isset($_GET['stevilkaZdravnika'])){
      $stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 	 }
-	 }
-	 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	 }*/
+	 
+	 
+/*	 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (isset($_POST['stevilkaZdravnika'])){
      $stevilkaZdravnika = $_POST['stevilkaZdravnika'];
 	 }
@@ -124,18 +143,19 @@ class TableRows extends RecursiveIteratorIterator {
 	 }else{
 		 $zacDatum = NULL; 
 	 } 
-	 }
-	 
+	 }  */
+	/* 
 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$stevilkaZdravnika.'" form="formaPogojiId">';
 echo'<br>Številka zdravnika= '.$stevilkaZdravnika.'<br>'; 
 if ($stevilkaZdravnika >0) {
 //$podminka = array("stevilkaZdravnika>"=>0);	   
 $podminka = array("stevilkaZdravnika="=>$stevilkaZdravnika);
-$podminka = array("datumOpravila>="=>$zacDatum);
 } else {
 	   $podminka = NULL;
        }
-new SestevekDela($podminka);
+new SestevekDela($podminka);*/
+
+new PodminkaGet();
 echo'
 <script src="js/manipulaceZdravniki.js?'.time().'">
 </script>';
