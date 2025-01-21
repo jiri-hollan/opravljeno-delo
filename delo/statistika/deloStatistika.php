@@ -107,7 +107,7 @@ class TableRows extends RecursiveIteratorIterator {
 
 //CCCCCCCCCCCCCCCCCCCCCC CLASS podminka GET  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-class PodminkaGet {
+class Podminka {
  function __construct() {
 	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	 
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
@@ -155,7 +155,7 @@ $podminka = array("stevilkaZdravnika="=>$stevilkaZdravnika);
        }
 new SestevekDela($podminka);*/
 
-new PodminkaGet();
+new Podminka();
 echo'
 <script src="js/manipulaceZdravniki.js?'.time().'">
 </script>';
