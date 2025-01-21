@@ -113,14 +113,30 @@ class Podminka {
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 //echo'linija 114';
 	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
-echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
-if ($this_stevilkaZdravnika >0) {
-$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
-} else {
+     echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+       if ($this_stevilkaZdravnika >0) {
+       $podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
+       } else {
 	   $podminka = NULL;
-       }
+              }
 new SestevekDela($podminka);
-	 }
+	 }//od if GET
+	 
+	 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['stevilkaZdravnika'])){
+		 $this_stevilkaZdravnika = $_POST['stevilkaZdravnika'];
+		 if(isset($_POST['zacDatum'])){
+		 $this_zacDatum = $_POST['zacDatum'];	 
+		 }else{$this_zacDatum =NULL;}
+		 if(isset($_POST['koncDatum'])){
+		 $this_koncDatum = $_POST['koncDatum'];		 
+		 }else{$this_koncDatum =NULL;}
+		 if(isset($_POST['sifraPoravila'])){
+		 $this_sifraPoravila = $_POST['sifraPoravila'];	 
+		 }else{$this_sifraPoravila =NULL;}
+	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
+     echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+	 }//od if POST 
+	 
  }//od construct  
 }//od class PodminkaGet
 //CCCCCCCCCCCCCCCCCCCC KONEC CLASS PODMINKA GET CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
