@@ -141,7 +141,7 @@ new SestevekDela($podminka);
 		 $this_sifraOpravila = $_POST['sifraOpravila'];	
 		 $podminka["sifraOpravila"] = $this_sifraOpravila;
 		 }else{$this_sifraOpravila =NULL;}
-	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
+	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
      echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
 	 //$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
 	/* $podminka = [];
@@ -179,7 +179,7 @@ new SestevekDela($podminka);
 	 } 
 	 }  */
 	/* 
-echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$stevilkaZdravnika.'" form="formaPogojiId">';
+echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$stevilkaZdravnika.'" form="formaPogojiId">';
 echo'<br>Številka zdravnika= '.$stevilkaZdravnika.'<br>'; 
 if ($stevilkaZdravnika >0) {
 //$podminka = array("stevilkaZdravnika>"=>0);	   
