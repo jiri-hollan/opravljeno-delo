@@ -56,7 +56,7 @@ class SestevekDela {
 public $tabulka;
  function __construct( $podminka) {
 $tabulka = 'deloTbl';
-var_dump($podminka);
+//var_dump($podminka);
 //date("Y-m-d")
  //$podminka ["datumOpravila="]=date("Y-m-d");
 // $podminka ["datumOpravila<="]='2025-01-20';
@@ -112,7 +112,7 @@ class Podminka {
 	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	 
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 //echo'linija 114';
-	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
+	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
      echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
 	 	 $podminka = [];
        if ($this_stevilkaZdravnika >0) {
@@ -126,26 +126,30 @@ new SestevekDela($podminka);
 	 }//od if GET
 	 
 	 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['stevilkaZdravnika'])){
+		 $podminka = [];
 		 $this_stevilkaZdravnika = $_POST['stevilkaZdravnika'];
+		 $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
 		 if(isset($_POST['zacDatum'])){
 		 $this_zacDatum = $_POST['zacDatum'];
-		 //echo'začetni datum= '.$this_zacDatum;
+		 $podminka["datumOpravila>="] = $this_zacDatum;
 		 }else{$this_zacDatum =NULL;}
 		 if(isset($_POST['koncDatum'])){
-		 $this_koncDatum = $_POST['koncDatum'];		 
+		 $this_koncDatum = $_POST['koncDatum'];
+		 $podminka["datumOpravila<="] = $this_koncDatum;
 		 }else{$this_koncDatum =NULL;}
-		 if(isset($_POST['sifraPoravila'])){
-		 $this_sifraPoravila = $_POST['sifraPoravila'];	 
-		 }else{$this_sifraPoravila =NULL;}
+		 if(isset($_POST['sifraOpravila'])){
+		 $this_sifraOpravila = $_POST['sifraOpravila'];	
+		 $podminka["sifraOpravila"] = $this_sifraOpravila;
+		 }else{$this_sifraOpravila =NULL;}
 	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
      echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
 	 //$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
-	 $podminka = [];
+	/* $podminka = [];
      $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
      $podminka["datumOpravila>="] = $this_zacDatum;
      $podminka["datumOpravila<="] = $this_koncDatum;	 
-  /*   $podminka["year"] = 1964;
-     $podminka["model"] = "Mustang";
+     $podminka["sifraOpravila"] = $this_sifraOpravila;*/
+     /*   $podminka["model"] = "Mustang";
      $podminka["year"] = 1964;	*/ 
 	//var_dump($podminka); 
 new SestevekDela($podminka);
