@@ -4,7 +4,7 @@ require_once 'databaseS.php';
 require_once('sabloni/zahlavi.php');
 require_once 'sabloni/forma.php';
 $nazaj="statistikaMenu.php.php";
-
+new VyberZdravnika(6027);
 //CCCCCCCCCCCCCCC CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class VyberImaStevilko {
 public $tabulka;
@@ -50,6 +50,8 @@ class TableRows extends RecursiveIteratorIterator {
 }// od class TableRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
+class VyberZdravnika {
+ function __construct( $podminka) {
 $stevilkaZdravnika="1"; //"= 1"  TO DOLOČI, DA SO ZBRANI LE ZAPISI S ŠTEVILKO >0
 
 if ($stevilkaZdravnika >0) {
@@ -59,9 +61,11 @@ $podminka = array("stevilkaZdravnika>"=>0);
 	   $podminka = NULL;
        }
 new VyberImaStevilko($podminka);
-echo'
-<script src="js/manipulaceZdravniki.js?'.time().'">
-</script>';
+ }//od construct  
+}//od class VyberZdravnika
+//CCCCCCCCCCCCC KONEC  CLASS VyberZdravnika CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+echo'<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
 require_once 'sabloni/prijavljenJe.php';
 require_once '../../skupne/sabloni/zapati.php';
 ?>
