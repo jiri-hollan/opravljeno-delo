@@ -7,6 +7,7 @@ echo '
 <div class="glavni">
 <form method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
 <input type="hidden" id="akceId" name="akce" value="">
+<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value=$stevilkaZdravnika>
 <label for "zacDatum">od</label>
 <input id="zacDatum" type="date" name="datumVpisa>=" value="'.date("Y-m-d").'" >
 <label for "koncDatum">do</label>
