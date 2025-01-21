@@ -115,6 +115,13 @@ class TableRows extends RecursiveIteratorIterator {
      $stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 	 }
 	 }
+	 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		if (isset($_POST['stevilkaZdravnika'])){
+     $stevilkaZdravnika = $_POST['stevilkaZdravnika'];
+	 }
+	 }
+	 
+	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$stevilkaZdravnika.'" form="formaPogojiId">';
 echo'<br>Številka zdravnika= '.$stevilkaZdravnika.'<br>'; 
 if ($stevilkaZdravnika >0) {
 //$podminka = array("stevilkaZdravnika>"=>0);	   
