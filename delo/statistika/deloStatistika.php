@@ -13,17 +13,7 @@ require_once('sabloni/formaPogoji.php');
 *1.Izbere število ur v določenem dnevu ali v dnevih od do. 
 *2.Lahko se pogleda, kaj vse je bilo v določenem dnevu (dnevih) vpisano.
 *3.Lahko se pogleda po šifri oravila trajanje le tega po dnedih ali v odstotku
-*
-*
-*
 **/
-/*/////////////////////////////////////////////
-SELECT OrderID, SUM(Quantity) AS [Total Quantity]
-FROM OrderDetails
-WHERE ProductID <=12
-AND ProductID >=11
-GROUP BY OrderID;
-*//////////////////////////////////////////////*/
 /**
 variable:
 
@@ -33,21 +23,13 @@ public $koncDatum;
 public $stevilkaZdravnika;
 public SqlCasDela = '
 
-SELECT datumOpravila, SUM(casOpravila) AS [Po dnevih]
-FROM $tabulka
-WHERE stevilkaZdravnika = $stevilkaZdravnika
-AND true
-GROUP BY datumOpravila;
 
-';
-
-SELECT datumOpravila, SUM(casOpravila) AS [Po dnevih]
+SELECT datumOpravila, SUM(casOpravila) 
 FROM $tabulka
 WHERE stevilkaZdravnika = $stevilkaZdravnika
 AND datumOpravila >= $zacDatum
 AND datumOpravila >= $koncDatum
 GROUP BY datumOpravila;
-
 ';
 
 **/
@@ -57,10 +39,7 @@ public $tabulka;
  function __construct( $podminka) {
 $tabulka = 'deloTbl';
 //var_dump($podminka);
-//date("Y-m-d")
  //$podminka ["datumOpravila="]=date("Y-m-d");
-// $podminka ["datumOpravila<="]='2025-01-20';
- // $podminka ["datumOpravila>="]='2025-01-10';
 //var_dump($podminka);
 	    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["datumOpravila","SUM(casOpravila)"];
@@ -105,7 +84,7 @@ class TableRows extends RecursiveIteratorIterator {
 }// od class TableRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-//CCCCCCCCCCCCCCCCCCCCCC CLASS podminka GET  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+//CCCCCCCCCCCCCCCCCCCCCC CLASS podminka   CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 class Podminka {
  function __construct() {
@@ -143,51 +122,13 @@ new SestevekDela($podminka);
 		 }else{$this_sifraOpravila =NULL;}
 	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
      echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
-	 //$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
-	/* $podminka = [];
-     $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
-     $podminka["datumOpravila>="] = $this_zacDatum;
-     $podminka["datumOpravila<="] = $this_koncDatum;	 
-     $podminka["sifraOpravila"] = $this_sifraOpravila;*/
-     /*   $podminka["model"] = "Mustang";
-     $podminka["year"] = 1964;	*/ 
 	//var_dump($podminka); 
 new SestevekDela($podminka);
 	 }//od if POST 
 	 
  }//od construct  
 }//od class PodminkaGet
-//CCCCCCCCCCCCCCCCCCCC KONEC CLASS PODMINKA GET CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-//$stevilkaZdravnika="6027"; //"= 1"  TO DOLOČI, DA SO ZBRANI LE ZAPISI S ŠTEVILKO >0
-	 
-	/* if ($_SERVER["REQUEST_METHOD"] == "GET") {
-		if (isset($_GET['stevilkaZdravnika'])){
-     $stevilkaZdravnika = $_GET['stevilkaZdravnika'];
-	 }
-	 }*/
-	 
-	 
-/*	 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		if (isset($_POST['stevilkaZdravnika'])){
-     $stevilkaZdravnika = $_POST['stevilkaZdravnika'];
-	 }
-		if (isset($_POST['zacDatum'])){
-     $zacDatum = $_POST['zacDatum'];
-	 }else{
-		 $zacDatum = NULL; 
-	 } 
-	 }  */
-	/* 
-echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$stevilkaZdravnika.'" form="formaPogojiId">';
-echo'<br>Številka zdravnika= '.$stevilkaZdravnika.'<br>'; 
-if ($stevilkaZdravnika >0) {
-//$podminka = array("stevilkaZdravnika>"=>0);	   
-$podminka = array("stevilkaZdravnika="=>$stevilkaZdravnika);
-} else {
-	   $podminka = NULL;
-       }
-new SestevekDela($podminka);*/
+//CCCCCCCCCCCCCCCCCCCC KONEC CLASS PODMINKA CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 new Podminka();
 echo'
