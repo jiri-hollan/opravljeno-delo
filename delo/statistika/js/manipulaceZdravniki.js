@@ -16,11 +16,11 @@ switch(akce) {
 }
     break;
 
-  case "odstrani": 
+ /* case "odstrani": 
    if ( confirm("v funkciji JS odstrani\odstranim en zapis?") == true) {
      if(document.getElementById("osebe")!=null){
         document.getElementById("osebe").addEventListener("click", functionOver);
-      }
+      }*/
 } else {
   text = "You canceled!";
 }
