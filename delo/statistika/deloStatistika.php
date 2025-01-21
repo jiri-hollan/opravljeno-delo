@@ -143,6 +143,7 @@ new SestevekDela($podminka);
 	 $podminka = [];
      $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
      $podminka["datumOpravila>="] = $this_zacDatum;
+     $podminka["datumOpravila<="] = $this_koncDatum;	 
   /*   $podminka["year"] = 1964;
      $podminka["model"] = "Mustang";
      $podminka["year"] = 1964;	*/ 
