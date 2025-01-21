@@ -135,6 +135,8 @@ new SestevekDela($podminka);
 		 }else{$this_sifraPoravila =NULL;}
 	 echo'<input type="text" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
      echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+	 $podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
+	 new SestevekDela($podminka);
 	 }//od if POST 
 	 
  }//od construct  
