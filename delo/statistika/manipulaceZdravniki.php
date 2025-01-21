@@ -4,7 +4,7 @@ require_once 'databaseS.php';
 require_once('sabloni/zahlavi.php');
 require_once 'sabloni/forma.php';
 $nazaj="statistikaMenu.php.php";
-new VyberZdravnika(6027);
+new VyberZdravnika(1);
 //CCCCCCCCCCCCCCC CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class VyberImaStevilko {
 public $tabulka;
