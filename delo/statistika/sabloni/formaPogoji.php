@@ -9,9 +9,9 @@ echo '
 <input type="hidden" id="akceId" name="akce" value="">
 
 <label for "zacDatum">od</label>
-<input id="zacDatum" type="date" name="datumVpisa>=" value="'.date("Y-m-d").'" >
+<input id="zacDatum" type="date" name="zacDatum" value="'.date("Y-m-d").'" >
 <label for "koncDatum">do</label>
-<input id="koncDatum" type="date" name="datumVpisa<=" value="'.date("Y-m-d").'" >
+<input id="koncDatum" type="date" name="koncDatum" value="'.date("Y-m-d").'" >
   <div class="notranji">
   <label for="opraviloId">vrsta opravila: </label><br>
   <input id="opraviloId" value="" name="opravilo"  autocomplete="off"><br>
