@@ -17,11 +17,12 @@ public $tabulka;
 //echo $vybrano[1];
 //echo var_dump($vybrano);
  //  echo "<br>";
- echo count($vybrano);
+ //echo count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 //echo "<br>";
   if(count($vybrano)>0){
+ echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
   echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
@@ -29,6 +30,9 @@ public $tabulka;
         echo $v;
    }//od foreach
   }//od if(cout) 
+  else{
+  echo'v bazi ni zdravnikov z vpisano zdravniško številko';  
+  }
  }//od construct  
 }//od class VyberImaStevilko
 //CCCCCCCCCCCCC KONEC  CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCC

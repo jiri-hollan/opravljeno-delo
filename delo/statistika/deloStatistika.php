@@ -69,7 +69,7 @@ $tabulka = 'deloTbl';
 //echo $vybrano[1];
 //echo var_dump($vybrano);
  //  echo "<br>";
- echo count($vybrano);
+//echo 'linija 72 '. count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 //echo "<br>";
@@ -80,7 +80,10 @@ $tabulka = 'deloTbl';
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
-  }//od if(cout) 
+  }//od if(cout)
+ else {
+ echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+ }	 
  }//od construct  
 }//od class VyberImaStevilko
 //CCCCCCCCCCCCC KONEC  CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCC
@@ -112,7 +115,7 @@ class TableRows extends RecursiveIteratorIterator {
      $stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 	 }
 	 }
-echo'<br>Številka zdravnika= '.$stevilkaZdravnika; 
+echo'<br>Številka zdravnika= '.$stevilkaZdravnika.'<br>'; 
 if ($stevilkaZdravnika >0) {
 //$podminka = array("stevilkaZdravnika>"=>0);	   
 $podminka = array("stevilkaZdravnika="=>$stevilkaZdravnika);
