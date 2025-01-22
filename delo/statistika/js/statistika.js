@@ -13,3 +13,8 @@ let i;
 //console.log(text);
 document.getElementById("opravilaId").innerHTML = text;
 }
+
+function pogojiFunction(akce,stevilkaZd) {
+	
+	
+}
