@@ -5,7 +5,7 @@ $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
 //require_once 'sabloni/forma.php';
 require_once('sabloni/formaPogoji.php');
-
+require_once('opraviloVsi.php');
 /**
 *V prvem bloku pobere iz uporabnikiTbl vse zapise v katerih je vnesena številka zdravnika
 *in prikaže ime, priimek, številka zdravnika, upstatus in gdpr.
