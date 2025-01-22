@@ -320,7 +320,7 @@ switch($_REQUEST["tabulka"]){
 
 
 case "deloTbl":
-//echo '<script src="js/manipulaceDelo.js?'.time().'"></script>'; 
+echo '<script src="js/manipulaceDelo.js?'.time().'"></script>'; 
 break;
 
 }
