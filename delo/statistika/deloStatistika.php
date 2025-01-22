@@ -45,12 +45,10 @@ $tabulka = 'deloTbl';
    $stolpci=["datumOpravila","SUM(casOpravila)"];
    $suma = new database();
    $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
-//echo $vybrano[1];
+var_dump($vybrano[0]);
 //echo var_dump($vybrano);
  //  echo "<br>";
 //echo 'linija 72 '. count($vybrano);
-//$dolzina=count($vybrano);
-//echo $vybrano[1];
 //echo "<br>";
   if(count($vybrano)>0){
   echo "<table id='osebe' style='border: solid 1px black;'>";
