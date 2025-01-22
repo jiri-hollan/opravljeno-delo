@@ -108,8 +108,8 @@ class Podminka {
               }
 //echo" deloStatistika.php linija 106 ";
 
-	//$danes=date("Y-m-d");
-	echo"<script>pogojFunction('2025-01-22', 'vnos',$this_stevilkaZdravnika)</script>";
+	$danes='"'.date("Y-m-d").'"';
+	echo"<script>pogojFunction($danes, 'vnos',$this_stevilkaZdravnika)</script>";
 new SestevekDela($podminka);
 	 }//od if GET
 	 
