@@ -1,8 +1,4 @@
 <?php
-echo'<script src="../statistika/js/statistika.js?'.time().'"></script>';
-
-
-
 echo '
 <div class="glavni">
 <form id="formaPogojiId" method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
@@ -31,6 +27,6 @@ echo'
 <p id="posli"></p>
 </form>
 <p id="demo3"></p>
-<script>pogojFunction("vloz","6027");</script>
+<!--<script>pogojFunction("vloz","6027");</script>-->
 ';
 ?>
