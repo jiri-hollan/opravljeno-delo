@@ -1,5 +1,5 @@
 <?php
-//echo'<script src="../js/statistika.js?'.time().'"></script>';
+echo'<script src="../statistika/js/statistika.js?'.time().'"></script>';
 
 
 
@@ -23,13 +23,15 @@ echo '
 </div>
 ';
 echo'
-<link rel="stylesheet" href="css/delo.css?'.time().'">
+<br><br><br><br><br><br><br><br>
+<!--<link rel="stylesheet" href="../css/delo.css?'.time().'">-->
 <form method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
-<input type="hidden" id="akceId" name="akce" value="">
+<input type="text" id="akceId" name="akce" value="vloz">
 <p id="demo"></p>
 <p id="posli"></p>
 </form>
 <p id="demo3"></p>
+<script>pogojFunction("vloz","6027");</script>
 ';
 
 Class PoberZapis{
