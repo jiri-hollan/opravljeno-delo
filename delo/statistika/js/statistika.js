@@ -1,5 +1,5 @@
-function pogojFunction(akce,stevilkaZd) {
-console.log("statistika.js  linija 2 "+akce+stevilkaZd);
+function pogojFunction(danes,akce,stevilkaZd) {
+console.log("statistika.js  linija 2 danes:"+danes+" akce: "+akce+" številkaZ: "+stevilkaZd);
   document.getElementById("akceId").value = akce;
 switch(akce) {
  /* case "vyber":
@@ -8,10 +8,10 @@ switch(akce) {
     break; */
 
   case "vnos":
-
+alert(danes);
    let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
-   let zacDatum= '<label for="zacDatumId">od: </label><input type="date" id="zacDatumId" name="zacDatum" value="" >';
-   let koncDatum= '<label for="koncDatumId">do: </label><input type="date" id="koncDatumId" name="koncDatum" value="" >';
+   let zacDatum= '<label for="zacDatumId">od: </label><input type="date" id="zacDatumId" name="zacDatum" value='+danes+' >';
+   let koncDatum= '<label for="koncDatumId">do: </label><input type="date" id="koncDatumId" name="koncDatum" value='+danes+' >';
    let sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" >';
    let opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo"  autocomplete="off" >';
    let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';

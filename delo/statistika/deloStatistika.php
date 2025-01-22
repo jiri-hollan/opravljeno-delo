@@ -101,12 +101,15 @@ class Podminka {
        if ($this_stevilkaZdravnika >0) {
        //$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
 	   $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
-	   $podminka ["datumOpravila="]=date("Y-m-d");
+	   $podminka["datumOpravila="]=date("Y-m-d");
+//echo 'podminka'. $podminka ["datumOpravila="];  
        } else {
 	   $podminka = NULL;
               }
-//echo" deloStatistika.php linija 106 ";	
-	echo"<script>pogojFunction('vnos',$this_stevilkaZdravnika)</script>";
+//echo" deloStatistika.php linija 106 ";
+
+	//$danes=date("Y-m-d");
+	echo"<script>pogojFunction('2025-01-22', 'vnos',$this_stevilkaZdravnika)</script>";
 new SestevekDela($podminka);
 	 }//od if GET
 	 
