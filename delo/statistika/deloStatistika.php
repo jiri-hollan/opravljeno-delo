@@ -90,6 +90,7 @@ class TableRows extends RecursiveIteratorIterator {
 
 class Podminka {
  function __construct() {
+		echo" deloStatistika.php linija 93 ";	 
 	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	 
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 //echo'linija 114';
