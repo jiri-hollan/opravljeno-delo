@@ -6,7 +6,7 @@ class Administrace {
 	public $zaklad;
 	
 	public function __construct() {
-	 $this->conn = new Database();
+	 $this->conn = new DatabaseS();
      $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
@@ -37,7 +37,7 @@ class Administrace {
 		  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=odhlasit'); 
 		  exit();
 	  } else {
-		  $this->conn = new Database();
+		  $this->conn = new DatabaseS();
 	  }  
 	}//od construct	
 }//0d class administrace
