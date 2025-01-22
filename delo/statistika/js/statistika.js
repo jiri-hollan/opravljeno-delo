@@ -1,19 +1,3 @@
-
-function listaOpravilFunction(opraviloList) {
-//alert ("lista opravil function");
-console.log("opravila.js"+opraviloList);
-let text = "<option id='' value=''>";
-let i;
- 
- for (let [sifra, value] of Object.entries(opraviloList)) { 	 
-  text += "<option id='" +  sifra  + "' value='" + value + "'>"+value; 
-  console.log(text);
-}
-  //alert ("TEXT="+text);
-//console.log(text);
-document.getElementById("opravilaId").innerHTML = text;
-}
-
 function pogojFunction(akce,stevilkaZd) {
 
   document.getElementById("akceId").value = akce;
@@ -32,8 +16,8 @@ switch(akce) {
    let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
     const opraviloList = JSON.parse(opraviloJson);
 	
-//alert("opravilo Json:" + opraviloJson);
-//alert(opraviloList);
+alert("opravilo Json:" + opraviloJson);
+alert(opraviloList);
   
     document.getElementById("demo").innerHTML = "<div class='glavni'>"+stevilkaZdravnika + datumOpravila + sifraOpravila +"<div class='notranji'>"+ opravilo + casOpravila +"<br>"+ izbira +"</div></div>" ;
 	   // document.getElementById("klik").innerHTML =	izbira;

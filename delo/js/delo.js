@@ -25,8 +25,8 @@ switch(akce) {
    let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
     const opraviloList = JSON.parse(opraviloJson);
 	
-//alert("opravilo Json:" + opraviloJson);
-//alert(opraviloList);
+alert("opravilo Json:" + opraviloJson);
+alert(opraviloList);
   
     document.getElementById("demo").innerHTML = "<div class='glavni'>"+stevilkaZdravnika + datumOpravila + sifraOpravila +"<div class='notranji'>"+ opravilo + casOpravila +"<br>"+ izbira +"</div></div>" ;
 	   // document.getElementById("klik").innerHTML =	izbira;
