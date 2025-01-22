@@ -45,7 +45,7 @@ $tabulka = 'deloTbl';
    $stolpci=["datumOpravila","SUM(casOpravila)"];
    $suma = new database();
    $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
-var_dump($vybrano[0]);
+//var_dump($vybrano[0]);
 //echo var_dump($vybrano);
  //  echo "<br>";
 //echo 'linija 72 '. count($vybrano);
