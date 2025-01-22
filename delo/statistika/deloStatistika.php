@@ -114,7 +114,7 @@ new SestevekDela($podminka);
 		 $this_koncDatum = $_POST['koncDatum'];
 		 $podminka["datumOpravila<="] = $this_koncDatum;
 		 }else{$this_koncDatum =NULL;}
-		 if(isset($_POST['sifraOpravila'])){
+		 if(isset($_POST['sifraOpravila'])&& is_numeric($_POST['sifraOpravila'])){
 		 $this_sifraOpravila = $_POST['sifraOpravila'];	
 		 $podminka["sifraOpravila"] = $this_sifraOpravila;
 		 }else{$this_sifraOpravila =NULL;}
