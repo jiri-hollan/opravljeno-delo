@@ -91,7 +91,7 @@ class TableRows extends RecursiveIteratorIterator {
 
 class Podminka {
  function __construct() {
-		echo" deloStatistika.php linija 93 ";	 
+//echo" deloStatistika.php linija 93 ";	 
 	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	 
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 //echo'linija 114';
@@ -105,7 +105,7 @@ class Podminka {
        } else {
 	   $podminka = NULL;
               }
-	echo" deloStatistika.php linija 106 ";	
+//echo" deloStatistika.php linija 106 ";	
 	echo"<script>pogojFunction('vnos',$this_stevilkaZdravnika)</script>";
 new SestevekDela($podminka);
 	 }//od if GET
@@ -128,7 +128,7 @@ new SestevekDela($podminka);
 		 }else{$this_sifraOpravila =NULL;}
 	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
      echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
-var_dump($podminka); 
+//var_dump($podminka); 
 new SestevekDela($podminka);
 	 }//od if POST 
 	 
