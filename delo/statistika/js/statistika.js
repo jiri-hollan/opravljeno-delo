@@ -18,10 +18,10 @@ function pogojFunction(akce,stevilkaZd) {
 
   document.getElementById("akceId").value = akce;
 switch(akce) {
-  case "vyber":
+ /* case "vyber":
     document.getElementById("demo").innerHTML = '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica">';// omogoči izbiro bolnišnice
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit">'; //submit
-    break; 
+    break; */
 
   case "vloz":
    let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
