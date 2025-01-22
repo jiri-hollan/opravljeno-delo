@@ -69,3 +69,51 @@ switch(akce) {
     // code block
  }//od switch
 } // od izborFunction
+
+//----------------------------------------------------------------------------------------
+function functionOver (e) {
+let x = e.target;
+if (x.nodeName == "TD") {
+let y = event.composedPath()[1];
+let row_value = y.cells[0].innerHTML;
+ /* document.getElementById("demo1").innerHTML = "Triggered by a " + x.nodeName + " element";
+  document.getElementById("demo2").innerHTML = "Triggered by a " + x.innerHTML + " element";  */
+  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+ }//od if
+ 
+ window.location.href = "manipulacePregledovalci.php?akce=" + x.innerHTML + "&id=" + row_value;
+  
+}//od function(e)
+//-----------------------------------------------------------------------------
+
+function listaOpravilFunction(opraviloList) {
+//alert ("lista opravil function");
+console.log("opravila.js"+opraviloList);
+let text = "<option id='' value=''>";
+let i;
+ 
+ for (let [sifra, value] of Object.entries(opraviloList)) { 	 
+  text += "<option id='" +  sifra  + "' value='" + value + "'>"+value; 
+  console.log(text);
+}
+  //alert ("TEXT="+text);
+//console.log(text);
+document.getElementById("opravilaId").innerHTML = text;
+}
+
+//_____________________________________________________
+function zadnjiAlertFunction() {
+let x= document.getElementById("opraviloId").value;
+	//alert("X=:"+x);
+	document.getElementById("sifraId").value = "";	
+}
+	  
+	 //----------------------------------------------------------------------------
+function myFunction() {
+	  const a = document.getElementById("opravilaId");
+	  //alert("A:"+a);
+      let i = a.selectedIndex;
+	  //alert("I="+i);
+    document.getElementById("opraviloId").value = a.options[i].value;
+	document.getElementById("sifraId").value = a.options[i].id;
+} 
