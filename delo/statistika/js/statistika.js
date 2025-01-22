@@ -16,26 +16,7 @@ switch(akce) {
    let opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo"  autocomplete="off" >';
    let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
    const opraviloList = JSON.parse(opraviloJson); 
-   
- /*  
-<label for "zacDatum">od</label>
-<input id="zacDatum" type="date" name="zacDatum" value="'.date("Y-m-d").'" >
-<label for "koncDatum">do</label>
-<input id="koncDatum" type="date" name="koncDatum" value="'.date("Y-m-d").'" >
 
-  <div class="notranji">
-  
-  <label for="opraviloId">vrsta opravila: </label><br>
-  <input id="opraviloId" value="" name="opravilo"  autocomplete="off"><br>
-  <select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>
-  </div><br>
-<input type="reset" name="reset" value="Reset">
-<input type="submit" name="submit" value="Submit">
-</form>
-</div>
-
-
-*************************************************************************/
 alert("linija 39 opravilo Json:" + opraviloJson);
 //alert(opraviloList);
   
