@@ -8,23 +8,10 @@ switch(akce) {
     break; */
 
   case "vnos":
-  /////////////////////////////////////////////////////////
-/*   let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
-   let datumOpravila= '<label for="datumId">datum opravila: </label><br><input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
-   let sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
-   let opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo" required autocomplete="off" onchange="zadnjiAlertFunction()">';		
-   let casOpravila= '<input type="number" id="casId" class="kratke"  name="casOpravila" min="0" step="1" value="" placeholder="minute" autocomplete="off"  required>';
-   let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
-    const opraviloList = JSON.parse(opraviloJson);*/
-////////////////////////////////////////////////////////////////////
-/******************************************************************
-<div class="glavni">
-<form id="formaPogojiId" method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
-<input type="hidden" id="akceId" name="akce" value="">
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb*/
+
    let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
-   let zacDatum= '<label for="zacDatumId">od: </label><br><input type="date" id="zacDatumId" name="zacDatum" value="" >';
-   let koncDatum= '<label for="koncDatumId">od: </label><br><input type="date" id="koncDatumId" name="koncDatum" value="" >';
+   let zacDatum= '<label for="zacDatumId">od: </label><input type="date" id="zacDatumId" name="zacDatum" value="" >';
+   let koncDatum= '<label for="koncDatumId">do: </label><input type="date" id="koncDatumId" name="koncDatum" value="" >';
    let sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" >';
    let opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo"  autocomplete="off" >';
    let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
@@ -49,8 +36,8 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 
 *************************************************************************/
-alert("opravilo Json:" + opraviloJson);
-alert(opraviloList);
+alert("linija 39 opravilo Json:" + opraviloJson);
+//alert(opraviloList);
   
     document.getElementById("demo").innerHTML = "<div class='glavni'>"+stevilkaZdravnika + zacDatum + koncDatum + sifraOpravila +"<div class='notranji'>"+ opravilo + "<br>"+ izbira +"</div></div>" ;
 	   // document.getElementById("klik").innerHTML =	izbira;

@@ -19,10 +19,9 @@ echo '
 </div>
 ';
 echo'
-<br><br><br><br><br><br><br><br>
+<br><br><br><br>
 <!--<link rel="stylesheet" href="../css/delo.css?'.time().'">-->
 <form method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
-<input type="text" id="akceId" name="akce" value="vloz">
 <p id="demo"></p>
 <p id="posli"></p>
 </form>
