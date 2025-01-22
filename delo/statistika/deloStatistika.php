@@ -1,11 +1,13 @@
 <?php
 require_once 'administrace.php';
 require_once 'databaseS.php';
+//require_once '../../skupne/database.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
 //require_once 'sabloni/forma.php';
 require_once('sabloni/formaPogoji.php');
 require_once('opraviloVsiS.php');
+echo'<script src="js/statistika.js?'.time().'"></script>';
 /**
 *V prvem bloku pobere iz uporabnikiTbl vse zapise v katerih je vnesena številka zdravnika
 *in prikaže ime, priimek, številka zdravnika, upstatus in gdpr.
@@ -43,7 +45,7 @@ $tabulka = 'deloTbl';
 //var_dump($podminka);
 	    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["datumOpravila","SUM(casOpravila)"];
-   $suma = new database();
+   $suma = new databaseS();
    $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
@@ -132,8 +134,7 @@ new SestevekDela($podminka);
 
 new Podminka();
 echo'
-<script src="js/manipulaceZdravniki.js?'.time().'">
-</script>';
+<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
 require_once 'sabloni/prijavljenJe.php';
 require_once '../../skupne/sabloni/zapati.php';
 ?>

@@ -5,7 +5,7 @@ Class PoberZapis{
 	public $conn;
 	public $pristop;
 	public function __construct($bolnisnica) {
- $this->conn = new Database();	
+ $this->conn = new DatabaseS();	
  $this->nameTable = 'opravilaTbl';
  $stolpci = array('sifraOpravila','opravilo');
  $poradi = "";

@@ -1,5 +1,5 @@
  <?php
-class Database {
+class DatabaseS {
 	public $servername = '';
 	public $username = '';
 	public $password = '';
@@ -218,4 +218,4 @@ $dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL
 	  return $zaznamy;
 	}
 //............konec sum............................................................	
-}//uzavírací zavorky class Database
+}//uzavírací zavorky class DatabaseS

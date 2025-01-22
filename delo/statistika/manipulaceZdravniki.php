@@ -12,7 +12,7 @@ public $tabulka;
 	    $tabulka="uporabnikiTbl";
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["id", "bolnisnica", "ime", "priimek", "stevilkaZdravnika"];
-   $vyber = new database();
+   $vyber = new databaseS();
    $vybrano=$vyber->vyberPogoj($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
