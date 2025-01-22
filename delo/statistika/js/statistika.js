@@ -8,7 +8,7 @@ switch(akce) {
     break; */
 
   case "vnos":
-alert(danes);
+//alert(danes);
    let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
    let zacDatum= '<label for="zacDatumId">od: </label><input type="date" id="zacDatumId" name="zacDatum" value='+danes+' >';
    let koncDatum= '<label for="koncDatumId">do: </label><input type="date" id="koncDatumId" name="koncDatum" value='+danes+' >';
