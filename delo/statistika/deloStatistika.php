@@ -124,11 +124,11 @@ new SestevekDela($podminka);
 		 }else{$this_koncDatum =NULL;}
 		 if(isset($_POST['sifraOpravila'])&& is_numeric($_POST['sifraOpravila'])){
 		 $this_sifraOpravila = $_POST['sifraOpravila'];	
-		 $podminka["sifraOpravila"] = $this_sifraOpravila;
+		 $podminka["sifraOpravila="] = $this_sifraOpravila;
 		 }else{$this_sifraOpravila =NULL;}
 	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
      echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
-//var_dump($podminka); 
+var_dump($podminka); 
 new SestevekDela($podminka);
 	 }//od if POST 
 	 
