@@ -103,6 +103,8 @@ class Podminka {
        } else {
 	   $podminka = NULL;
               }
+	echo" deloStatistika.php linija 106 ";	
+	echo"<script>pogojFunction('vnos',$this_stevilkaZdravnika)</script>";
 new SestevekDela($podminka);
 	 }//od if GET
 	 

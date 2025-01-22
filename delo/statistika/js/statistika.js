@@ -1,5 +1,5 @@
 function pogojFunction(akce,stevilkaZd) {
-
+console.log("statistika.js  linija 2 "+akce+stevilkaZd);
   document.getElementById("akceId").value = akce;
 switch(akce) {
  /* case "vyber":
@@ -7,7 +7,7 @@ switch(akce) {
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit">'; //submit
     break; */
 
-  case "vloz":
+  case "vnos":
    let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
    let datumOpravila= '<label for="datumId">datum opravila: </label><br><input type="date" id="datumId" name="datumOpravila" value="" placeholder="datumOpravila" required>';
    let sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" placeholder="0" readonly required>';
@@ -71,6 +71,7 @@ let row_value = y.cells[0].innerHTML;
 //-----------------------------------------------------------------------------
 
 function listaOpravilFunction(opraviloList) {
+console.log("statistika.js  linija 74");	
 //alert ("lista opravil function");
 console.log("opravila.js"+opraviloList);
 let text = "<option id='' value=''>";
@@ -94,6 +95,7 @@ let x= document.getElementById("opraviloId").value;
 	  
 	 //----------------------------------------------------------------------------
 function myFunction() {
+	console.log("statistika.js  linija 98");
 	  const a = document.getElementById("opravilaId");
 	  //alert("A:"+a);
       let i = a.selectedIndex;
