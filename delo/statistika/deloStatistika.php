@@ -47,16 +47,14 @@ $tabulka = 'deloTbl';
    $stolpci=["datumOpravila","SUM(casOpravila)"];
    $suma = new databaseS();
    $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
-echo "<br>";
-echo var_dump($vybrano);
- echo "<br>";
-echo var_dump($vybrano[0]);
-  echo "<br>";
-echo 'linija 72 '. count($vybrano);
-$dolzina=count($vybrano);
-echo "<br>";
-echo $dolzina;
-echo "<br>";
+//echo "<br>";
+//echo var_dump($vybrano);
+//echo "<br>";
+//echo var_dump($vybrano[0]);
+//echo "<br>"
+//echo 'linija 72 '. count($vybrano);
+//echo "<br>";
+//echo "<br>";
   if(count($vybrano)>0){
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
