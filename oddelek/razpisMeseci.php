@@ -15,9 +15,9 @@ echo'
 ';
 require_once('../skupne/home.php');
 echo '<a id="buttonDomov" href="' . $home . '" >Domov</a>';
-?>
-<ul id= "meseci">
-<?php
+
+echo'<ul id= "meseci">';
+
 if (isset($_GET['pogled'])) {
 $pogled= $_GET['pogled'];	
 $mesec = array("januar"=>"Januar", "februar"=>"Februar", "marec"=>"Marec", "april"=>"April", "maj"=>"Maj", "junij"=>"Junij", "julij"=>"Julij", "avgust"=>"Avgust", "september"=>"September", "oktober"=>"Oktober", "november"=>"November", "december"=>"December");
@@ -45,10 +45,11 @@ switch ($pogled) {
  // header('Location: ../menuFile.php');
   header('Location: ../admin/menuFile1.php');
 }
-?>
+echo'
 </ul>
-<p id=slika class=mesecni><img src="<?php echo $slika;?>" alt="Standardna oprema" width="460" height="600"></p>
+<p id=slika class=mesecni><img src="'.$slika.'" alt="Standardna oprema" width="460" height="600"></p>
 </body>
 </html>
-
+';
+?>
 
