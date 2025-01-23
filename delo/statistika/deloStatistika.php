@@ -116,6 +116,20 @@ new SestevekDela($podminka);
 	 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['stevilkaZdravnika'])){
 		 $podminka = [];
 		 $this_stevilkaZdravnika = $_POST['stevilkaZdravnika'];
+		/////////////////////////////////////////////////////////////// 
+			 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
+    // echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+	 	 $podminka = [];
+         if ($this_stevilkaZdravnika >0) {
+
+	   $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
+
+       }
+
+	$danes='"'.date("Y-m-d").'"';
+	echo"<script>pogojFunction($danes, 'vnos',$this_stevilkaZdravnika)</script>";
+	 
+		/////////////////////////////////////////////////////////////////////// 
 		 $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
 		 if(isset($_POST['zacDatum'])){
 		 $this_zacDatum = $_POST['zacDatum'];
