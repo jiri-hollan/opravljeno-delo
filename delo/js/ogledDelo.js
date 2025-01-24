@@ -1,4 +1,4 @@
-	//alert("MANIPULACE DELO JS");
+	alert("ogled DELO JS");
 let tabulka="deloTbl";
 	//alert(tabulka);
 function izborFunction(akce, tabulka) {
@@ -8,7 +8,7 @@ function izborFunction(akce, tabulka) {
 switch(akce) {
   case "vyber":
 // prikaže delo na določen dan
-  alert("manipulaceDelo.js linija 11");
+  alert("ogledDelo.js linija 11");
 const d = new Date();
 let text = d.toISOString();
 const actD = text.substr(0, 10);
@@ -54,5 +54,5 @@ let y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
-  window.location.href = "manipulaceObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
+  window.location.href = "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
 }//od function(e)
