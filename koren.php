@@ -1,7 +1,8 @@
 <?php
+/*echo"<br>";
+echo dirname($_SERVER['PHP_SELF']);*/
 echo"<br>";
-echo dirname($_SERVER['PHP_SELF']);
-echo"<br>";
-$koren = dirname($_SERVER['PHP_SELF']);
+$koren = 'delo';
 echo $koren;
+echo"<br>";
 ?>

@@ -1,6 +1,8 @@
  <?php
 session_start();
 require_once('../skupne/database.php');
+require_once('../koren.php');
+echo $koren;
 global $r;
 	  require_once('sabloni/prihlasovaci-formular.php');
 Class Prihlaseni {
@@ -14,7 +16,7 @@ Class Prihlaseni {
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }

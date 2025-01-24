@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('databaseS.php');
+require_once('../../koren.php');
+echo $koren;
 class Administrace {
 	public $conn;
 	public $zaklad;
@@ -9,7 +11,7 @@ class Administrace {
 	 $this->conn = new DatabaseS();
      $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
