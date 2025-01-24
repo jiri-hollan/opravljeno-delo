@@ -177,8 +177,6 @@ function odstraniFunction($podminka){
 	echo 'Odstranjena je bila '.$odstranjeno.' omejitev';
 }//od odstraniFunction
 echo'
-<script src="js/manipulaceOmejitve.js?'.time().'">
-</script>
-';
+<script src="js/manipulaceOmejitve.js?'.time().'"></script>';
 require_once '../skupne/sabloni/zapati.php';
 ?>
