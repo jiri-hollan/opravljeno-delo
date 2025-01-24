@@ -2,7 +2,6 @@
 require_once('../frontend/sabloni/vkladane/zahlavi.php');
 echo 'Menipulacija z bazo';
 require_once('administrace.php');
-require_once('../koren.php');
 class Manipulace extends Administrace {
    public function __construct() {
 	       parent::__construct();		   
