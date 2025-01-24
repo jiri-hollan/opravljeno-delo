@@ -177,7 +177,7 @@ echo'<br><br>';
 else{
 echo "Za izbrani datum ni zapisa v bazi";	
 }//od else
-}//od vyberFunction  
+}//od construct  
 }//od class vyber
 
 //________________________________________________________________________________________	
