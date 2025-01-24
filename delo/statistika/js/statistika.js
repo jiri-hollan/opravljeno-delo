@@ -2,10 +2,6 @@ function pogojFunction(danes,akce,stevilkaZd) {
 console.log("statistika.js  linija 2 danes:"+danes+" akce: "+akce+" številkaZ: "+stevilkaZd);
   document.getElementById("akceId").value = akce;
 switch(akce) {
- /* case "vyber":
-    document.getElementById("demo").innerHTML = '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica">';// omogoči izbiro bolnišnice
-	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit">'; //submit
-    break; */
 
   case "vnos":
 //alert(danes);
@@ -33,9 +29,8 @@ switch(akce) {
   if(document.getElementById("osebe")!=null){
  document.getElementById("osebe").addEventListener("click", functionOver);
 }
-
     break;
-
+/*
   case "odstrani":
     if ( confirm("v funkciji JS odstrani\odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
@@ -44,16 +39,12 @@ switch(akce) {
 } else {
   //alert( "You canceled!");
 }
-  /* if(document.getElementById("osebe")!=null){
- document.getElementById("osebe").addEventListener("click", functionOver);
- }*/
-   // code block
-
     break;	
+*/	
   default:
     // code block
  }//od switch
-} // od izborFunction
+} // od pogojFunction
 
 //----------------------------------------------------------------------------------------
 function functionOver (e) {

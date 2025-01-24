@@ -1,21 +1,13 @@
 function izberiStevilkoZdravnikaFunction(akce) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
- /* case "nnn":
-    document.getElementById("demo").innerHTML = '<input type="text" id="priimekId" name="priimek" value="" placeholder="Priimek">';// omogoči izbiro po priimku
-	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit">'; //to je submit
-    break; 
 
-  case "vloz":
-   alert("ni omogočeno");
-    break;
-*/
   case "vyber":
   if(document.getElementById("osebe")!=null){
  document.getElementById("osebe").addEventListener("click", functionOver);
 }
     break;
-
+/*
   case "odstrani": 
    if ( confirm("v funkciji JS odstrani\odstranim en zapis?") == true) {
      if(document.getElementById("osebe")!=null){
@@ -24,11 +16,12 @@ switch(akce) {
 } else {
   text = "You canceled!";
 }
-   break;	
+   break;
+*/   
   default:
 
  }//od switch
-} // od izborFunction
+} // od izberiStevilkoZdravnikaFunction
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
   var x = e.target;
