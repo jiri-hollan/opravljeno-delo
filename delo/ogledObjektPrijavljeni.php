@@ -32,12 +32,12 @@ if (isset($_REQUEST["akce"])) {
 	  $tabulka= new Test_input($_REQUEST["tabulka"]);
 	  $tabulka = $tabulka->get_test();
   }else {
-	  echo "ni tabulke v post";
+	  echo "<script>alert(ni tabulke v post);</script>";
   }
   //var_dump($akce);
- // echo strtoupper($akce) .': ';
+  echo strtoupper($akce) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
- //$stevilkaZdravnika=11111;
+ echo "tabulka je: ".$tabulka;
   new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
