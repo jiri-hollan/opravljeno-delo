@@ -38,7 +38,7 @@ echo '
       echo '</ul></nav>';
    }//od construct
 }//od class MenuAnestiz  
-$adminAnestiz = new MenuAnestiz(); 
+  new MenuAnestiz(); 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 require_once('sabloni/vkladane/zapati.php'); 
 ?>

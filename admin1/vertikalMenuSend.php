@@ -41,6 +41,6 @@ echo '
 	}
    }//od construct 
 }//od class vertikal  
- $adminVnertikal = new Vertikal(); 
+   new Vertikal(); 
 require_once('../admin/sabloni/vkladane/zapati.php'); 
 ?>

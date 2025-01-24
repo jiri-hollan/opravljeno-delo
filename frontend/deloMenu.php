@@ -40,7 +40,7 @@ echo '
       echo '</ul></nav>';
    }//od construct
 }//od class MenuDelo  
-$adminAnestiz = new MenuDelo(); 
+  new MenuDelo(); 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 echo'
 <script>	
