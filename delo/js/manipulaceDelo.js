@@ -8,7 +8,7 @@ function izborFunction(akce, tabulka) {
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice
-
+  alert("manipulaceDelo.js linija 11");
 const d = new Date();
 let text = d.toISOString();
 const actD = text.substr(0, 10);
