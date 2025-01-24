@@ -14,7 +14,6 @@ $nazaj="../admin1/vertikalMenu.php";
  <br>
 <p id="demo3"></p>
 <?php
- 
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
 
@@ -182,7 +181,6 @@ function odstraniFunction($podminka){
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 }//od odstraniFunction
 echo'
-<script src="js/manipulaceUporabniki.js?'.time().'">
-</script>';
+<script src="js/manipulaceUporabniki.js?'.time().'"></script>';
 require_once '../skupne/sabloni/zapati.php';
 ?>
