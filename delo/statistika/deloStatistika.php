@@ -8,6 +8,7 @@ require_once('sabloni/zahlavi.php');
 require_once('sabloni/formaPogoji.php');
 require_once('opraviloVsiS.php');
 echo'<script src="js/statistika.js?'.time().'"></script>';
+echo'<script src="js/poDatumu.js?'.time().'"></script>';
 /**
 *V prvem bloku pobere iz uporabnikiTbl vse zapise v katerih je vnesena številka zdravnika
 *in prikaže ime, priimek, številka zdravnika, upstatus in gdpr.
@@ -82,7 +83,7 @@ class TableRows extends RecursiveIteratorIterator {
         echo "<tr>";
     }
     function endChildren() {
-        echo "<td onclick=" . '"izberiStevilkoZdravnikaFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
+        echo "<td onclick=" . '"poDatumuFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
     }//od endChildren
 }// od class TableRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
