@@ -33,7 +33,7 @@ class MenuDelo  {
       echo '</ul></nav>';
    }//od construct
 }//od class MenuDelo  
-$adminAnestiz = new MenuDelo(); 
+ new MenuDelo(); 
 require_once 'sabloni/prijavljenJe.php';
 require_once('sabloni/zapati.php'); 
 
