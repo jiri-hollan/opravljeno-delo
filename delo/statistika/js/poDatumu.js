@@ -29,7 +29,7 @@ function datumOver (e) {
    var y = event.composedPath()[1];
    row_value = y.cells[0].innerHTML;
    document.getElementById("demo3").innerHTML = "izbrani datum= " + row_value ; 
-alert(row_value);   
+alert('poDatumu.js linija 32 '+row_value);   
  }//od if 
  window.location.href = "deloStatistika.php?datumOpravila=" + row_value; 
  //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
