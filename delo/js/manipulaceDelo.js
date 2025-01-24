@@ -7,7 +7,7 @@ function izborFunction(akce, tabulka) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
-// omogoči izbiro bolnišnice
+// prikaže delo na določen dan
   alert("manipulaceDelo.js linija 11");
 const d = new Date();
 let text = d.toISOString();
