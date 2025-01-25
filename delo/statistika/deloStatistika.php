@@ -159,6 +159,10 @@ case'semaforDatum':
 new SestevekDela($podminka);
 	 }//od if POST 
 break;
+case'semaforPregled':
+echo"ni še napisana koda";
+break;
+
 default:
 echo'linija163';	 
  	 }//od switch semafor	 

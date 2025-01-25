@@ -8,7 +8,7 @@ switch(akce) {
    let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
    let zacDatum= '<label for="zacDatumId">od: </label><input type="date" id="zacDatumId" name="zacDatum" value='+danes+' >';
    let koncDatum= '<label for="koncDatumId">do: </label><input type="date" id="koncDatumId" name="koncDatum" value='+danes+' >';
-   let semafor= '<label for="semaforId">semafor </label><input type="text" id="semaforId" name="semafor" value="semaforDatum" ><br>';
+   let semafor= '<input type="hidden" id="semaforId" name="semafor" value="semaforDatum" >';
    let sifraOpravila= '<input type="hidden" id="sifraId" class="kratke"  name="sifraOpravila" value="" >';
    let opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo"  autocomplete="off" >';
    let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
