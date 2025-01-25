@@ -1,4 +1,4 @@
-	alert("ogled DELO JS");
+	//alert("ogled DELO JS");
 let tabulka="deloTbl";
 	//alert(tabulka);
 function izborFunction(akce, tabulka) {
@@ -8,7 +8,7 @@ function izborFunction(akce, tabulka) {
 switch(akce) {
   case "vyber":
 // prikaže delo na določen dan
-  alert("ogledDelo.js linija 11");
+  //alert("ogledDelo.js linija 11");
 const d = new Date();
 let text = d.toISOString();
 const actD = text.substr(0, 10);
