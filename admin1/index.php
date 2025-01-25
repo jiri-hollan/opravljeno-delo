@@ -1,5 +1,4 @@
 <?php
-
-require_once('../admin/administrace.php');
-
- new Administrace();
+require_once('administrace.php');
+require_once('../koren.php');
+ new Administrace($koren);

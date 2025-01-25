@@ -1,3 +1,4 @@
 <?php
 require_once('administrace.php');
- new Administrace();
+require_once('../koren.php');
+ new Administrace($koren);

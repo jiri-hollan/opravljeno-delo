@@ -5,7 +5,7 @@ class Administrace {
 	public $conn;
 	public $zaklad;	
 	public $koren;
-	public function __construct() {
+	public function __construct($koren) {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
 	  $koren='delo';	  
