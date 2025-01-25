@@ -16,7 +16,7 @@ Class Prihlaseni {
 	  $koren='delo';
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; 
-		 echo"alert('KOREN: '.$koren);";
+		 echo"('KOREN: '.$koren)";
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
