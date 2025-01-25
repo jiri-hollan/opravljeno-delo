@@ -160,6 +160,9 @@ new SestevekDela($podminka);
 	 }//od if POST 
 break;
 case'semaforPregled':
+if(isset($_GET['stevilkaZdravnika'])){
+echo $_GET['stevilkaZdravnika'];	
+}
 //echo $stevilkaZdravnika;
 echo"ni še napisana koda";
 break;
