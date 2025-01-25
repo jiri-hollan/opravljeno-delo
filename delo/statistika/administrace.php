@@ -4,11 +4,11 @@ require_once('databaseS.php');
 class Administrace {
 	public $conn;
 	public $zaklad;
-	
+	public $koren;		
 	public function __construct() {
 	 $this->conn = new DatabaseS();
      $this->zaklad = new stdClass();
-	  $koren='delo';	 
+	 $koren='delo';	 
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/';
 		 echo"('KOREN: '.$koren)";		 
