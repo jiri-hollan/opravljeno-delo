@@ -30,6 +30,6 @@ function functionOver (e) {
    row_value = y.cells[4].innerHTML;
    document.getElementById("demo3").innerHTML = "izbrana številka zdravnika= " + row_value ;    
  }//od if 
- window.location.href = "deloStatistika.php?stevilkaZdravnika=" + row_value+"&akce=izberiZdr"; 
+ window.location.href = "deloStatistika.php?stevilkaZdravnika=" + row_value+"&semafor=semaforZdravnik"; 
  //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
 }//od function(e)

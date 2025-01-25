@@ -93,9 +93,9 @@ class TableRows extends RecursiveIteratorIterator {
 class Podminka {
  function __construct() {
 //echo" deloStatistika.php linija 93 ";
-if(isset($_GET['akce'])&&$_GET['akce']=='izberiZdr'){
+if(isset($_GET['semafor'])&&$_GET['semafor']=='semaforZdravnik'){
 	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	
-	 echo $_GET['akce'];
+	 echo $_GET['semafor'];
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 //echo'linija 114';
 	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
@@ -115,7 +115,7 @@ if(isset($_GET['akce'])&&$_GET['akce']=='izberiZdr'){
 	echo"<script>pogojFunction($danes, 'vnos',$this_stevilkaZdravnika)</script>";
 new SestevekDela($podminka);
 	 }//od if GET
-	 }//od if akce
+	 }//od if semafor
 	 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['stevilkaZdravnika'])){
 		 $podminka = [];
 		 $this_stevilkaZdravnika = $_POST['stevilkaZdravnika'];
