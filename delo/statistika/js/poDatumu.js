@@ -32,5 +32,6 @@ function datumOver (e) {
 alert('poDatumu.js linija 32 '+row_value);   
  }//od if 
  window.location.href = "podminkyRuzne.php?datumOpravila=" + row_value; 
+ //window.location.href = "deloStatistika.php?datumOpravila=" + row_value; 
  //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
 }//od function(e)
