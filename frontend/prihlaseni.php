@@ -12,12 +12,11 @@ Class Prihlaseni {
 	public $gdpr;
 	public $koren;	
 	public function __construct($koren) {
-	echo"('KOREN: '.$koren)";	
+	//echo"('KOREN: '.$koren)";	
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
-	  $koren='delo';
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; echo"('KOREN: '.$koren)";
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; //echo"('KOREN: '.$koren)";
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
