@@ -1,6 +1,7 @@
  <?php
 session_start();
 require_once('../skupne/database.php');
+require_once('../koren.php');
 global $r;
 	  require_once('sabloni/prihlasovaci-formular.php');
 Class Prihlaseni {
@@ -10,7 +11,8 @@ Class Prihlaseni {
 	public $pristop;
 	public $gdpr;
 	public $koren;	
-	public function __construct() {
+	public function __construct($koren) {
+	echo"('KOREN: '.$koren)";	
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
 	  $koren='delo';
@@ -28,8 +30,8 @@ Class Prihlaseni {
 //___________________________________- potomstvo_______________________________________________
 Class odjava extends Prihlaseni {
 		
-	public function __construct() {
-		    parent::__construct();
+	public function __construct($koren) {
+		    parent::__construct($koren);
 	
 
 	  //echo 'odhlašovani';
@@ -60,8 +62,8 @@ Class odjava extends Prihlaseni {
 Class Prijava extends Prihlaseni {
 	
 	
-	public function __construct() {
-		    parent::__construct();
+	public function __construct($koren) {
+		    parent::__construct($koren);
 	 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		  $chiba = $this->overUdaje();
 		  //echo var_dump($chiba);
@@ -438,7 +440,7 @@ if (isset($_GET['r'])) {
 switch ($r) {
   case "login":
     
-      $prihlaseni = new Prijava;
+      $prihlaseni = new Prijava($koren);
     //echo "poskušate se logirati!"; 
    break;
    
@@ -448,7 +450,7 @@ switch ($r) {
    break;
    
 case "logout":
-  $prihlaseni = new Odjava;
+  $prihlaseni = new Odjava($koren);
     //echo "Poskušate se odjaviti!"; 
    break;  
    
