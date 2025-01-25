@@ -10,7 +10,7 @@ class Administrace {
       $this->zaklad = new stdClass();
 	  $koren='delo';	  
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/admin/';
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/admin/';
 		 echo"('KOREN: '.$koren)";		 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/admin/';  
