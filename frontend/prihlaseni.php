@@ -9,12 +9,14 @@ Class Prihlaseni {
 	public $upstatus;
 	public $pristop;
 	public $gdpr;
-	
+	public $koren;	
 	public function __construct() {
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
+	  $koren='delo';
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; 
+		 echo"alert('KOREN: '.$koren);";
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
