@@ -5,13 +5,11 @@ class Administrace {
 	public $conn;
 	public $zaklad;
 	public $koren;		
-	public function __construct() {
+	public function __construct($koren) {
 	 $this->conn = new DatabaseS();
-     $this->zaklad = new stdClass();
-	 $koren='delo';	 
+     $this->zaklad = new stdClass();	 
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/';
-		 echo"('KOREN: '.$koren)";		 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/';	 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
