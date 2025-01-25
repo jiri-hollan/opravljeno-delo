@@ -161,8 +161,11 @@ new SestevekDela($podminka);
 break;
 case'semaforPregled':
 if(isset($_GET['stevilkaZdravnika'])){
+echo"<br>";	
 echo $_GET['stevilkaZdravnika'];
-echo $_GET['datumOpravila'];	
+echo"<br>";
+echo $_GET['datumOpravila'];
+echo"<br>";	
 }
 //echo $stevilkaZdravnika;
 echo"ni še napisana koda";
