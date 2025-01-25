@@ -160,7 +160,7 @@ new SestevekDela($podminka);
 	 }//od if POST 
 break;
 case'semaforPregled':
-echo $stevilkaZdravnika;
+//echo $stevilkaZdravnika;
 echo"ni še napisana koda";
 break;
 

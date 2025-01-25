@@ -27,11 +27,11 @@ function datumOver (e) {
   var x = e.target;
   if (x.nodeName == "TD") {
    var y = event.composedPath()[1];
-   row_value = y.cells[0].innerHTML;
-   document.getElementById("demo3").innerHTML = "izbrani datum= " + row_value ; 
-alert('poDatumu.js linija 32 '+row_value);   
+   row_datum = y.cells[0].innerHTML;
+   document.getElementById("demo3").innerHTML = "izbrani datum= " + row_datum ; 
+alert('poDatumu.js linija 32 '+row_datum);   
  }//od if 
- window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + row_value; 
- //window.location.href = "deloStatistika.php?datumOpravila=" + row_value; 
- //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
+ window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + row_datum; 
+ //window.location.href = "deloStatistika.php?datumOpravila=" + row_datum; 
+ //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_datum;  
 }//od function(e)
