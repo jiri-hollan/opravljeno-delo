@@ -164,7 +164,7 @@ echo"ni še napisana koda";
 break;
 
 default:
-echo'linija163';	 
+echo'linija167';	 
  	 }//od switch semafor	 
  }//od construct  
 

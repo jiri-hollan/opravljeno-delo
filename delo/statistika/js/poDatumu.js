@@ -31,7 +31,7 @@ function datumOver (e) {
    document.getElementById("demo3").innerHTML = "izbrani datum= " + row_value ; 
 alert('poDatumu.js linija 32 '+row_value);   
  }//od if 
- window.location.href = "podminkyRuzne.php?datumOpravila=" + row_value; 
+ window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + row_value; 
  //window.location.href = "deloStatistika.php?datumOpravila=" + row_value; 
  //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
 }//od function(e)
