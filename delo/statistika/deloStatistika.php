@@ -45,7 +45,7 @@ $tabulka = 'deloTbl';
  //$podminka ["datumOpravila="]=date("Y-m-d");
 //var_dump($podminka);
 	    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
-   $stolpci=["datumOpravila","SUM(casOpravila)"];
+   $stolpci=["datumOpravila","stevilkaZdravnika","SUM(casOpravila)"];
    $suma = new databaseS();
    $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
 //echo "<br>";
@@ -59,7 +59,7 @@ $tabulka = 'deloTbl';
   if(count($vybrano)>0){
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
-  echo "<tr class='glavaTable'><th>datum</th><th>minute</th></tr>";
+  echo "<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>minute</th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
@@ -160,6 +160,7 @@ new SestevekDela($podminka);
 	 }//od if POST 
 break;
 case'semaforPregled':
+echo $stevilkaZdravnika;
 echo"ni še napisana koda";
 break;
 
