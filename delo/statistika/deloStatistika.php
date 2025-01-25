@@ -93,7 +93,13 @@ class TableRows extends RecursiveIteratorIterator {
 class Podminka {
  function __construct() {
 //echo" deloStatistika.php linija 93 ";
-if(isset($_GET['semafor'])&&$_GET['semafor']=='semaforZdravnik'){
+if(isset($_REQUEST['semafor'])){
+	$this_semafor=$_REQUEST['semafor'];
+	}else{
+	$this_semafor="";	
+	}
+switch ($this_semafor){
+case 'semaforZdravnik':	
 	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	
 	 echo $_GET['semafor'];
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
@@ -115,7 +121,8 @@ if(isset($_GET['semafor'])&&$_GET['semafor']=='semaforZdravnik'){
 	echo"<script>pogojFunction($danes, 'vnos',$this_stevilkaZdravnika)</script>";
 new SestevekDela($podminka);
 	 }//od if GET
-	 }//od if semafor
+break;
+case'semaforDatum':
 	 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['stevilkaZdravnika'])){
 		 $podminka = [];
 		 $this_stevilkaZdravnika = $_POST['stevilkaZdravnika'];
@@ -151,8 +158,12 @@ new SestevekDela($podminka);
 //var_dump($podminka); 
 new SestevekDela($podminka);
 	 }//od if POST 
-	 
+break;
+default:
+echo'linija163';	 
+ 	 }//od switch semafor	 
  }//od construct  
+
 }//od class PodminkaGet
 //CCCCCCCCCCCCCCCCCCCC KONEC CLASS PODMINKA CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
