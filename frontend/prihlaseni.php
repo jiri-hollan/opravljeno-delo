@@ -122,8 +122,8 @@ Class Registrace extends Prihlaseni {
     public $data;
     public $nameTable;
    
-	public function __construct() {
-		    parent::__construct();
+	public function __construct($koren) {
+		    parent::__construct($koren);
 			
 			
 $registracija=true;
@@ -237,8 +237,8 @@ Class Profil extends Prihlaseni {
     public $data;
     public $nameTable;
    
-	public function __construct() {
-		    parent::__construct();
+	public function __construct($koren) {
+		    parent::__construct($koren);
 			
 			
 //$registracija=true;
@@ -275,8 +275,8 @@ class SpremembaG extends Prihlaseni  {
     public $data;
     public $podminka;
 
- public function __construct() {
-		    parent::__construct();
+ public function __construct($koren) {
+		    parent::__construct($koren);
 			
     $tabulka = 'uporabnikiTbl';
 	$geslo=0;
@@ -326,8 +326,8 @@ class SpremembaU extends Prihlaseni  {
     public $data;
     public $podminka;
 
- public function __construct() {
-		    parent::__construct();
+ public function __construct($koren) {
+		    parent::__construct($koren);
 			
     $tabulka = 'uporabnikiTbl';
 	$uname=0;
@@ -381,8 +381,8 @@ class SpremembaZdr extends Prihlaseni  {
     public $data;
     public $podminka;
 
- public function __construct() {
-		    parent::__construct();
+ public function __construct($koren) {
+		    parent::__construct($koren);
 			
     $tabulka = 'uporabnikiTbl';
 	$stevilkaZdravnika=0;
@@ -444,7 +444,7 @@ switch ($r) {
    break;
    
  case "singin":
-  $prihlaseni = new Registrace;
+  $prihlaseni = new Registrace($koren);
     //echo "Poskušate se registrirati!";
    break;
    
@@ -454,22 +454,22 @@ case "logout":
    break;  
    
 case "profil":
-  $prihlaseni = new Profil;
+  $prihlaseni = new Profil($koren);
     //echo "V profilu"; 
    break;  
    
 case "spremembaG":
-  $prihlaseni = new SpremembaG;
+  $prihlaseni = new SpremembaG($koren);
     //echo "V profilu"; 
    break;  
    
  case "spremembaU":
-  $prihlaseni = new SpremembaU;
+  $prihlaseni = new SpremembaU($koren);
     //echo "V profilu"; 
    break;    
    
  case "spremembaZdr":
-  $prihlaseni = new SpremembaZdr;
+  $prihlaseni = new SpremembaZdr($koren);
     //echo "V profilu"; 
    break;    
       
