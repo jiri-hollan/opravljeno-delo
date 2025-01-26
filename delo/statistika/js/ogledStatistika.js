@@ -41,7 +41,7 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
    if ( confirm("ogledStatistika.js Odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
 		alert('odstrani');
-    document.getElementById("osebe").addEventListener("click", functionOvce);
+    document.getElementById("osebe").addEventListener("click", functionOver);
       }
 } else {
   text = "You canceled!";
@@ -52,7 +52,7 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
 
 //////////////////// konec izborFunction /////////////////////////////////////////
 
-function functionOvce (e) {
+function functionOver (e) {
 alert('F.Over 56');	
 let x = e.target;
 if (x.nodeName == "TD") {
