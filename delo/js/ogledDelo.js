@@ -55,9 +55,9 @@ function functionOver (e,tabulka="deloTbl") {
 let x = e.target;
 if (x.nodeName == "TD") {
 let y = event.composedPath()[1];
-row_value = y.cells[0].innerHTML;
-  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+id = y.cells[0].innerHTML;
+  document.getElementById("demo3").innerHTML = "id v bazi je= " + id ;  
  }//od if 
-  window.location.href = "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
+  window.location.href = "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka; 
 }//od function(e)
 } // od izborFunction

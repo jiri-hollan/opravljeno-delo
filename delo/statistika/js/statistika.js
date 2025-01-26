@@ -52,13 +52,13 @@ function functionOver (e) {
 let x = e.target;
 if (x.nodeName == "TD") {
 let y = event.composedPath()[1];
-let row_value = y.cells[0].innerHTML;
+let id = y.cells[0].innerHTML;
  /* document.getElementById("demo1").innerHTML = "Triggered by a " + x.nodeName + " element";
   document.getElementById("demo2").innerHTML = "Triggered by a " + x.innerHTML + " element";  */
-  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+  document.getElementById("demo3").innerHTML = "id v bazi je= " + id ;  
  }//od if
  
- window.location.href = "manipulacePregledovalci.php?akce=" + x.innerHTML + "&id=" + row_value;
+ window.location.href = "manipulacePregledovalci.php?akce=" + x.innerHTML + "&id=" + id;
   
 }//od function(e)
 } // od pogojFunction

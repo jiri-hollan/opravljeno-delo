@@ -27,10 +27,10 @@ function functionOver (e) {
   var x = e.target;
   if (x.nodeName == "TD") {
    var y = event.composedPath()[1];
-   row_value = y.cells[4].innerHTML;
-   document.getElementById("demo3").innerHTML = "izbrana številka zdravnika= " + row_value ;    
+   stevilkaZdravnika = y.cells[4].innerHTML;
+   document.getElementById("demo3").innerHTML = "izbrana številka zdravnika= " + stevilkaZdravnika ;    
  }//od if 
- window.location.href = "deloStatistika.php?stevilkaZdravnika=" + row_value+"&semafor=semaforZdravnik"; 
- //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
+ window.location.href = "deloStatistika.php?stevilkaZdravnika=" + stevilkaZdravnika+"&semafor=semaforZdravnik"; 
+ //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + stevilkaZdravnika;  
 }//od function(e)
 } // od izberiStevilkoZdravnikaFunction
