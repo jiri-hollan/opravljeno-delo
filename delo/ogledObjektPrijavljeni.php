@@ -306,23 +306,21 @@ $neopazno=array_diff_key($vybrano[0],$vidno);
 	 $stolpci=["*"];	 
 	 $podminka = array("id"=>$this->id);
 	 $odstrani = new database();
-    $najdeno=$odstrani->vyber($this->tabulka, $stolpci, $podminka );
+    $najdeno=$odstrani->vyber($this->tabulka, $stolpci, $podminka ); 
 	print_r($najdeno);
 	$odstranjeno=$odstrani->odstrani($this->tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 	 }//od construct
 	 }//od class odstrani
-if (isset($_REQUEST["tabulka"])){
+/////////////////////konec class odstrani////////////////////////////////////////////
 
+if (isset($_REQUEST["tabulka"])){  //komentar: se zažene, ko se odpre ta fajl
 switch($_REQUEST["tabulka"]){
-
-
 case "deloTbl":
-echo '<script src="js/ogledDelo.js?'.time().'"></script>'; 
+echo '<script src="js/ogledDelo.js?'.time().'"></script>'; //komentar:  ogledDelo.js sprejeme "deloTbl" 
 break;
-
 }
-}
+}//od if isset request
 ?>
 <!--zapati-->
 </body>
