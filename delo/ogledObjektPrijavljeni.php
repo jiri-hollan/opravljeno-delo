@@ -3,7 +3,7 @@
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  require_once('../skupne/sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
- require_once('../servis/sabloni/formBaze.php');
+ require_once('../servis/sabloni/formBaze.php');//komentar: gumbi "izberi vlož"
  require_once ('../skupne/database.php');
  require_once ('identifikace.php');
  echo'<script src="js/delo.js?'.time().'"></script>';
@@ -317,7 +317,7 @@ $neopazno=array_diff_key($vybrano[0],$vidno);
 if (isset($_REQUEST["tabulka"])){  //komentar: se zažene, ko se odpre ta fajl
 switch($_REQUEST["tabulka"]){
 case "deloTbl":
-echo '<script src="js/ogledDelo.js?'.time().'"></script>'; //komentar:  ogledDelo.js sprejeme "deloTbl" 
+echo '<script src="js/ogledDelo.js?'.time().'"></script>'; //komentar: le vlkjuči ogledDelo.js" 
 break;
 }
 }//od if isset request

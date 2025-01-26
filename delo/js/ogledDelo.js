@@ -1,9 +1,11 @@
 	//alert("ogled DELO JS");
-let tabulka="deloTbl";
+ tabulka="deloTbl";
 	//alert(tabulka);
+//////////////////////////////////////////////////////////////////////////////7
 function izborFunction(akce, tabulka) {
-	tabulka=tabulka;
-	//alert(tabulka);
+//alert(tabulka);
+	 tabulka=tabulka;
+//alert(tabulka);
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
@@ -18,7 +20,7 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
 //alert(text);
 //document.getElementById("datumVpisaId").value = text;
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-  document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
+  document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //komentar: submit v ogledObjektPrijavljeni.php
     break; 
 
   case "vloz":
@@ -46,7 +48,8 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
   default:
  }//od switch
 } // od izborFunction
-//----------------------------------------------------------------------------------------
+//////////////////// konec izborFunction /////////////////////////////////////////
+
 function functionOver (e) {
 let x = e.target;
 if (x.nodeName == "TD") {
