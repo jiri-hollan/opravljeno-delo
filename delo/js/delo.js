@@ -62,7 +62,7 @@ switch(akce) {
   default:
     // code block
  }//od switch
-} // od izborFunction
+
 
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
@@ -79,7 +79,7 @@ let row_value = y.cells[0].innerHTML;
   
 }//od function(e)
 //-----------------------------------------------------------------------------
-
+} // od izborFunction
 function listaOpravilFunction(opraviloList) {
 //alert ("lista opravil function");
 console.log("opravila.js"+opraviloList);
