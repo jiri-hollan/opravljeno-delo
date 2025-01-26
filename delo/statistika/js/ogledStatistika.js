@@ -33,7 +33,7 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
   case "edit":
 //alert("v JS case edit");
    if(document.getElementById("osebe")!=null){
-     document.getElementById("osebe").addEventListener("click", functionOver);
+     document.getElementById("osebe").addEventListener("click", functionOvce);
 }
     break;
 
@@ -61,5 +61,6 @@ row_value = y.cells[0].innerHTML;
 alert(row_value);
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
+ alert("../ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka);
   window.location.href = "../ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
 }//od function(e)
