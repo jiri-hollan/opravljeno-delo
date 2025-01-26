@@ -7,6 +7,7 @@ require_once('sabloni/zahlavi.php');
 //require_once 'sabloni/forma.php';
 require_once('sabloni/formaPogoji.php');
 require_once('opraviloVsiS.php');
+require_once ('ogledStatistika.php');
 echo'<script src="js/statistika.js?'.time().'"></script>';
 echo'<script src="js/poDatumu.js?'.time().'"></script>';
 /**
@@ -163,12 +164,17 @@ case'semaforPregled':
 if(isset($_GET['stevilkaZdravnika'])){
 echo"<br>";	
 echo $_GET['stevilkaZdravnika'];
+$this_stevilkaZdravnika=$_GET['stevilkaZdravnika'];
 echo"<br>";
 echo $_GET['datumOpravila'];
+$this_datumOpravila=$_GET['datumOpravila'];
 echo"<br>";	
 }
 //echo $stevilkaZdravnika;
-echo"ni še napisana koda";
+new Vyber($this_stevilkaZdravnika,$this_datumOpravila,'deloTbl');
+echo"ni še napisana koda
+<button id='vyberId' onclick'izborFunction('vyber','delTbl')>izberi</button>
+";
 break;
 
 default:

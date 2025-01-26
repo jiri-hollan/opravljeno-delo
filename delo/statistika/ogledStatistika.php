@@ -2,9 +2,9 @@
  require_once ('../../skupne/database.php');
  require_once ('../identifikace.php');
  echo'<script src="../js/delo.js?'.time().'"></script>';
- 	$podminka = array("uname"=>$uname);
-	$stevilkaZdravnika=new VyberUporabnika($podminka);
-	$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
+ 	//$podminka = array("uname"=>$uname);
+	//$stevilkaZdravnika=new VyberUporabnika($podminka);
+	//$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
 	//var_dump ($stevilkaZdravnika);	
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
@@ -206,7 +206,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 }// od class Vloz
 
 //-------------------------iterator-----------------------------------------------------
-	class TableRows extends RecursiveIteratorIterator {
+	class TableR extends RecursiveIteratorIterator {
     function __construct($it) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
