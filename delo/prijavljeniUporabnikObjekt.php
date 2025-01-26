@@ -38,7 +38,7 @@ function __construct($podminka) {
 echo"
 <script>
 stevilkaZdravnika='".$this->stevilkaZdravnika."';
-izborFunction('vloz',stevilkaZdravnika);
+izborZdFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
 		}//od class NovZapis		
@@ -51,7 +51,7 @@ echo"
 <script>
 stevilkaZdravnika='".$this->stevilkaZdravnika."';
 
-//izborFunction('vloz',stevilkaZdravnika);
+//izborZdFunction('vloz',stevilkaZdravnika);
 </script>";		
 	}//od construct
 		}// od class DnevniZapis		

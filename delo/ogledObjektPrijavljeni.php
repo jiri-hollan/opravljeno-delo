@@ -237,8 +237,8 @@ foreach (json_decode($this->dataPreg) as $key) {
         echo "<tr>";
     }
     function endChildren() {
-        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'edit'".')"'.'"' . ">edit</td>
-		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>
+        echo "<td class='urediCls' onclick=" . '"izborOgledFunction('. "'edit'".')"'.'"' . ">edit</td>
+		<td class='odstraniCls' onclick=" . '"izborOgledFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>
 		
 		</tr>" . "\n";
     }

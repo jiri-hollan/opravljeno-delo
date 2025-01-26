@@ -7,7 +7,7 @@ if(identifikace==""){
 	}
 } // od identifikaceFunction
 
-function izborFunction(akce,stevilkaZd) {
+function izborZdFunction(akce,stevilkaZd) {
 
   document.getElementById("akceId").value = akce;
 switch(akce) {
