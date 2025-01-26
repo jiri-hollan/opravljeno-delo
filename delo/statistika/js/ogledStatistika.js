@@ -38,9 +38,10 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
     break;
 
   case "odstrani": 
-   if ( confirm("Odstranim en zapis?") == true) {
+   if ( confirm("ogledStatistika.js Odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
-    document.getElementById("osebe").addEventListener("click", functionOver);
+		alert('odstrani');
+    document.getElementById("osebe").addEventListener("click", functionOvce);
       }
 } else {
   text = "You canceled!";
@@ -51,11 +52,13 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
 } // od izborFunction
 //////////////////// konec izborFunction /////////////////////////////////////////
 
-function functionOver (e) {
+function functionOvce (e) {
+alert('F.Over 56');	
 let x = e.target;
 if (x.nodeName == "TD") {
 let y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
+alert(row_value);
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
   window.location.href = "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
