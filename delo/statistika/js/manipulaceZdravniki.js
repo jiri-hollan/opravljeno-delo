@@ -21,7 +21,7 @@ switch(akce) {
   default:
 
  }//od switch
-} // od izberiStevilkoZdravnikaFunction
+
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
   var x = e.target;
@@ -33,3 +33,4 @@ function functionOver (e) {
  window.location.href = "deloStatistika.php?stevilkaZdravnika=" + row_value+"&semafor=semaforZdravnik"; 
  //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_value;  
 }//od function(e)
+} // od izberiStevilkoZdravnikaFunction
