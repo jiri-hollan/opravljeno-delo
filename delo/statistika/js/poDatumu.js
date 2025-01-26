@@ -21,7 +21,7 @@ switch(akce) {
   default:
 
  }//od switch
-} // od poDatumuFunction
+
 //----------------------------------------------------------------------------------------
 function datumOver (e) {
   var x = e.target;
@@ -36,3 +36,4 @@ function datumOver (e) {
  //window.location.href = "deloStatistika.php?datumOpravila=" + row_datum; 
  //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + row_datum;  
 }//od function(e)
+} // od poDatumuFunction

@@ -45,7 +45,7 @@ switch(akce) {
   default:
     // code block
  }//od switch
-} // od pogojFunction
+
 
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
@@ -61,6 +61,7 @@ let row_value = y.cells[0].innerHTML;
  window.location.href = "manipulacePregledovalci.php?akce=" + x.innerHTML + "&id=" + row_value;
   
 }//od function(e)
+} // od pogojFunction
 //-----------------------------------------------------------------------------
 
 function listaOpravilFunction(opraviloList) {

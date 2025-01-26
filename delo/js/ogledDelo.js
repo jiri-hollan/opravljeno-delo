@@ -48,10 +48,10 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
     break;	
   default:
  }//od switch
-} // od izborFunction
+
 //////////////////// konec izborFunction /////////////////////////////////////////
 
-function functionOver (e) {
+function functionOver (e,tabulka="deloTbl") {
 let x = e.target;
 if (x.nodeName == "TD") {
 let y = event.composedPath()[1];
@@ -60,3 +60,4 @@ row_value = y.cells[0].innerHTML;
  }//od if 
   window.location.href = "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
 }//od function(e)
+} // od izborFunction
