@@ -24,7 +24,7 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
     break; 
 
   case "vloz":
-  alert("ogledDelo.js linja27");
+//alert("ogledDelo.js linja27");
  // <a href="../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis">
     location.replace("../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis");
    
