@@ -144,7 +144,7 @@ foreach (json_decode($this->dataPreg) as $key) {
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
-   $this->stolpci= array('id', 'vpis_date', 'opravilo', 'datumOpravila', 'casOpravila');
+   $this->stolpci= array('id', 'vpis_date', 'sifraOpravila', 'opravilo', 'datumOpravila', 'casOpravila');
 $vyber = new database();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
@@ -223,7 +223,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	//echo "<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>datumOpravila</th><th>casOpravila</th></tr>";
 	/* glava za izbrane stolpce */
 	//---------------------------------------------------------
-	echo "<tr><th>id</><th>vpisano dne</><th>opravilo</th><th>datumOpravila</th><th>casOpravila</th></tr>";
+	echo "<tr><th>id</><th>vpisano dne</><th>šifra opravila</th><th>opravilo</th><th>datumOpravila</th><th>casOpravila</th></tr>";
     break;
 	default:
 	echo "";
@@ -268,7 +268,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 $skrito=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
 $result=array_diff_key($vybrano[0],$skrito);
-$vidno=array("vpis_date"=>"", "opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
+$vidno=array("vpis_date"=>"", "sifraOpravila"=>"",  "opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
 $neopazno=array_diff_key($vybrano[0],$vidno);
 //___________________________	
 	   foreach ($neopazno as $key => $value) {
