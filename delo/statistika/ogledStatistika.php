@@ -29,7 +29,8 @@ if (isset($_REQUEST["akce"])) {
   }else {
 	  echo "<script>alert(ni tabulke v post);</script>";
   }
-  //var_dump($akce);
+var_dump($akce);
+echo"ogledStatistika.php linija33";
   echo strtoupper($akce) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //echo "tabulka je: ".$tabulka;
