@@ -3,7 +3,7 @@
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  require_once('../skupne/sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
- require_once('../servis/sabloni/formBaze.php');//komentar: gumbi "izberi vlož"
+ require_once('sabloni/formDelo.php');//komentar: gumbi "izberi vlož"
  require_once ('../skupne/database.php');
  require_once ('identifikace.php');
  echo'<script src="js/delo.js?'.time().'"></script>';
@@ -262,10 +262,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 	 $vybrano=$vyber->vyber($this->tabulka, $stolpci, $podminka );
 //echo "število izbranih zapisov= " . count($vybrano);
      $dolzina=count($vybrano);
-     echo "<form  method='post'>";
-
-	//------------------------------------------------------------------------
-
+	//------------------------------------------------------------------------	 
+  echo "<form  method='post'>";
 $skrito=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
 $result=array_diff_key($vybrano[0],$skrito);
 $vidno=array("vpis_date"=>"","opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
@@ -286,7 +284,7 @@ $neopazno=array_diff_key($vybrano[0],$vidno);
 	   echo " $key:<br> <input id=$key name=$key value='".$value."'></input><br>";
       }//od foreach	
 	  
-	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
+	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi1</button><button type='reset'>reset</button> ";
      echo "</form>";
 
 	 }//od construct	
