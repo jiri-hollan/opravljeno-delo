@@ -102,7 +102,7 @@ if(isset($_REQUEST['semafor'])){
 switch ($this_semafor){
 case 'semaforZdravnik':	
 	 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['stevilkaZdravnika'])){	
-	 echo $_GET['semafor'];
+//echo $_GET['semafor'];
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 //echo'linija 114';
 	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
