@@ -52,7 +52,7 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
 
 //////////////////// konec izborFunction /////////////////////////////////////////
 
-function functionOver (e) {
+function functionOver (e,tabulka="deloTbl") {
 alert('F.Over 56');	
 let x = e.target;
 if (x.nodeName == "TD") {
