@@ -145,7 +145,7 @@ $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->p
 echo "<br>";
 if(count($vybrano)>0){	
 	
-foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+foreach(new TableR(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
 
 }//od foreach
@@ -210,19 +210,16 @@ foreach (json_decode($this->dataPreg) as $key) {
     function __construct($it) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
-	switch ($_REQUEST["tabulka"]){
+
 		
 	
-	case "deloTbl":
+	//case "deloTbl":
     /*Glava tabele vseh stolpcev  
 	*echo *"<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>d*atumOpravila</th><th>casOpravila</th></tr>";*/
 	
 	/* glava za izbrane stolpce ----------------------------------*/
 	echo "<tr><th>id</><th>vpisano dne</><th>šifra opravila</th><th>opravilo</th><th>datumOpravila</th><th>casOpravila</th></tr>";
-    break;
-	default:
-	echo "";
-	}
+
         parent::__construct($it, self::LEAVES_ONLY);
     }
     function current() { 

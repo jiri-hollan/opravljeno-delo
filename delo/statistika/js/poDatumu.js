@@ -30,7 +30,7 @@ function datumOver (e) {
    row_datum = y.cells[0].innerHTML;
    row_zdravnik = y.cells[1].innerHTML;  
    document.getElementById("demo3").innerHTML = "izbrani datum= " + row_datum ; 
-alert('poDatumu.js linija 32 '+row_datum);   
+//alert('poDatumu.js linija 33 '+row_datum);   
  }//od if 
  window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + row_datum+"&&stevilkaZdravnika="+row_zdravnik; 
  //window.location.href = "deloStatistika.php?datumOpravila=" + row_datum; 

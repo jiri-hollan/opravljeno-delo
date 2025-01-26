@@ -172,9 +172,7 @@ echo"<br>";
 }
 //echo $stevilkaZdravnika;
 new Vyber($this_stevilkaZdravnika,$this_datumOpravila,'deloTbl');
-echo"ni še napisana koda
-<button id='vyberId' onclick'izborFunction('vyber','delTbl')>izberi</button>
-";
+
 break;
 
 default:
