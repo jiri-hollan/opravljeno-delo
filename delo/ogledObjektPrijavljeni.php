@@ -219,10 +219,10 @@ foreach (json_decode($this->dataPreg) as $key) {
 		
 	
 	case "deloTbl":
-    /*Glava tabele vseh stolpcev  */
-	//echo "<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>datumOpravila</th><th>casOpravila</th></tr>";
-	/* glava za izbrane stolpce */
-	//---------------------------------------------------------
+    /*Glava tabele vseh stolpcev  
+	*echo *"<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>d*atumOpravila</th><th>casOpravila</th></tr>";*/
+	
+	/* glava za izbrane stolpce ----------------------------------*/
 	echo "<tr><th>id</><th>vpisano dne</><th>šifra opravila</th><th>opravilo</th><th>datumOpravila</th><th>casOpravila</th></tr>";
     break;
 	default:
@@ -274,20 +274,18 @@ $neopazno=array_diff_key($vybrano[0],$vidno);
 	   foreach ($neopazno as $key => $value) {
 			   echo "  <input type='hidden' id=$key name=$key value='".$value."'></input>";
       }//od foreach	
-	
-       foreach ($result as $key => $value) {
+	      foreach ($result as $key => $value) {
 		   
 // echo "$key: $value\n";
-/*--------tu bo koda za izbiro vidnih polj za popravilo vnosa opravila*/
+/*--------tu bo koda za izbiro vidnih polj za popravilo vnosa opravila----------*/
 
-/*
-
-polja deloTbl
-"id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "opravilo"=>"", "sifraOpravila"=>"", "datumOpravila"=>"", "casOpravila"=>"",
-
--------*/
+/*-------------------------------------------------------------------
+*  polja deloTbl
+*  "id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "opravilo"=>"", "sifraOpravila"=>"",     "datumOpravila"=>"", "casOpravila"=>"",
+*--------------------------------------------------------------*/
 	   echo " $key:<br> <input id=$key name=$key value='".$value."'></input><br>";
-      }//od foreach	 
+      }//od foreach	
+	  
 	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
      echo "</form>";
 
