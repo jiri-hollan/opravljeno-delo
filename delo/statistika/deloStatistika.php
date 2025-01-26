@@ -10,7 +10,7 @@ require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
 echo'<script src="js/statistika.js?'.time().'"></script>';
 echo'<script src="js/poDatumu.js?'.time().'"></script>';
-echo'<script src="../js/ogledDelo.js?'.time().'"></script>';
+echo'<script src="js/ogledStatistika.js?'.time().'"></script>';
 /**
 *V prvem bloku pobere iz uporabnikiTbl vse zapise v katerih je vnesena številka zdravnika
 *in prikaže ime, priimek, številka zdravnika, upstatus in gdpr.
