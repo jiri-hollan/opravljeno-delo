@@ -268,7 +268,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 $skrito=array("id"=>"", "vpis_date"=>"", "stevilkaZdravnika"=>"", "sifraOpravila"=>"");
 $result=array_diff_key($vybrano[0],$skrito);
-$vidno=array("vpis_date"=>"", "sifraOpravila"=>"",  "opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
+$vidno=array("vpis_date"=>"","opravilo"=>"", "datumOpravila"=>"", "casOpravila"=>"");
 $neopazno=array_diff_key($vybrano[0],$vidno);
 //___________________________	
 	   foreach ($neopazno as $key => $value) {
