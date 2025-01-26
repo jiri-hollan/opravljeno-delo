@@ -7,9 +7,9 @@
 	//$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
 	//var_dump ($stevilkaZdravnika);	
 //_____________________________________________________________
-if (isset($_REQUEST["akceO"])) {
-	  $akceO = new Test_input($_REQUEST["akceO"]);
-	  $akceO = $akceO->get_test();
+if (isset($_REQUEST["akceClass"])) {
+	  $akceClass = new Test_input($_REQUEST["akceClass"]);
+	  $akceClass = $akceClass->get_test();
 
   
   //______________________________________________________
@@ -29,17 +29,17 @@ if (isset($_REQUEST["akceO"])) {
   }else {
 	  echo "<script>alert(ni tabulke v post);</script>";
   }
-var_dump($akceO);
+var_dump($akceClass);
 echo"ogledStatistika.php linija33";
-  echo strtoupper($akceO) .': ';
+  echo strtoupper($akceClass) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //echo "tabulka je: ".$tabulka;
-  new $akceO($stevilkaZdravnika, $datumOpravila, $tabulka);
+  new $akceClass($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
-}//od if akceO
+}//od if akceClass
 /*else {
-	 echo'akceO ni določena'; 
+	 echo'akceClass ni določena'; 
   }*/
 //_________________________________
  
