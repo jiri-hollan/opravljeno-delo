@@ -22,13 +22,13 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //komentar: submit v ogledObjektPrijavljeni.php
     break; 
-
+/*
   case "vloz":
 //alert("ogledDelo.js linja27");
  // <a href="../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis">
     location.replace("../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=novZapis");
    
-    break;
+    break;*/
 
   case "edit":
 //alert("v JS case edit");
