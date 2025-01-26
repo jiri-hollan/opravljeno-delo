@@ -168,7 +168,7 @@ echo $_GET['datumOpravila'];
 echo"<br>";	
 }
 //echo $stevilkaZdravnika;
-echo"ni še napisana koda
+echo"ni še napisana koda";
 break;
 
 default:
