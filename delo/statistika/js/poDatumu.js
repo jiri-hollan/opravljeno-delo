@@ -1,7 +1,10 @@
+let sifraOpravila;
+let datumOpravila;
+let stevilkaZdravnika;
 function poDatumuFunction(akce) {
   document.getElementById("akceId").value = akce;
   sifraOPravila= document.getElementById("sifraId").value;
-  alert(sifraOPravila);
+
 switch(akce) {
 
   case "vyber":
@@ -31,6 +34,7 @@ function datumOver (e) {
    var y = event.composedPath()[1];
    datumOpravila = y.cells[0].innerHTML;
    stevilkaZdravnika = y.cells[1].innerHTML;  
+     alert(sifraOPravila);
    document.getElementById("demo3").innerHTML = "izbrani datum= " + datumOpravila ; 
 //alert('poDatumu.js linija 33 '+datumOpravila);   
  }//od if 
