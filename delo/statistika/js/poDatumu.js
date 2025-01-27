@@ -1,4 +1,4 @@
-function poDatumuFunction(akce) {
+function poDatumuFunction(akce,sifra=undefined) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
 
