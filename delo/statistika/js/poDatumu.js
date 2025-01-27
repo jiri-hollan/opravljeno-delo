@@ -27,13 +27,13 @@ function datumOver (e) {
   var x = e.target;
   if (x.nodeName == "TD") {
    var y = event.composedPath()[1];
-   datunOpravila = y.cells[0].innerHTML;
-   stevilkaZdravnika = y.cells[1].innerHTML;  
-   document.getElementById("demo3").innerHTML = "izbrani datum= " + datunOpravila ; 
-//alert('poDatumu.js linija 33 '+datunOpravila);   
+   datumOpravila = y.cells[0].innerHTML;
+   stevilkaZdravnika = y.cells[1].innerHTML; 
+   sifraOpravila = y.cells[2].innerHTML;   
+   //document.getElementById("demo3").innerHTML = "izbrani datum= " + datumOpravila ; 
+//alert('poDatumu.js linija 33 '+datumOpravila);   
  }//od if 
- window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + datunOpravila+"&&stevilkaZdravnika="+stevilkaZdravnika; 
- //window.location.href = "deloStatistika.php?datumOpravila=" + datunOpravila; 
- //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + datunOpravila;  
+ window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + datumOpravila+"&&stevilkaZdravnika="+stevilkaZdravnika+"&&sifraOpravila="+sifraOpravila; 
+ 
 }//od function(e)
 } // od poDatumuFunction

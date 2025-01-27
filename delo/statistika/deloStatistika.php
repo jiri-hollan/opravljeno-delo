@@ -43,11 +43,27 @@ class SestevekDela {
 public $tabulka;
  function __construct( $podminka) {
 $tabulka = 'deloTbl';
-//var_dump($podminka);
+//////////kontrolna funkcija////////////////////
+var_dump($podminka);
+//echo"<br>";
+if (isset($podminka["sifraOpravila="])) {
+  //echo "Variabla 'sifraOpravila=' is set.<br>";
+  echo"Šifra opravila je: ".$podminka["sifraOpravila="];
+  //var_dump($podminka["sifraOpravila="]);
+    $stolpci=["datumOpravila","stevilkaZdravnika", "sifraOpravila", "SUM(casOpravila)"];
+	$glavaTable="<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>Šifra</th><th>minute</th></tr>";
+  }else{
+	$podminka["sifraOpravila="]=0;  
+  echo "Vrsta opravila ni določena.<br>";
+    $stolpci=["datumOpravila","stevilkaZdravnika", "sifraOpravila", "SUM(casOpravila)"];
+	$glavaTable="<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>Šifra</th><th>minute</th></tr>";
+  }
+/////////////////////////////////////////////////
+
  //$podminka ["datumOpravila="]=date("Y-m-d");
 //var_dump($podminka);
 	    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
-   $stolpci=["datumOpravila","stevilkaZdravnika","SUM(casOpravila)"];
+  // $stolpci=["datumOpravila","stevilkaZdravnika", "sifraOpravila", "SUM(casOpravila)"];
    $suma = new databaseS();
    $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
 //echo "<br>";
@@ -60,14 +76,16 @@ $tabulka = 'deloTbl';
 //echo "<br>";
   if(count($vybrano)>0){
   echo "<table id='osebe' style='border: solid 1px black;'>";
+
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
-  echo "<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>minute</th></tr>";
+
+  echo $glavaTable;
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
   }//od if(cout)
  else {
- echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+ echo '<br>V izbranem terminu ni zapisov o opravljenem delu ';
  }	 
  }//od construct  
 }//od class VyberImaStevilko
@@ -169,11 +187,14 @@ $this_stevilkaZdravnika=$_GET['stevilkaZdravnika'];
 echo"<br>";
 echo $_GET['datumOpravila'];
 $this_datumOpravila=$_GET['datumOpravila'];
+echo"<br>";
+echo $_GET['sifraOpravila'];
+$this_sifraOpravila=$_GET['sifraOpravila'];
 echo"<br>";	
 }
 //echo $stevilkaZdravnika;
-new Vyber($this_stevilkaZdravnika,$this_datumOpravila,'deloTbl');
-
+new Vyber($this_stevilkaZdravnika,$this_datumOpravila,$this_sifraOpravila,'deloTbl');
+//echo"$this_stevilkaZdravnika,$this_datumOpravila,$this_sifraOpravila,'deloTbl'";
 break;
 
 default:
