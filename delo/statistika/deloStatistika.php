@@ -53,7 +53,7 @@ if (isset($podminka["sifraOpravila="])) {
     $stolpci=["datumOpravila","stevilkaZdravnika", "sifraOpravila", "SUM(casOpravila)"];
 	$glavaTable="<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>Šifra</th><th>minute</th></tr>";
   }else{
-	$podminka["sifraOpravila="]=0;  
+	//$podminka["sifraOpravila="]='*';  
   echo "Vrsta opravila ni določena.<br>";
     $stolpci=["datumOpravila","stevilkaZdravnika", "sifraOpravila", "SUM(casOpravila)"];
 	$glavaTable="<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>Šifra</th><th>minute</th></tr>";
