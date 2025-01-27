@@ -1,5 +1,7 @@
-function poDatumuFunction(akce,sifra=undefined) {
+function poDatumuFunction(akce) {
   document.getElementById("akceId").value = akce;
+  sifraOPravila= document.getElementById("sifraId").value;
+  alert(sifraOPravila);
 switch(akce) {
 
   case "vyber":
