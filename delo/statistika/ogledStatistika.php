@@ -62,9 +62,10 @@ echo"ogledStatistika.php linija33";
 
  class DostopPost{
   public $stevilkaZdravnika;
-  public $datumOpravila;		 		
+  public $datumOpravila;
+  public $sifraOpravila;  
   public $tabulka;
-  function __construct($stevilkaZdravnika, $datumOpravila="",$tabulka="") {
+  function __construct($stevilkaZdravnika, $datumOpravila="",$sifraOpravila="",$tabulka="") {
 	    $datumOpravila=strtolower($datumOpravila); 
         $datumOpravila=ucfirst($datumOpravila); 
 	    $this->datumOpravila = $datumOpravila;
@@ -123,11 +124,12 @@ foreach (json_decode($this->dataPreg) as $key) {
 	class Vyber extends DostopPost{
   public $stolpci;
   public $datumOpravila;
-  public $stevilkaZdravnika;  
+  public $stevilkaZdravnika;
+  public $sifraOpravila;  
   public $tabulka;
   public $poradi;
   function __construct($stevilkaZdravnika, $datumOpravila, $sifraOpravila, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($stevilkaZdravnika, $datumOpravila, $tabulka);
+	parent::__construct($stevilkaZdravnika, $datumOpravila, $sifraOpravila,  $tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
 	
@@ -136,7 +138,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	if ($this->datumOpravila == "") {
 	    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika);	
    } else {
-    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
+    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila, "sifraOpravila"=>$sifraOpravila);
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
@@ -154,7 +156,7 @@ foreach(new TableR(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
 	if ($this->datumOpravila == "") {
 	$this->podminka = NULL;
    } else {
-    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
+    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila,"sifraOpravila"=>$sifraOpravila);
    }//od else
    $this->stolpec=array("casOpravila");   
    $this->tabulka=$tabulka;
