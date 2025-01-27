@@ -85,7 +85,7 @@ class TableRows extends RecursiveIteratorIterator {
         echo "<tr>";
     }
     function endChildren() {
-       // echo "<td onclick=" . '"poDatumuFunction('. "'vyber'".')"'. ">izberi</td></tr>\n";
+	  //echo "<td onclick=" . '"poDatumuFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
         echo '<td onclick="poDatumuFunction('."'vyber'".')">izberi</td></tr>';
     }//od endChildren
 }// od class TableRows
