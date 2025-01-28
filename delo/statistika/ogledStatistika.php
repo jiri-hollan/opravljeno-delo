@@ -79,6 +79,7 @@ echo"ogledStatistika.php linija33";
 	  break;
 	  
 	  default:
+	  echo "ogledStatistika.php linija 82"; 
 	  echo "tabulka ni določena";
   }
 		
@@ -123,11 +124,12 @@ foreach (json_decode($this->dataPreg) as $key) {
 	class Vyber extends DostopPost{
   public $stolpci;
   public $datumOpravila;
-  public $stevilkaZdravnika;  
+  public $stevilkaZdravnika; 
+  public $sifraOpravila; 
   public $tabulka;
   public $poradi;
-  function __construct($stevilkaZdravnika, $datumOpravila, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($stevilkaZdravnika, $datumOpravila, $tabulka);
+  function __construct($stevilkaZdravnika, $datumOpravila, $sifraOpravila=NULL,$tabulka, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($stevilkaZdravnika, $datumOpravila, $sifraOpravila=NULL,$tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
 	
@@ -136,7 +138,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	if ($this->datumOpravila == "") {
 	    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika);	
    } else {
-    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
+    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila, "sifraOpravila"=>$this->sifraOpravila);
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
