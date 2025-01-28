@@ -170,7 +170,10 @@ $this_stevilkaZdravnika=$_GET['stevilkaZdravnika'];
 echo"<br>";
 echo $_GET['datumOpravila'];
 $this_datumOpravila=$_GET['datumOpravila'];
-echo"<br>";	
+echo"<br>";
+echo $_GET['sifraOpravila'];
+$this_sifraOpravila=$_GET['sifraOpravila'];
+echo"<br>";
 }
 //echo $stevilkaZdravnika;
 new Vyber($this_stevilkaZdravnika,$this_datumOpravila,'deloTbl');
