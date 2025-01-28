@@ -130,8 +130,8 @@ foreach (json_decode($this->dataPreg) as $key) {
   public $stevilkaZdravnika;  
   public $tabulka;
   public $poradi;
-  function __construct($stevilkaZdravnika, $datumOpravila, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($stevilkaZdravnika, $datumOpravila, $tabulka);
+  function __construct($stevilkaZdravnika, $datumOpravila, $sifraOpravila, $tabulka, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($stevilkaZdravnika, $datumOpravila, $sifraOpravila, $tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
 	
