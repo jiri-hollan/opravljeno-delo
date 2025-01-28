@@ -48,14 +48,14 @@ $tabulka = 'deloTbl';
 //var_dump($podminka);
 	    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    $stolpci=["datumOpravila","stevilkaZdravnika","SUM(casOpravila)"];
-   $suma = new databaseS();
-   $vybrano=$suma->suma($tabulka, $stolpci, $podminka );
+   $sumaSumarum = new databaseS();
+   $vybrano=$sumaSumarum->sumaSumarum($tabulka, $stolpci, $podminka );
 //echo "<br>";
 //echo var_dump($vybrano);
 //echo "<br>";
 //echo var_dump($vybrano[0]);
 //echo "<br>"
-//echo 'linija 72 '. count($vybrano);
+//echo 'deloStatistika.php linija 72 '. count($vybrano);
 //echo "<br>";
 //echo "<br>";
   if(count($vybrano)>0){

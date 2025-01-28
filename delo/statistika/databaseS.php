@@ -170,9 +170,9 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 	  return $zaznamy;
 	}
 /**********************konec vyberPogoj******************************************************************************/
-//....................funkcija suma v razvoju.........................................
+//....................funkcija sumaSumarum v razvoju.........................................
 
-public function suma($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){
+public function sumaSumarum($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){
 	$sloupceSQL = implode(', ', $sloupce);
 	//echo '<br>'.$sloupceSQL;
 	$podminkaSQL = '';
@@ -217,5 +217,5 @@ $dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL
 	  $dotaz->closeCursor();
 	  return $zaznamy;
 	}
-//............konec sum............................................................	
+//............konec sumaSumarum............................................................	
 }//uzavírací zavorky class DatabaseS
