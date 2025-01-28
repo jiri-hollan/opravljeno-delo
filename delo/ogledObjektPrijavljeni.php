@@ -140,7 +140,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	if ($this->datumOpravila == "") {
 	    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika);	
    } else {
-    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila);
+    $this->podminka = array("stevilkaZdravnika"=>$stevilkaZdravnika, "datumOpravila"=>$this->datumOpravila, "sifraOpravila"=>$this->sifraOpravila);
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
