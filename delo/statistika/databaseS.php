@@ -124,8 +124,141 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 	  return $zaznamy;
 	} // od public function vyberIn
 //..............konec vyberIn...................................................
+public function  vloz($tabulka,$data){
+       $sloupce = array();
+	   $hodnoty = array();
+	   $parametry = array();
+	   if (is_array($data)) {
+		foreach ($data as $sloupec => $hodnota) { 
+		 array_push($sloupce, $sloupec);
+         array_push($hodnoty, '?');
+		 array_push($parametry, $hodnota);		   
+	   }		
+	}
+    $sloupceSQL = implode(', ', $sloupce);
+    $hodnotySQL = implode(',  ', $hodnoty);
+/*	echo '<br>sloupce: '.$sloupceSQL.'<br>';
+	echo 'hodnotySQL: '.$hodnotySQL.'<br>';
+	echo 'parametry: '.var_dump($parametry).'<br>';
+	*/
+    $dotaz = $this->conn->prepare("INSERT INTO $tabulka ($sloupceSQL) VALUES ($hodnotySQL)");
+
+  try {
+	  $dotaz->execute($parametry);
+	  $pocetVlozenych = $dotaz->rowCount();	 
+	  $lastId = $this->conn->lastInsertId();
+	  //var_dump($lastId);
+	  
+  } catch (PDOException $e) {
+	  echo $e->getMessage();
+	  $pocetVlozenych = false;
+	  $lastId =  false;
+  }
+      $vlozeno['pocetVlozenych'] = $pocetVlozenych;
+	  //var_dump ($vlozeno);
+	  $vlozeno['lastId'] = $lastId;
+	 // echo $pocetVlozenych . 'zadnji Id: '. $vlozeno['lastId'];
+  //return $pocetVlozenych;
+    return $vlozeno;
+}
+//.........konec vloz.................................................................
+	public function aktualizuj($tabulka,$data,$podminka){
+	  $sloupceHodnoty =array();
+      $parametry = array();	
+	  if (is_array($data) && !empty($data)) {
+		foreach ($data as $sloupec => $hodnota) {
+		  array_push($sloupceHodnoty, " $sloupec = ?");
+          array_push($parametry, $hodnota);		  
+		} //od foreache 
+
+	  } else {
+		  return 0;
+	  }//od else
+	  $sloupceHodnotySQL = implode(', ', $sloupceHodnoty);
+  //var_dump ($sloupceHodnotySQL);
+      $podminkaSQL = '';
+	  if (is_array($podminka)) {
+		$i = 0;
+        foreach ($podminka as $sloupec => $hodnota)	{
+			if ($i == 0) {
+			  $podminkaSQL .=" WHERE $sloupec = ?";
+			} else {
+			  $podminkaSQL .= " AND $sloupec = ?";
+			}//od else
+			array_push($parametry, $hodnota);
+		    $i++;
+		}// od foreach
+	//var_dump ($parametry);	
+  //var_dump ($podminkaSQL);		
+	  } else {
+		 // return;
+	  }
+	  
+	  
+	  $dotaz = $this->conn->prepare("UPDATE $tabulka SET $sloupceHodnotySQL".$podminkaSQL);
+  //var_dump ($dotaz);	  
+	  try {
+		 $dotaz->execute($parametry);
+         $pocetAktualizovanych = $dotaz->rowCount();		 
+	  } catch (PDOException $e) {
+		  echo $e->getMessage();
+		  $pocetAktualizovanych = false;
+	  }//od catch
+	   return $pocetAktualizovanych;
+	  
+	}//od function aktualizuj		
+//...........konec aktualizuj................................
+	
+	public function odstrani($tabulka,$podminka){	
+	  $podminkaSQL = '';
+	  $parametry = array();
+	  
+if (is_array($podminka)){
+		$i = 0;
+		foreach ($podminka as $sloupec=>$hodnota){
+			if ($i == 0){
+				$podminkaSQL .=" WHERE $sloupec = ?";				
+			}else {
+				$podminkaSQL .= " OR $sloupec = ?";
+			}			
+			$parametry[$i] = $hodnota;
+			$i++;
+		}
+	}
+	  
+	$dotaz = $this->conn->prepare("DELETE FROM $tabulka".$podminkaSQL);
+	try {
+	  $dotaz->execute($parametry);
+	  $pocetOdstranenych = $dotaz->rowCount();	
+	} catch (PDException $e) {
+		echo $e->getMessage();
+		$pocetOdstranenych = false;
+	}//od catch
+	
+	return $pocetOdstranenych;
+	}// od function odstrani		
+//......konec odstrani......................
 
 
+public function testirajBolnik() {
+try {
+  $kje='Tables_in_'.$this->dbname;
+  $sql = "SHOW TABLES FROM $this->dbname  WHERE $kje LIKE 'bolnikTbl' OR $kje LIKE 'omejitveTbl'";
+  $statement = $this->conn->prepare($sql);   
+  $statement->execute();
+  $tables = $statement->fetchAll(PDO::FETCH_BOTH);
+// var_dump($tables);
+  $bolnikObstaja=count($tables);
+  $this->bolnikObstaja = $bolnikObstaja;
+   return $this;
+}
+
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    }
+$conn = null;
+}//uzavírací zavorky function testrajBolnik
+//-------------------konec function testraj
 /**************************vyberPogoj*****************************************************/
 
 	public function vyberPogoj($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){

@@ -1,5 +1,5 @@
  <?php 
- require_once ('../../skupne/database.php');
+ require_once ('databaseS.php');
  require_once ('../identifikace.php');
  echo'<script src="../js/delo.js?'.time().'"></script>';
  	//$podminka = array("uname"=>$uname);
@@ -114,7 +114,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 
     $this->podminka = array("id"=>$this->id);
 	    $this->data = $data;
-    	$aktualizuj = new database();
+    	$aktualizuj = new databaseS();
 		$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
 }
 }// od class uredi
@@ -141,7 +141,7 @@ foreach (json_decode($this->dataPreg) as $key) {
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
    $this->stolpci= array('id', 'vpis_date', 'sifraOpravila', 'opravilo', 'datumOpravila', 'casOpravila');
-$vyber = new database();
+$vyber = new databaseS();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
 if(count($vybrano)>0){	
@@ -158,7 +158,7 @@ foreach(new TableR(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
    }//od else
    $this->stolpec=array("casOpravila");   
    $this->tabulka=$tabulka;
-$sestej = new database();
+$sestej = new databaseS();
 $sesteto=$sestej->suma($this->tabulka, $this->stolpec, $this->podminka);
 $sestevek= $sesteto[0]["SUM(casOpravila)"];
 //echo "<br>".$sestevek;
@@ -195,7 +195,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     $data =array_push_assoc($data, $key, $value);
 }
      $this->data = $data;
-     $vloz = new database();
+     $vloz = new databaseS();
      $vlozeno=$vloz->vloz($this->tabulka,$this->data);
     //echo $vlozeno[1];
      echo "<br>";
@@ -251,7 +251,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	 $this->tabulka = $tabulka->get_test();	 
 	 $podminka = array("id"=>$this->id);	
 	 $stolpci=["*"];
-	 $vyber = new database();
+	 $vyber = new databaseS();
 	 $vybrano=$vyber->vyber($this->tabulka, $stolpci, $podminka );
 //echo "število izbranih zapisov= " . count($vybrano);
      $dolzina=count($vybrano);
@@ -296,7 +296,7 @@ $neopazno=array_diff_key($vybrano[0],$vidno);
 	 echo "<br>";
 	 $stolpci=["*"];	 
 	 $podminka = array("id"=>$this->id);
-	 $odstrani = new database();
+	 $odstrani = new databaseS();
     $najdeno=$odstrani->vyber($this->tabulka, $stolpci, $podminka ); 
 	print_r($najdeno);
 	$odstranjeno=$odstrani->odstrani($this->tabulka, $podminka );
