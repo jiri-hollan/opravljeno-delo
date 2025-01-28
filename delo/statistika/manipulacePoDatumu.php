@@ -14,7 +14,7 @@ require_once '../skupne/sabloni/zahlavi.php';
 <p id="demo3"></p>
 <?php 
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
-require_once '../skupne/database.php';
+require_once 'databaseS.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
   $mesto = test_input($_POST["mesto"]);
@@ -46,7 +46,7 @@ case "uredi":
 	$bolnisnicaStatus = test_input($_POST["bolnisnicaStatus"]); 
 	$podminka = array("id"=>$id);
     $data= array("mesto"=>$mesto, "nazivB"=>$nazivB, "bolnisnicaStatus"=>$bolnisnicaStatus);
-	$aktualizuj = new database($tabulka,$data,$podminka);
+	$aktualizuj = new databaseS($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
     break;
   default:
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
 function vyberFunction($podminka){
   $tabulka="bolnisniceTbl";
   $stolpci=["*"];
-  $vyber = new database();
+  $vyber = new databaseS();
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
@@ -115,7 +115,7 @@ function vyberFunction($podminka){
 }//od vyberFunction  
 
 function vlozFunction($tabulka,$data){
-  $vloz = new database($tabulka,$data);
+  $vloz = new databaseS($tabulka,$data);
 //$vloz->vloz($tabulka,$data);
   $vlozeno=$vloz->vloz($tabulka,$data );
 //echo $vlozeno[1];
@@ -130,7 +130,7 @@ function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
   $tabulka="bolnisniceTbl";
   $stolpci=["*"];
-  $vyber = new database($tabulka, $stolpci, $podminka );
+  $vyber = new databaseS($tabulka, $stolpci, $podminka );
   $vyber->vyber($tabulka, $stolpci, $podminka);
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
@@ -154,7 +154,7 @@ function editFunction($podminka){
 function odstraniFunction($podminka){
 //echo 'odstraniFunction še ni napisana';
 	$tabulka="bolnisniceTbl";
-	$odstrani = new database();
+	$odstrani = new databaseS();
 	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 }//od odstraniFunction
