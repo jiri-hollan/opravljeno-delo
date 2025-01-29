@@ -61,7 +61,7 @@ id = y.cells[0].innerHTML;
 alert(id);
   document.getElementById("demo3").innerHTML = "id v bazi je= " + id ;  
  }//od if 
- alert( "../ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka );
-  window.location.href = "../ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka; 
+ alert( "ogledStatistika.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka );
+  window.location.href = "ogledStatistika.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka; 
 }//od function(e)
 } // od izborFunction

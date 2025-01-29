@@ -2,10 +2,12 @@
  require_once ('databaseS.php');
  require_once ('../identifikace.php');
  echo'<script src="../js/delo.js?'.time().'"></script>';
- 	//$podminka = array("uname"=>$uname);
-	//$stevilkaZdravnika=new VyberUporabnika($podminka);
-	//$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
-	//var_dump ($stevilkaZdravnika);	
+ if(isset($uname)){	 
+    $podminka = array("uname"=>$uname);
+		$stevilkaZdravnika=new VyberUporabnika($podminka);
+	$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
+	var_dump ($stevilkaZdravnika);
+	 }
 //_____________________________________________________________
 if (isset($_REQUEST["akceClass"])) {
 	  $akceClass = new Test_input($_REQUEST["akceClass"]);
@@ -246,14 +248,14 @@ foreach (json_decode($this->dataPreg) as $key) {
 	 function __construct($tabulka, $id) {
     $id = new test_input($_GET["id"]);
 	$this->id = $id->get_test();
-//echo "id uporabnika= " .  $id;
+echo "id uporabnika= " .  $this->id ;
 	$tabulka = new test_input($_GET["tabulka"]);
 	 $this->tabulka = $tabulka->get_test();	 
 	 $podminka = array("id"=>$this->id);	
 	 $stolpci=["*"];
 	 $vyber = new databaseS();
 	 $vybrano=$vyber->vyber($this->tabulka, $stolpci, $podminka );
-//echo "število izbranih zapisov= " . count($vybrano);
+echo "število izbranih zapisov= " . count($vybrano);
      $dolzina=count($vybrano);
 	//------------------------------------------------------------------------	 
   echo "<form  method='post'>";
