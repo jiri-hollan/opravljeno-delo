@@ -31,7 +31,7 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
     break;
 
   case "edit":
-//alert("v JS case edit");
+alert("v JS case edit");
    if(document.getElementById("osebe")!=null){
      document.getElementById("osebe").addEventListener("click", functionOver);
 }
@@ -61,7 +61,7 @@ id = y.cells[0].innerHTML;
 alert(id);
   document.getElementById("demo3").innerHTML = "id v bazi je= " + id ;  
  }//od if 
- alert( "ogledStatistika.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka );
-  window.location.href = "ogledStatistika.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka; 
+ alert( "ogledStatistika.php?akceClass=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka );
+  window.location.href = "ogledStatistika.php?akceClass=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka; 
 }//od function(e)
 } // od izborFunction
