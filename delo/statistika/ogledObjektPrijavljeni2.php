@@ -1,7 +1,7 @@
 <?php
-if (isset($_REQUEST["akce"])) {
-	  $akce = new Test_input($_REQUEST["akce"]);
-	  $akce = $akce->get_test();
+if (isset($_REQUEST["akceClass"])) {
+	  $akceClass = new Test_input($_REQUEST["akceClass"]);
+	  $akceClass = $akceClass->get_test();
 
   
   //______________________________________________________
@@ -21,16 +21,17 @@ if (isset($_REQUEST["akce"])) {
   }else {
 	  echo "<script>alert(ni tabulke v post);</script>";
   }
-  //var_dump($akce);
-  echo strtoupper($akce) .': ';
+var_dump($akceClass);
+echo"ogledStatistika.php linija33";
+  echo strtoupper($akceClass) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //echo "tabulka je: ".$tabulka;
-  new $akce($stevilkaZdravnika=NULL, $datumOpravila, $tabulka);
+  new $akceClass($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
-}//od if akce
+}//od if akceClass
 /*else {
-	 echo'akce ni določena'; 
+	 echo'akceClass ni določena'; 
   }*/
 //_________________________________
  
@@ -137,7 +138,7 @@ $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->p
 echo "<br>";
 if(count($vybrano)>0){	
 	
-foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+foreach(new TableR(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
 
 }//od foreach
@@ -198,23 +199,20 @@ foreach (json_decode($this->dataPreg) as $key) {
 }// od class Vloz
 
 //-------------------------iterator-----------------------------------------------------
-	class TableRows extends RecursiveIteratorIterator {
+	class TableR extends RecursiveIteratorIterator {
     function __construct($it) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
-	switch ($_REQUEST["tabulka"]){
+
 		
 	
-	case "deloTbl":
+	//case "deloTbl":
     /*Glava tabele vseh stolpcev  
 	*echo *"<tr><th>Id</th><th>vpis_date</><th>stevilkaZdravnika</th><th>opravilo</th><th>sifraOpravila</th><th>d*atumOpravila</th><th>casOpravila</th></tr>";*/
 	
 	/* glava za izbrane stolpce ----------------------------------*/
 	echo "<tr><th>id</><th>vpisano dne</><th>šifra opravila</th><th>opravilo</th><th>datumOpravila</th><th>casOpravila</th></tr>";
-    break;
-	default:
-	echo "";
-	}
+
         parent::__construct($it, self::LEAVES_ONLY);
     }
     function current() { 
@@ -271,7 +269,7 @@ $neopazno=array_diff_key($vybrano[0],$vidno);
 	   echo " $key:<br> <input id=$key name=$key value='".$value."'></input><br>";
       }//od foreach	
 	  
-	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
+	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi1</button><button type='reset'>reset</button> ";
      echo "</form>";
 
 	 }//od construct	
