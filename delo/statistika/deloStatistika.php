@@ -62,7 +62,7 @@ $tabulka = 'deloTbl';
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
   echo "<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>minute</th></tr>";
-    foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+    foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
   }//od if(cout)
@@ -74,7 +74,7 @@ $tabulka = 'deloTbl';
 //CCCCCCCCCCCCC KONEC  CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 //CCCCCCCCCCCCCCC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-class TableRows extends RecursiveIteratorIterator {
+class DeloRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
     }
@@ -88,7 +88,7 @@ class TableRows extends RecursiveIteratorIterator {
 	  //echo "<td onclick=" . '"poDatumuFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
         echo '<td onclick="poDatumuFunction('."'vyber'".')">izberi</td></tr>';
     }//od endChildren
-}// od class TableRows
+}// od class DeloRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 //CCCCCCCCCCCCCCCCCCCCCC CLASS podminka   CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
