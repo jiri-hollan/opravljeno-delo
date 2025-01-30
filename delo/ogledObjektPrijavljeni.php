@@ -34,10 +34,13 @@ if (isset($_REQUEST["akce"])) {
   }else {
 	  echo "<script>alert(ni tabulke v post);</script>";
   }
-  //var_dump($akce);
-  echo strtoupper($akce) .': ';
+ var_dump($akce);
+ /*  echo strtoupper($akce) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
- //echo "tabulka je: ".$tabulka;
+ //echo "tabulka je: ".$tabulka;*/
+  echo"Številka zdravnika= ".$stevilkaZdravnika;
+ echo"Datum opravila= ".$datumOpravila;
+ echo"Tabulka= ".$tabulka;
   new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  

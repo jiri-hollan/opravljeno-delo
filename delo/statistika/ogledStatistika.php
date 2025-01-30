@@ -33,9 +33,12 @@ if (isset($_REQUEST["akceClass"])) {
   }
 var_dump($akceClass);
 echo"ogledStatistika.php linija35";
-  echo strtoupper($akceClass) .': ';
-  echo '<b>dne: </b>'.($datumOpravila) .'<br>';
+/*  echo strtoupper($akceClass) .': ';
+  echo '<b>dne: </b>'.($datumOpravila) .'<br>';*/
  //echo "tabulka je: ".$tabulka;
+ echo"Številka zdravnika= ".$stevilkaZdravnika;
+ echo"Datum opravila= ".$datumOpravila;
+ echo"Tabulka= ".$tabulka;
   new $akceClass($stevilkaZdravnika, $datumOpravila, $tabulka);
 
 	  
