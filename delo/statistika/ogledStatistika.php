@@ -2,10 +2,6 @@
  require_once ('databaseS.php');
  require_once ('../identifikace.php');
  echo'<script src="../js/delo.js?'.time().'"></script>';
- 	//$podminka = array("uname"=>$uname);
-	//$stevilkaZdravnika=new VyberUporabnika($podminka);
-	//$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
-	//var_dump ($stevilkaZdravnika);	
 //_____________________________________________________________
 if (isset($_REQUEST["akceClass"])) {
 	  $akceClass = new Test_input($_REQUEST["akceClass"]);

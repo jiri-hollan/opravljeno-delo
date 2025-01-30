@@ -38,7 +38,7 @@ if (isset($_REQUEST["akce"])) {
   echo strtoupper($akce) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //echo "tabulka je: ".$tabulka;
-  new $akce($stevilkaZdravnika, $datumOpravila, $tabulka);
+  new $akce($stevilkaUporabnika, $datumOpravila, $tabulka);
 
 	  
 }//od if akce
