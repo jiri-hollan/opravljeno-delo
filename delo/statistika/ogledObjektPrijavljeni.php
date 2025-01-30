@@ -315,7 +315,7 @@ $neopazno=array_diff_key($vybrano[0],$vidno);
 if (isset($_REQUEST["tabulka"])){  //komentar: se zažene, ko se odpre ta fajl
 switch($_REQUEST["tabulka"]){
 case "deloTbl":
-echo '<script src="js/ogledDelo.js?'.time().'"></script>'; //komentar: le vlkjuči ogledDelo.js" 
+echo '<script src="../js/ogledDelo.js?'.time().'"></script>'; //komentar: le vlkjuči ogledDelo.js" 
 break;
 }
 }//od if isset request
