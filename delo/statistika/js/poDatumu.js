@@ -34,7 +34,7 @@ function datumOver (e) {
    var y = event.composedPath()[1];
    datumOpravila = y.cells[0].innerHTML;
    stevilkaZdravnika = y.cells[1].innerHTML;  
-alert(sifraOPravila);
+//alert("Šifra"+sifraOPravila);
    document.getElementById("demo3").innerHTML = "izbrani datum= " + datumOpravila ; 
 //alert('poDatumu.js linija 33 '+datumOpravila);   
  }//od if 
