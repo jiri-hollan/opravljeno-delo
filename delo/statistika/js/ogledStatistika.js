@@ -53,15 +53,15 @@ document.getElementById("demo").innerHTML = '<input id="datumVpisaId" type="date
 //////////////////// konec izborFunction /////////////////////////////////////////
 
 function functionOver (e,tabulka="deloTbl") {
-alert('F.Over 56');	
+//alert('F.Over 56');	
 let x = e.target;
 if (x.nodeName == "TD") {
 let y = event.composedPath()[1];
 id = y.cells[0].innerHTML;
-alert(id);
+//alert(id);
   document.getElementById("demo3").innerHTML = "id v bazi je= " + id ;  
  }//od if 
- alert( "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka );
+// alert( "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka );
   window.location.href = "ogledObjektPrijavljeni.php?akce=" + x.innerHTML + "&id=" + id + "&tabulka="+ tabulka; 
 }//od function(e)
 } // od izborFunction
