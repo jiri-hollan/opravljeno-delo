@@ -32,7 +32,7 @@ if (isset($_REQUEST["akceClass"])) {
 	  echo "<script>alert(ni tabulke v post);</script>";
   }
 var_dump($akceClass);
-echo"ogledStatistika.php linija33";
+echo"ogledStatistika.php linija35";
   echo strtoupper($akceClass) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //echo "tabulka je: ".$tabulka;
