@@ -1,12 +1,12 @@
  <?php 
  session_start();
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
- require_once('../skupne/sabloni/zahlavi.php');
+ require_once('../../skupne/sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
- require_once('sabloni/formDelo.php');//komentar: gumbi "izberi vlož"
- require_once ('../skupne/database.php');
- require_once ('identifikace.php');
- echo'<script src="js/delo.js?'.time().'"></script>';
+ require_once('../sabloni/formDelo.php');//komentar: gumbi "izberi vlož"
+ require_once ('../../skupne/database.php');
+ require_once ('../identifikace.php');
+ echo'<script src="../js/delo.js?'.time().'"></script>';
  	$podminka = array("uname"=>$uname);
 	$stevilkaZdravnika=new VyberUporabnika($podminka);
 	$stevilkaZdravnika=$stevilkaZdravnika->stevilkaZdravnika;
