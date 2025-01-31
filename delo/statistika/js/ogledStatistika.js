@@ -1,4 +1,4 @@
-//alert("statistika/js/ogledDELO JS");
+//alert("statistika/js/ogledSTATISTIKA JS");
 //tabulka="deloTbl";
   let tabulka;
 //alert(tabulka);
