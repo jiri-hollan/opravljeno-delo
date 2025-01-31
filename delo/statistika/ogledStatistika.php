@@ -4,9 +4,9 @@
  require_once ('ogledObjektPrijavljeni2.php');
  echo'<script src="../js/delo.js?'.time().'"></script>';
 //_____________________________________________________________
-if (isset($_REQUEST["akceClass"])) {
-	  $akceClass = new Test_input($_REQUEST["akceClass"]);
-	  $akceClass = $akceClass->get_test();
+if (isset($_REQUEST["dolociClasso"])) {
+	  $dolociClasso = new Test_input($_REQUEST["dolociClasso"]);
+	  $dolociClasso = $dolociClasso->get_test();
 
   
   //______________________________________________________
@@ -26,15 +26,15 @@ if (isset($_REQUEST["akceClass"])) {
   }else {
 	  echo "<script>alert(ni tabulke v post);</script>";
   }
-var_dump($akceClass);
+var_dump($dolociClasso);
 echo"ogledStatistika.php linija33";
-  echo strtoupper($akceClass) .': ';
+  echo strtoupper($dolociClasso) .': ';
   echo '<b>dne: </b>'.($datumOpravila) .'<br>';
  //echo "tabulka je: ".$tabulka;
-  new $akceClass($stevilkaZdravnika, $datumOpravila, $tabulka);	  
-}//od if akceClass
+  new $dolociClasso($stevilkaZdravnika, $datumOpravila, $tabulka);	  
+}//od if dolociClasso
 /*else {
-	 echo'akceClass ni določena'; 
+	 echo'dolociClasso ni določena'; 
   }*/
 //_________________________________
 ?>
