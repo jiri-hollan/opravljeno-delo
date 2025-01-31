@@ -1,6 +1,4 @@
 <?php
-
- 
  	class Test_input {
 	public $test;	
   function __construct($test) {
