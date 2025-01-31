@@ -1,6 +1,7 @@
-	//alert("ogled DELO JS");
- tabulka="deloTbl";
-	//alert(tabulka);
+//alert("ogled DELO JS");
+//tabulka="deloTbl";
+  let tabulka;
+//alert(tabulka);
 //////////////////////////////////////////////////////////////////////////////7
 function izborOgledFunction(akce, tabulka) {
 //alert(tabulka);
