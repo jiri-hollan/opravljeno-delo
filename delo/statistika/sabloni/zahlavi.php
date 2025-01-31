@@ -14,7 +14,7 @@ echo'
 <body>
 <div class="topnav">
   <span id="poPotrebi"></span>
-  <span id="uname">odjavljen</span> ';
+ <!-- <span id="uname">odjavljen</span>--> ';
 
 if (isset($nazaj)){
 	$nazaj=$nazaj;
