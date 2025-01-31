@@ -11,7 +11,7 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  	$podminka = array("uname"=>$uname);
 	$stevilkaUporabnika=new VyberUporabnika($podminka);
 	$stevilkaUporabnika=$stevilkaUporabnika->stevilkaZdravnika;
-	echo " je to trenutni uporabnik? ".var_dump ($stevilkaUporabnika);	
+//echo " je to trenutni uporabnik? ".var_dump ($stevilkaUporabnika);	
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
@@ -35,10 +35,10 @@ if (isset($_REQUEST["akce"])) {
   }else {
 	  echo "<script>alert(ni tabulke v post);</script>";
   }
-  //var_dump($akce);
-  echo strtoupper($akce) .': ';
-  echo '<b>dne: </b>'.($datumOpravila) .'<br>';
- //echo "tabulka je: ".$tabulka;
+//var_dump($akce);
+//echo "linija 39 ".strtoupper($akce) .': ';
+//echo '<b>dne: </b>'.($datumOpravila) .'<br>';
+//echo "tabulka je: ".$tabulka;
   new $akce($stevilkaZdravnika=NULL, $datumOpravila, $tabulka);	  
 }//od if akce
 /*else {
