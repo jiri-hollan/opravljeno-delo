@@ -2,10 +2,10 @@
 echo 'napredna manipulacija z bazo';
 require_once('../admin/sabloni/vkladane/zahlavi.php');
 require_once('../admin/administrace.php');
-
+require_once('../koren.php');
 class Vertikal extends Administrace {
-   public function __construct() {
-	       parent::__construct();
+   public function __construct($koren) {
+	       parent::__construct($koren);
 		   
   if (isset($_SESSION["upstatus"]) && $_SESSION["upstatus"] == 3)  {
 $nazaj="../admin1/vertikalMenu.php";
@@ -41,6 +41,6 @@ echo '
 	}
    }//od construct 
 }//od class vertikal  
-   new Vertikal(); 
+   new Vertikal($koren); 
 require_once('../admin/sabloni/vkladane/zapati.php'); 
 ?>

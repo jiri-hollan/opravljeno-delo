@@ -2,9 +2,10 @@
 require_once('../frontend/sabloni/vkladane/zahlavi.php');
 echo 'Menipulacija z bazo';
 require_once('administrace.php');
+require_once('../koren.php');
 class Manipulace extends Administrace {
-   public function __construct() {
-	       parent::__construct();		   
+   public function __construct($koren) {
+	       parent::__construct($koren);		   
   if (isset($_SESSION["upstatus"]) && $_SESSION["upstatus"] == 3)  {
 $nazaj="../admin/databaseMenu.php";
 echo '
@@ -38,6 +39,6 @@ echo '
            }
   }//od construct 
 }//od class Manipulace  
- new Manipulace(); 
+ new Manipulace($koren); 
 require_once('sabloni/vkladane/zapati.php'); 
 ?>

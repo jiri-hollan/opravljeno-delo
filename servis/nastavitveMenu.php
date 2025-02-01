@@ -1,10 +1,11 @@
 <?php
 require_once('sabloni/vkladane/zahlavi.php');
 require_once('../admin/administrace.php');
+require_once('../koren.php');
 echo 'Menipulacija z bazo';
 class Manipulace extends Administrace {
-   public function __construct() {
-	       parent::__construct();
+   public function __construct($koren) {
+	       parent::__construct($koren);
 		   
   if (isset($_SESSION["upstatus"]) && $_SESSION["upstatus"] > 1)  {			   
 echo '
@@ -25,6 +26,6 @@ echo '
 	}
    }//od construct 
 }//od class Manipulace  
- $servisManipulace = new Manipulace(); 
+ $servisManipulace = new Manipulace($koren); 
 
 ?>
