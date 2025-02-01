@@ -7,5 +7,5 @@ $a1= '';
 <li><a href="../delo/prijavljeniUporabnikObjekt.php?nazaj='.$nazaj.'&akce=dnevni">Dnevni</a> </li>	   
 <li><a href="../servis/manipulaceObjektUniverzal.php?tabulka=pregledovalciTbl">upravljanje z pregledovalci</a></li>';*/   
 $a2= ''; 
-$a3= '<li><a href="manipulaceZdravniki.php?nazaj='.$nazaj.'">izbira Zdravnika</a></li>'; 
+$a3= '<li><a href="zdravniki.php?nazaj='.$nazaj.'">izbira Zdravnika</a></li>'; 
 ?>

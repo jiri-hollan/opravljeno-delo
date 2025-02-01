@@ -41,6 +41,6 @@ function datumOver (e) {
 
 window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + datumOpravila+"&&stevilkaZdravnika="+stevilkaZdravnika+"&&sifraOpravila="+sifraOPravila; 
  //window.location.href = "deloStatistika.php?datumOpravila=" + datumOpravila; 
- //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + datumOpravila;  
+ //window.location.href = "zdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + datumOpravila;  
 }//od function(e)
 } // od poDatumuFunction

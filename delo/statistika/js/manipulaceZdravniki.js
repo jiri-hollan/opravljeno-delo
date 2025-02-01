@@ -31,6 +31,6 @@ function functionOver (e) {
    document.getElementById("demo3").innerHTML = "izbrana številka zdravnika= " + stevilkaZdravnika ;    
  }//od if 
  window.location.href = "deloStatistika.php?stevilkaZdravnika=" + stevilkaZdravnika+"&semafor=semaforZdravnik"; 
- //window.location.href = "manipulaceZdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + stevilkaZdravnika;  
+ //window.location.href = "zdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + stevilkaZdravnika;  
 }//od function(e)
 } // od izberiStevilkoZdravnikaFunction
