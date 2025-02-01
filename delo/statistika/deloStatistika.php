@@ -36,12 +36,11 @@ AND datumOpravila >= $zacDatum
 AND datumOpravila >= $koncDatum
 GROUP BY datumOpravila;
 ';
-
 **/
 //CCCCCCCCCCCCCCC CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class SestevekDela {
 public $tabulka;
- function __construct( $podminka) {
+function __construct( $podminka) {
 $tabulka = 'deloTbl';
 //var_dump($podminka);
  //$podminka ["datumOpravila="]=date("Y-m-d");
@@ -129,20 +128,14 @@ case'semaforDatum':
 	 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['stevilkaZdravnika'])){
 		 $podminka = [];
 		 $this_stevilkaZdravnika = $_POST['stevilkaZdravnika'];
-		/////////////////////////////////////////////////////////////// 
-			 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
-    // echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+		 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
+// echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
 	 	 $podminka = [];
          if ($this_stevilkaZdravnika >0) {
-
-	   $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
-
-       }
-
-	$danes='"'.date("Y-m-d").'"';
-	echo"<script>pogojFunction($danes, 'vnos',$this_stevilkaZdravnika)</script>";
-	 
-		/////////////////////////////////////////////////////////////////////// 
+	        $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
+           }
+	     $danes='"'.date("Y-m-d").'"';
+	     echo"<script>pogojFunction($danes, 'vnos',$this_stevilkaZdravnika)</script>"; 
 		 $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
 		 if(isset($_POST['zacDatum'])){
 		 $this_zacDatum = $_POST['zacDatum'];
@@ -151,16 +144,16 @@ case'semaforDatum':
 		 if(isset($_POST['koncDatum'])){
 		 $this_koncDatum = $_POST['koncDatum'];
 		 $podminka["datumOpravila<="] = $this_koncDatum;
-		 }else{$this_koncDatum =NULL;}
+		  }else{$this_koncDatum =NULL;}
 		 if(isset($_POST['sifraOpravila'])&& is_numeric($_POST['sifraOpravila'])){
 		 $this_sifraOpravila = $_POST['sifraOpravila'];	
 		 $podminka["sifraOpravila="] = $this_sifraOpravila;
-		 }else{$this_sifraOpravila =NULL;}
-	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
-     echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+		  }else{$this_sifraOpravila =NULL;}
+         echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
+         echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
 //var_dump($podminka); 
-new SestevekDela($podminka);
-	 }//od if POST 
+         new SestevekDela($podminka);
+	    }//od if POST 
 break;
 case'semaforPregled':
 if(isset($_GET['stevilkaZdravnika'])){
@@ -177,20 +170,17 @@ echo"<br>";
 }
 //echo $stevilkaZdravnika;
 new Vyber($this_stevilkaZdravnika,$this_datumOpravila,'deloTbl');
-
 break;
 
 default:
 echo'linija167';	 
  	 }//od switch semafor	 
  }//od construct  
-
-}//od class PodminkaGet
+}//od class Podminka
 //CCCCCCCCCCCCCCCCCCCC KONEC CLASS PODMINKA CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
 new Podminka();
-echo'
-<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
+echo'<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
 require_once 'sabloni/prijavljenJe.php';
 require_once '../../skupne/sabloni/zapati.php';
 ?>

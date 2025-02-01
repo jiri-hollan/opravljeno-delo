@@ -2,7 +2,6 @@ function pogojFunction(danes,akce,stevilkaZd) {
 console.log("statistika.js  linija 2 danes:"+danes+" akce: "+akce+" številkaZ: "+stevilkaZd);
   document.getElementById("akceId").value = akce;
 switch(akce) {
-
   case "vnos":
 //alert(danes);
    let stevilkaZdravnika= '<input type="hidden" id="stevilkaZdravnikaId" class="kratke" name="stevilkaZdravnika" value="'+stevilkaZd+'" placeholder="_____" readonly >';
@@ -13,23 +12,19 @@ switch(akce) {
    let opravilo= '<label for="opraviloId">vrsta opravila: </label><br><input id="opraviloId" value="" name="opravilo"  autocomplete="off" >';
    let izbira= '<select id="opravilaId"   onchange="myFunction()"><option>opravilo</select>';
    const opraviloList = JSON.parse(opraviloJson); 
-
 //alert("linija 39 opravilo Json:" + opraviloJson);
-//alert(opraviloList);
-  
+//alert(opraviloList); 
     document.getElementById("demo").innerHTML = "<div class='glavni'>"+semafor+stevilkaZdravnika + zacDatum + koncDatum + sifraOpravila +"<div class='notranji'>"+ opravilo + "<br>"+ izbira +"</div></div>" ;
-	   // document.getElementById("klik").innerHTML =	izbira;
+// document.getElementById("klik").innerHTML =	izbira;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
-	
 	listaOpravilFunction(opraviloList);
-	
     break;
 
-  case "uredi":
-  //alert("v JS case edit");
-  if(document.getElementById("osebe")!=null){
- document.getElementById("osebe").addEventListener("click", functionOver);
-}
+   case "uredi":
+//alert("v JS case edit");
+   if(document.getElementById("osebe")!=null){
+   document.getElementById("osebe").addEventListener("click", functionOver);
+     }
     break;
 /*
   case "odstrani":
@@ -47,7 +42,6 @@ switch(akce) {
  }//od switch
 
 
-//----------------------------------------------------------------------------------------
 function functionOver (e) {
 let x = e.target;
 if (x.nodeName == "TD") {
@@ -56,13 +50,11 @@ let id = y.cells[0].innerHTML;
  /* document.getElementById("demo1").innerHTML = "Triggered by a " + x.nodeName + " element";
   document.getElementById("demo2").innerHTML = "Triggered by a " + x.innerHTML + " element";  */
   document.getElementById("demo3").innerHTML = "id v bazi je= " + id ;  
- }//od if
- 
+  }//od if
  window.location.href = "manipulacePregledovalci.php?akce=" + x.innerHTML + "&id=" + id;
-  
 }//od function(e)
 } // od pogojFunction
-//-----------------------------------------------------------------------------
+//-------KONEC---pogojFunction---------------------------------------------------
 
 function listaOpravilFunction(opraviloList) {
 console.log("statistika.js  linija 74");	
@@ -70,24 +62,23 @@ console.log("statistika.js  linija 74");
 console.log("opravila.js"+opraviloList);
 let text = "<option id='' value=''>";
 let i;
- 
  for (let [sifra, value] of Object.entries(opraviloList)) { 	 
   text += "<option id='" +  sifra  + "' value='" + value + "'>"+value; 
   console.log(text);
-}
-  //alert ("TEXT="+text);
+   }
+//alert ("TEXT="+text);
 //console.log(text);
 document.getElementById("opravilaId").innerHTML = text;
-}
-
+}//od listaOpravilFunction
 //_____________________________________________________
+
 function zadnjiAlertFunction() {
 let x= document.getElementById("opraviloId").value;
 	//alert("X=:"+x);
 	document.getElementById("sifraId").value = "";	
 }
-	  
-	 //----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+
 function myFunction() {
 	console.log("statistika.js  linija 98");
 	  const a = document.getElementById("opravilaId");
