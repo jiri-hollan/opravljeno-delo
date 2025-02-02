@@ -234,7 +234,7 @@ echo "<b>Številka Zdravnika".$vybrano[0]['stevilkaZdravnika']."</b><br><br>";
 	   echo " $key:<br> <input id=$key name=$key value='".$value."'></input><br>";
       }//od foreach	
 	  
-	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi1</button><button type='reset'>reset</button> ";
+	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
      echo "</form>";
 
 	 }//od construct	

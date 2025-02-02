@@ -6,8 +6,8 @@ if (isset($_REQUEST["tabulka"])){
   } 
 ?>
 <br>
-<button id="vyberId" onclick="izborOgledFunction('vyber','<?php echo $tab;?>')">izberi</button>
-<button id="vlozId" onclick="izborOgledFunction('vloz','<?php echo $tab;?>')">vlož1</button>
+<button id="vyberId" onclick="izborOgledFunction('vyber','<?php echo $tab;?>')">izberi datum</button>
+<button id="vlozId" onclick="izborOgledFunction('vloz','<?php echo $tab;?>')">vlož</button>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <input type="hidden" id="akceId" name="akce" value="">
 <p id="demo"></p>
