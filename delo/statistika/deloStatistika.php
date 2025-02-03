@@ -112,7 +112,7 @@ case 'semaforZdravnik':
        if ($this_stevilkaZdravnika >0) {
        //$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
 	   $podminka["stevilkaZdravnika="] = $this_stevilkaZdravnika;
-	   $podminka["datumOpravila="]=date("Y-m-d");
+	   //$podminka["datumOpravila="]=date("Y-m-d");
 //echo 'podminka'. $podminka ["datumOpravila="];  
        } else {
 	   $podminka = NULL;
