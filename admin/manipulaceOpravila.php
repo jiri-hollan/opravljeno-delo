@@ -1,7 +1,7 @@
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
-<h2>Prednastavljeni sklepi</h2>
+<h2>Prednastavljena opravila</h2>
 <button onclick="izborFunction('vyber')">izberi</button>
 <button onclick="izborFunction('vloz')">vlož</button>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -15,10 +15,10 @@ require_once '../skupne/sabloni/zahlavi.php';
 require_once '../skupne/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
-  $bolnisnica = test_input($_POST["bolnisnica"]);
+  //$bolnisnica = test_input($_POST["bolnisnica"]);
  // echo strtoupper($akce) .': ';
-  echo strtoupper($bolnisnica) .'<br>';
-//echo var_dump($sklepiStatus) .'<br>';
+ // echo strtoupper($bolnisnica) .'<br>';
+//echo var_dump($sifraOpravila) .'<br>';
 //$akce = naredi($akce);
 switch ($akce) {
   case "vyber":
@@ -26,24 +26,24 @@ switch ($akce) {
    if ($bolnisnica == "") {
 	$podminka = NULL;
 } else {
-    $podminka = array("bolnisnica"=>$bolnisnica);
+    //$podminka = array("bolnisnica"=>$bolnisnica);
 }
     vyberFunction($podminka);
     break;
 case "vloz":
-    $sklep = test_input($_POST["sklep"]);
-    $sklepiStatus = test_input($_POST["sklepiStatus"]);  
-    $data= array("bolnisnica"=>$bolnisnica, "sklep"=>$sklep, "sklepiStatus"=>$sklepiStatus);
+    $opravilo = test_input($_POST["opravilo"]);
+    $sifraOpravila = test_input($_POST["sifraOpravila"]);  
+    $data= array("sifraOpravila"=>$sifraOpravila, "opravilo"=>$opravilo);
     vlozFunction($data);
     break;
 case "uredi":
-    $tabulka="sklepiTbl";
+    $tabulka="opravilaTbl";
     $id=test_input($_POST["id"]);
-    $bolnisnica=test_input($_POST["bolnisnica"]);
-    $sklep = test_input($_POST["sklep"]);
-	$sklepiStatus = test_input($_POST["sklepiStatus"]); 
+    //$bolnisnica=test_input($_POST["bolnisnica"]);
+    $opravilo = test_input($_POST["opravilo"]);
+	$sifraOpravila = test_input($_POST["sifraOpravila"]); 
 	$podminka = array("id"=>$id);
-    $data= array("bolnisnica"=>$bolnisnica, "sklep"=>$sklep, "sklepiStatus"=>$sklepiStatus);
+    $data= array("sifraOpravila"=>$sifraOpravila, "opravilo"=>$opravilo);
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
     break;
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
 }//od if
 
 function vyberFunction($podminka){
- $tabulka="sklepiTbl";
+ $tabulka="opravilaTbl";
  $stolpci=["*"];
  $vyber = new database();
  $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
@@ -87,7 +87,7 @@ function vyberFunction($podminka){
 //echo $vybrano[1];
 if(count($vybrano)>0){
  echo "<table id='osebe' style='border: solid 1px black;'>";
- echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>sklepiStatus</th></tr>";
+ echo "<tr><th>Id</th><th>bolnišnica</><th>opravilo</th><th>sifraOpravila</th></tr>";
 
  class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
@@ -117,7 +117,7 @@ if(count($vybrano)>0){
 }//od vyberFunction  
 
 function vlozFunction($data){
- $tabulka="sklepiTbl";
+ $tabulka="opravilaTbl";
  $vloz = new database($tabulka,$data);
  $vlozeno=$vloz->vloz($tabulka,$data );
 //echo $vlozeno[1];
@@ -130,7 +130,7 @@ function vlozFunction($data){
 
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
- $tabulka="sklepiTbl";
+ $tabulka="opravilaTbl";
  $stolpci=["*"];
  $vyber = new database($tabulka, $stolpci, $podminka );
  $vyber->vyber($tabulka, $stolpci, $podminka);
@@ -153,13 +153,13 @@ function editFunction($podminka){
 
 function odstraniFunction($podminka){
 	//echo 'odstraniFunction še ni napisana';
-	$tabulka="sklepiTbl";
+	$tabulka="opravilaTbl";
 	$odstrani = new database();
 	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 }//od odstraniFunction
 echo'
-<script src="js/manipulaceSklepi.js?'.time().'">
+<script src="js/manipulaceOpravila.js?'.time().'">
 </script>
 ';
 require_once '../skupne/sabloni/zapati.php';
