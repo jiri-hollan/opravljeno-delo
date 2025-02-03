@@ -17,7 +17,7 @@ echo '
 <input type="submit"  name="imeTable" value="uporabnikiTbl">
 <input type="submit"  name="imeTable" value="pregledovalciTbl">
 <input type="submit"  name="imeTable" value="limitiTbl">
-<!--<input type="submit"  name="imeTable" value="ocenaTbl">-->
+<input type="submit"  name="imeTable" value="opravilaTbl">
 <input type="submit"  name="imeTable" value="sklepiTbl">
 <input type="submit"  name="imeTable" value="bolnisniceTbl">
 </form>
