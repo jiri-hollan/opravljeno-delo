@@ -109,6 +109,7 @@ $ulozeno = $this->conn->vloz($this->nameTable, $data);
     echo '<script>';
     echo 'sessionStorage.setItem("bolnikId",'. $bolnikId .');';		
     //echo 'alert("vnos vrstice: "+sessionStorage.getItem("bolnikId"));';
+    echo 'alert("shranjeno v bazo");';	
 	echo 'window.location.href = "bolnik\.php";';
     echo '</script>';	
 	return;		
