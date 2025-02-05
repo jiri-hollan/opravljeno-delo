@@ -1,6 +1,6 @@
 let tabulka="pregledovalciTbl";
 function izborFunction(akce, tabulka) {
-	let tabulka=tabulka;
+	tabulka=tabulka;
 	//alert(tabulka);
   document.getElementById("akceId").value = akce;
 switch(akce) {
