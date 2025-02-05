@@ -17,13 +17,13 @@ if (isset($_REQUEST["akce"])) {
 	 $bolnisnica = "";   
   }
   //______________________________________________________
-   if (isset($_REQUEST["datumVpisa"])){
+ /*  if (isset($_REQUEST["datumVpisa"])){
 	  $datumOpravila = new Test_input($_REQUEST['datumVpisa']); 
       $datumOpravila = $datumOpravila->get_test();
 	  
   }else {
 	 $datumOpravila = "";   
-  }
+  }*/
   //------------------------------------------------------
  if (isset($tabulka)){
 	  $tabulka= $tabulka; 
@@ -69,7 +69,7 @@ if (isset($_REQUEST["akce"])) {
         $bolnisnica=ucfirst($bolnisnica); 
 	    $this->bolnisnica = $bolnisnica;
         $this->tabulka = $tabulka; 
-		$this->datumOpravila = $datumOpravila;
+		//$this->datumOpravila = $datumOpravila;
 		 switch($this->tabulka){
 	  case "pregledovalciTbl":
 	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "pregledovalciStatus"]';
@@ -78,16 +78,12 @@ if (isset($_REQUEST["akce"])) {
 	  $this->dataPreg= '["bolnisnica", "sklep", "sklepiStatus"]';
 	  break;
 	  
-	  case "ocenaTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "ocena", "ocenaStatus"]';
-	  break;
-	  
 	  case "limitiTbl":
 	  $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
 	  break;
 	  
-	   case "deloTbl":
-	  $this->dataPreg= '["vpis_date", "stevilkaZdravnika", "opravilo", "sifraOpravila", "datumOpravila",  "casOpravila"]';
+	   case "opravilaTbl":
+	  $this->dataPreg= '[ "opravilo", "sifraOpravila"]';
 	  break;
 	  
 	  default:
@@ -178,7 +174,7 @@ echo "Za izbrano bolnisnico ni zapisa v bazi";
    return $data;
 }
 foreach (json_decode($this->dataPreg) as $key) {
- //echo "$key <br>";
+//echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
     $data =array_push_assoc($data, $key, $value);
@@ -204,15 +200,11 @@ foreach (json_decode($this->dataPreg) as $key) {
 		  case "pregledovalciTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>pregledovalciStatus</th></tr>";
     break;
+	
 	case "sklepiTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>sklepiStatus</th></tr>";
     break;
-	
-	case "ocenaTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>ocena</th><th>ocenaStatus</th></tr>";
-    break;
-	
-	
+
 	case "limitiTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>skupina</th><th>ime</th><th>min</th><th>max</th></tr>";
     break;
@@ -228,8 +220,8 @@ foreach (json_decode($this->dataPreg) as $key) {
         echo "<tr>";
     }
     function endChildren() {
-        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'edit'".')"'.'"' . ">edit</td>
-		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>
+        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'edit', 'tabulka'".')"'.'"' . ">edit</td>
+		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani', 'tabulka'".')"'.'"' . ">odstrani</td>
 		
 		</tr>" . "\n";
     }
@@ -291,20 +283,17 @@ switch($_REQUEST["tabulka"]){
 case "sklepiTbl":
 echo '<script src="js/manipulaceSklepi.js?'.time().'"></script>'; 
 break;
+
 case "pregledovalciTbl":
 echo '<script src="js/manipulacePregledovalci.js?'.time().'"></script>'; 
-break;
-
-case "ocenaTbl":
-echo '<script src="js/manipulaceOcena.js?'.time().'"></script>'; 
 break;
 
 case "limitiTbl":
 echo '<script src="js/manipulaceLimiti.js?'.time().'"></script>'; 
 break;
 
-case "deloTbl":
-echo '<script src="js/manipulaceDelo.js?'.time().'"></script>'; 
+case "opravilaTbl":
+echo '<script src="js/manipulaceOpravila.js?'.time().'"></script>'; 
 break;
 
 }
