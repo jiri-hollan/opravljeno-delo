@@ -1,18 +1,18 @@
-var tabulka="pregledovalciTbl";
+let tabulka="pregledovalciTbl";
 function izborFunction(akce, tabulka) {
-	var tabulka=tabulka;
+	let tabulka=tabulka;
 	//alert(tabulka);
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice 	
  document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onfocusout="bolnisnicaFunction()" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
-	var bolList  =[
+	const bolList  =[
 	"Izola",
 	"Jesenice",
 	];
-	var text = "";
-var i;
+	let text = "";
+let i;
 for (i = 0; i < bolList.length; i++) {
  // text += "<option value=" +  zdravList[i] + ">"+"<br>";
   text += "<option value='" +  bolList[i] + "'>"  +"<br>";
@@ -53,9 +53,9 @@ for (i = 0; i < bolList.length; i++) {
 } // od izborFunction
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
-var x = e.target;
+let x = e.target;
 if (x.nodeName == "TD") {
-var y = event.composedPath()[1];
+let y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 

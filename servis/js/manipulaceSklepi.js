@@ -1,13 +1,13 @@
-var tabulka="sklepiTbl";
+let tabulka="sklepiTbl";
 function izborFunction(akce) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice 	
    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onfocusout="bolnisnicaFunction()" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
-   var bolList  =["Izola","Jesenice",];
-   var text = "";
-   var i;
+   const bolList  =["Izola","Jesenice",];
+   let text = "";
+   let i;
    for (i = 0; i < bolList.length; i++) {
     text += "<option value='" +  bolList[i] + "'>"  +"<br>";
 }
@@ -46,9 +46,9 @@ switch(akce) {
 } // od izborFunction
 
 function functionOver (e) {
-var x = e.target;
+let x = e.target;
 if (x.nodeName == "TD") {
-var y = event.composedPath()[1];
+let y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
