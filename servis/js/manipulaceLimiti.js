@@ -37,7 +37,7 @@ switch(akce) {
   case "odstrani": 
   if ( confirm("Odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
-    document.getElementById("osebe").addEventListener("click", functionOver);
+   return document.getElementById("osebe").addEventListener("click", functionOver);
       }
 } else {
   text = "You canceled!";
@@ -46,14 +46,20 @@ switch(akce) {
   default:
     // code block
  }//od switch
-} // od izborFunction
+
 //----------------------------------------------------------------------------------------
+
 function functionOver (e) {
-let x = e.target;
+ x = e.target;
 if (x.nodeName == "TD") {
-let y = event.composedPath()[1];
+ y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
-  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+//alert("x= "+x.innerHTML+" row value= "+row_value);
+  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ; 
+//return;  
  }//od if 
- window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value+ "&tabulka="+ tabulka;  
 }//od function(e)
+
+ window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value+ "&tabulka="+ tabulka;  
+
+} // od izborFunction
