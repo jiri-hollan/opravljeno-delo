@@ -1,8 +1,7 @@
-let tabulka="____Tbl";
+let tabulka;
 function izborFunction(akce, tabulka) {
-  let tabulka=tabulka;
 //alert(tabulka);
-  document.getElementById("akceId").value = akce;
+document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice

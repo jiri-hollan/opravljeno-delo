@@ -1,5 +1,5 @@
-let tabulka="sklepiTbl";
-function izborFunction(akce) {
+let tabulka;
+function izborFunction(akce, tabulka) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
