@@ -50,7 +50,7 @@ switch(akce) {
 
 //----------------------------------------------------------------------------------------
 
-function functionOver (e,tabulka) {
+function functionOver (e) {
  x = e.target;
 if (x.nodeName == "TD") {
  y = event.composedPath()[1];
