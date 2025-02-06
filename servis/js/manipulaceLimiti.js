@@ -1,5 +1,5 @@
 let tabulka;
-function izborFunction(akce,tabulka) {
+function izborFunction(akce, tabulka) {
 document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
@@ -58,7 +58,7 @@ row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ; 
 //return;
 //alert(tabulka);  
-window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value+ "&tabulka="+ tabulka;  
+  window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka=" + tabulka;  
  }//od if 
 }//od function(e)
 } // od izborFunction
