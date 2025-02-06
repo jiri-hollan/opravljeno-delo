@@ -25,6 +25,7 @@ echo '
 <ul id="linky1">
 <li><a href="../admin1/manipulaceOmejitve.php?nazaj='.$nazaj.'">Omejitve</a></li>
 <li><a href="../admin1/manipulaceUporabniki.php?nazaj='.$nazaj.'">uporabniki</a></li>
+<li><a href="../admin1/resetGesla.php?nazaj='.$nazaj.'">reset gesla</a></li>
 <li><a href="kreateBasepremedikacija.php?nazaj='.$nazaj.'">naredi bazo: premedikacija</a></li>
 <li><a href="kreateTableVse.php?nazaj='.$nazaj.'">naredi tabele</a></li>
 </ul>
