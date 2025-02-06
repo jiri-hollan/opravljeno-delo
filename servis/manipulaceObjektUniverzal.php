@@ -195,8 +195,9 @@ foreach (json_decode($this->dataPreg) as $key) {
 	class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
 		//echo $_REQUEST["tabulka"];
+		$this->tabulka=$_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
-	switch ($_REQUEST["tabulka"]){
+	switch ($this->tabulka){
 		  case "pregledovalciTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>pregledovalciStatus</th></tr>";
     break;
@@ -220,8 +221,8 @@ foreach (json_decode($this->dataPreg) as $key) {
         echo "<tr>";
     }
     function endChildren() {
-        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'edit', 'tabulka'".')"'.'"' . ">edit</td>
-		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani', 'tabulka'".')"'.'"' . ">odstrani</td>
+        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'edit','". "$this->tabulka"."'".')"'.'"' . ">edit</td>
+		<td class='odstraniCls' onclick=" . '"izborFunction('. "'edit','". "$this->tabulka"."'".')"'.'"' . ">odstrani</td>
 		
 		</tr>" . "\n";
     }

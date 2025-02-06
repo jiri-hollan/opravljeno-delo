@@ -1,5 +1,5 @@
 let tabulka="limitiTbl";
-function izborFunction(akce) {
+function izborFunction(akce,tabulka) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
@@ -49,7 +49,7 @@ switch(akce) {
 
 //----------------------------------------------------------------------------------------
 
-function functionOver (e) {
+function functionOver (e,tabulka) {
  x = e.target;
 if (x.nodeName == "TD") {
  y = event.composedPath()[1];
@@ -59,7 +59,7 @@ row_value = y.cells[0].innerHTML;
 //return;  
  }//od if 
 }//od function(e)
-
+if(typeof x !== 'undefined'){
  window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value+ "&tabulka="+ tabulka;  
-
+}
 } // od izborFunction
