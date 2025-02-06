@@ -31,13 +31,13 @@ switch ($akce) {
 }
     vyberFunction($podminka);
     break;
-case "vloz":
+/*case "vloz":
     $tabulka="uporabnikiTbl";
     $nazivB = test_input($_POST["nazivB"]);
     $bolnisnicaStatus = test_input($_POST["bolnisnicaStatus"]);  
     $data= array("mesto"=>$mesto, "nazivB"=>$nazivB, "bolnisnicaStatus"=>$bolnisnicaStatus);
     vlozFunction($tabulka, $data);
-    break;
+    break;*/
 case "uredi":
     $tabulka="uporabnikiTbl";
     $id=test_input($_POST["id"]);
@@ -114,7 +114,7 @@ function vyberFunction($podminka){
 }//od else
 }//od vyberFunction  
 
-function vlozFunction($tabulka,$data){
+/*function vlozFunction($tabulka,$data){
   $vloz = new database($tabulka,$data);
 //$vloz->vloz($tabulka,$data);
   $vlozeno=$vloz->vloz($tabulka,$data );
@@ -124,7 +124,7 @@ function vlozFunction($tabulka,$data){
   echo "<br>";
   echo count($vlozeno);
   echo "<br>";
-}//od vlozFunction
+}//od vlozFunction*/
 
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
