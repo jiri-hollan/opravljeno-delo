@@ -43,7 +43,7 @@ switch(akce) {
     break;	
    default:
  }//od switch
-} // od izborFunction
+
 
 function functionOver (e) {
 let x = e.target;
@@ -54,3 +54,4 @@ row_value = y.cells[0].innerHTML;
  }//od if 
  window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value+ "&tabulka="+ tabulka;  
 }//od function(e)
+} // od izborFunction

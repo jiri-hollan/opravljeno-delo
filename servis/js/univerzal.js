@@ -39,7 +39,7 @@ KODA
   break;	
   default:
  }//od switch
-} // od izborFunction
+
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
 let x = e.target;
@@ -50,3 +50,4 @@ if(x.nodeName == "TD") {
   }//od if 
 window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka=" + tabulka;
 }//od function(e)
+} // od izborFunction

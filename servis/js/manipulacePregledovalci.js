@@ -40,7 +40,7 @@ for (i = 0; i < bolList.length; i++) {
   case "odstrani": 
    if ( confirm("Odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
-    document.getElementById("osebe").addEventListener("click", functionOver);
+    return document.getElementById("osebe").addEventListener("click", functionOver);
       }
 } else {
   text = "You canceled!";
@@ -48,7 +48,7 @@ for (i = 0; i < bolList.length; i++) {
     break;	
   default:
  }//od switch
-} // od izborFunction
+
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
 let x = e.target;
@@ -59,3 +59,4 @@ row_value = y.cells[0].innerHTML;
  }//od if 
   window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
 }//od function(e)
+} // od izborFunction
