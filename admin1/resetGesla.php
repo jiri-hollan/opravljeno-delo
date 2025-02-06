@@ -2,9 +2,9 @@
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
 <!--konec zahlavi-->
-<h2>izberi bolnišnico</h2>
+<h2>izberi uporabnika</h2>
 <button onclick="izborFunction('vyber')">izberi</button>
-<button onclick="izborFunction('vloz')">vlož</button>
+<!--<button onclick="izborFunction('vloz')">vlož</button>-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <input type="hidden" id="akceId" name="akce" value="">
 <p id="demo"></p>
@@ -32,14 +32,14 @@ switch ($akce) {
     vyberFunction($podminka);
     break;
 case "vloz":
-    $tabulka="bolnisniceTbl";
+    $tabulka="uporabnikiTbl";
     $nazivB = test_input($_POST["nazivB"]);
     $bolnisnicaStatus = test_input($_POST["bolnisnicaStatus"]);  
     $data= array("mesto"=>$mesto, "nazivB"=>$nazivB, "bolnisnicaStatus"=>$bolnisnicaStatus);
     vlozFunction($tabulka, $data);
     break;
 case "uredi":
-    $tabulka="bolnisniceTbl";
+    $tabulka="uporabnikiTbl";
     $id=test_input($_POST["id"]);
     $mesto=test_input($_POST["mesto"]);
     $nazivB = test_input($_POST["nazivB"]);
@@ -65,20 +65,20 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
 	 $podminka = array("id"=>$id);
      editFunction($podminka);
     break;
- case "odstrani":
+/* case "odstrani":
     $id = test_input($_GET["id"]);
 	echo "id v bazi= " .  $id;
 	echo "<br>";
     $podminka = array("id"=>$id);
 	odstraniFunction($podminka);
-    break;	
+    break;	*/
   default:
     echo "ni izvelo get case"; 
 }//od switch	  
 }//od if
 
 function vyberFunction($podminka){
-  $tabulka="bolnisniceTbl";
+  $tabulka="uporabnikiTbl";
   $stolpci=["*"];
   $vyber = new database();
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
@@ -101,7 +101,7 @@ function vyberFunction($podminka){
     }
     function endChildren() {
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
-		<td onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>		
+		<!--<td onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>-->	
 		</tr>" . "\n";
 }// od function endChildren
 }// od class TableRows
@@ -128,7 +128,7 @@ function vlozFunction($tabulka,$data){
 
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
-  $tabulka="bolnisniceTbl";
+  $tabulka="uporabnikiTbl";
   $stolpci=["*"];
   $vyber = new database($tabulka, $stolpci, $podminka );
   $vyber->vyber($tabulka, $stolpci, $podminka);
@@ -153,7 +153,7 @@ function editFunction($podminka){
 
 function odstraniFunction($podminka){
 //echo 'odstraniFunction še ni napisana';
-	$tabulka="bolnisniceTbl";
+	$tabulka="uporabnikiTbl";
 	$odstrani = new database();
 	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
