@@ -129,7 +129,7 @@ function vyberFunction($podminka){
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
   $tabulka="uporabnikiTbl";
-  $stolpci=["*"];
+  $stolpci=["id", "uname", "geslo", "ime", "priimek"];
   $vyber = new database($tabulka, $stolpci, $podminka );
   $vyber->vyber($tabulka, $stolpci, $podminka);
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
