@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
 
 function vyberFunction($podminka){
   $tabulka="uporabnikiTbl";
-  $stolpci=["*"];
+  $stolpci=["id", "ime", "priimek"];
   $vyber = new database();
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
@@ -88,7 +88,7 @@ function vyberFunction($podminka){
 //echo $vybrano[1];
   if(count($vybrano)>0){
    echo "<table id='osebe' style='border: solid 1px black;'>";
-   echo "<tr><th>Id</th><th>mesto</><th>nazivB</th><th>bolnisnicaStatus</th></tr>";
+   echo "<tr><th>Id</th><th>ime</><th>priimek</th></tr>";
  class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
@@ -129,7 +129,7 @@ function vyberFunction($podminka){
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
   $tabulka="uporabnikiTbl";
-  $stolpci=["id", "uname", "geslo", "ime", "priimek"];
+  $stolpci=["id", "uname", "geslo"];
   $vyber = new database($tabulka, $stolpci, $podminka );
   $vyber->vyber($tabulka, $stolpci, $podminka);
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
@@ -151,13 +151,13 @@ function editFunction($podminka){
 }//od for		
 }//od editFunction
 
-function odstraniFunction($podminka){
+/*function odstraniFunction($podminka){
 //echo 'odstraniFunction še ni napisana';
 	$tabulka="uporabnikiTbl";
 	$odstrani = new database();
 	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
-}//od odstraniFunction
+}//od odstraniFunction*/
 
 echo'
 <script src="js/resetGesla.js?'.time().'">
