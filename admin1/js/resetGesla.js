@@ -6,13 +6,13 @@ switch(akce) {
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit">'; //submit
     break; 
 
-  case "vloz":
+ /* case "vloz":
     mesto= '<input type="text" id="mestoId" name="mesto" value="" placeholder="Mesto" required>';
     nazivB= '<input type="text" id="nazivBId" name="nazivB" value="" placeholder="nazivB" required>';
     bolnisnicaStatus= '<input type="int" id="statusId" name="bolnisnicaStatus" value="" placeholder="bolnisnicaStatus" required>';
     document.getElementById("demo").innerHTML = mesto + nazivB + bolnisnicaStatus;
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
-    break;
+    break;*/
 
   case "uredi":
   //alert("v JS case edit");
@@ -20,7 +20,7 @@ switch(akce) {
  document.getElementById("osebe").addEventListener("click", functionOver);
 }
     break;
-  case "odstrani":  
+/*  case "odstrani":  
   if ( confirm("v funkciji JS odstrani\odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
     document.getElementById("osebe").addEventListener("click", functionOver);
@@ -28,7 +28,7 @@ switch(akce) {
 } else {
   text = "You canceled!";
 }
-    break;	
+    break;	*/
   default:
     // code block
  }//od switch
