@@ -1,5 +1,6 @@
-let tabulka="limitiTbl";
+let tabulka;
 function izborFunction(akce,tabulka) {
+
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
@@ -56,10 +57,12 @@ if (x.nodeName == "TD") {
 row_value = y.cells[0].innerHTML;
 //alert("x= "+x.innerHTML+" row value= "+row_value);
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ; 
-//return;  
+//return;
+alert(tabulka);  
+window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value+ "&tabulka="+ tabulka;  
  }//od if 
 }//od function(e)
-if(typeof x !== 'undefined'){
+/*if(typeof x !== 'undefined'){
  window.location.href = "manipulaceObjektUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value+ "&tabulka="+ tabulka;  
-}
+}*/
 } // od izborFunction
