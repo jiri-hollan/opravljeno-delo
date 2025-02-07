@@ -17,20 +17,13 @@ require_once '../skupne/sabloni/zahlavi.php';
 require_once '../skupne/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
-  $mesto = test_input($_POST["mesto"]);
   echo strtoupper($akce) .': ';
-  echo strtoupper($mesto) .'<br>';
-//echo var_dump($bolnisnicaStatus) .'<br>';
 switch ($akce) {
   case "vyber":
 // echo "to je vyber.<br>";
-   if ($mesto == "") {
-	$podminka = NULL;
-} else {
-    $podminka = array("mesto"=>$mesto);
-}
-    vyberFunction($podminka);
-    break;
+  $podminka = NULL;
+  vyberFunction($podminka);
+  break;
 /*case "vloz":
     $tabulka="uporabnikiTbl";
     $nazivB = test_input($_POST["nazivB"]);
