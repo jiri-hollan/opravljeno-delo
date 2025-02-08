@@ -2,8 +2,7 @@
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
 <!--konec zahlavi-->
-<h2>izberi uporabnika</h2>
-<button onclick="izborFunction('vyber')">izberi</button>
+<button onclick="izborFunction('vyber')"><h2>izberi uporabnika</h2></button>
 <!--<button onclick="izborFunction('vloz')">vlož</button>-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <input type="hidden" id="akceId" name="akce" value="">
