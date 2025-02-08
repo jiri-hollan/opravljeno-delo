@@ -1,7 +1,7 @@
 function izborFunction(akce) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
-  case "vyber":
+/*  case "vyber":
    // document.getElementById("demo").innerHTML = '<input type="text" id="mestoId" name="mesto" value="" placeholder="Bolnišnica">';// omogoči izbiro bolnišnice
 	document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit">'; //submit
     break; 
@@ -19,16 +19,8 @@ switch(akce) {
   if(document.getElementById("osebe")!=null){
  document.getElementById("osebe").addEventListener("click", functionOver);
 }
-    break;
-/*  case "odstrani":  
-  if ( confirm("v funkciji JS odstrani\odstranim en zapis?") == true) {
-    if(document.getElementById("osebe")!=null){
-    document.getElementById("osebe").addEventListener("click", functionOver);
-      }
-} else {
-  text = "You canceled!";
-}
-    break;	*/
+  break;
+
   default:
     // code block
  }//od switch
