@@ -123,22 +123,29 @@ function editFunction($podminka){
   $vyber = new database($tabulka, $stolpci, $podminka );
   $vyber->vyber($tabulka, $stolpci, $podminka);
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
-//echo $vybrano[1];
+//echo $vybrano[0];
 //echo var_dump($vybrano);
+  $vybrano = $vybrano[0];
   echo "<br>";
-  echo "število izbranih zapisov= " . count($vybrano);
-  $dolzina=count($vybrano);
+  $dolzina=count($vybrano);  
+  echo "število izbranih stolpcev= " . $dolzina;
+
 //echo $vybrano[1];
   echo "<br>";
-  echo "<form  method='post'>";
-  
+  echo "<form id='gesloForm' method='post'>";
+ /* 
   for ($i = 0; $i < $dolzina; $i++) {
    foreach ($vybrano[$i] as $key => $value) {
 // echo "$key: $value\n";
 //echo " $key:<input id=$key name=$key value='".$value."'></input>";
 	echo " <input id=$key name=$key value='".$value."'></input>";
 }//od foreach
-}//od for	
+}//od for  */
+//var_dump($vybrano);
+	echo " <input id='id' name='id' value='".$vybrano['id']."' readonly></input>";
+	echo " <input id='uname' name='uname' value='".$vybrano['uname']."' readonly></input>";
+	echo " ".$vybrano['ime']." ";
+	echo " ".$vybrano['priimek']." ";
   echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
   echo "</form>";
 	
