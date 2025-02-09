@@ -119,7 +119,7 @@ function vyberFunction($podminka){
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
   $tabulka="uporabnikiTbl";
-  $stolpci=["id", "uname", "geslo"];
+  $stolpci=["id", "uname", "ime", "priimek"];
   $vyber = new database($tabulka, $stolpci, $podminka );
   $vyber->vyber($tabulka, $stolpci, $podminka);
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
@@ -131,15 +131,17 @@ function editFunction($podminka){
 //echo $vybrano[1];
   echo "<br>";
   echo "<form  method='post'>";
+  
   for ($i = 0; $i < $dolzina; $i++) {
    foreach ($vybrano[$i] as $key => $value) {
 // echo "$key: $value\n";
 //echo " $key:<input id=$key name=$key value='".$value."'></input>";
 	echo " <input id=$key name=$key value='".$value."'></input>";
 }//od foreach
+}//od for	
   echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
   echo "</form>";
-}//od for		
+	
 }//od editFunction
 
 /*function odstraniFunction($podminka){
