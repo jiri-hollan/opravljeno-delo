@@ -134,7 +134,8 @@ function editFunction($podminka){
   for ($i = 0; $i < $dolzina; $i++) {
    foreach ($vybrano[$i] as $key => $value) {
 // echo "$key: $value\n";
-	echo " $key:<input id=$key name=$key value='".$value."'></input>";
+//echo " $key:<input id=$key name=$key value='".$value."'></input>";
+	echo " <input id=$key name=$key value='".$value."'></input>";
 }//od foreach
   echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
   echo "</form>";
