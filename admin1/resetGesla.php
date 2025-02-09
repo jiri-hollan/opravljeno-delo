@@ -49,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
   switch ($akce) {
 	 case "uredi":
      $id = test_input($_GET["id"]);
-	 echo "id v bazi= " .  $id;
-	 echo "<br>";
+     echo "id v bazi= " .  $id;
+//echo "<br>";
 // var_dump($id);
 	 $podminka = array("id"=>$id);
      editFunction($podminka);
@@ -126,9 +126,9 @@ function editFunction($podminka){
 //echo $vybrano[0];
 //echo var_dump($vybrano);
   $vybrano = $vybrano[0];
-  echo "<br>";
+//echo "<br>";
   $dolzina=count($vybrano);  
-  echo "število izbranih stolpcev= " . $dolzina;
+//echo "število izbranih stolpcev= " . $dolzina;
 
 //echo $vybrano[1];
   echo "<br>";
@@ -142,11 +142,13 @@ function editFunction($podminka){
 }//od foreach
 }//od for  */
 //var_dump($vybrano);
-	echo " <input id='id' name='id' value='".$vybrano['id']."' readonly></input>";
-	echo " <input id='uname' name='uname' value='".$vybrano['uname']."' readonly></input>";
-	echo " ".$vybrano['ime']." ";
-	echo " ".$vybrano['priimek']." ";
+  echo " ".$vybrano['ime']." ";
+  echo " ".$vybrano['priimek']." ";
+  echo " <input type='hidden' id='id' name='id' value='".$vybrano['id']."' readonly></input>";
+  echo " <input id='uname' name='uname' value='".$vybrano['uname']."' readonly></input>";
+  echo" začasno geslo: <input id='geslo' name='geslo' value='' ></input>";  
   echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
+
   echo "</form>";
 	
 }//od editFunction
