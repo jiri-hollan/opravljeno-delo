@@ -31,11 +31,13 @@ switch ($akce) {
 case "uredi":
     $tabulka="uporabnikiTbl";
     $id=test_input($_POST["id"]);
-    $mesto=test_input($_POST["mesto"]);
-    $nazivB = test_input($_POST["nazivB"]);
-	$bolnisnicaStatus = test_input($_POST["bolnisnicaStatus"]); 
-	$podminka = array("id"=>$id);
-    $data= array("mesto"=>$mesto, "nazivB"=>$nazivB, "bolnisnicaStatus"=>$bolnisnicaStatus);
+    $uname=test_input($_POST["uname"]);
+    $geslo=test_input($_POST["geslo"]);
+	$geslo = md5($geslo);
+    //$nazivB = test_input($_POST["nazivB"]);
+	//$bolnisnicaStatus = test_input($_POST["bolnisnicaStatus"]); 
+	$podminka = array("id"=>$id, "uname"=>$uname);
+    $data= array("geslo"=>$geslo);
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
     break;
