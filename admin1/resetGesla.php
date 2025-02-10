@@ -21,21 +21,13 @@ switch ($akce) {
   $podminka = NULL;
   vyberFunction($podminka);
   break;
-/*case "vloz":
-    $tabulka="uporabnikiTbl";
-    $nazivB = test_input($_POST["nazivB"]);
-    $bolnisnicaStatus = test_input($_POST["bolnisnicaStatus"]);  
-    $data= array("mesto"=>$mesto, "nazivB"=>$nazivB, "bolnisnicaStatus"=>$bolnisnicaStatus);
-    vlozFunction($tabulka, $data);
-    break;*/
+
 case "uredi":
     $tabulka="uporabnikiTbl";
     $id=test_input($_POST["id"]);
     $uname=test_input($_POST["uname"]);
     $geslo=test_input($_POST["geslo"]);
 	$geslo = md5($geslo);
-    //$nazivB = test_input($_POST["nazivB"]);
-	//$bolnisnicaStatus = test_input($_POST["bolnisnicaStatus"]); 
 	$podminka = array("id"=>$id, "uname"=>$uname);
     $data= array("geslo"=>$geslo);
 	$aktualizuj = new database($tabulka,$data,$podminka);
@@ -57,13 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
 	 $podminka = array("id"=>$id);
      editFunction($podminka);
     break;
-/* case "odstrani":
-    $id = test_input($_GET["id"]);
-	echo "id v bazi= " .  $id;
-	echo "<br>";
-    $podminka = array("id"=>$id);
-	odstraniFunction($podminka);
-    break;	*/
+
   default:
     echo "ni izvelo get case"; 
 }//od switch	  
@@ -93,7 +79,6 @@ function vyberFunction($podminka){
     }
     function endChildren() {
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
-		<!--<td onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>-->	
 		</tr>" . "\n";
 }// od function endChildren
 }// od class TableRows
@@ -106,17 +91,6 @@ function vyberFunction($podminka){
 }//od else
 }//od vyberFunction  
 
-/*function vlozFunction($tabulka,$data){
-  $vloz = new database($tabulka,$data);
-//$vloz->vloz($tabulka,$data);
-  $vlozeno=$vloz->vloz($tabulka,$data );
-//echo $vlozeno[1];
-  echo "<br>";
-  echo var_dump($vlozeno);
-  echo "<br>";
-  echo count($vlozeno);
-  echo "<br>";
-}//od vlozFunction*/
 
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
@@ -131,41 +105,19 @@ function editFunction($podminka){
 //echo "<br>";
   $dolzina=count($vybrano);  
 //echo "število izbranih stolpcev= " . $dolzina;
-
 //echo $vybrano[1];
   echo "<br>";
   echo "<form id='gesloForm' method='post'>";
- /* 
-  for ($i = 0; $i < $dolzina; $i++) {
-   foreach ($vybrano[$i] as $key => $value) {
-// echo "$key: $value\n";
-//echo " $key:<input id=$key name=$key value='".$value."'></input>";
-	echo " <input id=$key name=$key value='".$value."'></input>";
-}//od foreach
-}//od for  */
 //var_dump($vybrano);
   echo " ".$vybrano['ime']." ";
   echo " ".$vybrano['priimek']." ";
   echo " <input type='hidden' id='id' name='id' value='".$vybrano['id']."' readonly></input>";
   echo " <input id='uname' name='uname' value='".$vybrano['uname']."' readonly></input>";
-  echo" začasno geslo: <input id='geslo' name='geslo' value='' ></input>";  
+//echo" začasno geslo: <input id='geslo' name='geslo' value='' ></input>";
+  echo" začasno geslo: <input id='geslo' placeholder='Novo geslo' name='geslo' autocomplete='off' pattern='(?=.*\d)(?=.*[a-z]).{8,}' title='Mora vsebovati vsaj številke in male črke skupaj najmanj 8 znakov' required>";
   echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
-
   echo "</form>";
-	
 }//od editFunction
-
-/*function odstraniFunction($podminka){
-//echo 'odstraniFunction še ni napisana';
-	$tabulka="uporabnikiTbl";
-	$odstrani = new database();
-	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
-	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
-}//od odstraniFunction*/
-
-echo'
-<script src="js/resetGesla.js?'.time().'">
-</script>
-';
+echo'<script src="js/resetGesla.js?'.time().'"></script>';
 require_once '../skupne/sabloni/zapati.php';
 ?>
