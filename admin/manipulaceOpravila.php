@@ -23,12 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 switch ($akce) {
   case "vyber":
 // echo "to je vyber.<br>";
- /*  if ($bolnisnica == "") {
+/* if ($bolnisnica == "") {
 	$podminka = NULL;
 } else {
     //$podminka = array("bolnisnica"=>$bolnisnica);
-}
-    vyberFunction($podminka);*/
+}*/
+    vyberFunction($podminka=NULL);
     break;
 case "vloz":
     $opravilo = test_input($_POST["opravilo"]);
