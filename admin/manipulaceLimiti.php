@@ -2,16 +2,8 @@
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
 <h2>Urejanje limitov</h2>
-<button onclick="izborFunction('vyber')">izberi</button>
-<button onclick="izborFunction('vloz')">vlož</button>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<input type="hidden" id="akceId" name="akce" value="">
-<p id="demo"></p>
-<p id="posli"></p>
-</form>
- <br>
-<p id="demo3"></p>
 <?php
+require_once 'sabloni/izbira.php';
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
 
