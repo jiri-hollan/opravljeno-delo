@@ -5,7 +5,7 @@
  require_once('sabloni/formBaze.php');
  require_once '../skupne/database.php';
 
-//_____________________________________________________________
+/*********** akce pride iz neke od "manipulace____.js" ****************/
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
@@ -278,25 +278,29 @@ foreach (json_decode($this->dataPreg) as $key) {
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 	 }//od construct
 	 }//od class odstrani
+	 
+/**************************************** 
+tabulka pride od nastavitveMenu.php
+***************************************/
 if (isset($_REQUEST["tabulka"])){
+  switch($_REQUEST["tabulka"]){
+  case "sklepiTbl":
+  echo '<script src="js/manipulaceSklepi.js?'.time().'"></script>'; 
+  break;
 
-switch($_REQUEST["tabulka"]){
-case "sklepiTbl":
-echo '<script src="js/manipulaceSklepi.js?'.time().'"></script>'; 
-break;
+  case "pregledovalciTbl":
+  echo '<script src="js/manipulacePregledovalci.js?'.time().'"></script>'; 
+  break;
 
-case "pregledovalciTbl":
-echo '<script src="js/manipulacePregledovalci.js?'.time().'"></script>'; 
-break;
+  case "limitiTbl":
+  echo '<script src="js/manipulaceLimiti.js?'.time().'"></script>'; 
+  break;
+/*********opravila niso za zdaj v menu nastavitve***********
 
-case "limitiTbl":
-echo '<script src="js/manipulaceLimiti.js?'.time().'"></script>'; 
-break;
-
-case "opravilaTbl":
-echo '<script src="js/manipulaceOpravila.js?'.time().'"></script>'; 
-break;
-
+  case "opravilaTbl":
+  echo '<script src="js/manipulaceOpravila.js?'.time().'"></script>'; 
+  break;
+*******************************************************/
 }
 }
 ?>
