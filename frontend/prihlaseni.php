@@ -101,7 +101,7 @@ Class Prijava extends Prihlaseni {
 			$pristop=$uporabnikiTbl[0]['pristop'];			
 			//echo $pristop;
 			$gdpr=$uporabnikiTbl[0]['gdpr'];			
-			//echo $gdpr;			
+			echo $gdpr;			
 			$uname=$uporabnikiTbl[0]['uname'];
 			echo $uname;
 		// echo $upstatus;

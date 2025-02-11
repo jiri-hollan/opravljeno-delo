@@ -21,7 +21,7 @@ $omejitevGdpr=$gdpr[0];
     break;
 	
 	case "1":
-	$gdpr=$omejitevGdpr['nivo']; 
+	$gdpr=1; 
     break;	
 	
 	case "2":
