@@ -15,13 +15,14 @@ if(count($gdpr)==1){
 $omejitevGdpr=$gdpr[0];		
 	switch($omejitevGdpr['nivo']){
 	case "0":
-	if (isset($_SESSION["uporabnikGdpr"])) {
-	$gdpr=$_SESSION["uporabnikGdpr"]; 
-	}
+	$gdpr=$omejitevGdpr['nivo']; 
     break;
 	
 	case "1":
-	$gdpr=$omejitevGdpr['nivo']; 
+	if (isset($_SESSION["uporabnikGdpr"])) {
+	$gdpr=$_SESSION["uporabnikGdpr"]; 
+	}
+	
     break;	
 	
 	case "2":
