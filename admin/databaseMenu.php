@@ -27,7 +27,6 @@ echo '
 <ul id="linky">
 <li><a href="../admin/manipulacePregledovalci.php?nazaj='.$nazaj.'">pregledovalci</a></li>
 <li><a href="../admin/manipulaceLimiti.php?nazaj='.$nazaj.'">limiti</a></li>
-<!--<li><a href="../admin/manipulaceOcena.php?nazaj='.$nazaj.'">ocena</a></li>-->
 <li><a href="../admin/manipulaceSklepi.php?nazaj='.$nazaj.'">sklepi</a></li>
 <li><a href="../admin/manipulaceBolnisnice.php?nazaj='.$nazaj.'">bolnišnice</a></li>
 <li><a href="../admin/manipulaceOpravila.php?nazaj='.$nazaj.'">opravila</a></li><br>
