@@ -9,7 +9,7 @@ Class Prihlaseni {
 	public $zaklad;
 	public $upstatus;
 	public $pristop;
-	public $gdpr;
+	public $upGdpr;
 	public $koren;	
 	public function __construct($koren) {
 	//echo"('KOREN: '.$koren)";	
@@ -73,12 +73,12 @@ Class Prijava extends Prihlaseni {
 	//od function inicializuj		
 	}
 	
-	public function prihlaseniUspesne($upstatus, $pristop, $gdpr, $uname){
+	public function prihlaseniUspesne($upstatus, $pristop, $upGdpr, $uname){
 	   $_SESSION['uporabnikPrihlasen'] = true;
 	   $_SESSION["casova_znamka"] = time();
 	   $_SESSION["upstatus"] = $upstatus;
 	   $_SESSION["pristop"] = $pristop;
-	   $_SESSION["uporabnikGdpr"] = $gdpr;
+	   $_SESSION["uporabnikGdpr"] = $upGdpr;
 	   $_SESSION["uname"] = $uname;
 	  //echo $upstatus;
 	echo '<script type="text/JavaScript"> 
@@ -100,12 +100,12 @@ Class Prijava extends Prihlaseni {
 			//echo $upstatus;
 			$pristop=$uporabnikiTbl[0]['pristop'];			
 			//echo $pristop;
-			$gdpr=$uporabnikiTbl[0]['gdpr'];			
-			echo $gdpr;			
+			$upGdpr=$uporabnikiTbl[0]['gdpr'];			
+			echo $upGdpr;			
 			$uname=$uporabnikiTbl[0]['uname'];
 			echo $uname;
 		// echo $upstatus;
-			$this->prihlaseniUspesne($upstatus, $pristop, $gdpr, $uname);
+			$this->prihlaseniUspesne($upstatus, $pristop, $upGdpr, $uname);
 		} else {
 			//echo 'iz funkcije overUdaje';
 			return $this->prihlaseniSelhalo();
@@ -130,7 +130,7 @@ $registracija=true;
 $email=$geslo=$ime=$priimek=$uname=0;
 $upstatus = 0;
 $pristop = 0;
-$gdpr = 0;
+$upGdpr = 0;
 $nameTable = "uporabnikiTbl";
 
 	
@@ -186,7 +186,7 @@ if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
   
     $data['upstatus'] = $upstatus;
 	$data['pristop'] = $pristop;
-	$data['gdpr'] = $gdpr;	
+	$data['gdpr'] = $upGdpr;	
   //echo '<br>upstatus: ' .$upstatus;
   //echo'<br>data: '. $data["upstatus"].'<br>';
 }
