@@ -8,11 +8,11 @@ $tabulka="omejitveTbl";
 $sloupce=["razlog", "nivo"];
 $podminka=["razlog"=>"gdpr"];
 $database= new Database;
-$gdpr=$database->vyber($tabulka,$sloupce,$podminka);
+$omejGdpr=$database->vyber($tabulka,$sloupce,$podminka);
 //echo '<br>'.count($gdpr).'<br>';
 
-if(count($gdpr)==1){
-$omejitevGdpr=$gdpr[0];		
+if(count($omejGdpr)==1){
+$omejitevGdpr=$omejGdpr[0];		
 	switch($omejitevGdpr['nivo']){
 	case "0":
 	if (isset($_SESSION["uporabnikGdpr"])) {
