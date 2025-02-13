@@ -1,5 +1,5 @@
  <?php 
- session_start();
+ @session_start();
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  require_once('../skupne/sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/

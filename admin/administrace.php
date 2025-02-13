@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 require_once('../skupne/database.php');
 class Administrace {
 	public $conn;
