@@ -31,7 +31,7 @@ function novBolnikFunction(izbris) {
 function stariFunction() {
 if(localStorage.getItem("gdpr")==1){	
 //alert ('v stariFunction fajl odjava'+localStorage.getItem("aktivnaBolnisnica"));
-alert('GDPR= '+localStorage.getItem("gdpr"));
+//alert('GDPR= '+localStorage.getItem("gdpr"));
   let x=localStorage.getItem("aktivnaBolnisnica");
   let y=localStorage.getItem("bazeBolnisnice");
   let z= y.includes(x);

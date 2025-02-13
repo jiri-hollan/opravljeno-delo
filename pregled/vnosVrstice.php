@@ -1,4 +1,3 @@
-
 <?php
 require_once '../skupne/database.php';
 require_once('../skupne/aktivace.php');

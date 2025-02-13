@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 require_once 'sabloni/zahlavi.php';
 require_once 'vnosVrstice.php';
 ?>

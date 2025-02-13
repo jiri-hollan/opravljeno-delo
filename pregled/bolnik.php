@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 require_once ('sabloni/vkladane/zahlavi.php');
 require_once ('evaluacijaVsi.php');
 require_once('sklepVsi.php');
