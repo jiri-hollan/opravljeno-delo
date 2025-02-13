@@ -48,14 +48,14 @@ alert('GDPR= '+localStorage.getItem("gdpr"));
 //alert ('shranjeno v bazo');
 alert ('po vstavljanju v bazo');
   } else {
-location.reload();
-  }
+         location.reload();
+         }
 // alert ('nov bolnik');
 	}//od if
 	else {
-    alert ( localStorage.getItem("aktivnaBolnisnica") + ' ni možno schraniti v podatkovno bazo');	
-	location.reload();	
-	}
+         alert ( localStorage.getItem("aktivnaBolnisnica") + ' ni možno schraniti v podatkovno bazo');	
+	     location.reload();	
+	     }
 }else{
 	alert('GDPR ne shranjuje= ?'+localStorage.getItem("gdpr"));
 location.reload();	
