@@ -17,7 +17,7 @@ $omejitevGdpr=$omejGdpr[0];
 	case "0":
 	if (isset($_SESSION["uporabnikGdpr"])) {
 	$gdpr=$_SESSION["uporabnikGdpr"]; 
-	}
+	}else{$gdpr=0;}
     break;
 	
 	case "1":
