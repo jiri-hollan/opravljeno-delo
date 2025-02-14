@@ -265,7 +265,7 @@ echo "<b>Številka Zdravnika".$vybrano[0]['stevilkaZdravnika']."</b><br><br>";
 if (isset($_REQUEST["tabulka"])){  //komentar: se zažene, ko se odpre ta fajl
 switch($_REQUEST["tabulka"]){
 case "deloTbl":
-echo '<script src="../js/ogledDelo.js?'.time().'"></script>'; //komentar: le vlkjuči ogledDelo.js" 
+echo '<script src="../delo/js/ogledDelo.js?'.time().'"></script>'; //komentar: le vlkjuči ogledDelo.js" 
 break;
 }
 }//od if isset request

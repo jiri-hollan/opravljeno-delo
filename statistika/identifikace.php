@@ -32,7 +32,7 @@ identifikaceFunction(identifikace);
 		   echo "V bazi ni vaše zdravniške številke";
 		   echo "<script>
 		   alert('V bazi ni vaše zdravniške številke');		   
-		  window.location.replace('../frontend/deloMenu.php');
+		  window.location.replace('../delo/frontend/deloMenu.php');
 		  </script>";
 	}
 

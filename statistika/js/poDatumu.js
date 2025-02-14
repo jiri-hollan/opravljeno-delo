@@ -39,7 +39,7 @@ function datumOver (e) {
 //alert('poDatumu.js linija 33 '+datumOpravila);   
  }//od if 
 
-window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + datumOpravila+"&&stevilkaZdravnika="+stevilkaZdravnika+"&&sifraOpravila="+sifraOPravila; 
+window.location.href = "deloStatistika.php?semafor=semaforPregled&&datumOpravila=" + datumOpravila+"&&stevilkaZdravnika="+stevilkaZdravnika+"&&sifraOpravila="+sifraOPravila+"&&nazaj="+"statistikaMenu.php"; 
  //window.location.href = "deloStatistika.php?datumOpravila=" + datumOpravila; 
  //window.location.href = "zdravniki.php?akce=" + x.innerHTML + "&stevilkaZdravnika=" + datumOpravila;  
 }//od function(e)

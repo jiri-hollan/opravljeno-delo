@@ -9,7 +9,7 @@ echo'
 <link rel="stylesheet" href="css/zahlavi.css?'.time().'">
 <link rel="stylesheet" href="css/pregledovalci.css?'.time().'">
 <title>Anestiz</title>
-<link rel="shortcut icon" href="../../favicon.ico?'.time().'">
+<link rel="shortcut icon" href="../favicon.ico?'.time().'">
 </head>
 <body>
 <div class="topnav">
@@ -25,7 +25,7 @@ if (isset($nazaj)){
       $nazaj = test_input($_POST['nazaj']);	
   	//var_dump($nazaj); 
 }else {
-     $nazaj = "../../frontend/menuFile1.php";
+     $nazaj = "../frontend/menuFile1.php";
 }
 echo '
  <a class="active" href=' .$nazaj.'>Nazaj</a>

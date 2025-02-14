@@ -1,7 +1,7 @@
 <?php
 require_once 'administrace.php';
 require_once 'databaseS.php';
-//require_once '../../skupne/database.php';
+//require_once '../skupne/database.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
 //require_once 'sabloni/forma.php';
@@ -182,5 +182,5 @@ echo'linija167';
 new Podminka();
 echo'<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
 require_once 'sabloni/prijavljenJe.php';
-require_once '../../skupne/sabloni/zapati.php';
+require_once '../skupne/sabloni/zapati.php';
 ?>

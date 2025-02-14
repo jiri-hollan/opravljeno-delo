@@ -71,5 +71,5 @@ new VyberImaStevilko($podminka);
 
 echo'<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
 require_once 'sabloni/prijavljenJe.php';
-require_once '../../skupne/sabloni/zapati.php';
+require_once '../skupne/sabloni/zapati.php';
 ?>

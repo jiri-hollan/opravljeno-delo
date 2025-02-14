@@ -2,7 +2,7 @@
  require_once ('databaseS.php');
  require_once ('identifikace.php');
  require_once ('ogledi.php');
- echo'<script src="../js/delo.js?'.time().'"></script>';
+ echo'<script src="../delo/js/delo.js?'.time().'"></script>';
 //_____________________________________________________________
 if (isset($_REQUEST["dolociClasso"])) {
 	  $dolociClasso = new Test_input($_REQUEST["dolociClasso"]);

@@ -7,7 +7,7 @@ class DatabaseS {
 	public $connn = '';
 	public $bolnikObstaja= '';
 	public Function __construct(){
-	require '../../skupne/streznik.php';
+	require '../skupne/streznik.php';
       //$this->servername = "sh17.neoserv.si";
 		$this->conn = new PDO("mysql:host=" . $this->servername . ";dbname=" . $this->dbname . ';charset=UTF8', $this->username, $this->password);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		

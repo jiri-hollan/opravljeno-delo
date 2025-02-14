@@ -7,7 +7,7 @@ $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
  require_once ('databaseS.php');
  require_once ('identifikace.php');
  require_once ('ogledi.php');
- echo'<script src="../js/delo.js?'.time().'"></script>';
+ echo'<script src="../delo/js/delo.js?'.time().'"></script>';
  	$podminka = array("uname"=>$uname);
 	$stevilkaUporabnika=new VyberUporabnika($podminka);
 	$stevilkaUporabnika=$stevilkaUporabnika->stevilkaZdravnika;
