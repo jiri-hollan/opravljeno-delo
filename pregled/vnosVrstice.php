@@ -207,7 +207,7 @@ Class PreberiVpis extends Apregled {
    $prebrano = $this->conn->vyber($this->nameTable, $this->stolpci, $this->podminka);
            //echo '<br>';
           //var_dump($prebrano);		  
-			echo 'Število najdenih zapisov vnos: '.count($prebrano);			
+			echo 'Število najdenih zapisov: '.count($prebrano);			
 Return	$prebrano;		
 } 
   

@@ -45,8 +45,7 @@ if(localStorage.getItem("gdpr")==1){
 // alert ('pred vstavljanjem v bazo');
         document.getElementById("ustanova").value= localStorage.getItem("aktivnaBolnisnica");
         document.getElementById("frm").submit();
-//alert ('shranjeno v bazo');
-alert ('po vstavljanju v bazo');
+//alert ('po vstavljanju v bazo');
   } else {
          location.reload();
          }
