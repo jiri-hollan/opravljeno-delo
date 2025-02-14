@@ -1,6 +1,7 @@
 <?php 
  @session_start();
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
+$nazaj="statistikaMenu.php";
  require_once('sabloni/zahlavi.php');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('sabloni/formDelo.php');//komentar: gumbi "izberi vlož"
