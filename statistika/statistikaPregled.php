@@ -7,3 +7,11 @@
 *prikaz pozdravniku
 *grafične prikaze določi dodatna obdelava arrayev
 ************************************************************/
+
+/******* SQL za prikaz vseh zdravnikov in števila njigovih zapisov***
+SELECT imeZdravnika, COUNT(*) AS steviloZapisov
+FROM bolnikTbl
+GROUP BY imeZdravnika
+ORDER BY steviloZapisov DESC;
+
+*********************************************************************/
