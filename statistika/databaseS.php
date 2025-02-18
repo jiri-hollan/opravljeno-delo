@@ -302,8 +302,8 @@ $conn = null;
 	  $dotaz->closeCursor();
 	  return $zaznamy;
 	}
-/**********************konec vyberPogoj******************************************************************************/
-//....................funkcija sumaSumarum v razvoju.........................................
+/**********************konec vyberPogoj***********************************/
+//....................funkcija sumaSumarum ..............................
 
 public function sumaSumarum($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){
 	$sloupceSQL = implode(', ', $sloupce);
@@ -396,7 +396,7 @@ public function suma($tabulka, $sloupce, $podminka = NULL){
 //............konec suma............................................................
 
 //....................funkcija counta v razvoju.........................................
-public function suma($tabulka, $sloupce, $grupa, $podminka = NULL){
+public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 	$sloupceSQL = implode(', ', $sloupce);
 	//echo '<br>$sloupceSQL= ';
 	//var_dump($sloupceSQL);
