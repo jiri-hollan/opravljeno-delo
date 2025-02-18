@@ -10,7 +10,7 @@ require_once ('ogledStatistika.php');
 //echo'<script src="js/poDatumu.js?'.time().'"></script>';
 //echo'<script src="js/ogledStatistika.js?'.time().'"></script>';
 if(isset($_REQUEST['semafor'])){
-new Podminka();
+new countPregled();
 }else{echo"Nekaj je narobe, obvestite admina!";}
 /************************************************************
 *Tu pridejo predlogi SQL za pregled polj v tabli bolnikTbl
@@ -33,9 +33,9 @@ ORDER BY steviloZapisov DESC;
 //CCCCCCCCCCCCCCC CLASS countPregled  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class countPregled {
 public $tabulka;
-function __construct( $podminka) {
+function __construct() {
 $tabulka = 'bolnikTbl';
-$stolpci=["imeZdravnika","steviloZapisov"];
+$stolpci=["imeZdravnika"];
 $grupa=["imeZdravnika"];
    $counta = new databaseS();
    $vybrano=$counta->counta($tabulka, $stolpci, $grupa );
