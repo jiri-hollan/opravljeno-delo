@@ -353,7 +353,7 @@ public function suma($tabulka, $sloupce, $podminka = NULL){
 
 //..........začetek celoImeNbsp.................
 public function ciscenje($tabulka='bolnikTbl', $sloupce='imeZdravnika'){
-$dotaz = $this->conn->prepare("UPDATE $tabulka SET $sloupce = REPLACE($sloupce, '&nbsp;', UNHEX('C2A0'))  ");
+$dotaz = $this->conn->prepare("UPDATE $tabulka SET $sloupce = REPLACE($sloupce, ' ', UNHEX('C2A0'))  ");
 var_dump($dotaz);
 //SQL:UPDATE table_name SET column1 = value1, column2 = value2, ...WHERE condition; 
 try {
