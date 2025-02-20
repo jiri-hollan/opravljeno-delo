@@ -426,7 +426,7 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 	
 //$dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
 	
-	$dotaz = $this->conn->prepare("SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL");	
+	$dotaz = $this->conn->prepare("SELECT REPLACE($sloupceSQL, 'CHAR(160)', 'F') AS celoIme, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY celoIme ORDER BY celoIme");	
 	
 //(SELECT imeZdravnika, COUNT(*) AS steviloZapisov FROM bolnikTbl GROUP BY imeZdravnika ORDER BY steviloZapisov DESC);
 	
