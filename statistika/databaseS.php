@@ -449,23 +449,20 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 
 //..........začetek celoImeNbsp.................
 public function ciscenje($tabulka='bolnikTbl', $sloupce='imeZdravnika'){
-	
 //$dotaz = $this->conn->prepare("SELECT REPLACE($sloupceSQL, ' ', '&nbsp') AS celoIme, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY celoIme ORDER BY celoIme");
-
 $dotaz = $this->conn->prepare("UPDATE $tabulka SET $sloupce = REPLACE($sloupce, '&nbsp;', UNHEX('C2A0'))  ");
 var_dump($dotaz);
 //SQL:UPDATE table_name SET column1 = value1, column2 = value2, ...WHERE condition; 
 try {
-		$dotaz->execute();		
-		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
-		//echo '<br>v try vyber';
-	  }catch (PDException $e) {
-		  echo $e->getMessage();
-		  $zaznamy = false;
-	  }
-	  
-	  $dotaz->closeCursor();
-	  return $zaznamy;	
+    $dotaz->execute();		
+    $zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
+//echo '<br>v try vyber';
+    }catch (PDException $e) {
+    echo $e->getMessage();
+    $zaznamy = false;
+    }
+$dotaz->closeCursor();
+return $zaznamy;	
 }//konec function ciscenje
 
 //........konec celoImeNbsp.....................
