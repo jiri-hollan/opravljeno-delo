@@ -58,7 +58,8 @@ var text = "";
 var naslov="&nbsp;dr.med";
 var i;
 for (i = 0; i < zdravList.length; i++) {
-    text += "<option value='" +  zdravList[i] + naslov + "'>"  +"<br>";
+	let povezano = zdravList[i].replace(/ /g, "&nbsp;");
+    text += "<option value='" +  povezano + naslov + "'>"  +"<br>";
 }
 document.getElementById("zdravniki").innerHTML = text;
 }
