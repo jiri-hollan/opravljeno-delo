@@ -1,7 +1,7 @@
 <?php
 require_once '../skupne/database.php';
 require_once('../skupne/aktivace.php');
-echo"<script>alert('GDPR='.$gdpr);</script>";
+//echo"<script>alert('GDPR='".$gdpr.");</script>";
 if($gdpr==1){
 if ($_SERVER['REQUEST_METHOD']== 'POST') {
 	if (isset($_POST['doBaze'])&&isset($_POST['ustanova'])){
