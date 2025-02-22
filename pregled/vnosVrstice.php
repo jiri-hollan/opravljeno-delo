@@ -92,7 +92,7 @@ if(!empty($_POST)) {
            }
   }//od foreach
   $ulozeno = $this->conn->vloz($this->nameTable, $data);
-  echo 'Zapis vnesen v tabelo';
+
 //var_dump ($ulozeno);			
 //echo '<br>počet vloženych: '.$ulozeno["pocetVlozenych"];
   echo '<br>last id: '.$ulozeno["lastId"];
@@ -142,7 +142,7 @@ if(isset($_POST['bolnikId'])) {
 //$database = new database;
 //var_dump ($database);
     $ulozeno = $this->conn->aktualizuj($this->nameTable, $data, $podminka );
-    echo 'Zapis aktualizovan in shranjen v tabelo';
+    echo "<script>alert('Zapis aktualizovan in shranjen v tabelo');</script>";
 //var_dump ($ulozeno);			
 //echo '<br>počet vloženych: '.$ulozeno["pocetVlozenych"];
     header('Location: bolnik.php');
