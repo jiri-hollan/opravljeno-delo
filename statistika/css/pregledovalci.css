@@ -73,13 +73,16 @@ th, td {
   overflow: hidden;
 }
 
-div#intervalId {
 
-position: fixed;
-top: 60px;
-left: 430px;
-width: 200px;
-padding: 25px;
-border: solid;
-  background-color: lightblue;
+
+#pogId {
+position: fixed;	
+top: 40px;
+left: 430px;	
+}
+
+#posli {
+position: fixed;	
+top: 120px;
+left: 600px;		
 }
