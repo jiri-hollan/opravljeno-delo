@@ -3,6 +3,7 @@ require_once 'administrace.php';
 require_once 'databaseS.php';
 require_once('sabloni/zahlavi.php');
 require_once 'sabloni/forma.php';
+echo'<link rel="stylesheet" href="../delo/css/delo.css?'.time().'">';
 $nazaj="statistikaMenu.php.php";
 new VyberZdravnika(1);
 //CCCCCCCCCCCCCCC CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC

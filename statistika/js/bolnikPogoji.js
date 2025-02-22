@@ -5,6 +5,6 @@ function intervalFunction(danes) {
   let semafor= '<input type="hidden" id="semaforId" name="semafor" value="d" >';
      console.log("bolnikPogoji.js  linija 5 danes:"+danes); 
 //alert(danes); 
-  document.getElementById("pogId").innerHTML = "<div class='glavni'>"+semafor+zacDatum + koncDatum +"<div class='notranji'>"+ "</div></div>" ;
+  document.getElementById("pogojId").innerHTML = "<div class='glavni'>"+ semafor + zacDatum + koncDatum +"<div class='notranji'>"+ "</div></div>" ;
   document.getElementById("posli").innerHTML = '<input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">'; //submit+reset
 }

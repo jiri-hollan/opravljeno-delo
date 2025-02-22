@@ -3,15 +3,11 @@ require_once 'administrace.php';
 require_once 'databaseS.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
-//require_once('sabloni/formaPogoji.php');
+require_once('sabloni/forma.php');
 require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
 echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
-//echo'<script src="js/statistika.js?'.time().'"></script>';
-//echo'<script src="js/poDatumu.js?'.time().'"></script>';
-//echo'<script src="js/ogledStatistika.js?'.time().'"></script>';
-echo"<p id='pogId'>razdoblje</p>";
-if(isset($_GET['semafor'])){
+if(isset($_REQUEST['semafor'])){
 /***
 za enkrat semafor nerabi parameter, ker ni več opcij
 vseeno sem dal v switch

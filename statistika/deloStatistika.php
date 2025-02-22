@@ -1,10 +1,8 @@
 <?php
 require_once 'administrace.php';
 require_once 'databaseS.php';
-//require_once '../skupne/database.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
-//require_once 'sabloni/forma.php';
 require_once('sabloni/formaPogoji.php');
 require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
