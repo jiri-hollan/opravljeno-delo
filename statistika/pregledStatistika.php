@@ -30,13 +30,13 @@ vseeno sem dal v switch
    	     $danes='"'.date("Y-m-d").'"';
 		 if(isset($_POST['zacDatum'])){
 		 $this_zacDatum = $_POST['zacDatum'];
-		 $podminka["datumOpravila>="] = $this_zacDatum;
+		 $podminka["datPregleda>="] = $this_zacDatum;
 		 }else{$this_zacDatum =NULL;}
 		 if(isset($_POST['koncDatum'])){
 		 $this_koncDatum = $_POST['koncDatum'];
-		 $podminka["datumOpravila<="] = $this_koncDatum;
+		 $podminka["datPregleda<="] = $this_koncDatum;
 		  }else{$this_koncDatum =NULL;}
-//var_dump($podminka); 
+var_dump($podminka); 
        //  new SestevekDela($podminka);	
       new countPregled($podminka);
     break;
@@ -71,7 +71,7 @@ function __construct($podminka) {
 $tabulka = 'bolnikTbl';
 $stolpci=["imeZdravnika"];
 $grupa=["imeZdravnika"];
-$podminka=[];
+//$podminka=$podminka;
    $counta = new databaseS();
    $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $podminka);
 //echo "<br>";

@@ -408,21 +408,21 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 		$i = 0;
 		foreach ($podminka as $sloupec=>$hodnota){
 			if ($i == 0){
-				$podminkaSQL .=" WHERE $sloupec = ?";				
+				$podminkaSQL .=" WHERE $sloupec ?";				
 			}else {
-				$podminkaSQL .=" AND $sloupec = ?";
+				$podminkaSQL .=" AND $sloupec  ?";
 			}
 			$parametry[$i] = $hodnota;
 			$i++;
 		}
 	}
 
-	/*echo '<br>parametry= ';
+	//echo '<br>parametry= ';
 	var_dump($parametry);
-	 echo "<br>podminka= ";
+	/* echo "<br>podminka= ";
 	 var_dump($podminka);
-	echo "<br>podminka SQL: ";
-	var_dump($podminkaSQL );*/
+	echo "<br>podminka SQL: ";*/
+	var_dump($podminkaSQL );
 	
 //$dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
 	
