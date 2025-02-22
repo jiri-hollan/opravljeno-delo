@@ -418,11 +418,11 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 	}
 
 	//echo '<br>parametry= ';
-	var_dump($parametry);
+	//var_dump($parametry);
 	/* echo "<br>podminka= ";
 	 var_dump($podminka);
 	echo "<br>podminka SQL: ";*/
-	var_dump($podminkaSQL );
+	//var_dump($podminkaSQL );
 	
 //$dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
 	

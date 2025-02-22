@@ -36,7 +36,7 @@ vseeno sem dal v switch
 		 $this_koncDatum = $_POST['koncDatum'];
 		 $podminka["datPregleda<="] = $this_koncDatum;
 		  }else{$this_koncDatum =NULL;}
-var_dump($podminka); 
+//var_dump($podminka); 
        //  new SestevekDela($podminka);	
       new countPregled($podminka);
     break;
