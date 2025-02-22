@@ -37,28 +37,27 @@ if(localStorage.getItem("gdpr")==1){
   let z= y.includes(x);
 //alert(z);
 //IF: localStorage.getItem("aktivnaBolnisnica")== bolnišnica s statusom 2
-	if (z){
+  if(z){
 //alert ('v stariFunction');
-      var r = confirm("Za shranjevanje v podatkovno bazo\n Pritisni v redu ali prekliči.");
-      if (r == true) {
+    var r = confirm("Za shranjevanje v podatkovno bazo\n Pritisni v redu ali prekliči.");
+    if(r == true){
 //alert ('odjava.js bolnikId: '+sessionStorage.getItem("bolnikId"));  
 // alert ('pred vstavljanjem v bazo');
-        document.getElementById("ustanova").value= localStorage.getItem("aktivnaBolnisnica");
-        document.getElementById("frm").submit();
+      document.getElementById("ustanova").value= localStorage.getItem("aktivnaBolnisnica");
+      document.getElementById("frm").submit();
 //alert ('po vstavljanju v bazo');
-  } else {
-         location.reload();
-         }
+      }else{
+            location.reload();
+            }
 // alert ('nov bolnik');
-	}//od if
-	else {
-         alert ( localStorage.getItem("aktivnaBolnisnica") + ' ni možno schraniti v podatkovno bazo');	
-	     location.reload();	
-	     }
+  }else{
+        alert ( localStorage.getItem("aktivnaBolnisnica") + ' ni možno schraniti v podatkovno bazo');	
+        location.reload();	
+        }
 }else{
-	alert('GDPR ne shranjuje= ?'+localStorage.getItem("gdpr"));
-location.reload();	
-}
+      alert('GDPR ne shranjuje= ?'+localStorage.getItem("gdpr"));
+      location.reload();	
+     }
 }//--od stariFunction
 //--------------------------------------------
 function noviFunction() {
