@@ -114,7 +114,7 @@ if(!empty($_POST)) {
 Class SpremeniVpis extends Apregled {
 	public function __construct() {
 		    parent::__construct();
-//echo 'V spremeni Vpis';
+//exit("V spremeni Vpis");
   if(!empty($_POST)) {
 // define variables and set to empty values
     $najdene = $ime = $priimek = $datRojstva  = $stevMaticna = $EMSO = "";
@@ -144,7 +144,7 @@ if(isset($_POST['bolnikId'])) {
     $ulozeno = $this->conn->aktualizuj($this->nameTable, $data, $podminka );
     echo "<script>alert('Zapis aktualizovan in shranjen v tabelo');</script>";
 //var_dump ($ulozeno);			
-//echo '<br>počet vloženych: '.$ulozeno["pocetVlozenych"];
+exit("<br>počet vloženych: ".var_dump ($ulozeno));
     header('Location: bolnik.php');
     }//od if
 } //od construct
