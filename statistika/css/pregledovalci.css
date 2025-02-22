@@ -70,5 +70,16 @@ th, td {
 .glavaTable {
   position: sticky;
   top: 6%;	
-  overflow: hidden;	
+  overflow: hidden;
+}
+
+div#intervalId {
+
+position: fixed;
+top: 60px;
+left: 430px;
+width: 200px;
+padding: 25px;
+border: solid;
+  background-color: lightblue;
 }

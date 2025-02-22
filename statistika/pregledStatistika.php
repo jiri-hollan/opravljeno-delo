@@ -10,6 +10,9 @@ require_once ('ogledStatistika.php');
 //echo'<script src="js/poDatumu.js?'.time().'"></script>';
 //echo'<script src="js/ogledStatistika.js?'.time().'"></script>';
 if(isset($_REQUEST['semafor'])){
+/***
+za enkrat semafor nerabi parameter, ker ni več opcij
+**/
 new countPregled();
 }else{echo"Nekaj je narobe, obvestite admina!";}
 /************************************************************
@@ -54,15 +57,17 @@ $grupa=["imeZdravnika"];
     foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
+  echo"</table>";
   }//od if(cout)
- else {
- echo 'V izbranem terminu ni zapisov o opravljenem delu ';
- }	 
+ else{
+     echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+     }
+echo"<div id='intervalId'>razdoblje</div>";
  }//od construct  
 }//od class VyberImaStevilko
 //CCCCCCCCCCCCC KONEC  CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-//CCCCCCCCCCCCCCC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+//CCCCCCCCCCCCCCC CLASS delo ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class DeloRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
@@ -74,9 +79,8 @@ class DeloRows extends RecursiveIteratorIterator {
         echo "<tr>";
     }
     function endChildren() {
-	  //echo "<td onclick=" . '"poDatumuFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
       //echo '<td onclick="poDatumuFunction('."'vyber'".')">izberi</td></tr>';	  
         echo '</tr>';
     }//od endChildren
 }// od class DeloRows
-//CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+//CCCCCCCCCCCCCCC KONEC CLASS delo ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
