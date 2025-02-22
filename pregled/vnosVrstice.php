@@ -76,45 +76,35 @@ Class PrviVpis extends Apregled {
 		    parent::__construct();
 
 
-if (!empty($_POST)) {
+if(!empty($_POST)) {
 // define variables and set to empty values
-$najdene = $ime = $priimek = $datRojstva  = $stevMaticna = $EMSO = "";
-
-
+  $najdene = $ime = $priimek = $datRojstva  = $stevMaticna = $EMSO = "";
 // Looping through an array using for 
 //echo "\nLOOPING array z uporabo for: \n"; 
-
-foreach ($this->stolpci as $stolpec) {
-	
-if (isset($_POST[$stolpec])) {
-	//echo $_POST[$stolpec];
-		$data[$stolpec] = trim($_POST[$stolpec]);
-		$data[$stolpec] = stripslashes($data[$stolpec]); 
-		$data[$stolpec] = htmlspecialchars($data[$stolpec]);
- } else {
-	echo $stolpec . ' ne obstaja';
-  }
-  
-	
-}//od foreach
-
-$ulozeno = $this->conn->vloz($this->nameTable, $data);
-			echo 'Zapis vnesen v tabelo';
-			//var_dump ($ulozeno);			
-            //echo '<br>počet vloženych: '.$ulozeno["pocetVlozenych"];
-			echo '<br>last id: '.$ulozeno["lastId"];
-			
-		 $bolnikId = $ulozeno["lastId"];
-
-    echo '<script>';
-    echo 'sessionStorage.setItem("bolnikId",'. $bolnikId .');';		
+  foreach ($this->stolpci as $stolpec) {
+    if(isset($_POST[$stolpec])){
+//echo $_POST[$stolpec];
+      $data[$stolpec] = trim($_POST[$stolpec]);
+      $data[$stolpec] = stripslashes($data[$stolpec]); 
+      $data[$stolpec] = htmlspecialchars($data[$stolpec]);
+      }else{
+            echo $stolpec . ' ne obstaja';
+           }
+  }//od foreach
+  $ulozeno = $this->conn->vloz($this->nameTable, $data);
+  echo 'Zapis vnesen v tabelo';
+//var_dump ($ulozeno);			
+//echo '<br>počet vloženych: '.$ulozeno["pocetVlozenych"];
+  echo '<br>last id: '.$ulozeno["lastId"];
+  $bolnikId = $ulozeno["lastId"];
+  echo '<script>';
+  echo 'sessionStorage.setItem("bolnikId",'. $bolnikId .');';		
 //echo 'alert("vnos vrstice: "+sessionStorage.getItem("bolnikId"));';
-    echo 'alert("shranjeno v bazo");';	
-	echo 'window.location.href = "bolnik\.php";';
-    echo '</script>';	
-	return;		
+  echo 'alert("shranjeno v bazo");';	
+  echo 'window.location.href = "bolnik\.php";';
+  echo '</script>';	
+  return;		
 } //od if 
-
 	} //od construct
 	} //od class PrviVpis
 	
