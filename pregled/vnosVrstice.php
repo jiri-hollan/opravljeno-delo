@@ -142,9 +142,8 @@ if(isset($_POST['bolnikId'])) {
 //$database = new database;
 //var_dump ($database);
     $ulozeno = $this->conn->aktualizuj($this->nameTable, $data, $podminka );
-    echo "<script>alert('Zapis aktualizovan in shranjen v tabelo');</script>";
-//var_dump ($ulozeno);			
-exit("<br>počet vloženych: ".var_dump ($ulozeno));
+    echo "<script>alert('Zapis aktualizovan in shranjen v tabelo');</script>";		
+//exit("<br>počet vloženych: ".var_dump ($ulozeno));
     header('Location: bolnik.php');
     }//od if
 } //od construct
