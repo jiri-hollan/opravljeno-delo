@@ -15,7 +15,8 @@ vseeno sem dal v switch
  if(isset($_GET['semafor'])){
   switch ($_GET['semafor']){
     case "d":
-     new countPregled();
+	$podminka=NULL;
+     new countPregled($podminka);
     break;
     default:
      echo"semafor GET ni pravi";
@@ -66,7 +67,7 @@ ORDER BY steviloZapisov DESC;
 //CCCCCCCCCCCCCCC CLASS countPregled  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class countPregled {
 public $tabulka;
-function __construct() {
+function __construct($podminka) {
 $tabulka = 'bolnikTbl';
 $stolpci=["imeZdravnika"];
 $grupa=["imeZdravnika"];
