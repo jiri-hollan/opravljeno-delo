@@ -142,7 +142,7 @@ if(isset($_POST['bolnikId'])) {
     $ulozeno = $this->conn->aktualizuj($this->nameTable, $data, $podminka );
 //exit("<br>počet vloženych: ".var_dump ($ulozeno));
 	if($ulozeno==1){
-		echo "<script>alert('Zapis aktualiziran');
+		echo "<script>alert('Zapis posodobljen');
 		window.location.href = 'bolnik\.php';
 		</script>";
 	}else{
