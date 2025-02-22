@@ -25,7 +25,19 @@ vseeno sem dal v switch
  if(isset($_POST['semafor'])){
   switch ($_POST['semafor']){
 	case "d":
-      new countPregled();
+         $podminka = [];
+   	     $danes='"'.date("Y-m-d").'"';
+		 if(isset($_POST['zacDatum'])){
+		 $this_zacDatum = $_POST['zacDatum'];
+		 $podminka["datumOpravila>="] = $this_zacDatum;
+		 }else{$this_zacDatum =NULL;}
+		 if(isset($_POST['koncDatum'])){
+		 $this_koncDatum = $_POST['koncDatum'];
+		 $podminka["datumOpravila<="] = $this_koncDatum;
+		  }else{$this_koncDatum =NULL;}
+//var_dump($podminka); 
+       //  new SestevekDela($podminka);	
+      new countPregled($podminka);
     break;
     default:
 	echo $_POST['semafor'];
@@ -58,8 +70,9 @@ function __construct() {
 $tabulka = 'bolnikTbl';
 $stolpci=["imeZdravnika"];
 $grupa=["imeZdravnika"];
+$podminka=[];
    $counta = new databaseS();
-   $vybrano=$counta->counta($tabulka, $stolpci, $grupa );
+   $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $podminka);
 //echo "<br>";
 //echo var_dump($vybrano);
 //echo "<br>";
