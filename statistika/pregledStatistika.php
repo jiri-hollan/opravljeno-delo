@@ -3,7 +3,7 @@ require_once 'administrace.php';
 require_once 'databaseS.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
-require_once('sabloni/formaPogoji.php');
+//require_once('sabloni/formaPogoji.php');
 require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
 echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
@@ -11,20 +11,32 @@ echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
 //echo'<script src="js/poDatumu.js?'.time().'"></script>';
 //echo'<script src="js/ogledStatistika.js?'.time().'"></script>';
 echo"<p id='pogId'>razdoblje</p>";
-if(isset($_REQUEST['semafor'])){
+if(isset($_GET['semafor'])){
 /***
 za enkrat semafor nerabi parameter, ker ni več opcij
 vseeno sem dal v switch
 **/
-
-switch ($_REQUEST['semafor']){
-case "d":
-new countPregled();
-break;
-default:
-echo"semafor ni pravi";
-}
-}else{echo"Nekaj je narobe, obvestite admina!";}
+ if(isset($_GET['semafor'])){
+  switch ($_GET['semafor']){
+    case "d":
+     new countPregled();
+    break;
+    default:
+     echo"semafor GET ni pravi";
+  }
+ }
+ 
+ if(isset($_POST['semafor'])){
+  switch ($_POST['semafor']){
+	case "d":
+      new countPregled();
+    break;
+    default:
+	echo $_POST['semafor'];
+     echo"semafor POST ni pravi";	  
+  }
+ }
+}else{echo"ni REQUEST";}
 /************************************************************
 *Tu pridejo predlogi SQL za pregled polj v tabli bolnikTbl
 *naj bi vsbovali datum od-do ali določeno leto mesec ...
