@@ -75,7 +75,8 @@ class DeloRows extends RecursiveIteratorIterator {
     }
     function endChildren() {
 	  //echo "<td onclick=" . '"poDatumuFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
-        echo '<td onclick="poDatumuFunction('."'vyber'".')">izberi</td></tr>';
+      //echo '<td onclick="poDatumuFunction('."'vyber'".')">izberi</td></tr>';	  
+        echo '</tr>';
     }//od endChildren
 }// od class DeloRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
