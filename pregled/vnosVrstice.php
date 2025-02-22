@@ -139,12 +139,17 @@ if(isset($_POST['bolnikId'])) {
         echo 'window.location.href = "bolnik\.php";';
         echo '</script>';	
         }
-//$database = new database;
-//var_dump ($database);
     $ulozeno = $this->conn->aktualizuj($this->nameTable, $data, $podminka );
-    echo "<script>alert('Zapis aktualizovan in shranjen v tabelo');</script>";		
 //exit("<br>počet vloženych: ".var_dump ($ulozeno));
-    header('Location: bolnik.php');
+	if($ulozeno==1){
+		echo "<script>alert('Zapis aktualiziran');
+		window.location.href = 'bolnik\.php';
+		</script>";
+	}else{
+		header('Location: bolnik.php');
+	}
+
+
     }//od if
 } //od construct
 	} //od class SpremeniVpis
