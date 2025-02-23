@@ -107,7 +107,17 @@ $grupa=["imeZdravnika"];
 
  }//od construct  
 }//od class VyberImaStevilko
-//CCCCCCCCCCCCC KONEC  CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCC
+//CCCCCCCCCCCCC KONEC  CLASS count Pregled  CCCCCCCCCCCCCCCCCCCCCCCCCCC
+//cccccccccccccc CLASS poKriterijih cccccccccccccccccccccccccccccccccccc
+class poKriterijih {
+public $tabulka;
+function __construct($stolpci, $grupa=NULL, $interval, $kriterij) {
+$tabulka = 'bolnikTbl';
+$this->podminka=array_merge($interval,$kriterij);
+$counta = new databaseS();
+$vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
+}
+//CCCCCCCCCCCCCCC konec CLASS po Kriterijih CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 //CCCCCCCCCCCCCCC CLASS delo ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class DeloRows extends RecursiveIteratorIterator {
