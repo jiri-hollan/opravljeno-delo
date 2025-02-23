@@ -1,6 +1,5 @@
 <?php
 //------na temelju pregledId pobere podatke iz zapisa z bolnišnice
-//require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
 	public $pristop;
