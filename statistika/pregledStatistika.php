@@ -110,8 +110,13 @@ $grupa=["imeZdravnika"];
 //CCCCCCCCCCCCC KONEC  CLASS count Pregled  CCCCCCCCCCCCCCCCCCCCCCCCCCC
 //cccccccccccccc CLASS poKriterijih cccccccccccccccccccccccccccccccccccc
 class poKriterijih {
+/*******************************************************************
+*(mogoče)
+* brez kriterijev pokaže le število zapisov kje se $stolpec nahaja
+*"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
+*******************************************************************/
 public $tabulka;
-function __construct($stolpci, $grupa=NULL, $interval, $kriterij) {
+function __construct($stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL) {
 $tabulka = 'bolnikTbl';
 $this->podminka=array_merge($interval,$kriterij);
 $counta = new databaseS();
