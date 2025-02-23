@@ -15,6 +15,7 @@ vseeno sem dal v switch
  if(isset($_GET['semafor'])){
   switch ($_GET['semafor']){
     case "d":
+/***prikaže število pregledov za celotno razdobje po zdravnikih***/
 	$podminka=NULL;
      new countPregled($podminka);
     break;
@@ -26,7 +27,10 @@ vseeno sem dal v switch
  if(isset($_POST['semafor'])){
   switch ($_POST['semafor']){
 	case "dDatum":
-/**semafor dDatum poslan iz bolnikPogoji.js**/
+/**************************************************************
+*semafor dDatum poslan iz bolnikPogoji.js
+*prikaže število pregledov po zdravnikih za določen interval
+***************************************************************/
          $podminka = [];
    	     $danes='"'.date("Y-m-d").'"';
 		 if(isset($_POST['zacDatum'])){
