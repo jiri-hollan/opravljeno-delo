@@ -55,7 +55,7 @@ if(localStorage.getItem("gdpr")==1){
         location.reload();	
         }
 }else{
-      alert('GDPR ne shranjuje= ?'+localStorage.getItem("gdpr"));
+//alert('GDPR ne shranjuje= ?'+localStorage.getItem("gdpr"));
       location.reload();	
      }
 }//--od stariFunction
