@@ -25,7 +25,8 @@ vseeno sem dal v switch
  
  if(isset($_POST['semafor'])){
   switch ($_POST['semafor']){
-	case "d":
+	case "dDatum":
+/**semafor dDatum poslan iz bolnikPogoji.js**/
          $podminka = [];
    	     $danes='"'.date("Y-m-d").'"';
 		 if(isset($_POST['zacDatum'])){
