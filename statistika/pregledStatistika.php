@@ -76,7 +76,7 @@ function __construct($podminka) {
 $tabulka = 'bolnikTbl';
 $stolpci=["imeZdravnika"];
 $grupa=["imeZdravnika"];
-//$podminka=$podminka;
+//echo var_dump($podminka);
    $counta = new databaseS();
    $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $podminka);
 //echo "<br>";
@@ -88,6 +88,9 @@ $grupa=["imeZdravnika"];
 //echo "<br>";
 //echo "<br>";
   if(count($vybrano)>0){
+	  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
+      echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
+      }
   echo "<table id='pocet' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
   echo "<tr class='glavaTable'><th>ime Zdravnika</th><th>stevilo pregledov</th></tr>";
@@ -95,8 +98,9 @@ $grupa=["imeZdravnika"];
         echo $v;
    }//od foreach
   echo"</table>";
-  }//od if(cout)
- else{
+   }else{
+	// echo var_dump($podminka);
+	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
      echo 'V izbranem terminu ni zapisov o opravljenem delu ';
      }
 		$danes='"'.date("Y-m-d").'"';
