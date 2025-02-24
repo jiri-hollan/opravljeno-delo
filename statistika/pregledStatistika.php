@@ -126,6 +126,7 @@ $this->podminka=array_merge($interval,$kriterij);
 $counta = new databaseS();
 $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
 }
+}
 //CCCCCCCCCCCCCCC konec CLASS po Kriterijih CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 //CCCCCCCCCCCCCCC CLASS delo ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
