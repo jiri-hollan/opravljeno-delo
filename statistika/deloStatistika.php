@@ -59,14 +59,19 @@ $tabulka = 'deloTbl';
 //echo "<br>";
 //echo "<br>";
   if(count($vybrano)>0){
+    if(isset($podminka["datumOpravila>="])||isset($podminka["datumOpravila<="])){
+      echo "&nbsp;od:&nbsp;".$podminka["datumOpravila>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datumOpravila<="]."<br>";
+      }
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
   echo "<tr class='glavaTable'><th>datum</th><th>številka zdr.</th><th>minute</th></tr>";
     foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
-  }//od if(cout)
- else {
+  }else{
+    if(isset($podminka["datumOpravila>="])||isset($podminka["datumOpravila<="])){
+      echo "&nbsp;od:&nbsp;".$podminka["datumOpravila>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datumOpravila<="]."<br>";
+      }
  echo 'V izbranem terminu ni zapisov o opravljenem delu ';
  }	 
  }//od construct  
