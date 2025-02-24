@@ -71,7 +71,7 @@ function __construct($podminka) {
 $tabulka = 'bolnikTbl';
 $stolpci=["imeZdravnika"];
 $grupa=["imeZdravnika"];
-//$podminka=$podminka;
+//echo var_dump($podminka);
    $counta = new databaseS();
    $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $podminka);
 //echo "<br>";
@@ -92,6 +92,8 @@ $grupa=["imeZdravnika"];
   echo"</table>";
   }//od if(cout)
  else{
+	// echo var_dump($podminka);
+	 echo "od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
      echo 'V izbranem terminu ni zapisov o opravljenem delu ';
      }
 		$danes='"'.date("Y-m-d").'"';
