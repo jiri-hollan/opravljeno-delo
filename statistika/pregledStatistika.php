@@ -106,7 +106,7 @@ $grupa=["imeZdravnika"];
 
  }//od construct  
 }//od class VyberImaStevilko
-//CCCCCCCCCCCCC KONEC  CLASS SestevekDela  CCCCCCCCCCCCCCCCCCCCCCCCCCC
+//CCCCCCCCCCCCC KONEC  CLASS count Pregled  CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 //CCCCCCCCCCCCCCC CLASS delo ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class DeloRows extends RecursiveIteratorIterator {
