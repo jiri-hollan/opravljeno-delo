@@ -120,12 +120,12 @@ class poKriterijih {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL) {
-$tabulka = 'bolnikTbl';
-$this->podminka=array_merge($interval,$kriterij);
-$counta = new databaseS();
-$vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
-}
+function __construct($stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL){
+  $tabulka = 'bolnikTbl';
+  $this->podminka=array_merge($interval,$kriterij);
+  $counta = new databaseS();
+  $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
+  }
 }
 //CCCCCCCCCCCCCCC konec CLASS po Kriterijih CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
