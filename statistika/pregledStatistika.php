@@ -15,7 +15,7 @@ vseeno sem dal v switch
 **/
  if(isset($_GET['semafor'])){
   switch ($_GET['semafor']){
-    case "d":
+    case "pregledovalec":
 /***prikaže število pregledov za celotno razdobje po zdravnikih***/
 	$podminka=NULL;
      new countPregled($tabulka, $podminka);
@@ -27,7 +27,7 @@ vseeno sem dal v switch
  
  if(isset($_POST['semafor'])){
   switch ($_POST['semafor']){
-	case "dDatum":
+	case "pregledovalecDatum":
 /**************************************************************
 *semafor dDatum poslan iz bolnikPogoji.js
 *prikaže število pregledov po zdravnikih za določen interval
@@ -121,7 +121,7 @@ class poKriterijih {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL){
+function __construct($tabulka, $stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL){
   //$tabulka = 'bolnikTbl';
   $this->podminka=array_merge($interval,$kriterij);
   $counta = new databaseS();
