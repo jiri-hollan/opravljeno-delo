@@ -8,6 +8,7 @@ require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
 echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
 if(isset($_REQUEST['semafor'])){
+  $tabulka="bolnikTbl";
 /***
 za enkrat semafor nerabi parameter, ker ni več opcij
 vseeno sem dal v switch
@@ -17,7 +18,7 @@ vseeno sem dal v switch
     case "d":
 /***prikaže število pregledov za celotno razdobje po zdravnikih***/
 	$podminka=NULL;
-     new countPregled($podminka);
+     new countPregled($tabulka, $podminka);
     break;
     default:
      echo"semafor GET ni pravi";
@@ -43,7 +44,7 @@ vseeno sem dal v switch
 		  }else{$this_koncDatum =NULL;}
 //var_dump($podminka); 
        //  new SestevekDela($podminka);	
-      new countPregled($podminka);
+      new countPregled($tabulka, $podminka);
     break;
     default:
 	echo $_POST['semafor'];
@@ -72,8 +73,8 @@ ORDER BY steviloZapisov DESC;
 //CCCCCCCCCCCCCCC CLASS countPregled  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class countPregled {
 public $tabulka;
-function __construct($podminka) {
-$tabulka = 'bolnikTbl';
+function __construct($tabulka, $podminka) {
+//$tabulka = 'bolnikTbl';
 $stolpci=["imeZdravnika"];
 $grupa=["imeZdravnika"];
 //echo var_dump($podminka);
@@ -121,7 +122,7 @@ class poKriterijih {
 *******************************************************************/
 public $tabulka;
 function __construct($stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL){
-  $tabulka = 'bolnikTbl';
+  //$tabulka = 'bolnikTbl';
   $this->podminka=array_merge($interval,$kriterij);
   $counta = new databaseS();
   $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
