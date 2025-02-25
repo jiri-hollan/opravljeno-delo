@@ -18,7 +18,9 @@ vseeno sem dal v switch
     case "pregledovalec":
 /***prikaže število pregledov za celotno razdobje po zdravnikih***/
 	$podminka=NULL;
-     new countPregled($tabulka, $podminka);
+	$stolpci=["imeZdravnika"];
+	$grupa=["imeZdravnika"];
+     new countPregled($tabulka, $stolpci, $grupa, $podminka);
     break;
     default:
      echo"semafor GET ni pravi";
@@ -43,8 +45,10 @@ vseeno sem dal v switch
 		 $podminka["datPregleda<="] = $this_koncDatum;
 		  }else{$this_koncDatum =NULL;}
 //var_dump($podminka); 
-       //  new SestevekDela($podminka);	
-      new countPregled($tabulka, $podminka);
+       //  new SestevekDela($podminka);
+	   $stolpci=["imeZdravnika"];
+	   $grupa=["imeZdravnika"];
+      new countPregled($tabulka, $stolpci, $grupa, $podminka);
     break;
     default:
 	echo $_POST['semafor'];
@@ -73,11 +77,7 @@ ORDER BY steviloZapisov DESC;
 //CCCCCCCCCCCCCCC CLASS countPregled  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class countPregled {
 public $tabulka;
-function __construct($tabulka, $podminka) {
-//$tabulka = 'bolnikTbl';
-$stolpci=["imeZdravnika"];
-$grupa=["imeZdravnika"];
-//echo var_dump($podminka);
+function __construct($tabulka, $stolpci, $grupa, $podminka) {
    $counta = new databaseS();
    $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $podminka);
 //echo "<br>";
