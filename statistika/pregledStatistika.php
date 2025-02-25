@@ -34,20 +34,19 @@ vseeno sem dal v switch
 *semafor dDatum poslan iz bolnikPogoji.js
 *prikaže število pregledov po zdravnikih za določen interval
 ***************************************************************/
-         $podminka = [];
-   	     $danes='"'.date("Y-m-d").'"';
-		 if(isset($_POST['zacDatum'])){
-		 $this_zacDatum = $_POST['zacDatum'];
-		 $podminka["datPregleda>="] = $this_zacDatum;
-		 }else{$this_zacDatum =NULL;}
-		 if(isset($_POST['koncDatum'])){
-		 $this_koncDatum = $_POST['koncDatum'];
-		 $podminka["datPregleda<="] = $this_koncDatum;
-		  }else{$this_koncDatum =NULL;}
+	 $podminka = [];
+	 $danes='"'.date("Y-m-d").'"';
+	 if(isset($_POST['zacDatum'])){
+	 $this_zacDatum = $_POST['zacDatum'];
+	 $podminka["datPregleda>="] = $this_zacDatum;
+	 }else{$this_zacDatum =NULL;}
+	 if(isset($_POST['koncDatum'])){
+	 $this_koncDatum = $_POST['koncDatum'];
+	 $podminka["datPregleda<="] = $this_koncDatum;
+	  }else{$this_koncDatum =NULL;}
 //var_dump($podminka); 
-       //  new SestevekDela($podminka);
-	   $stolpci=["imeZdravnika"];
-	   $grupa=["imeZdravnika"];
+	 $stolpci=["imeZdravnika"];
+	 $grupa=["imeZdravnika"];
       new countPregled($tabulka, $stolpci, $grupa, $podminka);
     break;
     default:
