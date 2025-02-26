@@ -35,6 +35,27 @@ vseeno sem dal v switch
 	$interval=[];
 	$kriteriji=[];
 	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	break;
+	case "sklep":
+	$stolpci=["sklep"];
+	$grupa=["sklep"];
+	$interval=[];
+	$kriteriji=[];
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	break;	
+	case "opiati":
+	$stolpci=["opiati"];
+	$grupa=["opiati"];
+	$interval=[];
+	$kriteriji=[];
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	break;
+	case "alergija":
+	$stolpci=["alergija"];
+	$grupa=["alergija"];
+	$interval=[];
+	$kriteriji=[];
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
 	break;	
     default:
      echo"semafor GET ni pravi";
