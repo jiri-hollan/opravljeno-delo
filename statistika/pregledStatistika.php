@@ -24,7 +24,7 @@ vseeno sem dal v switch
     break;
 	case "asa":
 	$stolpci=["asa"];
-	$grupa=NULL;
+	$grupa=["asa"];
 	$interval=[];
 	$kriteriji=[];
 	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
@@ -113,12 +113,11 @@ function __construct($tabulka, $stolpci, $grupa, $podminka) {
 		$danes='"'.date("Y-m-d").'"';
 	echo"<script>intervalFunction($danes)</script>"; 
 //echo"<div id='intervalId'>razdoblje</div>";
-
-
-
  }//od construct  
-}//od class VyberImaStevilko
+}//od class CountPregled
 //CCCCCCCCCCCCC KONEC  CLASS count Pregled  CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+
 //cccccccccccccc CLASS poKriterijih cccccccccccccccccccccccccccccccccccc
 class poKriterijih {
 /*******************************************************************
@@ -127,8 +126,9 @@ class poKriterijih {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL){
+function __construct($tabulka, $stolpci, $grupa=[], $interval=NULL, $kriterij=NULL){
   //$tabulka = 'bolnikTbl';
+var_dump($grupa);
   $this->podminka=array_merge($interval,$kriterij);
   $counta = new databaseS();
   $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
