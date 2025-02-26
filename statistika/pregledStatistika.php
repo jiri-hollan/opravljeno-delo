@@ -29,6 +29,13 @@ vseeno sem dal v switch
 	$kriteriji=[];
 	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
 	break;
+	case "mallampati":
+	$stolpci=["mallampati"];
+	$grupa=["mallampati"];
+	$interval=[];
+	$kriteriji=[];
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	break;	
     default:
      echo"semafor GET ni pravi";
   }
@@ -138,7 +145,9 @@ function __construct($tabulka, $stolpci, $grupa=[], $interval=NULL, $kriterij=NU
       }*/
   echo "<table id='pocet' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
-  echo "<tr class='glavaTable'><th>ASA</th><th></th></tr>";
+//var_dump($grupa[0]);
+//echo strtoupper($grupa[0]);
+  echo "<tr class='glavaTable'><th>".strtoupper($grupa[0])."</th><th></th></tr>";
     foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
