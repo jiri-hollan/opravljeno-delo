@@ -22,6 +22,13 @@ vseeno sem dal v switch
 	$grupa=["imeZdravnika"];
      new countPregled($tabulka, $stolpci, $grupa, $podminka);
     break;
+	case "asa":
+	$stolpci=["asa"];
+	$grupa=NULL;
+	$interval=[];
+	$kriteriji=[];
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	break;
     default:
      echo"semafor GET ni pravi";
   }
