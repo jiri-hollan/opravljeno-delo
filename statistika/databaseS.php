@@ -398,10 +398,10 @@ public function suma($tabulka, $sloupce, $podminka = NULL){
 //....................funkcija counta v razvoju.........................................
 public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 	$sloupceSQL = implode(', ', $sloupce);
-	//echo '<br>$sloupceSQL= ';
-	//var_dump($sloupceSQL);
+//echo '<br>$sloupceSQL= ';
+//var_dump($sloupceSQL);
 	$grupaSQL = implode(', ', $grupa);
-var_dump($grupaSQL);	
+//var_dump($grupaSQL);	
 	$podminkaSQL = '';
 	$parametry = array();
 
