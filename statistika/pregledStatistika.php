@@ -132,6 +132,22 @@ var_dump($grupa);
   $this->podminka=array_merge($interval,$kriterij);
   $counta = new databaseS();
   $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
+    if(count($vybrano)>0){
+	  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
+      echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
+      }
+  echo "<table id='pocet' style='border: solid 1px black;'>";
+/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
+  echo "<tr class='glavaTable'><th>ime Zdravnika</th><th>stevilo pregledov</th></tr>";
+    foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+        echo $v;
+   }//od foreach
+  echo"</table>";
+   }else{
+	// echo var_dump($podminka);
+	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
+     echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+     }
   }
 }
 //CCCCCCCCCCCCCCC konec CLASS po Kriterijih CCCCCCCCCCCCCCCCCCCCCCCCCCC
