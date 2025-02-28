@@ -448,4 +448,35 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 	}
 //............konec counta............................................................
 
+//................ funkcija skupina .................................................
+public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
+	$dotaz = $this->conn->prepare("WITH starostneSkupine AS (
+    SELECT starost
+        CASE
+		    WHEN starost < 10 THEN starost
+		    --WHEN starost >= 10 THEN TRUNCATE(starost, -1)
+		    WHEN starost BETWEEN 10 AND 110 THEN TRUNCATE(starost, -1)
+		    ELSE 'neveljaven vnos'	
+		END
+		AS skupina
+    FROM 
+        bolnikTbl;
+)
+SELECT skupina, COUNT(*) AS steviloZapisov FROM starostneSkupine GROUP BY skupina ORDER BY skupina");
+try {
+		$dotaz->execute();		
+		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
+		//echo '<br>v try vyber';
+	  }catch (PDException $e) {
+		  echo $e->getMessage();
+		  $zaznamy = false;
+	  }
+	  
+	  $dotaz->closeCursor();
+	  return $zaznamy;
+}
+//................ konec skupina .....................................................
+
+
+
 }//uzavírací zavorky class DatabaseS
