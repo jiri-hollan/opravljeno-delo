@@ -454,7 +454,7 @@ public function skupina($tabulka= NULL, $sloupce= NULL, $grupa= NULL, $podminka 
     SELECT starost
         CASE
 		    WHEN starost < 10 THEN starost
-		    --WHEN starost >= 10 THEN TRUNCATE(starost, -1)
+		    WHEN starost >= 10 THEN TRUNCATE(starost, -1)
 		    WHEN starost BETWEEN 10 AND 110 THEN TRUNCATE(starost, -1)
 		    ELSE 'neveljaven vnos'	
 		END
