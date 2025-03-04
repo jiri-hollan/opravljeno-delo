@@ -468,12 +468,11 @@ $dotaz = $this->conn->prepare("      SELECT pregledId,
 		    WHEN starost < 10 THEN starost
 		    WHEN starost BETWEEN 10 AND 100 THEN TRUNCATE(starost, -1)           
 		    WHEN starost BETWEEN 100 AND 110 THEN TRUNCATE(starost, -2)
-		    ELSE 'neveljaven vnos'	
 		END
 		AS skupina
     FROM 
         bolnikTbl
-    GROUP BY skupina ORDER BY skupina asc;   ");
+    GROUP BY skupina ORDER BY ABS(skupina);   ");
 
 
 try {
