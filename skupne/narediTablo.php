@@ -43,7 +43,7 @@ try {
     }
 catch(PDOException $e)
     { 
-	echo "napaka";
+	echo "<br>napaka!!!!!!!!!!!!!!!!!!!<br><br>";
     echo $sql . "<br>" . $e->getMessage();
     }
 $conn = null;
