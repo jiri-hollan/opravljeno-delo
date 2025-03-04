@@ -453,13 +453,13 @@ public function skupina($tabulka, $sloupce, $grupa= NULL, $podminka = NULL){
 		$sloupceSQL = implode(', ', $sloupce);
 
 //echo $sloupceSQL;  
-$dotaz = $this->conn->prepare("SELECT pregledId,
+$dotaz = $this->conn->prepare("SELECT 
         CASE
 		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
 		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
 		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
 		END
-		AS skupina
+		AS skupina, count(*) AS število
     FROM 
         $tabulka
     GROUP BY skupina ORDER BY ABS(skupina);");
