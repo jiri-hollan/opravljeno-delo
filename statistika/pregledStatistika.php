@@ -63,7 +63,14 @@ vseeno sem dal v switch
 	$interval=[];
 	$kriteriji=[];
 	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
-	break;		
+	break;	
+	case "skupina":
+	$stolpci=["starost"];
+	$grupa=["starost"];
+	$interval=[];
+	$kriteriji=[];
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	break;	
     default:
      echo"semafor GET ni pravi";
   }

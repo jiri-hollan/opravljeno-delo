@@ -449,7 +449,7 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 //............konec counta............................................................
 
 //................ funkcija skupina .................................................
-public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
+public function skupina($tabulka= NULL, $sloupce= NULL, $grupa= NULL, $podminka = NULL){
 	$dotaz = $this->conn->prepare("WITH starostneSkupine AS (
     SELECT starost
         CASE

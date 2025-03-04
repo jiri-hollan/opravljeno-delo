@@ -14,6 +14,7 @@ $a2= '<li><a href="zdravniki.php?nazaj='.$nazaj.'">delo Zdravnika</a></li>
 <li><a href="pregledStatistika.php?semafor=opiati">opiati</a></li>
 <li><a href="pregledStatistika.php?semafor=alergija">alergija</a></li>
 <li><a href="pregledStatistika.php?semafor=starost">starost</a></li>
+<li><a href="pregledStatistika.php?semafor=skupina">skupina</a></li>
 ';
 $a3= ''; 
 ?>
