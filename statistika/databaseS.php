@@ -450,7 +450,7 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 
 //................ funkcija skupina .................................................
 public function skupina($tabulka= NULL, $sloupce= NULL, $grupa= NULL, $podminka = NULL){
-	$dotaz = $this->conn->prepare("WITH starostneSkupine AS (
+	/*$dotaz = $this->conn->prepare("WITH starostneSkupine AS (
     SELECT starost
         CASE
 		    WHEN starost < 10 THEN starost
@@ -462,7 +462,20 @@ public function skupina($tabulka= NULL, $sloupce= NULL, $grupa= NULL, $podminka 
     FROM 
         bolnikTbl;
 )
-SELECT skupina, COUNT(*) AS steviloZapisov FROM starostneSkupine GROUP BY skupina ORDER BY skupina");
+SELECT skupina, COUNT(*) AS steviloZapisov FROM starostneSkupine GROUP BY skupina ORDER BY skupina");*/
+$dotaz = $this->conn->prepare("      SELECT pregledId,
+        CASE
+		    WHEN starost < 10 THEN starost
+		    WHEN starost BETWEEN 10 AND 100 THEN TRUNCATE(starost, -1)           
+		    WHEN starost BETWEEN 100 AND 110 THEN TRUNCATE(starost, -2)
+		    ELSE 'neveljaven vnos'	
+		END
+		AS skupina
+    FROM 
+        bolnikTbl
+    GROUP BY skupina ORDER BY skupina asc;   ");
+
+
 try {
 		$dotaz->execute();		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
