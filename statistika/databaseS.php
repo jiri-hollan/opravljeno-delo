@@ -449,10 +449,10 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 //............konec counta............................................................
 
 //................ funkcija skupina .................................................
-public function skupina($tabulka, $sloupce= NULL, $grupa= NULL, $podminka = NULL){
+public function skupina($tabulka, $sloupce, $grupa= NULL, $podminka = NULL){
 		$sloupceSQL = implode(', ', $sloupce);
 
-echo $sloupceSQL;  
+//echo $sloupceSQL;  
 $dotaz = $this->conn->prepare("SELECT pregledId,
         CASE
 		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
