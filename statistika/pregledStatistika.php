@@ -65,13 +65,13 @@ vseeno sem dal v switch
 	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
 	break;	
 	case "skupina":
-	/*$stolpci=["starost"];
+	$stolpci=["starost"];
 	$grupa=["starost"];
 	$interval=[];
 	$kriteriji=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);*/
-	  $skupina = new databaseS();
-  $vybrano=$skupina->skupina($tabulka, $stolpci=NULL, $grupa=NULL, $podminka=NULL);
+	 new poStarosti($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	/*  $skupina = new databaseS();
+  $vybrano=$skupina->skupina($tabulka, $stolpci=NULL, $grupa=NULL, $podminka=NULL);*/
 	break;	
     default:
      echo"semafor GET ni pravi";
@@ -215,3 +215,45 @@ class DeloRows extends RecursiveIteratorIterator {
     }//od endChildren
 }// od class DeloRows
 //CCCCCCCCCCCCCCC KONEC CLASS delo ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+//cccccccccccccc CLASS poStarosti cccccccccccccccccccccccccccccccccccc
+class poStarosti {
+/*******************************************************************
+*(mogoče)
+* brez kriterijev pokaže le število zapisov kje se $stolpec nahaja
+*"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
+*******************************************************************/
+public $tabulka;
+function __construct($tabulka, $stolpci, $grupa=[], $interval=NULL, $kriterij=NULL){
+//$tabulka = 'bolnikTbl';
+//var_dump($grupa);
+  $this->podminka=array_merge($interval,$kriterij);
+  $skupina = new databaseS();
+  $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka);
+    if(count($vybrano)>0){
+	/*  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
+      echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
+      }*/
+  echo "<table id='pocet' style='border: solid 1px black;'>";
+/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
+//var_dump($grupa[0]);
+//echo strtoupper($grupa[0]);
+  echo "<tr class='glavaTable'><th>".strtoupper($grupa[0])."</th><th></th></tr>";
+    foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+        echo $v;
+   }//od foreach
+  echo"</table>";
+   }else{
+// echo var_dump($podminka);
+	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
+     echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+     }
+  }
+}
+//CCCCCCCCCCCCCCC konec CLASS po starosti CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+
+
+
+
+?>
