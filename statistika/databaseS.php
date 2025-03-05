@@ -459,7 +459,7 @@ $dotaz = $this->conn->prepare("SELECT
 		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
 		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
 		END
-		AS skupina, count(*) AS število
+		AS skupina, count(*) AS stevilo
     FROM 
         $tabulka
     GROUP BY skupina ORDER BY ABS(skupina);");
