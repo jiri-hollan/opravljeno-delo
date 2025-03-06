@@ -52,7 +52,9 @@ input {
 
 table {
   border: 1px solid black;
-  max_width:500px;		
+  max_width:500px;
+  top: 50px;
+
 }
 	
  tr:hover {
@@ -71,18 +73,26 @@ th, td {
   position: sticky;
   top: 6%;	
   overflow: hidden;
+  background-color: Cornsilk;
 }
 
-
+.pogojiDiv {
+position: fixed;
+top: 50px;
+left: 410px;
+background-color: lightblue;
+width: 400px;;
+}
 
 #pogojId {
-position: fixed;	
+/*position: fixed;	
 top: 40px;
-left: 400px;	
+left: 400px;*/	
 }
 
 #posli {
-position: fixed;	
-top: 200px;
-left: 450px;		
+position: relative;	
+/*position: fixed;	
+top: 200px;*/	
+left: 50px;	
 }
