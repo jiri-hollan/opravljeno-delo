@@ -458,7 +458,7 @@ $dotaz = $this->conn->prepare("SELECT
 		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
 		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
 		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
-			ELSE 'neveljaven vnos'
+			ELSE '200neveljaven vnos'
 		END
 		AS skupina, count(*) AS stevilo
     FROM 
