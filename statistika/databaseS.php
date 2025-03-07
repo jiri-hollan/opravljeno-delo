@@ -418,22 +418,15 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 		}
 	}
 
-	//echo '<br>parametry= ';
-	//var_dump($parametry);
-	/* echo "<br>podminka= ";
-	 var_dump($podminka);
-	echo "<br>podminka SQL: ";*/
-	//var_dump($podminkaSQL );
+//echo '<br>parametry= ';
+//var_dump($parametry);
+/* echo "<br>podminka= ";
+var_dump($podminka);
+echo "<br>podminka SQL: ";*/
+//var_dump($podminkaSQL );
 	
-//$dotaz = $this->conn->prepare("SELECT  $sloupceSQL  FROM $tabulka". $podminkaSQL. $poradiSQL. " GROUP BY datumOpravila");
-	
-	$dotaz = $this->conn->prepare("SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL");	
-	
-//(SELECT imeZdravnika, COUNT(*) AS steviloZapisov FROM bolnikTbl GROUP BY imeZdravnika ORDER BY steviloZapisov DESC);
-	
-	
-	
-	//var_dump($dotaz);
+	$dotaz = $this->conn->prepare("SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL");		
+//var_dump($dotaz);
 	try {
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
