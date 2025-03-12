@@ -194,6 +194,8 @@ function __construct($tabulka, $stolpci, $grupa=[], $interval=NULL, $kriterij=NU
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
      echo 'V izbranem terminu ni zapisov o opravljenem delu ';
      }
+$danes='"'.date("Y-m-d").'"';
+echo"<script>intervalFunction($danes)</script>"; 
   }
 }
 //CCCCCCCCCCCCCCC konec CLASS po Kriterijih CCCCCCCCCCCCCCCCCCCCCCCCCCC
