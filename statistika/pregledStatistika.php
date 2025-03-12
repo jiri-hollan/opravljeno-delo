@@ -14,7 +14,9 @@ za enkrat semafor nerabi parameter, ker ni več opcij
 vseeno sem dal v switch
 **/
  if(isset($_GET['semafor'])){
-  switch ($_GET['semafor']){
+	$semafor = $_GET['semafor'];
+  //switch ($_GET['semafor']){
+  switch ($semafor){	  
     case "pregledovalec":
 /***prikaže število pregledov za celotno razdobje po zdravnikih***/
 	$podminka=NULL;
