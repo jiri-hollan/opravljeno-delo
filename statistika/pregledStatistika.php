@@ -80,7 +80,7 @@ vseeno sem dal v switch
  
  if(isset($_POST['semafor'])){
   switch ($_POST['semafor']){
-	case "pregledovalecDatum":
+	case "pregledovalec":
 /**************************************************************
 *semafor dDatum poslan iz bolnikPogoji.js
 *prikaže število pregledov po zdravnikih za določen interval
