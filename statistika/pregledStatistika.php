@@ -22,28 +22,28 @@ vseeno sem dal v switch
 	$podminka=NULL;
 	$stolpci=["imeZdravnika"];
 	$grupa=["imeZdravnika"];
-     new countPregled($tabulka, $stolpci, $grupa, $podminka);
+     new countPregled($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "asa":
 	$stolpci=["asa"];
 	$grupa=["asa"];
 	$interval=[];
 	$kriteriji=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji, $semafor);
 	break;
 	case "mallampati":
 	$stolpci=["mallampati"];
 	$grupa=["mallampati"];
 	$interval=[];
 	$kriteriji=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji, $semafor);
 	break;
 	case "sklep":
 	$stolpci=["sklep"];
 	$grupa=["sklep"];
 	$interval=[];
 	$kriteriji=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji, $semafor);
 	break;	
 	case "opiati":
 	$stolpci=["opiati"];
@@ -57,21 +57,21 @@ vseeno sem dal v switch
 	$grupa=["alergija"];
 	$interval=[];
 	$kriteriji=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji, $semafor);
 	break;	
 	case "starost":
 	$stolpci=["starost"];
 	$grupa=["starost"];
 	$interval=[];
 	$kriteriji=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji, $semafor);
 	break;	
 	case "skupina":
 	$stolpci=["starost"];
 	$grupa=["starost"];
 	$interval=[];
 	$kriteriji=[];
-	 new poStarosti($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	 new poStarosti($tabulka, $stolpci, $grupa, $interval, $kriteriji, $semafor);
 	/*  $skupina = new databaseS();
   $vybrano=$skupina->skupina($tabulka, $stolpci=NULL, $grupa=NULL, $podminka=NULL);*/
 	break;	

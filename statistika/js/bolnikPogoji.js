@@ -1,4 +1,4 @@
-function intervalFunction(danes) {
+function intervalFunction(danes, semafor) {
     console.log("bolnikPogoji.js  linija 2 danes:"+danes);
   let zacDatum= '<label for="zacDatumId">od: </label><input type="date" id="zacDatumId" name="zacDatum" value='+danes+' >';
   let koncDatum= '<label for="koncDatumId">do: </label><input type="date" id="koncDatumId" name="koncDatum" value='+danes+' >';
