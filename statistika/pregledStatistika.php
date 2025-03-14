@@ -19,52 +19,52 @@ vseeno sem dal v switch
   switch ($semafor){	  
     case "pregledovalec":
 /***prikaže število pregledov za celotno razdobje po zdravnikih***/
-$podminka=[];
 	$stolpci=["imeZdravnika"];
 	$grupa=["imeZdravnika"];
+    $podminka=NULL;
      new countPregled($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "asa":
 	$stolpci=["asa"];
 	$grupa=["asa"];
-$podminka=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa,$podminka, $semafor);
+    $podminka=NULL;
+	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;
 	case "mallampati":
 	$stolpci=["mallampati"];
 	$grupa=["mallampati"];
-$podminka=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa,$podminka, $semafor);
+    $podminka=NULL;
+	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;
 	case "sklep":
 	$stolpci=["sklep"];
 	$grupa=["sklep"];
-$podminka=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa,$podminka, $semafor);
+    $podminka=NULL;
+	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;	
 	case "opiati":
 	$stolpci=["opiati"];
 	$grupa=["opiati"];
-$podminka=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa,$podminka, $semafor);
+    $podminka=NULL;
+	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;
 	case "alergija":
 	$stolpci=["alergija"];
 	$grupa=["alergija"];
-$podminka=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa,$podminka, $semafor);
+    $podminka=NULL;
+	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;	
 	case "starost":
 	$stolpci=["starost"];
 	$grupa=["starost"];
-$podminka=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa,$podminka, $semafor);
+    $podminka=NULL;
+	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;	
 	case "skupina":
 	$stolpci=["starost"];
 	$grupa=["starost"];
-$podminka=[];
-	 new poStarosti($tabulka, $stolpci, $grupa,$podminka, $semafor);
+    $podminka=NULL;
+	 new poStarosti($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	/*  $skupina = new databaseS();
   $vybrano=$skupina->skupina($tabulka, $stolpci=NULL, $grupa=NULL, $podminka=NULL);*/
 	break;	
@@ -128,7 +128,7 @@ ORDER BY steviloZapisov DESC;
 //CCCCCCCCCCCCCCC CLASS countPregled  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class countPregled {
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa, $podminka=NULL, $semafor) {
+function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor) {
    $counta = new databaseS();
    $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $podminka);
 //echo "<br>";
@@ -173,7 +173,7 @@ class poKriterijih {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa=[],$podminka=NULL, $semafor){
+function __construct($tabulka, $stolpci, $grupa=[], $podminka=[], $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
 //var_dump($semafor);
@@ -231,7 +231,7 @@ class poStarosti {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa=[],$podminka=NULL, $semafor){
+function __construct($tabulka, $stolpci, $grupa=[], $podminka=[], $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
 //var_dump($semafor);
