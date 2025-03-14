@@ -462,13 +462,13 @@ public function skupina($tabulka, $sloupce, $grupa= NULL, $podminka = NULL){
 			$i++;
 		}
 	}
-
+/*
 echo '<br>parametry= ';
 var_dump($parametry);
  echo "<br>podminka= ";
 var_dump($podminka);
 echo "<br>podminka SQL: ";
-var_dump($podminkaSQL );
+var_dump($podminkaSQL );*/
 	
 $dotaz = $this->conn->prepare("SELECT 
         CASE
@@ -479,11 +479,11 @@ $dotaz = $this->conn->prepare("SELECT
 		END
 		AS skupina, count(*) AS stevilo
     FROM 
-        $tabulka $podminkaSQL
+        $tabulka 
     GROUP BY skupina ORDER BY ABS(skupina)");
-echo"<br><br>";	
+/*echo"<br><br>";	
 var_dump($dotaz);
-echo"<br><br>";
+echo"<br><br>";*/
 
 try {
 		$dotaz->execute();		
