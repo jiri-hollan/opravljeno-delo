@@ -257,6 +257,9 @@ function __construct($tabulka, $stolpci, $grupa=[], $interval=NULL, $kriterij=NU
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
      echo 'V izbranem terminu ni zapisov o opravljenem delu ';
      }
+$danes='"'.date("Y-m-d").'"';
+//echo $semafor;
+echo"<script>intervalFunction($danes, '$semafor')</script>";
   }
 }
 //CCCCCCCCCCCCCCC konec CLASS po starosti CCCCCCCCCCCCCCCCCCCCCCCCCCC
