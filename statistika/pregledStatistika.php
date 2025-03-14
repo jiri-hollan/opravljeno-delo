@@ -96,6 +96,11 @@ $podminka=[];
 	 $grupa=["imeZdravnika"];
       new countPregled($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
     break;
+	case "asa":
+	$stolpci=["asa"];
+	$grupa=["asa"];
+      new countPregled($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+    break;
     default:
 	echo $_POST['semafor'];
      echo" semafor POST ni pravi";	  
