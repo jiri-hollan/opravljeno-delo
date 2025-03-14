@@ -52,9 +52,9 @@ input {
 
 table {
   border: 1px solid black;
-  max_width:500px;
+ /* max-width:300px;*/
   top: 50px;
-
+  width: 30%;
 }
 	
  tr:hover {

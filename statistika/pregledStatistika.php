@@ -50,7 +50,7 @@ vseeno sem dal v switch
 	$grupa=["opiati"];
 	$interval=[];
 	$kriteriji=[];
-	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji, $semafor);
 	break;
 	case "alergija":
 	$stolpci=["alergija"];
