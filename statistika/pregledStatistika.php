@@ -91,8 +91,34 @@ vseeno sem dal v switch
 	case "asa":
 	$stolpci=["asa"];
 	$grupa=["asa"];
-      new countPregled($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
     break;
+	case "mallampati":
+	$stolpci=["mallampati"];
+	$grupa=["mallampati"];
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+    break;
+	case "sklep":
+	$stolpci=["sklep"];
+	$grupa=["sklep"];
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+    break;
+	case "opiati":
+	$stolpci=["opiati"];
+	$grupa=["opiati"];
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+    break;
+	case "alergija":
+	$stolpci=["alergija"];
+	$grupa=["alergija"];
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+    break;
+	case "starost":
+	$stolpci=["starost"];
+	$grupa=["starost"];
+      new poStarosti($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+    break;
+	
     default:
 	echo $_POST['semafor'];
      echo" semafor POST ni pravi";	  
