@@ -253,9 +253,8 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
 //var_dump($semafor);
-  $this->podminka=$podminka;
   $skupina = new databaseS();
-  $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka);
+  $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $podminka);
     if(count($vybrano)>0){
   echo "<table id='pocet' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/

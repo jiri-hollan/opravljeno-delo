@@ -418,17 +418,17 @@ public function counta($tabulka, $sloupce, $grupa, $podminka = NULL){
 		}
 	}
 
-//echo '<br>parametry= ';
-//var_dump($parametry);
-/* echo "<br>podminka= ";
+echo '<br>parametry= ';
+var_dump($parametry);
+ echo "<br>podminka= ";
 var_dump($podminka);
-echo "<br>podminka SQL: ";*/
-//var_dump($podminkaSQL );
+echo "<br>podminka SQL: ";
+var_dump($podminkaSQL );
 	
 	$dotaz = $this->conn->prepare("SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL");
-/*echo"<br><br>";	
+echo"<br><br>";	
 var_dump($dotaz);
-echo"<br><br>";*/
+echo"<br><br>";
 	try {
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
@@ -477,7 +477,7 @@ $dotaz = $this->conn->prepare("SELECT
 		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
 			ELSE '200neveljaven vnos'
 		END
-		AS skupina, count(*) AS stevilo
+		AS skupina, COUNT(*) AS stevilo
     FROM 
         $tabulka $podminkaSQL
     GROUP BY skupina ORDER BY ABS(skupina)");
