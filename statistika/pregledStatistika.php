@@ -19,7 +19,7 @@ vseeno sem dal v switch
   switch ($semafor){	  
     case "pregledovalec":
 /***prikaže število pregledov za celotno razdobje po zdravnikih***/
-	$podminka=NULL;
+$podminka=[];
 	$stolpci=["imeZdravnika"];
 	$grupa=["imeZdravnika"];
      new countPregled($tabulka, $stolpci, $grupa, $podminka, $semafor);
@@ -128,7 +128,7 @@ ORDER BY steviloZapisov DESC;
 //CCCCCCCCCCCCCCC CLASS countPregled  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class countPregled {
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor) {
+function __construct($tabulka, $stolpci, $grupa, $podminka=NULL, $semafor) {
    $counta = new databaseS();
    $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $podminka);
 //echo "<br>";
