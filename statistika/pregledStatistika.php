@@ -54,19 +54,11 @@ vseeno sem dal v switch
     $podminka=NULL;
 	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;	
-	case "starost":
-	$stolpci=["starost"];
-	$grupa=["starost"];
-    $podminka=NULL;
-	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;	
-	case "skupina":
+    case "starost":
 	$stolpci=["starost"];
 	$grupa=["starost"];
     $podminka=NULL;
 	 new poStarosti($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	/*  $skupina = new databaseS();
-  $vybrano=$skupina->skupina($tabulka, $stolpci=NULL, $grupa=NULL, $podminka=NULL);*/
 	break;	
     default:
      echo"semafor GET ni pravi";
