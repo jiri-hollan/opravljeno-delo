@@ -87,7 +87,8 @@ width: 400px;;
 #pogojId {
 /*position: fixed;	
 top: 40px;
-left: 400px;*/	
+left: 400px;*/
+position: relative;	
 }
 
 #posli {
