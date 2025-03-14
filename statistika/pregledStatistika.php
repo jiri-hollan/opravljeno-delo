@@ -257,9 +257,6 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
   $skupina = new databaseS();
   $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka);
     if(count($vybrano)>0){
-	/*  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
-      echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
-      }*/
   echo "<table id='pocet' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
 //var_dump($grupa[0]);
@@ -276,7 +273,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
      }
 $danes='"'.date("Y-m-d").'"';
 //echo $semafor;
-echo"<script>intervalFunction($danes, '$semafor')</script>";
+echo"<script>intervalFunction($danes, '$semafor')</script>"; 
   }
 }
 //CCCCCCCCCCCCCCC konec CLASS po starosti CCCCCCCCCCCCCCCCCCCCCCCCCCC
