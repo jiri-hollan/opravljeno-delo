@@ -74,12 +74,6 @@ $podminka=[];
  }
  
  if(isset($_POST['semafor'])){
-  switch ($_POST['semafor']){
-	case "pregledovalec":
-/**************************************************************
-*semafor dDatum poslan iz bolnikPogoji.js
-*prikaže število pregledov po zdravnikih za določen interval
-***************************************************************/
 	 $podminka = [];
 	 $danes='"'.date("Y-m-d").'"';
 	 if(isset($_POST['zacDatum'])){
@@ -91,6 +85,13 @@ $podminka=[];
 	 $podminka["datPregleda<="] = $this_koncDatum;
 	  }else{$this_koncDatum =NULL;}
 //var_dump($podminka); 
+  switch ($_POST['semafor']){
+	case "pregledovalec":
+/**************************************************************
+*semafor dDatum poslan iz bolnikPogoji.js
+*prikaže število pregledov po zdravnikih za določen interval
+***************************************************************/
+
 	 $stolpci=["imeZdravnika"];
 	 $grupa=["imeZdravnika"];
       new countPregled($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
