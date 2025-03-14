@@ -173,7 +173,7 @@ class poKriterijih {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa=[], $podminka=[], $semafor){
+function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
 //var_dump($semafor);
@@ -231,7 +231,7 @@ class poStarosti {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa=[], $podminka=[], $semafor){
+function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
 //var_dump($semafor);
