@@ -54,7 +54,7 @@ table {
   border: 1px solid black;
  /* max-width:300px;*/
   top: 50px;
-  width: 30%;
+  width: 50%;
 }
 	
  tr:hover {
@@ -77,9 +77,10 @@ th, td {
 }
 
 .pogojiDiv {
+/*position: absolute;*/
 position: fixed;
 top: 50px;
-left: 410px;
+left: 400px;
 background-color: lightblue;
   opacity: 0.8;
 width: 400px;;
