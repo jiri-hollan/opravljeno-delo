@@ -48,6 +48,12 @@ vseeno sem dal v switch
     $podminka=NULL;
 	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;
+	case "druge_Ovisnosti":
+	$stolpci=["dovisnosti"];
+	$grupa=["dovisnosti"];
+    $podminka=NULL;
+	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
+	break;
 	case "alergija":
 	$stolpci=["alergija"];
 	$grupa=["alergija"];
@@ -106,6 +112,11 @@ vseeno sem dal v switch
 	case "opiati":
 	$stolpci=["opiati"];
 	$grupa=["opiati"];
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+    break;
+	case "druge_Ovisnosti":
+	$stolpci=["dovisnosti"];
+	$grupa=["dovisnosti"];
       new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
     break;
 	case "alergija":
@@ -206,7 +217,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
 //var_dump($grupa[0]);
 //echo strtoupper($grupa[0]);
-  echo "<tr class='glavaTable'><th>".strtoupper($grupa[0])."</th><th></th></tr>";
+  echo "<tr class='glavaTable'><th>".strtoupper($semafor)."</th><th></th></tr>";
     foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
