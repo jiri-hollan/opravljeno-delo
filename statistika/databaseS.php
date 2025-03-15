@@ -486,7 +486,7 @@ var_dump($dotaz);
 echo"<br><br>";
 
 try {
-		$dotaz->execute();		
+		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 		//echo '<br>v try vyber';
 	  }catch (PDException $e) {
