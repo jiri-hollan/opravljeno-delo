@@ -98,3 +98,8 @@ position: relative;
 top: 200px;*/	
 left: 50px;	
 }
+
+#stranId {
+	  width: 800px;
+	  border: 1px solid #ccc;
+}

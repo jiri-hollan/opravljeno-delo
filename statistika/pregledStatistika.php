@@ -3,9 +3,11 @@ require_once 'administrace.php';
 require_once 'databaseS.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
-require_once('sabloni/forma.php');
+//require_once('sabloni/forma.php');
 require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
+ echo"<div id='stranId'>";
+require_once('sabloni/forma.php');
 echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
 if(isset($_REQUEST['semafor'])){
   $tabulka="bolnikTbl";
@@ -70,7 +72,7 @@ vseeno sem dal v switch
      echo"semafor GET ni pravi";
   }
  }
- 
+
  if(isset($_POST['semafor'])){
 	 $podminka = [];
 	 $danes='"'.date("Y-m-d").'"';
@@ -289,7 +291,7 @@ echo"<script>intervalFunction($danes, '$semafor')</script>";
 }
 //CCCCCCCCCCCCCCC konec CLASS po starosti CCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-
+echo"</div>";
 
 
 
