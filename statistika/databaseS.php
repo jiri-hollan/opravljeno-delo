@@ -479,14 +479,14 @@ $dotaz = $this->conn->prepare("SELECT
 		END
 		AS skupina, count(*) AS stevilo
     FROM 
-        $tabulka 
+        $tabulka $podminkaSQL
     GROUP BY skupina ORDER BY ABS(skupina)");
 /*echo"<br><br>";	
 var_dump($dotaz);
 echo"<br><br>";*/
 
 try {
-		$dotaz->execute();		
+		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 		//echo '<br>v try vyber';
 	  }catch (PDException $e) {
