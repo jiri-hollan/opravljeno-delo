@@ -173,7 +173,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor) {
 	  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
       echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
       }
-  echo "<table id='pocet' style='border: solid 1px black;'>";
+  echo "<table id='pocet'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
   echo "<tr class='glavaTable'><th>ime Zdravnika</th><th>stevilo pregledov</th></tr>";
     foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
@@ -213,7 +213,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 	/*  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
       echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
       }*/
-  echo "<table id='pocet' style='border: solid 1px black;'>";
+  echo "<table id='pocet'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
 //var_dump($grupa[0]);
 //echo strtoupper($grupa[0]);
@@ -268,7 +268,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
   $skupina = new databaseS();
   $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka);
     if(count($vybrano)>0){
-  echo "<table id='pocet' style='border: solid 1px black;'>";
+  echo "<table id='pocet'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
 //var_dump($grupa[0]);
 //echo strtoupper($grupa[0]);
