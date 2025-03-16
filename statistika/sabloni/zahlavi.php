@@ -36,8 +36,9 @@ function test_input($test) {
   $test = htmlspecialchars($test);
   return $test;
 } 
+echo"</div>";
  ?>
-</div>
+
 
 
 
