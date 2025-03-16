@@ -3,9 +3,12 @@ require_once 'administrace.php';
 require_once 'databaseS.php';
 $nazaj="statistikaMenu.php";
 require_once('sabloni/zahlavi.php');
-require_once('sabloni/forma.php');
+//require_once('sabloni/forma.php');
 require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
+echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
+echo"<div>";
+require_once('sabloni/forma.php');
 echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
 if(isset($_REQUEST['semafor'])){
   $tabulka="bolnikTbl";
@@ -292,5 +295,5 @@ echo"<script>intervalFunction($danes, '$semafor')</script>";
 
 
 
-
+echo"</div>";
 ?>
