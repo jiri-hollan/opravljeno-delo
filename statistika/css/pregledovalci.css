@@ -102,7 +102,7 @@ left: 50px;
   background-color: #f1f1f1;
 }
 
-.pogojiDiv  form {
+.flex-container  form {
 	  position: sticky;
   top: 6%;	
 }
