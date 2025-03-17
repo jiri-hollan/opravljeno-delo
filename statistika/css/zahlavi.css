@@ -5,7 +5,7 @@ body {
 }
 
 .topnav {
-  position: sticky;
+  position: fixed;
   top: 0;	
   overflow: hidden;
   background-color: #333;
