@@ -6,7 +6,7 @@ require_once('sabloni/zahlavi.php');
 //require_once('sabloni/forma.php');
 require_once('opraviloVsiS.php');
 require_once ('ogledStatistika.php');
-echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
+//echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
 echo"<div class='flex-container'>";
 require_once('sabloni/forma.php');
 echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
