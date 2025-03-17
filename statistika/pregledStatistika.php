@@ -173,6 +173,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor) {
 //echo "<br>";
 //var_dump($semafor);
   if(count($vybrano)>0){
+	  echo"<div class='udaje'>";
 	  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
       echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
       }
@@ -183,6 +184,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor) {
         echo $v;
    }//od foreach
   echo"</table>";
+  echo"</div>";
    }else{
 // echo var_dump($podminka);
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
@@ -213,9 +215,10 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
   $counta = new databaseS();
   $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
     if(count($vybrano)>0){
-	/*  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
+	  echo"<div class='udaje'>";
+	  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
       echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
-      }*/
+      } 
   echo "<table id='pocet'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
 //var_dump($grupa[0]);
@@ -225,6 +228,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
         echo $v;
    }//od foreach
   echo"</table>";
+  echo"</div>";  
    }else{
 // echo var_dump($podminka);
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
@@ -271,6 +275,10 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
   $skupina = new databaseS();
   $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka);
     if(count($vybrano)>0){
+	  echo"<div class='udaje'>";
+	  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
+      echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";
+      }
   echo "<table id='pocet'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
 //var_dump($grupa[0]);
@@ -280,6 +288,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
         echo $v;
    }//od foreach
   echo"</table>";
+  echo"</div>";
    }else{
 // echo var_dump($podminka);
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
