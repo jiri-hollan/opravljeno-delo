@@ -9,6 +9,7 @@ body {
   top: 0;	
   overflow: hidden;
   background-color: #333;
+  z-index: 6;
 }
 
 .topnav a {
@@ -96,4 +97,20 @@ div.glavni {
 
 #opravilaId{
   width: 200px;	
+}
+
+.statistikaNav {
+	position: relative;
+	top: 50px;
+	z-index: 1;
+}
+
+#formaPogojiId {
+	position: relative;
+	top: 40px;
+	z-index: 1;
+}
+.main {
+	position: relative;
+	top: 30px;	
 }

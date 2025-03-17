@@ -9,6 +9,7 @@ require_once ('ogledStatistika.php');
 echo'<script src="js/statistika.js?'.time().'"></script>';
 echo'<script src="js/poDatumu.js?'.time().'"></script>';
 echo'<script src="js/ogledStatistika.js?'.time().'"></script>';
+echo'<div class="main">';
 if(isset($_REQUEST['semafor'])){
 new Podminka();
 }else{echo"Nekaj je narobe, obvestite admina!";}
@@ -113,7 +114,7 @@ case 'semaforZdravnik':
 	 $this_stevilkaZdravnika = $_GET['stevilkaZdravnika'];
 //echo'linija 114';
 	 echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
-     echo'<br>Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
+     echo'Številka zdravnika= '.$this_stevilkaZdravnika.'<br>'; 
 	 	 $podminka = [];
        if ($this_stevilkaZdravnika >0) {
        //$podminka = array("stevilkaZdravnika="=>$this_stevilkaZdravnika);
@@ -156,7 +157,7 @@ case'semaforDatum':
 		 $podminka["sifraOpravila="] = $this_sifraOpravila;
 		  }else{$this_sifraOpravila =NULL;}
          echo'<input type="hidden" id="stevilkaZdravnikaIdId" name="stevilkaZdravnika" value="'.$this_stevilkaZdravnika.'" form="formaPogojiId">';
-         echo'<br>ŠTEVILKA ZDRAVNIKA= '.$this_stevilkaZdravnika.'<br>'; 
+         echo'ŠTEVILKA ZDRAVNIKA= '.$this_stevilkaZdravnika.'<br>'; 
 //var_dump($podminka); 
          new SestevekDela($podminka);
 	    }//od if POST 
@@ -189,4 +190,5 @@ echo'linija 179';
 echo'<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
 require_once 'sabloni/prijavljenJe.php';
 require_once 'sabloni/zapati.php';
+echo'</div>';
 ?>

@@ -4,7 +4,7 @@ require_once('sabloni/zahlavi.php');
 class MenuDelo  {
    public function __construct() {
    require_once('menuStatistika-items.php'); 
-   echo '<nav id= "glavnaNav"><ul>';
+   echo '<nav class= "statistikaNav"><ul>';
   if (isset($_SESSION["upstatus"]))  {
 	 switch ($_SESSION["upstatus"]) {		   
 	case 0:

@@ -5,6 +5,7 @@ require_once('sabloni/zahlavi.php');
 require_once 'sabloni/forma.php';
 echo'<link rel="stylesheet" href="../delo/css/delo.css?'.time().'">';
 $nazaj="statistikaMenu.php.php";
+echo'<div class="main">';
 new VyberZdravnika(1);
 //CCCCCCCCCCCCCCC CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class VyberImaStevilko {
@@ -73,4 +74,5 @@ new VyberImaStevilko($podminka);
 echo'<script src="js/manipulaceZdravniki.js?'.time().'"></script>';
 require_once 'sabloni/prijavljenJe.php';
 require_once 'sabloni/zapati.php';
+echo'</div>';
 ?>

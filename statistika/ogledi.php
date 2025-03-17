@@ -99,7 +99,7 @@ foreach (json_decode($this->dataPreg) as $key) {
    $this->stolpci= array('id', 'vpis_date', 'sifraOpravila', 'opravilo', 'datumOpravila', 'casOpravila');
 $vyber = new databaseS();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
-echo "<br>";
+//echo "<br>";
 if(count($vybrano)>0){	
 	
 foreach(new TableR(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
