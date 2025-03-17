@@ -49,6 +49,9 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+.udaje {
+  border: 1px solid #ccc;	
+}
 
 table {
   border: 1px solid black;
