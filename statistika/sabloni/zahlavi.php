@@ -6,7 +6,7 @@ echo'
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/zahlavi.css?'.time().'">
+<!--<link rel="stylesheet" href="css/zahlavi.css?'.time().'">-->
 <link rel="stylesheet" href="css/pregledovalci.css?'.time().'">
 <title>Anestiz</title>
 <link rel="shortcut icon" href="../favicon.ico?'.time().'">
