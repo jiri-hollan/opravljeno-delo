@@ -53,7 +53,7 @@ input {
 table {
   border: 1px solid black;
   top: 50px;
-  width: 30%;
+  max-width: 50%;
   order: 1;
 }
 	
@@ -100,6 +100,7 @@ left: 50px;
 .flex-container {
   display: flex;
   background-color: #f1f1f1;
+  max-width: 900px;
 }
 
 .flex-container  form {
