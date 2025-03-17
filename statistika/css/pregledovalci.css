@@ -71,7 +71,7 @@ th, td {
 
 .glavaTable {
   position: sticky;
-  top: 6%;	
+  top: 0;	
   overflow: hidden;
   background-color: Cornsilk;
 }
