@@ -7,4 +7,5 @@
        <li><a href="../servis/manipulaceObjektUniverzal.php?tabulka=pregledovalciTbl">upravljanje z pregledovalci</a></li>';*/   
  $a2= ''; 
  $a3= ''; 
+ $a4= ''; 
 ?>

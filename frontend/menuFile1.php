@@ -23,7 +23,10 @@ echo '
 	 break;	 
 	 case 3:
 	   echo $a0.$a1.$a2.$a3;
-    break;   
+    break;
+	 case 4:
+	   echo $a0.$a1.$a2.$a3.$a4;
+    break;	
     default:
 	   } //od switch
 	 echo

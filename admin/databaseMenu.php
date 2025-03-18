@@ -6,7 +6,7 @@ require_once('../koren.php');
 class Manipulace extends Administrace {
    public function __construct($koren) {
 	       parent::__construct($koren);		   
-  if (isset($_SESSION["upstatus"]) && $_SESSION["upstatus"] == 3)  {
+  if (isset($_SESSION["upstatus"]) && $_SESSION["upstatus"] == 4)  {
 $nazaj="../admin/databaseMenu.php";
 echo '
 <div id="manipulace">
