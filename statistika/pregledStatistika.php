@@ -18,62 +18,9 @@ vseeno sem dal v switch
 **/
  if(isset($_GET['semafor'])){
 	$semafor = $_GET['semafor'];
-  //switch ($_GET['semafor']){
-  switch ($semafor){	  
-    case "pregledovalec":
-/***prikaže število pregledov za celotno razdobje po zdravnikih***/
-	$stolpci=["imeZdravnika"];
-	$grupa=["imeZdravnika"];
     $podminka=NULL;
-     new countPregled($tabulka, $stolpci, $grupa, $podminka, $semafor);
-    break;
-	case "asa":
-	$stolpci=["asa"];
-	$grupa=["asa"];
-    $podminka=NULL;
-	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;
-	case "mallampati":
-	$stolpci=["mallampati"];
-	$grupa=["mallampati"];
-    $podminka=NULL;
-	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;
-	case "sklep":
-	$stolpci=["sklep"];
-	$grupa=["sklep"];
-    $podminka=NULL;
-	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;	
-	case "opiati":
-	$stolpci=["opiati"];
-	$grupa=["opiati"];
-    $podminka=NULL;
-	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;
-	case "druge_Ovisnosti":
-	$stolpci=["dovisnosti"];
-	$grupa=["dovisnosti"];
-    $podminka=NULL;
-	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;
-	case "alergija":
-	$stolpci=["alergija"];
-	$grupa=["alergija"];
-    $podminka=NULL;
-	 new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;	
-    case "starost":
-	$stolpci=["starost"];
-	$grupa=["starost"];
-    $podminka=NULL;
-	 new poStarosti($tabulka, $stolpci, $grupa, $podminka, $semafor);
-	break;	
-    default:
-		echo $_GET['semafor'];
-     echo"semafor GET ni pravi";
-  }
- }
+	 }
+
  
  if(isset($_POST['semafor'])){
 	 $semafor = $_POST['semafor'];
@@ -88,7 +35,8 @@ vseeno sem dal v switch
 	 $podminka["datPregleda<="] = $this_koncDatum;
 	  }else{$this_koncDatum =NULL;}
 //var_dump($podminka); 
-  switch ($_POST['semafor']){
+ }
+  switch ($semafor){
 	case "pregledovalec":
 /**************************************************************
 *semafor dDatum poslan iz bolnikPogoji.js
@@ -136,10 +84,10 @@ vseeno sem dal v switch
     break;
 	
     default:
-	echo $_POST['semafor'];
-     echo" semafor POST ni pravi";	  
+	echo $semafor;
+     echo" semafor GET ali POST ni pravi";	  
   }
- }
+
 }else{echo"ni REQUEST";}
 /************************************************************
 *Tu pridejo predlogi SQL za pregled polj v tabli bolnikTbl
