@@ -12,16 +12,18 @@ require_once('sabloni/forma.php');
 echo'<script src="js/bolnikPogoji.js?'.time().'"></script>';
 if(isset($_REQUEST['semafor'])){
   $tabulka="bolnikTbl";
-/***
-za enkrat semafor nerabi parameter, ker ni več opcij
-vseeno sem dal v switch
-**/
+/*************************************************
+*$_GET semafor poslan iz statistikaMenu,
+*definiran v menuStatistika_items
+**************************************************/ 
  if(isset($_GET['semafor'])){
 	$semafor = $_GET['semafor'];
     $podminka=NULL;
 	 }
-
- 
+ /**************************************************************
+*$_POST semafor poslan iz bolnikPogoji.js
+*prikaže število pregledov po zdravnikih za določen interval
+***************************************************************/
  if(isset($_POST['semafor'])){
 	 $semafor = $_POST['semafor'];
 	 $podminka = [];
@@ -34,14 +36,12 @@ vseeno sem dal v switch
 	 $this_koncDatum = $_POST['koncDatum'];
 	 $podminka["datPregleda<="] = $this_koncDatum;
 	  }else{$this_koncDatum =NULL;}
+
+
 //var_dump($podminka); 
  }
   switch ($semafor){
 	case "pregledovalec":
-/**************************************************************
-*semafor dDatum poslan iz bolnikPogoji.js
-*prikaže število pregledov po zdravnikih za določen interval
-***************************************************************/
 
 	 $stolpci=["imeZdravnika"];
 	 $grupa=["imeZdravnika"];
