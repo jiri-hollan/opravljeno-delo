@@ -70,11 +70,13 @@ vseeno sem dal v switch
 	 new poStarosti($tabulka, $stolpci, $grupa, $podminka, $semafor);
 	break;	
     default:
+		echo $_GET['semafor'];
      echo"semafor GET ni pravi";
   }
  }
  
  if(isset($_POST['semafor'])){
+	 $semafor = $_POST['semafor'];
 	 $podminka = [];
 	 $danes='"'.date("Y-m-d").'"';
 	 if(isset($_POST['zacDatum'])){
@@ -95,42 +97,42 @@ vseeno sem dal v switch
 
 	 $stolpci=["imeZdravnika"];
 	 $grupa=["imeZdravnika"];
-      new countPregled($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new countPregled($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "asa":
 	$stolpci=["asa"];
 	$grupa=["asa"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "mallampati":
 	$stolpci=["mallampati"];
 	$grupa=["mallampati"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "sklep":
 	$stolpci=["sklep"];
 	$grupa=["sklep"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "opiati":
 	$stolpci=["opiati"];
 	$grupa=["opiati"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "druge_Ovisnosti":
 	$stolpci=["dovisnosti"];
 	$grupa=["dovisnosti"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "alergija":
 	$stolpci=["alergija"];
 	$grupa=["alergija"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "starost":
 	$stolpci=["starost"];
 	$grupa=["starost"];
-      new poStarosti($tabulka, $stolpci, $grupa, $podminka, $_POST['semafor']);
+      new poStarosti($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	
     default:
