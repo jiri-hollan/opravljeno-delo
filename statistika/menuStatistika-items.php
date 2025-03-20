@@ -10,6 +10,7 @@ $a2= '<li><a href="pregledStatistika.php?semafor=asa">ASA</a></li>
 <li><a href="pregledStatistika.php?semafor=druge_Ovisnosti">druge ovisnosti</a></li>
 <li><a href="pregledStatistika.php?semafor=alergija">alergija</a></li>
 <li><a href="pregledStatistika.php?semafor=starost">starost</a></li>
+<li><a href="pregledStatistika.php?semafor=spo2">spo2</a></li>
 ';
 $a3= '<br>
 .....................................

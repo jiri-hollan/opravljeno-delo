@@ -82,7 +82,11 @@ if(isset($_REQUEST['semafor'])){
 	$grupa=["starost"];
       new poStarosti($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
-	
+	case "spo2":
+	$stolpci=["spo2"];
+	$grupa=["spo2"];
+      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
+    break;	
     default:
 	echo $semafor;
      echo" semafor GET ali POST ni pravi";	  
