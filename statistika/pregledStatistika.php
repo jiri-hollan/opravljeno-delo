@@ -80,7 +80,14 @@ if(isset($_REQUEST['semafor'])){
 	case "starost":
 	$stolpci=["starost"];
 	$grupa=["starost"];
-      new poStarosti($tabulka, $stolpci, $grupa, $podminka, $semafor);
+	  $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
+		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
+		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
+			ELSE '200neveljaven vnos'
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
 	case "spo2":
 	$stolpci=["spo2"];
@@ -221,18 +228,18 @@ class poStarosti {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
-function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
+function __construct($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
 //var_dump($semafor);
   $this->podminka=$podminka;
   $sloupceSQL = implode(', ', $stolpci);
-  $razvrstitev ="CASE
+/*  $razvrstitev ="CASE
 		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
 		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
 		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
 			ELSE '200neveljaven vnos'
-		END";
+		END";*/
   $skupina = new databaseS();
   $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka, $razvrstitev);
     if(count($vybrano)>0){
