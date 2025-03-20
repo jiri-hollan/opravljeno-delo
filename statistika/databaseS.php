@@ -444,12 +444,13 @@ echo"<br><br>";*/
 //............konec counta............................................................
 
 //................ funkcija skupina .................................................
-public function skupina($tabulka, $sloupce, $grupa= NULL, $podminka = NULL){
-		$sloupceSQL = implode(', ', $sloupce);
+public function skupina($tabulka, $sloupce, $grupa= NULL, $podminka = NULL, $razvrstitev){
+		//$sloupceSQL = implode(', ', $sloupce);
 		
 	$podminkaSQL = '';
 	$parametry = array();
 
+//echo $razvrstitev;
 	if (is_array($podminka)){
 		$i = 0;
 		foreach ($podminka as $sloupec=>$hodnota){
@@ -471,12 +472,7 @@ echo "<br>podminka SQL: ";
 var_dump($podminkaSQL );*/
 	
 $dotaz = $this->conn->prepare("SELECT 
-        CASE
-		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
-		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
-		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
-			ELSE '200neveljaven vnos'
-		END
+         $razvrstitev
 		AS skupina, count(*) AS stevilo
     FROM 
         $tabulka $podminkaSQL

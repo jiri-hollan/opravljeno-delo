@@ -226,8 +226,15 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 //var_dump($grupa);
 //var_dump($semafor);
   $this->podminka=$podminka;
+  $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
+		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
+		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
+			ELSE '200neveljaven vnos'
+		END";
   $skupina = new databaseS();
-  $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka);
+  $vybrano=$skupina->skupina($tabulka, $stolpci, $grupa, $this->podminka, $razvrstitev);
     if(count($vybrano)>0){
 	  echo"<div class='udaje'>";
 	  if(isset($podminka["datPregleda>="])||isset($podminka["datPregleda<="])){
