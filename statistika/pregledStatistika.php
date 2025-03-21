@@ -93,10 +93,10 @@ if(isset($_REQUEST['semafor'])){
 //.........................................................................
 	case "ks":	
 		$stolpci=["ks"];
-	$grupa=["ks"];
-	  $sloupceSQL = implode(', ', $stolpci);
+	    $grupa=["ks"];
+	    $sloupceSQL = implode(', ', $stolpci);
   $razvrstitev ="CASE
-		    WHEN $sloupceSQL < 1 THEN 'ni podatkov'
+		    WHEN $sloupceSQL < 1 THEN 'ni&nbsppodatkov'
 			WHEN $sloupceSQL BETWEEN 1 AND 3 THEN TRUNCATE($sloupceSQL, 0) 
 		    WHEN $sloupceSQL BETWEEN 3 AND 5 THEN TRUNCATE($sloupceSQL, 0)           
 		    WHEN $sloupceSQL BETWEEN 5 AND 10 THEN TRUNCATE($sloupceSQL, 0)
@@ -107,6 +107,22 @@ if(isset($_REQUEST['semafor'])){
       new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
 //.........................................................................
+	case "hb":	
+		$stolpci=["hb"];
+	    $grupa=["hb"];
+	    $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 1 THEN 'ni&nbsppodatkov'
+			WHEN $sloupceSQL BETWEEN 1 AND 49 THEN 'pod&nbsp50' 
+		    WHEN $sloupceSQL BETWEEN 50 AND 99 THEN TRUNCATE($sloupceSQL, -1)           
+		    WHEN $sloupceSQL BETWEEN 100 AND 149 THEN TRUNCATE($sloupceSQL, -1)
+			WHEN $sloupceSQL BETWEEN 150 AND 200 THEN TRUNCATE($sloupceSQL, -1)
+			ELSE 'verjetno&nbspneveljaven&nbspvnos'
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
+    break;
+//.........................................................................
+
 	case "spo2":
 	$stolpci=["spo2"];
 	$grupa=["spo2"];
