@@ -445,8 +445,8 @@ echo"<br><br>";*/
 
 //................ funkcija skupina .................................................
 public function skupina($tabulka, $sloupce, $grupa= NULL, $podminka = NULL, $razvrstitev){
-		//$sloupceSQL = implode(', ', $sloupce);
-		
+		$sloupceSQL = implode(', ', $sloupce);
+echo $razvrstitev;
 	$podminkaSQL = '';
 	$parametry = array();
 
@@ -470,16 +470,16 @@ var_dump($parametry);
 var_dump($podminka);
 echo "<br>podminka SQL: ";
 var_dump($podminkaSQL );*/
-	
+
 $dotaz = $this->conn->prepare("SELECT 
          $razvrstitev
 		AS skupina, count(*) AS stevilo
     FROM 
         $tabulka $podminkaSQL
     GROUP BY skupina ORDER BY ABS(skupina)");
-/*echo"<br><br>";	
+echo"<br><br>";	
 var_dump($dotaz);
-echo"<br><br>";*/
+echo"<br><br>";
 
 try {
 		$dotaz->execute($parametry);		

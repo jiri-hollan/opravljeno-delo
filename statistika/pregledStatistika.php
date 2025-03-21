@@ -80,11 +80,11 @@ if(isset($_REQUEST['semafor'])){
 	case "starost":
 	$stolpci=["starost"];
 	$grupa=["starost"];
-	  $sloupceSQL = implode(', ', $stolpci);
+	 // $sloupceSQL = implode(', ', $stolpci);
   $razvrstitev ="CASE
-		    WHEN $sloupceSQL < 10 THEN $sloupceSQL
-		    WHEN $sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE($sloupceSQL, -1)           
-		    WHEN $sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE($sloupceSQL, -2)
+		    WHEN \$sloupceSQL < 10 THEN \$sloupceSQL
+		    WHEN \$sloupceSQL BETWEEN 10 AND 100 THEN TRUNCATE(\$sloupceSQL, -1)           
+		    WHEN \$sloupceSQL BETWEEN 100 AND 110 THEN TRUNCATE(\$sloupceSQL, -2)
 			ELSE '200neveljaven vnos'
 		END";
       new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
