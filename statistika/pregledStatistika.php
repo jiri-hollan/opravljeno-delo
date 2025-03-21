@@ -122,7 +122,21 @@ if(isset($_REQUEST['semafor'])){
       new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
 //.........................................................................
-
+	case "pbnp":	
+		$stolpci=["pbnp"];
+	    $grupa=["pbnp"];
+	    $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 1 THEN 'ni&nbsppodatkov'
+			WHEN $sloupceSQL BETWEEN 1 AND 49 THEN 'pod&nbsp50' 
+		    WHEN $sloupceSQL BETWEEN 50 AND 99 THEN TRUNCATE($sloupceSQL, -1)           
+		    WHEN $sloupceSQL BETWEEN 100 AND 999 THEN TRUNCATE($sloupceSQL, -2)
+			WHEN $sloupceSQL BETWEEN 1000 AND 20000 THEN TRUNCATE($sloupceSQL, -2)
+			ELSE 'verjetno&nbspneveljaven&nbspvnos'
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
+    break;
+//.........................................................................
 	case "spo2":
 	$stolpci=["spo2"];
 	$grupa=["spo2"];
