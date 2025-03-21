@@ -77,6 +77,7 @@ if(isset($_REQUEST['semafor'])){
 	$grupa=["alergija"];
       new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
+//.........................................................................
 	case "starost":
 	$stolpci=["starost"];
 	$grupa=["starost"];
@@ -89,6 +90,7 @@ if(isset($_REQUEST['semafor'])){
 		END";
       new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
+//.........................................................................
 	case "ks":	
 		$stolpci=["ks"];
 	$grupa=["ks"];
@@ -104,11 +106,13 @@ if(isset($_REQUEST['semafor'])){
 		END";
       new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
+//.........................................................................
 	case "spo2":
 	$stolpci=["spo2"];
 	$grupa=["spo2"];
       new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-    break;	
+    break;
+//.........................................................................
     default:
 	echo $semafor;
      echo" semafor GET ali POST ni pravi";	  
