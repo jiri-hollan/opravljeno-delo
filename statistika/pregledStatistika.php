@@ -113,10 +113,7 @@ if(isset($_REQUEST['semafor'])){
 	    $sloupceSQL = implode(', ', $stolpci);
   $razvrstitev ="CASE
 		    WHEN $sloupceSQL < 1 THEN 'ni&nbsppodatkov'
-			WHEN $sloupceSQL BETWEEN 1 AND 49 THEN 'pod&nbsp50' 
-		    WHEN $sloupceSQL BETWEEN 50 AND 99 THEN TRUNCATE($sloupceSQL, -1)           
-		    WHEN $sloupceSQL BETWEEN 100 AND 149 THEN TRUNCATE($sloupceSQL, -1)
-			WHEN $sloupceSQL BETWEEN 150 AND 200 THEN TRUNCATE($sloupceSQL, -1)
+			WHEN $sloupceSQL BETWEEN 50 AND 200 THEN TRUNCATE($sloupceSQL, -1)
 			ELSE 'verjetno&nbspneveljaven&nbspvnos'
 		END";
       new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
