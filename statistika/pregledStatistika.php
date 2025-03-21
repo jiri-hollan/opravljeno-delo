@@ -127,8 +127,8 @@ if(isset($_REQUEST['semafor'])){
 	    $grupa=["pbnp"];
 	    $sloupceSQL = implode(', ', $stolpci);
   $razvrstitev ="CASE
-		    WHEN $sloupceSQL < 1 THEN 'ni&nbsppodatkov'
-			WHEN $sloupceSQL BETWEEN 1 AND 99 THEN 'pod&nbsp100'            
+		    WHEN $sloupceSQL < 1 THEN ' ni&nbsppodatkov'
+			WHEN $sloupceSQL BETWEEN 1 AND 99 THEN '<100'            
 		    WHEN $sloupceSQL BETWEEN 100 AND 999 THEN TRUNCATE($sloupceSQL, -2)
 			WHEN $sloupceSQL BETWEEN 1000 AND 20000 THEN TRUNCATE($sloupceSQL, -3)
 			ELSE 'verjetno&nbspneveljaven&nbspvnos'
