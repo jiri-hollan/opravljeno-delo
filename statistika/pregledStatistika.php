@@ -89,6 +89,21 @@ if(isset($_REQUEST['semafor'])){
 		END";
       new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
+	case "ks":	
+		$stolpci=["ks"];
+	$grupa=["ks"];
+	  $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 1 THEN 'ni podatkov'
+			WHEN $sloupceSQL BETWEEN 1 AND 3 THEN TRUNCATE($sloupceSQL, 0) 
+		    WHEN $sloupceSQL BETWEEN 3 AND 5 THEN TRUNCATE($sloupceSQL, 0)           
+		    WHEN $sloupceSQL BETWEEN 5 AND 10 THEN TRUNCATE($sloupceSQL, 0)
+			WHEN $sloupceSQL BETWEEN 10 AND 19 THEN TRUNCATE($sloupceSQL, 0)
+			WHEN $sloupceSQL BETWEEN 20 AND 50 THEN TRUNCATE($sloupceSQL, -1)
+			ELSE 'verjetno&nbspneveljaven&nbspvnos'
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
+    break;
 	case "spo2":
 	$stolpci=["spo2"];
 	$grupa=["spo2"];
