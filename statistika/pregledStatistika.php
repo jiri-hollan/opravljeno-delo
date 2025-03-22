@@ -42,9 +42,8 @@ if(isset($_REQUEST['semafor'])){
  }
   switch ($semafor){
 	case "pregledovalec":
-
-	 $stolpci=["imeZdravnika"];
-	 $grupa=["imeZdravnika"];
+	$stolpci=["imeZdravnika"];
+	$grupa=["imeZdravnika"];
       new countPregled($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
 	case "asa":
@@ -151,7 +150,15 @@ if(isset($_REQUEST['semafor'])){
 	case "spo2":
 	$stolpci=["spo2"];
 	$grupa=["spo2"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
+	$sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 1 THEN ' ni&nbsppodatkov'          
+		    WHEN $sloupceSQL BETWEEN 50 AND 100 THEN TRUNCATE($sloupceSQL, 1)
+			ELSE 'verjetno&nbspneveljaven&nbspvnos'
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
+	  
+	  
     break;
 //.........................................................................
     default:
