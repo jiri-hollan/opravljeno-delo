@@ -345,7 +345,7 @@ function __construct($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semaf
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
 //var_dump($grupa[0]);
 //echo strtoupper($grupa[0]);
-  echo "<tr class='glavaTable'><th>".strtoupper($grupa[0])."</th><th></th></tr>";
+  echo "<tr class='glavaTable'><th>".strtoupper($semafor)."</th><th></th></tr>";
     foreach(new DeloRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
