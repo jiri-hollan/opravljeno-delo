@@ -46,16 +46,35 @@ if(isset($_REQUEST['semafor'])){
 	$grupa=["imeZdravnika"];
       new countPregled($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
-	case "asa":
-	$stolpci=["asa"];
-	$grupa=["asa"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
+
+//.........................................................................
+	case "asa":	
+		$stolpci=["asa"];
+	    $grupa=["asa"];
+	    $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 1 THEN 'ni&nbsppodatkov'
+			WHEN $sloupceSQL BETWEEN 1 AND 5 THEN $sloupceSQL 
+			ELSE 'verjetno&nbspneveljaven&nbspvnos'
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
-	case "mallampati":
-	$stolpci=["mallampati"];
-	$grupa=["mallampati"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
+//.........................................................................	
+
+	case "mallampati":	
+		$stolpci=["mallampati"];
+	    $grupa=["mallampati"];
+	    $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL < 1 THEN 'ni&nbsppodatkov'
+			WHEN $sloupceSQL BETWEEN 1 AND 4 THEN $sloupceSQL 
+			ELSE 'verjetno&nbspneveljaven&nbspvnos'
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
+//.........................................................................		
+	
+	
 	case "sklep":
 	$stolpci=["sklep"];
 	$grupa=["sklep"];
@@ -66,11 +85,15 @@ if(isset($_REQUEST['semafor'])){
 	$grupa=["opiati"];
       new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
+	
+//.........................................................................	
+	
 	case "druge_Ovisnosti":
 	$stolpci=["dovisnosti"];
 	$grupa=["dovisnosti"];
       new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
+	
 	case "alergija":
 	$stolpci=["alergija"];
 	$grupa=["alergija"];
@@ -216,7 +239,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor) {
    }else{
 // echo var_dump($podminka);
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
-     echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+     echo 'V izbranem terminu ni zapisov ';
      }
 		$danes='"'.date("Y-m-d").'"';
 //echo $semafor;
@@ -260,7 +283,7 @@ function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
    }else{
 // echo var_dump($podminka);
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
-     echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+     echo 'V izbranem terminu ni zapisov ';
      }
 $danes='"'.date("Y-m-d").'"';
 //echo $semafor;
@@ -320,7 +343,7 @@ function __construct($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semaf
    }else{
 // echo var_dump($podminka);
 	 echo "&nbsp;od:&nbsp;".$podminka["datPregleda>="]."&nbsp;&nbsp;do:&nbsp;".$podminka["datPregleda<="]."<br>";	 
-     echo 'V izbranem terminu ni zapisov o opravljenem delu ';
+     echo 'V izbranem terminu ni zapisov';
      }
 $danes='"'.date("Y-m-d").'"';
 //echo $semafor;
