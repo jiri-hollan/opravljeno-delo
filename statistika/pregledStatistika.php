@@ -80,20 +80,31 @@ if(isset($_REQUEST['semafor'])){
 	$grupa=["sklep"];
       new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
     break;
-	case "opiati":
-	$stolpci=["opiati"];
-	$grupa=["opiati"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
-    break;
 	
+	//.........................................................................	
+
+	case "opiati":	
+		$stolpci=["opiati"];
+	    $grupa=["opiati"];
+	    $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL ='' THEN 'ni&nbsppodatkov'
+			ELSE  $sloupceSQL
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
+    break;
 //.........................................................................	
-	
-	case "druge_Ovisnosti":
-	$stolpci=["dovisnosti"];
-	$grupa=["dovisnosti"];
-      new poKriterijih($tabulka, $stolpci, $grupa, $podminka, $semafor);
+	case "druge_Ovisnosti":	
+		$stolpci=["dovisnosti"];
+	    $grupa=["dovisnosti"];
+	    $sloupceSQL = implode(', ', $stolpci);
+  $razvrstitev ="CASE
+		    WHEN $sloupceSQL ='' THEN 'ni&nbsppodatkov'
+			ELSE  $sloupceSQL
+		END";
+      new poStarosti($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor);
     break;
-	
+//.........................................................................	
 	case "alergija":
 	$stolpci=["alergija"];
 	$grupa=["alergija"];
