@@ -18,6 +18,9 @@ echo'
 ZA DOLOČITEV BOLNIŠNICE JE POTREBNO VPISATI PARAMETR FUNKCIJE sbFunction ZA IZOLO "i" ZA JESENICE "j"
 oziroma to določi izbira NAV bara, če je ta aktivirana
 ________________________________________________________________________________________-->
+<div class="stanje">
+<span id="stanje"></span>
+</div>
 <div id="prijava" >
 <p id="aktBolnisnica">.</p>
 <p id="pregledovalec"> </p>
