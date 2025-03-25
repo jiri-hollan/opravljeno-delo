@@ -444,7 +444,7 @@ echo"<br><br>";*/
 //............konec counta............................................................
 
 //................ funkcija skupina .................................................
-public function skupina($tabulka, $sloupce, $grupa= NULL, $podminka = NULL, $razvrstitev){
+public function skupina($tabulka, $sloupce, $grupa = NULL, $podminka = NULL, $razvrstitev = NULL){
 		//$sloupceSQL = implode(', ', $sloupce);
 		
 	$podminkaSQL = '';
