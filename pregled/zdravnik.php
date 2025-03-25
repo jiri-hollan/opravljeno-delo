@@ -31,7 +31,7 @@ echo"$uname";
 <div id="prijava" >
 <p id="aktBolnisnica">.</p>
 <p id="pregledovalec"> </p>
-<h1>Prijava</h1>
+<h1>Identifikacija izvajalca</h1>
 	 <!-- Izbira bolnišnice -->
 <label for="bolnisnica" >Bolnišnica:</label> 
 <input id="bolnisnica"  list="bolnisnice" name="bolnisnica"  onkeyup="sbFunction(1)" required autocomplete="off"> 
