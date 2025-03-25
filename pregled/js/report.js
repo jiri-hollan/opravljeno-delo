@@ -288,6 +288,7 @@ return m;
 function natisniFunction() {
   if (confirm("natisni! bolnik= " + document.title)){
   document.getElementById("navbar").style.display = "none"; 
+  document.getElementById("stanje").style.display = "none"  
   window.print();
   ogledFunction();
    }else {

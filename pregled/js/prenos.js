@@ -271,6 +271,7 @@ function prenos1Function() {
   document.getElementById("predogled").style.display = "none";
   document.getElementById("nazaj").style.display = "block";
   document.getElementById("submitFrm").style.display = "none";
-  document.getElementById("najdiZapis").style.display = "none";  
+  document.getElementById("najdiZapis").style.display = "none"; 
+  document.getElementById("stanje").style.display = "none"  
 }
  
