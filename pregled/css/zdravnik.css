@@ -70,9 +70,19 @@ border-radius: 12%;
 	position: relative;
     left: 20px;
 }
-.stanje {
+.stanjeNe {
     color: red;	
     background-color:black;
+    position: fixed;
+    top: 0;
+	z-index: 61;
+	width:200px;
+	height: 20px;
+    text-align: center;
+}
+.stanjeDa {
+    color: black;	
+    background-color:white;
     position: fixed;
     top: 0;
 	z-index: 61;

@@ -286,9 +286,9 @@ width:95%;
  /* overflow: hidden;*/
   background-color: blue;
   position: fixed;
-  top: 0;
+  top: 20px;
   max-width:1000px;
-  ​​z-index: 60;
+  z-index: 60;
   
 }
 
@@ -363,4 +363,24 @@ border-radius: 12%;
 }
 #buttonDomov:hover {
 background-color: black;	
+}
+.stanjeNe {
+    color: red;	
+    background-color:black;
+    position: fixed;
+    top: 0;
+	z-index: 61;
+	width:200px;
+	height: 20px;
+    text-align: center;
+}
+.stanjeDa {
+    color: black;	
+    background-color:white;
+    position: fixed;
+    top: 0;
+	z-index: 61;
+	width:200px;
+	height: 20px;
+
 }

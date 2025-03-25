@@ -1,4 +1,5 @@
 <?php
+@session_start();
 echo'
 <!DOCTYPE html>
 <html lang="sl-SI">
@@ -13,14 +14,20 @@ echo'
 <link rel="stylesheet" type="text/css" href="css/zdravnik.css?'.time().'">
 </head>
 <body>';
-?>
-<!--_____________________________________________________________________________________________________________________
+
+/************************************************************************************
 ZA DOLOČITEV BOLNIŠNICE JE POTREBNO VPISATI PARAMETR FUNKCIJE sbFunction ZA IZOLO "i" ZA JESENICE "j"
 oziroma to določi izbira NAV bara, če je ta aktivirana
-________________________________________________________________________________________-->
-<div class="stanje">
-<span id="stanje"></span>
-</div>
+***********************************************************************************/
+//$uname = !empty($_SESSION["uname"]) ? "prijavljen je: ".$_SESSION["uname"] : "Niste prijavljeni";
+if(!empty($_SESSION["uname"])){
+$uname = "<div class='stanjeDa'>prijavljen je: ".$_SESSION["uname"]."</div>";
+}else{
+$uname = "<div class='stanjeNe'>Niste prijavljeni</div>";	
+
+}
+echo"$uname";
+?>
 <div id="prijava" >
 <p id="aktBolnisnica">.</p>
 <p id="pregledovalec"> </p>
