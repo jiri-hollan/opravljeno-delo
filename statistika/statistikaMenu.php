@@ -36,8 +36,11 @@ class MenuDelo  {
        }
       echo '</ul></nav>';
    }//od construct
-}//od class MenuDelo  
- new MenuDelo(); 
+}//od class MenuDelo 
+ require_once('../skupne/aktivace.php');
+ if($gdpr==1){
+ new MenuDelo();
+ }else{  header('Location: ../frontend/menuFile1.php');} 
 require_once 'sabloni/prijavljenJe.php';
 require_once('sabloni/zapati.php'); 
 

@@ -2,8 +2,10 @@
 require_once('../skupne/administrace.php');
 require_once('sabloni/vkladane/zahlavi.php');
 include_once "../skupne/pregledovalciKomb.php";
+
 class MenuAnestiz  {
    public function __construct() {
+   require_once('../skupne/aktivace.php');
    require_once('../skupne/menu-items.php');          
 echo '
 <nav id= "glavnaNav">
@@ -19,13 +21,19 @@ echo '
 	  echo $a0.$a1;
     break;   
      case 2:
+	 if($gdpr==1){
 	   echo $a0.$a1.$a2;
+	 }else{echo $a0.$a1;}
 	 break;	 
 	 case 3:
+	 if($gdpr==1){
 	   echo $a0.$a1.$a2.$a3;
+	 }else{echo $a0.$a1;}
     break;
 	 case 4:
+	 if($gdpr==1){	 
 	   echo $a0.$a1.$a2.$a3.$a4;
+	 }else{echo $a0.$a1.$a4;} 
     break;	
     default:
 	   } //od switch
