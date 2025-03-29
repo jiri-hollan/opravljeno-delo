@@ -35,6 +35,9 @@ echo '
  
    <label for="opravilo"><span class="imenaFilov">opravilo</span></label>
    <input type="radio" id="opravilo" name="name" value="opravilo"> 
+   
+   <label for="premedikacija"><span class="imenaFilov">premedikacija</span></label>
+   <input type="radio" id="premedikacija" name="name" value="premedikacija"> 
  
    <input type="hidden" name="nazaj" value='. $nazaj.'>
   <br><br>
@@ -194,6 +197,18 @@ $definice= " id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	sifraOpravila int(3),
 	opravilo VARCHAR(225)";
 $databaseGloboka->naredi('opravilaTbl', $definice);	
+break;
+
+case "premedikacija":
+$definice= " id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	teza int(3),
+	midazolam VARCHAR(225),
+	midazolamNavodila VARCHAR(225),	
+	dexmedetomidin VARCHAR(225),
+	dexmedetomidinNavodila VARCHAR(225),
+	ketamin VARCHAR(225),
+	ketaminNavodila VARCHAR(225)";
+$databaseGloboka->naredi('premedikacijaTbl', $definice);	
 break;
 
 /*
