@@ -202,11 +202,13 @@ break;
 case "premedikacija":
 $definice= " id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	teza int(3),
-	midazolam VARCHAR(225),
+	midazolam NUMERIC(3,1),
+	midazolamKoncentracija NUMERIC(3,1),
 	midazolamNavodila VARCHAR(225),	
-	dexmedetomidin VARCHAR(225),
+	dexmedetomidin NUMERIC(3,1),
+	dexmedetomidinKOncentracija NUMERIC(3,1),	
 	dexmedetomidinNavodila VARCHAR(225),
-	ketamin VARCHAR(225),
+	ketamin NUMERIC(3,1),
 	ketaminNavodila VARCHAR(225)";
 $databaseGloboka->naredi('premedikacijaTbl', $definice);	
 break;
