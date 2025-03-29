@@ -168,9 +168,9 @@
 <br><br>
  <fieldset class="zaklucek">premedikacija 
   <div id="zaklucek">
-	<label for="premedVecer">Zvečer:..<textarea  id="premedVecer" type="textarea" name="premedVecer" ></textarea></label>  
+	<label for="premedVecer">Zvečer:..<textarea  id="premedVecer" class="premedikacija"  name="premedVecer" ></textarea></label>  
     <br>
-	<label for="premedPredOp">Pred op.:<textarea id="premedPredOp" type="textarea" name="premedPredOp" ></textarea></label> <br> 
+	<label for="premedPredOp">Pred op.:<textarea id="premedPredOp" class="premedikacija"  name="premedPredOp" ></textarea></label> <br> 
     <textarea id="navodila" class="mikro"  name="navodila" placeholder="Navodila" rows="3" ></textarea>
    </div>
   </fieldset> 	

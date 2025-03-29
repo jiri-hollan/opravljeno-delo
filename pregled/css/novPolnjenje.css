@@ -263,6 +263,10 @@ textarea.velka {
   background-color: #f8f8f8;
   resize: none;
 }
+  .premedikacija {
+  resize: none;  
+  }
+
 #navodila {
   position: absolute;
   bottom: 2px;
