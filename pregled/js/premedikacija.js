@@ -1,0 +1,3 @@
+function testna{
+	alert("testna");
+}
