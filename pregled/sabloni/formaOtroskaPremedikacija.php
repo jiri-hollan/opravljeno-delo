@@ -5,7 +5,18 @@ echo"
  <label for='midazolamId'>midazolam</label><br>
   <input type='radio' id='medetomidinId' name='ucinkovina' value='medetomidin'>
  <label for='medetomidinId'>medetomidin</label><br>
+<input id='tezaPremedikacijaId' type = 'text' name='teza' value=''>
 <input type='submit' value='izberi' name='submit'>
 </form>
+<script>
+let teza;
+function otroskaFunction(){
+	    teza = document. getElementById('teza').value;
+		alert(teza);
+		document.getElementById('tezaPremedikacijaId').value=teza;
+}
+</script>
+
 ";
+
 ?>
