@@ -1,3 +1,3 @@
-function testna{
+function testna(){
 	alert("testna");
 }
