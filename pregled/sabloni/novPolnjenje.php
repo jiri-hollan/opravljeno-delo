@@ -167,7 +167,7 @@
   </script>
 <br><br>
  <fieldset  class="zaklucek">
- <legend style="float:left">premedikacija</legend><br>
+ <legend id="premedikacija" style="float:left">premedikacija</legend><br>
   <div id="zaklucek">
 	<label for="premedVecer">Zvečer:..<textarea  id="premedVecer" class="premedikacija"  name="premedVecer" ></textarea></label>  
     <br>
