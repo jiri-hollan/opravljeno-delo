@@ -27,9 +27,9 @@ function bmiFunction()
         BMI = Math.round(teza/(visina*visina));
         //window.alert ("BMI= " + BMI);
         document.getElementById('bmi').value=BMI;
-		if(teza<45){
-        document.getElementById('premedikacija').innerHTML='<b class="otroska" onclick="testna()">premedikacija otroka</b>';
-		}
+		  if(teza<45){
+          document.getElementById('premedikacija').innerHTML='<b class="otroska" onclick="testna()">premedikacija otroka</b>';
+		  }else{document.getElementById('premedikacija').innerHTML='Premedikacija';}
     } else {
         // window.alert ("BMI2= " + BMI);
         document.getElementById('bmi').value="";
