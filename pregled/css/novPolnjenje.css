@@ -243,7 +243,7 @@ textarea.mala {
 
 textarea.mikro {
   width: 60%;
-  height: 80px;
+  height: 90px;
   rows: 3;
   padding: 4px 20px;
   box-sizing: border-box;
@@ -264,7 +264,8 @@ textarea.velka {
   resize: none;
 }
   .premedikacija {
-  resize: none;  
+  resize: none;
+  width: 30%;
   }
 
 #navodila {
