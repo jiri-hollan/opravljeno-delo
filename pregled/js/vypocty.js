@@ -28,7 +28,7 @@ function bmiFunction()
         //window.alert ("BMI= " + BMI);
         document.getElementById('bmi').value=BMI;
 		if(teza<45){
-        document.getElementById('premedikacija').innerText='premedikacija otroka';
+        document.getElementById('premedikacija').innerHTML='<b class="otroska">premedikacija otroka</b>';
 		}
     } else {
         // window.alert ("BMI2= " + BMI);
