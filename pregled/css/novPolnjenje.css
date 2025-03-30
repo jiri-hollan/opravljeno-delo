@@ -267,6 +267,17 @@ textarea.velka {
   resize: none;
   width: 30%;
   }
+  
+  .otroska {
+  color: red;
+  background-color: #f8f8f8;
+  } 
+   .otroska:hover {
+	border: 3px solid #555;
+    background-color: LightYellow;   
+   } 
+  
+  
 
 #navodila {
   position: absolute;
