@@ -2,19 +2,26 @@
 <?php
 require_once '../skupne/database.php';
 require_once 'sabloni/formaOtroskaPremedikacija.php';
-
-if(isset($POST_ucinkovina)&&isset($POST_teza)){
-    new Premedikace($POST_ucinkovina, $POST_teza);
+if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
+	$ucinkovina=$_POST['ucinkovina'];
+	$teza=$_POST['teza'];
+		echo 'Teža= '.$teza;
+		echo'<br>';
+		echo 'Učinkovina= '.$ucinkovina;		
+    $prem=new Premedikace($ucinkovina, $teza);
+	echo $prem->get_name();
 }//else{echo'Ni določena učinkovina ali teža';}
 
 class Premedikace {
 	public $ucinkovina;
 	public $teza;	
 	function _construct($ucinkovina, $teza){
+	echo'V class premedikacija';	
 	$this->ucinkovina = $ucinkovina;
 	$this->teza = $teza;
-	echo $this->teza;
 	}
-	
+	function get_name() {
+    return $this->ucinkovina;
+	}
 }//od class Premedikace
 ?>
