@@ -10,7 +10,6 @@ echo'
 <link rel="shortcut icon" href="../favicon.ico?'.time().'">
 <link rel="stylesheet" href="../admin/sabloni/css/zahlavi.css?'.time().'">
 <link rel="stylesheet" href="../admin/sabloni/css/menuFile.css?'.time().'">
-<script src="../admin/js/uporabnikiVse.js?'.time().'"></script> 
 <link rel="stylesheet" href="../admin/sabloni/css/uporabnikiNov.css?'.time().'">
 </head>
 <body>
