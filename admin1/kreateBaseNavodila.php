@@ -22,10 +22,10 @@ catch(PDOException $e)
     }
 
 try {
-    $sql = "CREATE DATABASE premedikacija";
+    $sql = "CREATE DATABASE navodila";
     // use exec() because no results are returned
     $this->conn->exec($sql);
-    echo "Database <premedikacija> je pravkar narejena<br>";
+    echo "Database <navodila> je pravkar narejena<br>";
     }
 catch(PDOException $e)
     {
