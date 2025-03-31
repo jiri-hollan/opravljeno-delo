@@ -13,10 +13,9 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
 }//else{echo'Ni določena učinkovina ali teža';}
 
 class Premedikace {
-	public $ucinkovina;
-	public $teza;	
-	function _construct($ucinkovina, $teza){
-	echo'V class premedikacija';	
+	public $ucinkovina = '';
+	public $teza = '';	
+	public Function __construct($ucinkovina, $teza){	
 	$this->ucinkovina = $ucinkovina;
 	$this->teza = $teza;
 	}
