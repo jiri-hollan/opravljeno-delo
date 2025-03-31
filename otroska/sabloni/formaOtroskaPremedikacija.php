@@ -1,5 +1,4 @@
 <script>
-
 function otroskaFunction(){
 	   let teza = document. getElementById('teza').value;
 		//alert(teza);
@@ -7,9 +6,7 @@ function otroskaFunction(){
 		document.getElementById('tezaPremedikacijaId').value=teza;		
 }
 </script>
-<?php
-
-echo"
+<div id='doziranje'  class='modal'>
 <form id='otroskaFrm' name='otroskaForma' method='post' action='otroskaPremedikacija.php' autocomplete='off'> 
   <input type='radio' id='midazolamId' name='ucinkovina' value='midazolam'>
  <label for='midazolamId'>midazolam</label><br>
@@ -18,8 +15,7 @@ echo"
 <input id='tezaPremedikacijaId' type = 'text' name='teza' value='1'>
 <input type='submit' value='izberi' name='submit'>
 </form>
-";
-?>
+</div>
 <script>
 otroskaFunction();
 </script>
