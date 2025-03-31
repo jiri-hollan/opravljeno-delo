@@ -32,7 +32,7 @@ echo '
 <h1>Menu premedikacija</h1>
 <ul id="linky1">
 
-<li><a href="kreateBasepremedikacija.php?nazaj='.$nazaj.'">naredi bazo: premedikacija</a></li>
+<li><a href="kreateBaseNavodila.php?nazaj='.$nazaj.'">naredi bazo: navodila</a></li>
 <li><a href="kreateTableVse.php?nazaj='.$nazaj.'">naredi tabele</a></li>
 </ul>
 ';
