@@ -1,9 +1,17 @@
 function modalna(a=''){
 	alert("modalna "+a+" kg");
-}
+	document.getElementById('doziranje').style.display='block';
+	// Get the modal
+let modal = document.getElementById('doziranje');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}//od window.onclick
+}//od function modalna
 
-
-
+/*
 
 function schovej(a){
 //alert (a);
@@ -17,3 +25,4 @@ window.onclick = function(event) {
   }
 }//od window.onclick
 }//od function schovej
+*/
