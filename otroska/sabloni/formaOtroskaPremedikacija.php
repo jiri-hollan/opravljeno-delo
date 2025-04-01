@@ -7,7 +7,7 @@ function otroskaFunction(){
 }
 </script>
 <div id='doziranje'  class='modal'>
-<form id='otroskaFrm' name='otroskaForma' method='post' action='otroskaPremedikacija.php' autocomplete='off'> 
+<form id='otroskaFrm' class="modal-content" name='otroskaForma' method='post' action='otroskaPremedikacija.php' autocomplete='off'> 
   <input type='radio' id='midazolamId' name='ucinkovina' value='midazolam'>
  <label for='midazolamId'>midazolam</label><br>
   <input type='radio' id='deksmedetomidinId' name='ucinkovina' value='deksmedetomidin'>
