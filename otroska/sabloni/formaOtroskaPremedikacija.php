@@ -5,7 +5,7 @@
  <label for='midazolamId'>midazolam</label><br>
   <input type='radio' id='deksmedetomidinId' class='ucinkovina' name='ucinkovina' value='deksmedetomidin'>
  <label for='deksmedetomidinId'>deksmedetomidin</label><br>
-<input id='tezaPremedikacijaId' type = 'text' name='teza' value='1'>
+<input id='tezaPremedikacijaId' class='udaje' type = 'text' name='teza' value='1'>
 <button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>
 </form>
 </div>
