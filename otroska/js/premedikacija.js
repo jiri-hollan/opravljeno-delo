@@ -1,5 +1,5 @@
-function modalna(a=''){
-	alert("modalna "+a+" kg");
+function modalna(teza=''){
+	alert("modalna "+teza+" kg");
 }
 
 
