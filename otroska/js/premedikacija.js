@@ -1,15 +1,15 @@
 function modalna(teza=''){
-	alert("modalna "+teza+" kg");
+//alert("modalna "+teza+" kg");
 	otroskaFunction()
 }
 
 function otroskaFunction(){
 	   let teza = document. getElementById('teza').value;
-		alert('teza'+teza);
-		//document.getElementById('tezaPremedikacijaId').setAttribute("value",teza);
+//alert('teza'+teza);
+//document.getElementById('tezaPremedikacijaId').setAttribute("value",teza);
 		document.getElementById('tezaPremedikacijaId').value=teza;	
 		document.getElementById('doziranje').style.display='block';
-	// Get the modal
+// Get the modal
 let modal = document.getElementById('doziranje');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
