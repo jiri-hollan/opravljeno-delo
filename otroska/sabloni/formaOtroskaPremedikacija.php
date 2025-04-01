@@ -1,25 +1,11 @@
-<script>
 
-function otroskaFunction(){
-	   let teza = document. getElementById('teza').value;
-		//alert(teza);
-		//document.getElementById('tezaPremedikacijaId').setAttribute("value",teza);
-		document.getElementById('tezaPremedikacijaId').value=teza;		
-}
-</script>
-<?php
-
-echo"
-<form id='otroskaFrm' name='otroskaForma' method='post' action='otroskaPremedikacija.php' autocomplete='off'> 
-  <input type='radio' id='midazolamId' name='ucinkovina' value='midazolam'>
+<div id='doziranje'  class='modal'>
+<form id='otroskaFrm' class="modal-content animate" name='otroskaForma' method='post' action='bolnik.php' autocomplete='off'> 
+  <input type='radio' id='midazolamId' class='ucinkovina' name='ucinkovina' value='midazolam'>
  <label for='midazolamId'>midazolam</label><br>
-  <input type='radio' id='deksmedetomidinId' name='ucinkovina' value='deksmedetomidin'>
+  <input type='radio' id='deksmedetomidinId' class='ucinkovina' name='ucinkovina' value='deksmedetomidin'>
  <label for='deksmedetomidinId'>deksmedetomidin</label><br>
 <input id='tezaPremedikacijaId' type = 'text' name='teza' value='1'>
-<input type='submit' value='izberi' name='submit'>
+<button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>
 </form>
-";
-?>
-<script>
-otroskaFunction();
-</script>
+</div>
