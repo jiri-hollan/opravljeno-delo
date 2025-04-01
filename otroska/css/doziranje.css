@@ -3,17 +3,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 	}
 */
-.modal input[type=text], input[type=password] {
-  width: 40px;
+.modal input[type=text] {
+  width: 60px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  color: red;
 }
 
 /* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -27,6 +28,7 @@ input.udaje {
 
 
 /* Set a style for all buttons */
+/*
 .knof{
   background-color: #4CAF50;
   color: white;
@@ -37,7 +39,7 @@ input.udaje {
   width: 100%;
   opacity: 0.9;
 }
-
+*/
 .knof,.cancelbtn,.potrdiBtn:hover {
   opacity:1;
 }
@@ -73,8 +75,8 @@ input.udaje {
   z-index: 1; /* Sit on top */
   right: 0;
   bottom: 0;
-  width: 40%; /* Full width */
-  height: 40%; /* Full height */
+  width: 40%; /*  width */
+  height: 40%; /*  height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
