@@ -1,8 +1,14 @@
 function modalna(teza=''){
 	alert("modalna "+teza+" kg");
+	otroskaFunction()
 }
 
-
+function otroskaFunction(){
+	   let teza = document. getElementById('teza').value;
+		alert('teza'+teza);
+		//document.getElementById('tezaPremedikacijaId').setAttribute("value",teza);
+		document.getElementById('tezaPremedikacijaId').value=teza;		
+}
 
 
 function schovej(a){
