@@ -78,7 +78,7 @@ input.udaje {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   right: 0;
-  bottom: 0;
+  bottom: 5px;
   width: 40%; /*  width */
   height: 40%; /*  height */
   overflow: auto; /* Enable scroll if needed */
