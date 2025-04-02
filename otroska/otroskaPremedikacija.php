@@ -7,17 +7,21 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
 	/*	echo 'Teža= '.$teza;
 		echo'<br>';
 		echo 'Učinkovina= '.$ucinkovina;	*/	
-    $prem=new Premedikace($ucinkovina, $teza);
+    //$prem=new Premedikace($ucinkovina, $teza);
 	//echo'<br>'. $prem->get_name();
+	$order='teza';
+   new VyberTezo($teza, $order);
+	
 }//else{echo'Ni določena učinkovina ali teža';}
-$order='teza';
-  // new VyberTezo($teza, $order);
+
 class Premedikace {
 	public $ucinkovina = '';
 	public $teza = '';	
-	public Function __construct($ucinkovina, $teza){	
+	public Function __construct($ucinkovina, $teza){
+	$podminka = [];	
 	$this->ucinkovina = $ucinkovina;
 	$this->teza = $teza;
+	$podminka["teza>="] = $this_teza;
 	echo 'Teža= '.$this->teza ;
 	echo'<br>';
 	echo 'Učinkovina= '.$this->ucinkovina;	
@@ -31,10 +35,11 @@ class VyberTezo {
 public $tabulka;
  function __construct( $podminka, $order="teza") {
 	    $tabulka="premedikacijaTbl";
+		
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
    $vyber = new database();
-   $vybrano=$vyber->vyberPogoj($tabulka, $podminka );
+   $vybrano=$vyber->otroska($tabulka, $podminka, $order );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
  //  echo "<br>";
@@ -42,18 +47,18 @@ public $tabulka;
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 //echo "<br>";
-  if(count($vybrano)>0){
+ /* if(count($vybrano)>0){
  echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
-  echo "<table id='osebe' style='border: solid 1px black;'>";
+  echo "<table id='osebe' style='border: solid 1px black;'>";*/
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
-  echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
+ /* echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
   }//od if(cout) 
   else{
   echo'v bazi ni zdravnikov z vpisano zdravniško številko';  
-  }
+  }*/
  }//od construct  
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCC
