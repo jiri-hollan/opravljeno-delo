@@ -9,6 +9,7 @@
        <label for='deksmedetomidinId'>deksmedetomidin</label><br>
       <label for='tezaPremedikacijaId'><b>Teža</b></label><br>
       <input id='tezaPremedikacijaId' class='udaje' type = 'text' name='teza' value='1' readonly>
+	  <br><br><br>
       <button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('doziranje').style.display='none'" class="cancelbtn">zapri</button>
