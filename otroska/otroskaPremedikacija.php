@@ -7,11 +7,11 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
 	/*	echo 'Teža= '.$teza;
 		echo'<br>';
 		echo 'Učinkovina= '.$ucinkovina;	*/	
-    //$prem=new Premedikace($ucinkovina, $teza);
+    $prem=new Premedikace($ucinkovina, $teza);
 	//echo'<br>'. $prem->get_name();
 }//else{echo'Ni določena učinkovina ali teža';}
 $order='teza';
-   new VyberTezo($teza, $order);
+  // new VyberTezo($teza, $order);
 class Premedikace {
 	public $ucinkovina = '';
 	public $teza = '';	
