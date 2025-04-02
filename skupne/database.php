@@ -396,7 +396,7 @@ public function otroska($tabulka='premedikacijaTbl', $podminka, $poradi){
 	 echo" parametry: ". var_dump($parametry) . "<br>";
 	 echo " Podminka: ".var_dump($podminka) . "<br>";
 	 echo " podminkaSQL: ".var_dump($podminkaSQL );
-	$dotaz = $this->conn->prepare("SELECT * FROM $tabulka $podminkaSQL $poradiSQL LIMIT 1");
+	$dotaz = $this->conn->prepare("SELECT * FROM $tabulka $podminkaSQL $poradiSQL DESC LIMIT 1");
 	//var_dump($dotaz);
 	try {
 		$dotaz->execute($parametry);		
