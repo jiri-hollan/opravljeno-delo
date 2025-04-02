@@ -9,8 +9,8 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
 		echo 'Učinkovina= '.$ucinkovina;	*/	
     //$prem=new Premedikace($ucinkovina, $teza);
 	//echo'<br>'. $prem->get_name();
-	$order='teza';
-   new VyberTezo($teza, $order);
+	$poradi='teza';
+   new VyberTezo($teza, $poradi);
 	
 }//else{echo'Ni določena učinkovina ali teža';}
 
@@ -33,13 +33,15 @@ class Premedikace {
 
 class VyberTezo {
 public $tabulka;
- function __construct( $podminka, $order="teza") {
+ function __construct( $teza, $poradi) {
 	    $tabulka="premedikacijaTbl";
-		
+		$podminka = [];	
+		$this->teza = $teza;
+	    $podminka["teza>="] = $this->teza;
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
    $vyber = new database();
-   $vybrano=$vyber->otroska($tabulka, $podminka, $order );
+   $vybrano=$vyber->otroska($tabulka, $podminka, $poradi );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
  //  echo "<br>";

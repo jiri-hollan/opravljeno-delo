@@ -391,11 +391,11 @@ public function otroska($tabulka='premedikacijaTbl', $podminka, $poradi){
 	   $poradiSQL = " ORDER BY " . $poradi;	
 	}
 
-	//echo $poradiSQL;
-	// echo '<br>';
-	// echo var_dump($parametry) . "<br>";
-	 // echo var_dump($podminka) . "<br>";
-	 // echo var_dump($podminkaSQL );
+	 echo "Poradi: ".$poradiSQL;
+	 echo '<br>';
+	 echo" parametry: ". var_dump($parametry) . "<br>";
+	 echo " Podminka: ".var_dump($podminka) . "<br>";
+	 echo " podminkaSQL: ".var_dump($podminkaSQL );
 	$dotaz = $this->conn->prepare("SELECT * FROM $tabulka". $podminkaSQL. $poradiSQL);
 	//var_dump($dotaz);
 	try {
@@ -408,6 +408,7 @@ public function otroska($tabulka='premedikacijaTbl', $podminka, $poradi){
 	  }
 	  
 	  $dotaz->closeCursor();
+	  //var_dump($zaznamy);
 	  return $zaznamy;	
 	
 }//konec function otroska
