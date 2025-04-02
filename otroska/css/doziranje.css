@@ -3,7 +3,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 	}
 */
-#otroskaFrm h2 {
+#otroskaFrm h3 {
   text-align: left;
 }
 
@@ -91,7 +91,7 @@ input.udaje {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 90%; /* Could be more or less, depending on screen size */
   height: 80%; 
