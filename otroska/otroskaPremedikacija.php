@@ -37,7 +37,7 @@ public $tabulka;
 	    $tabulka="premedikacijaTbl";
 		$podminka = [];	
 		$this->teza = $teza;
-	    $podminka["teza>="] = $this->teza;
+	    $podminka["teza<="] = $this->teza;
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
    $vyber = new database();
@@ -49,18 +49,18 @@ public $tabulka;
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 //echo "<br>";
- /* if(count($vybrano)>0){
+  if(count($vybrano)>0){
  echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
-  echo "<table id='osebe' style='border: solid 1px black;'>";*/
+  echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
- /* echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
+  echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
   }//od if(cout) 
   else{
   echo'v bazi ni zdravnikov z vpisano zdravniško številko';  
-  }*/
+  }
  }//od construct  
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VYBER IMA STEVIKLO CCCCCCCCCCCCCCCCCCCCCCCCCCC
