@@ -54,7 +54,7 @@ public $tabulka;
 //echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
-  echo "<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th></tr>";
+ echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
