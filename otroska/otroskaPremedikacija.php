@@ -70,7 +70,17 @@ public $poradi;
  }//od construct  
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VyberTezo CCCCCCCCCCCCCCCCCCCCCCCCCCC
- 
+ class Midazolam extends VyberTezo {
+  public function message() {
+    echo "Am I a fruit or a berry? ";
+  }
+}//od class Midazolam
+ class Dexmedetomidin extends VyberTezo {
+  public function message() {
+    echo "Am I a fruit or a berry? ";
+  }
+}//od class Dexmedetomidin
+
 //CCCCCCCCCCCCCCC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
