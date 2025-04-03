@@ -50,7 +50,7 @@ public $tabulka;
 //echo $vybrano[1];
 //echo "<br>";
   if(count($vybrano)>0){
- echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
+//echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
   echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
