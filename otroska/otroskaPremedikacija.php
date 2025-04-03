@@ -40,6 +40,7 @@ public $tabulka;
 	    $podminka["teza<="] = $this->teza;
    /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
    //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
+   //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
    $vyber = new database();
    $vybrano=$vyber->otroska($tabulka, $podminka, $poradi );
 //echo $vybrano[1];
@@ -53,7 +54,7 @@ public $tabulka;
 //echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
-  echo "<tr class='glavaTable'><th>Id</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th></tr>";
+  echo "<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th><th>mmm</th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
