@@ -200,39 +200,6 @@ $databaseGloboka->naredi('opravilaTbl', $definice);
 break;
 
 case "premedikacija":
-////////////////////////////////////////////////
-
-CREATE TABLE `premedikacijatbl` (
-  `id` int(3) UNSIGNED NOT NULL,
-  `teza` int(3) DEFAULT NULL,
-  `midazolamDoza` decimal(3,1) DEFAULT NULL,
-  `midazolamKoncentracija` decimal(3,1) DEFAULT NULL,
-  `midazolamNavodila` varchar(225) DEFAULT NULL,
-  `dexmedetomidinDoza` decimal(3,1) DEFAULT NULL,
-  `dexmedetomidinKoncentracija` decimal(3,1) DEFAULT NULL,
-  `dexmedetomidinNavodila` varchar(225) DEFAULT NULL,
-  `ketaminDoza` decimal(3,1) DEFAULT NULL,
-  `ketaminKoncentracija` decimal(3,1) NOT NULL,
-  `ketaminNavodila` varchar(225) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Odloži podatke za tabelo `premedikacijatbl`
---
-
-INSERT INTO `premedikacijatbl` (`id`, `teza`, `midazolamDoza`, `midazolamKoncentracija`, `midazolamNavodila`, `dexmedetomidinDoza`, `dexmedetomidinKoncentracija`, `dexmedetomidinNavodila`, `ketaminDoza`, `ketaminKoncentracija`, `ketaminNavodila`) VALUES
-(1, 1, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml\r\n', '3.0', '10.0', 'Redčina 10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)', NULL, '0.0', NULL),
-(2, 5, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml', '3.0', '50.0', 'Redčina 50 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 1 ml 0,9% NaCl)', NULL, '0.0', NULL),
-(3, 20, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml', '3.0', '99.9', 'Redčina 100 mcg/ml (originalnega zdravila dexmedetomidin 100 mcg/ml ni potrebno redčiti)', NULL, '0.0', NULL);
-
-ALTER TABLE `premedikacijatbl`
-  ADD PRIMARY KEY (`id`);
-ALTER TABLE `premedikacijatbl`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-COMMIT;
-
-///////////////////////////////////////////////////
-
 $definice= " 
   `id` INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `teza` int(3) DEFAULT NULL,
@@ -243,7 +210,7 @@ $definice= "
   `dexmedetomidinKoncentracija` decimal(3,1) DEFAULT NULL,
   `dexmedetomidinNavodila` varchar(225) DEFAULT NULL,
   `ketaminDoza` decimal(3,1) DEFAULT NULL,
-  `ketaminKoncentracija` decimal(3,1) NOT NULL,
+  `ketaminKoncentracija` decimal(3,1)  DEFAULT NULL,
   `ketaminNavodila` varchar(225) DEFAULT NULL";
 
 $databaseGloboka->naredi('premedikacijaTbl', $definice);	
