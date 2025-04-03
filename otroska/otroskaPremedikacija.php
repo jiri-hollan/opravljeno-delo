@@ -39,14 +39,14 @@ public $poradi;
 	    $tabulka="premedikacijaTbl";
 		$this->teza = $teza;
 		$podminka = [];			
-	    $podminka["teza<="] = $this->teza;		
+	    $podminka["teza<="] = $this->teza;
+		   $vyber = new database();
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
 
-/* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
-   $vyber = new database();
+   //$vyber = new database();
    $vybrano=$vyber->otroska($tabulka,$stolpci, $podminka, $poradi );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
