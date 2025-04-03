@@ -33,3 +33,8 @@ window.onclick = function(event) {
   }
 }//od window.onclick
 }//od function schovej
+
+
+function posli(){
+	document.getElementById('otroskaFrm').submit();
+}
