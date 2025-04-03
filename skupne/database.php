@@ -370,7 +370,7 @@ return $zaznamy;
 //........konec ciscenje.....................
 
 //.........začetek otroska...................
-public function otroska($tabulka='premedikacijaTbl', $sloupce, $podminka, $poradi){
+public function otroska($tabulka, $sloupce, $podminka, $poradi){
 	$sloupceSQL = implode(', ', $sloupce);
 	//echo '<br>'.$sloupceSQL;
 	$podminkaSQL = '';
