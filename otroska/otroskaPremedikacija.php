@@ -35,6 +35,8 @@ class VyberTezo {
 public $tabulka;
  function __construct( $teza, $poradi) {
 	    $tabulka="premedikacijaTbl";
+		//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
+		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
 		$podminka = [];	
 		$this->teza = $teza;
 	    $podminka["teza<="] = $this->teza;
@@ -42,7 +44,7 @@ public $tabulka;
    //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
    //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
    $vyber = new database();
-   $vybrano=$vyber->otroska($tabulka, $podminka, $poradi );
+   $vybrano=$vyber->otroska($tabulka,$stolpci, $podminka, $poradi );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
  //  echo "<br>";

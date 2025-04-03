@@ -370,8 +370,9 @@ return $zaznamy;
 //........konec ciscenje.....................
 
 //.........začetek otroska...................
-public function otroska($tabulka='premedikacijaTbl', $podminka, $poradi){
-
+public function otroska($tabulka='premedikacijaTbl', $sloupce, $podminka, $poradi){
+	$sloupceSQL = implode(', ', $sloupce);
+	//echo '<br>'.$sloupceSQL;
 	$podminkaSQL = '';
 	$parametry = array();
 	$poradiSQL = '';
@@ -396,7 +397,7 @@ public function otroska($tabulka='premedikacijaTbl', $podminka, $poradi){
 	 echo" parametry: ". var_dump($parametry) . "<br>";
 	 echo " Podminka: ".var_dump($podminka) . "<br>";
 	 echo " podminkaSQL: ".var_dump($podminkaSQL );*/
-	$dotaz = $this->conn->prepare("SELECT * FROM $tabulka $podminkaSQL $poradiSQL DESC LIMIT 1");
+	$dotaz = $this->conn->prepare("SELECT $sloupceSQL FROM $tabulka $podminkaSQL $poradiSQL DESC LIMIT 1");
 	//var_dump($dotaz);
 	try {
 		$dotaz->execute($parametry);		
