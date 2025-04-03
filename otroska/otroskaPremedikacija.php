@@ -33,13 +33,16 @@ class Premedikace {
 
 class VyberTezo {
 public $tabulka;
+public $teza;
+public $poradi;
  function __construct( $teza, $poradi) {
 	    $tabulka="premedikacijaTbl";
+		$this->teza = $teza;
+		$podminka = [];			
+	    $podminka["teza<="] = $this->teza;		
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
-		$podminka = [];	
-		$this->teza = $teza;
-	    $podminka["teza<="] = $this->teza;
+
 /* stolpci se morajo ujemati z nadpisi stlpcev v "if(count)" linija 105*/
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
