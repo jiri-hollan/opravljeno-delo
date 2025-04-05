@@ -87,7 +87,38 @@ public $poradi;
  class Midazolam extends VyberTezo {
 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
-    }
+	    $tabulka="premedikacijaTbl";
+		$this->teza = $teza;
+		$podminka = [];			
+	    $podminka["teza<="] = $this->teza;
+		   $vyber = new database();
+//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
+		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
+
+//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
+//echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
+   //$vyber = new database();
+   $vybrano=$vyber->otroska($tabulka,$stolpci, $podminka, $poradi );
+//echo $vybrano[1];
+//echo var_dump($vybrano);
+//  echo "<br>";
+//echo count($vybrano);
+//$dolzina=count($vybrano);
+//echo $vybrano[1];
+//echo "<br>";
+  if(count($vybrano)>0){
+//echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
+  echo "<table id='osebe' style='border: solid 1px black;'>";
+/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
+ echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
+    foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+        echo $v;
+   }//od foreach
+  }//od if(cout) 
+  else{
+  echo'v bazi ni zdravnikov z vpisano zdravniško številko';  
+  }
+    }//od construct
 	 
   public function message() {
     echo "Am I a fruit or a berry? ";
