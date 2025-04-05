@@ -14,8 +14,8 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
   case 'midazolam':
    new Midazolam($teza, $poradi);
     break;
-  case 'dexmedetomidin':
-   new Dexmedetomidin($teza, $poradi);
+  case 'deksmedetomidin':
+   new Deksmedetomidin($teza, $poradi);
     break;
   case 'label3':
     //code block
@@ -89,7 +89,7 @@ public $poradi;
     echo "Am I a fruit or a berry? ";
   }
 }//od class Midazolam
- class Dexmedetomidin extends VyberTezo {
+ class Deksmedetomidin extends VyberTezo {
   public function message() {
     echo "Am I a fruit or a berry? ";
   }
