@@ -71,11 +71,19 @@ public $poradi;
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VyberTezo CCCCCCCCCCCCCCCCCCCCCCCCCCC
  class Midazolam extends VyberTezo {
+	     function __construct() {
+        parent::__construct();
+        echo 'Child __construct<br/>';
+    }
   public function message() {
     echo "Am I a fruit or a berry? ";
   }
 }//od class Midazolam
  class Dexmedetomidin extends VyberTezo {
+	  function __construct() {
+        parent::__construct();
+        echo 'Child __construct<br/>';
+    }
   public function message() {
     echo "Am I a fruit or a berry? ";
   }
