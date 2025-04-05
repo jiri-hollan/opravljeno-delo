@@ -31,7 +31,7 @@ class Premedikace {
 	}
 }//od class Premedikace
 
-class VyberTezo {
+abstract class VyberTezo {
 public $tabulka;
 public $teza;
 public $poradi;
