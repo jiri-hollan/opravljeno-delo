@@ -4,13 +4,27 @@ require_once 'sabloni/formaOtroskaPremedikacija.php';
 if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
 	$ucinkovina=$_POST['ucinkovina'];
 	$teza=$_POST['teza'];
+	$poradi='teza';
 	/*	echo 'Teža= '.$teza;
 		echo'<br>';
 		echo 'Učinkovina= '.$ucinkovina;	*/	
     //$prem=new Premedikace($ucinkovina, $teza);
 	//echo'<br>'. $prem->get_name();
-	$poradi='teza';
-   new VyberTezo($teza, $poradi);
+	switch ($ucinkovina) {
+  case 'midazolam':
+   new Midazolam($teza, $poradi);
+    break;
+  case 'dexmedetomidin':
+   new Dexmedetomidin($teza, $poradi);
+    break;
+  case 'label3':
+    //code block
+    break;
+  default:
+    echo "ni prepoznalo učinkovine";
+}
+
+//new VyberTezo($teza, $poradi); to je bilo pred child
 	
 }//else{echo'Ni določena učinkovina ali teža';}
 
