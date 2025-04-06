@@ -50,11 +50,11 @@ public $tabulka;
 public $teza;
 public $poradi;
  function __construct( $teza, $poradi) {
-	    $tabulka="premedikacijaTbl";
+	    $this->tabulka="premedikacijaTbl";
 		$this->teza = $teza;
-		$podminka = [];			
-	    $podminka["teza<="] = $this->teza;
-		   $vyber = new database();
+		$this->poradi = $poradi;	
+	    $this->podminka["teza<="] = $this->teza;
+		$this->vyber = new database();
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 //		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
 
@@ -85,20 +85,11 @@ public $poradi;
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VyberTezo CCCCCCCCCCCCCCCCCCCCCCCCCCC
  class Midazolam extends VyberTezo {
-	     public function __construct( $teza, $poradi) {
+	    public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
-	    $tabulka="premedikacijaTbl";
-		$this->teza = $teza;
-		$podminka = [];			
-	    $podminka["teza<="] = $this->teza;
-		   $vyber = new database();
-//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
-		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
 
-//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
-//echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
-   //$vyber = new database();
-   $vybrano=$vyber->otroska($tabulka,$stolpci, $podminka, $poradi );
+		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
+        $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
 //  echo "<br>";
@@ -127,18 +118,18 @@ public $poradi;
  class Deksmedetomidin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
-	    $tabulka="premedikacijaTbl";
+	/*    $tabulka="premedikacijaTbl";
 		$this->teza = $teza;
 		$podminka = [];			
 	    $podminka["teza<="] = $this->teza;
-		   $vyber = new database();
+		$vyber = new database();*/
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
 
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
    //$vyber = new database();
-   $vybrano=$vyber->otroska($tabulka,$stolpci, $podminka, $poradi );
+   $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
 //  echo "<br>";
