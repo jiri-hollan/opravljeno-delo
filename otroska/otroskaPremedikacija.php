@@ -23,9 +23,6 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
   default:
     echo "ni prepoznalo učinkovine";
 }
-
-//new VyberTezo($teza, $poradi); to je bilo pred child
-	
 }//else{echo'Ni določena učinkovina ali teža';}
 
 class Premedikace {
@@ -40,6 +37,7 @@ class Premedikace {
 	echo'<br>';
 	echo 'Učinkovina= '.$this->ucinkovina;	
 	}
+	
 	function get_name() {
     return $this->ucinkovina;
 	}
@@ -55,13 +53,10 @@ public $poradi;
 		$this->poradi = $poradi;	
 	    $this->podminka["teza<="] = $this->teza;
 		$this->vyber = new database();
-//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
-//		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
 
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
-   //$vyber = new database();
-   //$vybrano=$vyber->otroska($tabulka,$stolpci, $podminka, $poradi );
+
 //echo $vybrano[1];
 //echo var_dump($vybrano);
 //  echo "<br>";
@@ -69,18 +64,7 @@ public $poradi;
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 //echo "<br>";
-  //if(count($vybrano)>0){
-//echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
-  //echo "<table id='osebe' style='border: solid 1px black;'>";
-/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
- //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
- //   foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
- //       echo $v;
-  // }//od foreach
-  //}//od if(cout) 
- // else{
- // echo'v bazi ni zdravnikov z vpisano zdravniško številko';  
-  //}
+
  }//od construct  
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VyberTezo CCCCCCCCCCCCCCCCCCCCCCCCCCC
