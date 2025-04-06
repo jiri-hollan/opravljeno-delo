@@ -98,10 +98,10 @@ public $poradi;
 //echo $vybrano[1];
 //echo "<br>";
   if(count($vybrano)>0){
-//echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
+//echo'Število izbranih zapisov= '. count($vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
- echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
+ echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
@@ -118,18 +118,9 @@ public $poradi;
  class Deksmedetomidin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
-	/*    $tabulka="premedikacijaTbl";
-		$this->teza = $teza;
-		$podminka = [];			
-	    $podminka["teza<="] = $this->teza;
-		$vyber = new database();*/
-//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
-		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
 
-//$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
-//echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
-   //$vyber = new database();
-   $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
+		$stolpci=["id", "teza", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila"];
+        $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
 //  echo "<br>";
@@ -138,10 +129,10 @@ public $poradi;
 //echo $vybrano[1];
 //echo "<br>";
   if(count($vybrano)>0){
-//echo'Število zdravnikov z vpisano zdravniško številko= '. count($vybrano);	  
+//echo'Število izbranih zapisov= '. count($vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
- echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
+ echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th></tr>";
     foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
