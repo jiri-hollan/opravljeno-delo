@@ -17,8 +17,8 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
   case 'deksmedetomidin':
    new Deksmedetomidin($teza, $poradi);
     break;
-  case 'label3':
-    //code block
+  case 'ketamin':
+   new Ketamin($teza, $poradi);
     break;
   default:
     echo "ni prepoznalo učinkovine";
@@ -107,7 +107,7 @@ public $poradi;
    }//od foreach
   }//od if(cout) 
   else{
-  echo'v bazi ni zdravnikov z vpisano zdravniško številko';  
+  echo'v bazi ni odgovarajočih zapisov';  
   }
     }//od construct
 	 
@@ -138,13 +138,44 @@ public $poradi;
    }//od foreach
   }//od if(cout) 
   else{
-  echo'v bazi ni zdravnikov z vpisano zdravniško številko';  
+  echo'v bazi ni odgovarajučih zapisov';  
   }		
     }
   public function message() {
     echo "Am I a fruit or a berry? ";
   }
 }//od class Dexmedetomidin
+
+ class Ketamin extends VyberTezo {
+	 	     public function __construct( $teza, $poradi) {
+        parent::__construct( $teza, $poradi);
+
+		$stolpci=["id", "teza", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
+        $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
+//echo $vybrano[1];
+//echo var_dump($vybrano);
+//  echo "<br>";
+//echo count($vybrano);
+//$dolzina=count($vybrano);
+//echo $vybrano[1];
+//echo "<br>";
+  if(count($vybrano)>0){
+//echo'Število izbranih zapisov= '. count($vybrano);	  
+  echo "<table id='osebe' style='border: solid 1px black;'>";
+/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
+ echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
+    foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+        echo $v;
+   }//od foreach
+  }//od if(cout) 
+  else{
+  echo'v bazi ni odgovarajučih zapisov';  
+  }		
+    }
+  public function message() {
+    echo "Am I a fruit or a berry? ";
+  }
+}//od class Ketamin
 
 //CCCCCCCCCCCCCCC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 class TableRows extends RecursiveIteratorIterator {
