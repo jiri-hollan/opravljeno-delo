@@ -7,6 +7,8 @@
 	   <label for='midazolamId'>midazolam</label><br>
       <input  onclick='document.getElementById("otroskaFrm").submit();' type='radio' id='deksmedetomidinId' class='ucinkovina' name='ucinkovina' value='deksmedetomidin'>
        <label for='deksmedetomidinId'>deksmedetomidin</label><br>
+      <input  onclick='document.getElementById("otroskaFrm").submit();' type='radio' id='ketaminId' class='ucinkovina' name='ucinkovina' value='ketamin'>
+       <label for='ketaminId'>ketamin</label><br>	  
       <label for='tezaPremedikacijaId'><b>Teža</b></label><br>
       <input id='tezaPremedikacijaId' class='udaje' type = 'text' name='teza' value='1' readonly>
 	  <br><br><br>
