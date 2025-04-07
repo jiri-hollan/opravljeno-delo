@@ -4,15 +4,15 @@
   <div class="container">
   	  <button type="button" onclick="document.getElementById('doziranje').style.display='none'"class="close" title="zapri">&times;</button>
       <h3>Otroška premedikacija</h3>
-      <input  onclick='document.getElementById("otroskaFrm").submit();' type='radio' id='midazolamId' class='ucinkovina' name='ucinkovina' value='midazolam'>
+      <input  onclick='posli();' type='radio' id='midazolamId' class='ucinkovina' name='ucinkovina' value='midazolam'>
 	   <label for='midazolamId'>midazolam</label><br>
-      <input  onclick='document.getElementById("otroskaFrm").submit();' type='radio' id='deksmedetomidinId' class='ucinkovina' name='ucinkovina' value='deksmedetomidin'>
+      <input  onclick='posli();' type='radio' id='deksmedetomidinId' class='ucinkovina' name='ucinkovina' value='deksmedetomidin'>
        <label for='deksmedetomidinId'>deksmedetomidin</label><br>
-      <input  onclick='document.getElementById("otroskaFrm").submit();' type='radio' id='ketaminId' class='ucinkovina' name='ucinkovina' value='ketamin'>
+      <input  onclick='posli();' type='radio' id='ketaminId' class='ucinkovina' name='ucinkovina' value='ketamin'>
        <label for='ketaminId'>ketamin</label><br>	  
-      <label for='tezaPremedikacijaId'><b>Teža je hidden</b></label><br>
+      <!--<label for='tezaPremedikacijaId'><b>Teža je hidden</b></label><br>-->
       <input id='tezaPremedikacijaId' class='udaje' type = 'hidden' name='teza' value='1' hidden readonly>
-	  <br><br><br>
+	  <br>
       <!--<button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>-->
       <div class="clearfix">
        <!-- <button type="button" onclick="document.getElementById('doziranje').style.display='none'" class="cancelbtn">zapri</button>-->
