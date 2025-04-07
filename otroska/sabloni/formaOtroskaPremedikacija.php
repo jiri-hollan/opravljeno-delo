@@ -1,7 +1,8 @@
 
 <div id='doziranje'  class='modal'>
 <form id='otroskaFrm' class="modal-content animate" name='otroskaForma' method='post' action='bolnik.php' autocomplete='off'> 
-  <div class="container">
+  <div class="container">        
+	  <button type="button" onclick="document.getElementById('doziranje').style.display='none'"class="close" title="zapri">&times;</button>
       <h3>Otroška premedikacija</h3>
       <input  onclick='document.getElementById("otroskaFrm").submit();' type='radio' id='midazolamId' class='ucinkovina' name='ucinkovina' value='midazolam'>
 	   <label for='midazolamId'>midazolam</label><br>
@@ -12,7 +13,7 @@
 	  <br><br><br>
       <!--<button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>-->
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('doziranje').style.display='none'" class="cancelbtn">zapri</button>
+     <!-- <button type="button" onclick="document.getElementById('doziranje').style.display='none'" class="cancelbtn">zapri</button>-->
       </div>
   </div><!--container-->
 </form>
