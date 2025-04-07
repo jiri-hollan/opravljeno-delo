@@ -10,7 +10,20 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
     //$prem=new Premedikace($ucinkovina, $teza);
 	//echo'<br>'. $prem->get_name();
 	$poradi='teza';
-   new VyberTezo($teza, $poradi);
+	switch ($ucinkovina) {
+  case "midazolam":
+       new Midazolam($teza, $poradi);
+    break;
+  case "deksmedetomidin":
+       new Deksmedetomidin($teza, $poradi);
+    break;
+  case "label3":
+    echo"nekaj je narobe lonija 21 otroskaPremedikacija php";
+    break;
+  default:
+    echo"nekaj je narobe lonija 24 otroskaPremedikacija php";
+}
+   //new Midazolam($teza, $poradi);
 	
 }//else{echo'Ni določena učinkovina ali teža';}
 
@@ -75,9 +88,10 @@ public $poradi;
     echo "Am I a fruit or a berry? ";
   }
 }//od class Midazolam
- class Dexmedetomidin extends VyberTezo {
-  public function message() {
-    echo "Am I a fruit or a berry? ";
+ class Deksmedetomidin extends VyberTezo {
+  function __construct(){
+	  var_dump($this->teza);
+    echo "Am I a fruit or a $this->teza? ";
   }
 }//od class Dexmedetomidin
 
