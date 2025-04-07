@@ -10,13 +10,20 @@
        <label for='deksmedetomidinId'>deksmedetomidin</label><br>
       <input  onclick='document.getElementById("otroskaFrm").submit();' type='radio' id='ketaminId' class='ucinkovina' name='ucinkovina' value='ketamin'>
        <label for='ketaminId'>ketamin</label><br>	  
-      <label for='tezaPremedikacijaId'><b>Teža</b></label><br>
-      <input id='tezaPremedikacijaId' class='udaje' type = 'text' name='teza' value='1' readonly>
+      <label for='tezaPremedikacijaId'><b>Teža je hidden</b></label><br>
+      <input id='tezaPremedikacijaId' class='udaje' type = 'hidden' name='teza' value='1' hidden readonly>
 	  <br><br><br>
       <!--<button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>-->
       <div class="clearfix">
        <!-- <button type="button" onclick="document.getElementById('doziranje').style.display='none'" class="cancelbtn">zapri</button>-->
       </div>
+  </div><!--container-->
+</form>
+
+<form id='ucinkovinaFrm' class="modal-content animate" name='ucinkovinaForma' method='post' action='bolnik.php' autocomplete='off'>
+  <div class="container">
+  <p>premedikacija</p>
+
   </div><!--container-->
 </form>
 </div>
