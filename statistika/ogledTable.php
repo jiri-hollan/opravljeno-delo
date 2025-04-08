@@ -10,9 +10,9 @@ $nazaj="statistikaMenu.php";
  require_once ('ogledi.php');
  echo'<script src="../delo/js/delo.js?'.time().'"></script>';
  	$podminka = array("uname"=>$uname);
-	$stevilkaUporabnika=new VyberUporabnika($podminka);
-	$stevilkaUporabnika=$stevilkaUporabnika->stevilkaZdravnika;
-//echo " je to trenutni uporabnik? ".var_dump ($stevilkaUporabnika);	
+	$uporabnik=new VyberUporabnika($podminka);
+	$stevilkaZdravnika=$uporabnik->stevilkaZdravnika;
+//echo " je to trenutni uporabnik? ".var_dump ($stevilkaZdravnika);	
 //_____________________________________________________________
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
