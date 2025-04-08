@@ -13,7 +13,7 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
 	switch ($ucinkovina) {
   case 'midazolam':
    $midazolam = new Midazolam($teza, $poradi);
-   $midazolam->tabulkaFunction();
+   $midazolam->izracunFunction();
     break;
   case 'deksmedetomidin':
    new Deksmedetomidin($teza, $poradi);
@@ -80,10 +80,21 @@ public function __construct( $teza, $poradi) {
 //  echo "<br>";
 //echo count($vybrano);
 //$dolzina=count($vybrano);
-//echo $vybrano[1];
+//var_dump( $this->vybrano[0]);
 //echo "<br>";
  
     }//od construct
+public function izracunFunction() {
+	if(count($this->vybrano)>0){
+	 $dozaMg=$this->vybrano[0]["midazolamDoza"]*$this->teza;
+	  $dozaMl=$dozaMg*$this->vybrano[0]['midazolamKoncentracija'];
+	  echo "Doza $dozaMg mg to je $dozaMl ml";
+	//var_dump( $this->vybrano);
+	}else{
+			 
+	}
+  } //od izracunFunction
+	
   public function tabulkaFunction() {
 	 if(count($this->vybrano)>0){
 //echo'Število izbranih zapisov= '. count($vybrano);	  
