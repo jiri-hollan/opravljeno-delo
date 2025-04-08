@@ -12,7 +12,8 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
 	//echo'<br>'. $prem->get_name();
 	switch ($ucinkovina) {
   case 'midazolam':
-   new Midazolam($teza, $poradi);
+   $midazolam = new Midazolam($teza, $poradi);
+   $midazolam->tabulkaFunction();
     break;
   case 'deksmedetomidin':
    new Deksmedetomidin($teza, $poradi);
@@ -24,7 +25,7 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
     echo "ni prepoznalo učinkovine";
 }
 }//else{echo'Ni določena učinkovina ali teža';}
-
+//poskusni class Premedikace:
 class Premedikace {
 	public $ucinkovina = '';
 	public $teza = '';	
@@ -73,7 +74,7 @@ public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
 
 		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
-        $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
+        $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
 //  echo "<br>";
@@ -81,20 +82,23 @@ public function __construct( $teza, $poradi) {
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 //echo "<br>";
-  if(count($vybrano)>0){
+ 
+    }//od construct
+  public function tabulkaFunction() {
+	 if(count($this->vybrano)>0){
 //echo'Število izbranih zapisov= '. count($vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
  echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th></tr>";
-    foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+    foreach(new TableRows(new RecursiveArrayIterator($this->vybrano)) as $k=>$v) {
         echo $v;
    }//od foreach
   }//od if(cout) 
   else{
   echo'v bazi ni odgovarajočih zapisov';  
-  }
-    }//od construct
-	 
+  }  
+  }	
+	
   public function message() {
     echo "Am I a fruit or a berry? ";
   }
