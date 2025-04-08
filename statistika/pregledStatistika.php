@@ -17,11 +17,39 @@ if(isset($_REQUEST['semafor'])){
 *definiran v menuStatistika_items
 **************************************************/ 
  if(isset($_GET['semafor'])){
+<<<<<<< Updated upstream
 	$semafor = $_GET['semafor'];
     $podminka=NULL;
 	 }
  /**************************************************************
 *$_POST semafor poslan iz bolnikPogoji.js
+=======
+  switch ($_GET['semafor']){
+    case "pregledovalec":
+/***prikaže število pregledov za celotno razdobje po zdravnikih***/
+	$podminka=NULL;
+	$stolpci=["imeZdravnika"];
+	$grupa=["imeZdravnika"];
+     new countPregled($tabulka, $stolpci, $grupa, $podminka);
+    break;
+	case "asa":
+	$stolpci=["asa"];
+	$grupa=["asa"];
+	$interval=[];
+	$kriteriji=[];
+	 new poKriterijih($tabulka, $stolpci, $grupa, $interval, $kriteriji);
+	break;
+    default:
+     echo"semafor GET ni pravi";
+  }
+ }
+ 
+ if(isset($_POST['semafor'])){
+  switch ($_POST['semafor']){
+	case "pregledovalecDatum":
+/**************************************************************
+*semafor dDatum poslan iz bolnikPogoji.js
+>>>>>>> Stashed changes
 *prikaže število pregledov po zdravnikih za določen interval
 ***************************************************************/
  if(isset($_POST['semafor'])){
@@ -269,11 +297,19 @@ class poKriterijih {
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
 public $tabulka;
+<<<<<<< Updated upstream
 function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
 //var_dump($semafor);
   $this->podminka=$podminka;
+=======
+function __construct($tabulka, $stolpci, $grupa=NULL, $interval=NULL, $kriterij=NULL){
+  //$tabulka = 'bolnikTbl';
+  if(isset(array_merge($interval,$kriterij)){
+  $this->podminka=array_merge($interval,$kriterij);
+  }
+>>>>>>> Stashed changes
   $counta = new databaseS();
   $vybrano=$counta->counta($tabulka, $stolpci, $grupa, $this->podminka);
     if(count($vybrano)>0){
