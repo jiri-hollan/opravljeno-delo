@@ -43,11 +43,11 @@ class Premedikace {
 	}
 }//od class Premedikace
 
-class VyberTezo {
+abstract class VyberTezo {
 public $tabulka;
 public $teza;
 public $poradi;
- function __construct( $teza, $poradi) {
+public function __construct( $teza, $poradi) {
 	    $this->tabulka="premedikacijaTbl";
 		$this->teza = $teza;
 		$this->poradi = $poradi;	
