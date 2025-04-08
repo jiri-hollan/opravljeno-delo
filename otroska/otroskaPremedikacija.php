@@ -88,7 +88,7 @@ public function izracunFunction() {
 	if(count($this->vybrano)>0){
 	 $dozaMg=$this->vybrano[0]["midazolamDoza"]*$this->teza;
 	  $dozaMl=$dozaMg*$this->vybrano[0]['midazolamKoncentracija'];
-	  echo "Doza $dozaMg mg to je $dozaMl ml";
+	  echo "Midazolam $dozaMg mg to je $dozaMl ml";
 	//var_dump( $this->vybrano);
 	}else{
 			 
