@@ -1,5 +1,16 @@
 /* CSS za novPolnjenje.HTML*/
-
+#prva {
+display: none;	
+}
+#druga {
+display: none;	
+}
+#tretja {
+display: none;	
+}
+#cetrta {
+display: none;	
+}
 
 h1 {
   text-align: center;
