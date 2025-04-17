@@ -23,8 +23,8 @@ padding: 40px;
   overflow: hidden;
   background-color: blue;
   position: fixed;
-  top: 20px;
-  width:200px;
+  top: 5px;
+  /*width:400px;*/
   z-index: 60;
 }
 
@@ -70,23 +70,15 @@ border-radius: 12%;
 	position: relative;
     left: 20px;
 }
-.stanjeNe {
+#stanjeNe {
     color: red;	
     background-color:black;
-    position: fixed;
-    top: 0;
 	z-index: 61;
-	width:200px;
-	height: 20px;
     text-align: center;
 }
-.stanjeDa {
-    color: black;	
-    background-color:white;
-    position: fixed;
-    top: 0;
-	z-index: 61;
-	width:200px;
-	height: 20px;
+#stanjeDa {
+    color: white;	
+    background-color: blue;;
+		z-index: 61;
 
 }

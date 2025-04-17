@@ -21,12 +21,11 @@ oziroma to določi izbira NAV bara, če je ta aktivirana
 ***********************************************************************************/
 //$uname = !empty($_SESSION["uname"]) ? "prijavljen je: ".$_SESSION["uname"] : "Niste prijavljeni";
 if(!empty($_SESSION["uname"])){
-$uname = "<div class='stanjeDa'>prijavljen je: ".$_SESSION["uname"]."</div>";
+$uname = "<span id='stanjeDa'>prijavljen je: ".$_SESSION["uname"]."</span>";
 }else{
-$uname = "<div class='stanjeNe'>Niste prijavljeni</div>";	
-
+$uname = "<span id='stanjeNe'>Niste prijavljeni</span>";	
 }
-echo"$uname";
+
 ?>
 <div id="prijava" >
 <p id="aktBolnisnica">.</p>
@@ -65,6 +64,9 @@ echo '<button id="buttonDomov" onclick="window.location.href=' . "'" . $home . "
 //alert(localStorage.getItem("bazeBolnisnice"));
   </script>
      <span class="" id="odjava" onclick="odjavaFunction()">RESET</span>
+<?php
+echo"$uname";
+?>
  </div>	 
 </body>
 </html>
