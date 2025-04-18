@@ -162,7 +162,7 @@ public function izracunFunction() {
 	  echo $navodila;
 	//var_dump( $this->vybrano);
 	}else{
-	echo "premedikacija z ketaminom še ni dločena";		 
+	echo "premedikacija z ketaminom še ni določena";		 
 	}
   } //od izracunFunction
 }//od class Ketamin
