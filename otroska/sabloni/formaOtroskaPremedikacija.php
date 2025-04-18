@@ -6,8 +6,8 @@
       <h3>Otroška premedikacija</h3>
       <input  onclick='posli();' type='radio' id='midazolamId' class='ucinkovina' name='ucinkovina' value='midazolam'>
 	   <label for='midazolamId'>midazolam</label><br>
-      <input  onclick='posli();' type='radio' id='deksmedetomidinId' class='ucinkovina' name='ucinkovina' value='deksmedetomidin'>
-       <label for='deksmedetomidinId'>deksmedetomidin</label><br>
+      <input  onclick='posli();' type='radio' id='dexmedetomidinId' class='ucinkovina' name='ucinkovina' value='dexmedetomidin'>
+       <label for='dexmedetomidinId'>dexmedetomidin</label><br>
       <input  onclick='posli();' type='radio' id='ketaminId' class='ucinkovina' name='ucinkovina' value='ketamin'>
        <label for='ketaminId'>ketamin</label><br>	  
       <!--<label for='tezaPremedikacijaId'><b>Teža je hidden</b></label><br>-->

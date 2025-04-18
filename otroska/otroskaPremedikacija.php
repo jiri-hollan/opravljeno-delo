@@ -15,11 +15,13 @@ if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
    $midazolam = new Midazolam($teza, $poradi);
    $midazolam->izracunFunction();
     break;
-  case 'deksmedetomidin':
-   new Deksmedetomidin($teza, $poradi);
+  case 'dexmedetomidin':
+   $dexmedetomidin=new dexmedetomidin($teza, $poradi);
+   $dexmedetomidin->izracunFunction();
     break;
   case 'ketamin':
-   new Ketamin($teza, $poradi);
+   $ketamin=new ketamin($teza, $poradi);
+   $ketamin->izracunFunction();
     break;
   default:
     echo "ni prepoznalo učinkovine";
@@ -57,15 +59,6 @@ public function __construct( $teza, $poradi) {
 
 //$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
 //echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
-
-//echo $vybrano[1];
-//echo var_dump($vybrano);
-//  echo "<br>";
-//echo count($vybrano);
-//$dolzina=count($vybrano);
-//echo $vybrano[1];
-//echo "<br>";
-
  }//od construct  
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VyberTezo CCCCCCCCCCCCCCCCCCCCCCCCCCC
@@ -75,11 +68,11 @@ public function __construct( $teza, $poradi) {
 
 		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
-//echo $vybrano[1];
-//echo var_dump($vybrano);
+//echo $this->vybrano[1];
+//echo var_dump($this->vybrano);
 //  echo "<br>";
-//echo count($vybrano);
-//$dolzina=count($vybrano);
+//echo count($this->vybrano);
+//$dolzina=count($this->vybrano);
 //var_dump( $this->vybrano[0]);
 //echo "<br>";
  
@@ -100,7 +93,7 @@ public function izracunFunction() {
 	
   public function tabulkaFunction() {
 	 if(count($this->vybrano)>0){
-//echo'Število izbranih zapisov= '. count($vybrano);	  
+//echo'Število izbranih zapisov= '. count($this->vybrano);	  
   echo "<table id='osebe' style='border: solid 1px black;'>";
 /* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
  echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th></tr>";
@@ -112,71 +105,66 @@ public function izracunFunction() {
   echo'v bazi ni odgovarajočih zapisov';  
   }  
   }	
-	
-  public function message() {
-    echo "Am I a fruit or a berry? ";
-  }
+
 }//od class Midazolam
- class Deksmedetomidin extends VyberTezo {
+ class dexmedetomidin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
 
 		$stolpci=["id", "teza", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila"];
-        $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
-//echo $vybrano[1];
-//echo var_dump($vybrano);
+        $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
+//echo $this->vybrano[1];
+//echo var_dump($this->vybrano);
 //  echo "<br>";
-//echo count($vybrano);
-//$dolzina=count($vybrano);
-//echo $vybrano[1];
+//echo count($this->vybrano);
+//$dolzina=count($this->vybrano);
+//echo $this->vybrano[1];
 //echo "<br>";
-  if(count($vybrano)>0){
-//echo'Število izbranih zapisov= '. count($vybrano);	  
-  echo "<table id='osebe' style='border: solid 1px black;'>";
-/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
- echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th></tr>";
-    foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
-        echo $v;
-   }//od foreach
-  }//od if(cout) 
-  else{
-  echo'v bazi ni odgovarajučih zapisov';  
-  }		
-    }
-  public function message() {
-    echo "Am I a fruit or a berry? ";
-  }
-}//od class Dexmedetomidin
+ 
+    }//od construct
+	public function izracunFunction() {
+	if(count($this->vybrano)>0){
+	 $dozaMg=$this->vybrano[0]["dexmedetomidinDoza"]*$this->teza;
+	  $dozaMl= round($dozaMg/$this->vybrano[0]['dexmedetomidinKoncentracija'],1);
+	  $navodila=$this->vybrano[0]["dexmedetomidinNavodila"];
+	  echo "dexmedetomidin $dozaMg mg to je $dozaMl ml";
+	  echo "<br>";
+	  echo $navodila;
+	//var_dump( $this->vybrano);
+	}else{
+			 
+	}
+  } //od izracunFunction
+}//od class dexmedetomidin
 
  class Ketamin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
 
 		$stolpci=["id", "teza", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
-        $vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
-//echo $vybrano[1];
-//echo var_dump($vybrano);
+        $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
+//echo $this->vybrano[1];
+//echo var_dump($this->vybrano);
 //  echo "<br>";
-//echo count($vybrano);
-//$dolzina=count($vybrano);
-//echo $vybrano[1];
+//echo count($this->vybrano);
+//$dolzina=count($this->vybrano);
+//echo $this->vybrano[1];
 //echo "<br>";
-  if(count($vybrano)>0){
-//echo'Število izbranih zapisov= '. count($vybrano);	  
-  echo "<table id='osebe' style='border: solid 1px black;'>";
-/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
- echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
-    foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
-        echo $v;
-   }//od foreach
-  }//od if(cout) 
-  else{
-  echo'v bazi ni odgovarajučih zapisov';  
-  }		
-    }
-  public function message() {
-    echo "Am I a fruit or a berry? ";
-  }
+
+    }//od construct
+	public function izracunFunction() {
+	if(count($this->vybrano)>0&& $this->vybrano[0]['ketaminKoncentracija']>0){
+	 $dozaMg=$this->vybrano[0]["ketaminDoza"]*$this->teza;
+	  $dozaMl= round($dozaMg/$this->vybrano[0]['ketaminKoncentracija'],1);
+	  $navodila=$this->vybrano[0]["ketaminNavodila"];
+	  echo "ketamin $dozaMg mg to je $dozaMl ml";
+	  echo "<br>";
+	  echo $navodila;
+	//var_dump( $this->vybrano);
+	}else{
+	echo "premedikacija z ketaminom še ni dločena";		 
+	}
+  } //od izracunFunction
 }//od class Ketamin
 
 //CCCCCCCCCCCCCCC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
