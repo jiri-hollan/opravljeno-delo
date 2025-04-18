@@ -46,9 +46,9 @@ CREATE TABLE `premedikacijatbl` (
 --
 
 INSERT INTO `premedikacijatbl` (`id`, `teza`, `midazolamDoza`, `midazolamKoncentracija`, `midazolamNavodila`, `dexmedetomidinDoza`, `dexmedetomidinKoncentracija`, `dexmedetomidinNavodila`, `ketaminDoza`, `ketaminKoncentracija`, `ketaminNavodila`) VALUES
-(1, 1, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml\r\n', '3.0', '10.0', 'Redčina 10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)', NULL, '0.0', NULL),
-(2, 5, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml', '3.0', '50.0', 'Redčina 50 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 1 ml 0,9% NaCl)', NULL, '0.0', NULL),
-(3, 20, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml', '3.0', '99.9', 'Redčina 100 mcg/ml (originalnega zdravila dexmedetomidin 100 mcg/ml ni potrebno redčiti)', NULL, '0.0', NULL);
+(1, 1, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml\r\n', '3.0', '10.0', '10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)', NULL, '0.0', NULL),
+(2, 5, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml', '3.0', '50.0', '50 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 1 ml 0,9% NaCl)', NULL, '0.0', NULL),
+(3, 20, '0.5', '1.0', 'Midazolam sirup 1,5 mg/ml', '3.0', '99.9', '100 mcg/ml (originalnega zdravila dexmedetomidin 100 mcg/ml ni potrebno redčiti)', NULL, '0.0', NULL);
 
 --
 -- Indeksi zavrženih tabel
