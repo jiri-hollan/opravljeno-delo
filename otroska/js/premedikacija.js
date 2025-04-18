@@ -1,5 +1,5 @@
 
-function modalna(){
+function otroskaFunction(){
 	   let teza = document. getElementById('teza').value;
 //alert('teza'+teza);
 //document.getElementById('tezaPremedikacijaId').setAttribute("value",teza);
