@@ -85,6 +85,7 @@ public function izracunFunction() {
 	  echo "Midazolam $dozaMg mg to je $dozaMl ml";
 	  echo "<br>";
 	  echo $navodila;
+	  echo"<script>premedikacijaFunction();</script>";
 	//var_dump( $this->vybrano);
 	}else{
 			 

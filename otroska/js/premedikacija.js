@@ -34,3 +34,9 @@ window.onclick = function(event) {
 function posli(){
 	document.getElementById('otroskaFrm').submit();
 }
+
+function premedikacijaFunction(){
+	document.getElementById('premedPredOp').innerText= "tu pride premedikacija";
+	document.getElementById('navodila').innerText= "tu pridejo navodila";
+	alert("premedikacija alert");		
+}
