@@ -41,7 +41,8 @@ function naprejFunction() {
     alert("zdravnik ni prijavljen");
     return false;
   } 
-	 window.open("bolnik.php", "_self"); 
+	 window.open("bolnik.php", "_self");
+	 vpisFunction();
 }
 //______________________________________________________
 function listaZdravnikovFunction(zdravListX) {
