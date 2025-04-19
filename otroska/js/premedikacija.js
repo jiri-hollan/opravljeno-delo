@@ -38,5 +38,16 @@ function posli(){
 function premedikacijaFunction(){
 	document.getElementById('premedPredOp').innerText= "tu pride premedikacija";
 	document.getElementById('navodila').innerText= "tu pridejo navodila";
-	alert("premedikacija alert");		
+	alert("premedikacija alert");
+     document.getElementById("navbar").style.display = "block";
+     document.getElementById("prva").style.display = "none"; 
+     document.getElementById("druga").style.display = "block";
+     document.getElementById("tretja").style.display = "none";
+     document.getElementById("nazaj").style.display = "none";
+     document.getElementById("predogled").style.display = "block";
+     document.getElementById("novB").style.display = "block";
+     document.getElementById("natisni").style.display = "block";
+     document.getElementById("pomoc").style.display = "block";
+     document.getElementById("submitFrm").style.display = "none";
+	 document.getElementById("najdiZapis").style.display = "none";
 }
