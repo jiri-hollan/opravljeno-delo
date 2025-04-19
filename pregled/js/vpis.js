@@ -1,9 +1,6 @@
 
-
-
 function vpisFunction() {
-
-	   document.getElementById("navbar").style.display = "block";
+	 document.getElementById("navbar").style.display = "block";
      document.getElementById("prva").style.display = "block"; 
      document.getElementById("druga").style.display = "none";
      document.getElementById("tretja").style.display = "none";
