@@ -1,3 +1,4 @@
+<script src="../otroska/js/premedikacija.js?'.time().'"></script>
 <?php
 require_once '../skupne/database.php';
 require_once 'sabloni/formaOtroskaPremedikacija.php';
@@ -82,9 +83,9 @@ public function izracunFunction() {
 	 $dozaMg=$this->vybrano[0]["midazolamDoza"]*$this->teza;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['midazolamKoncentracija'],1);
 	  $navodila=$this->vybrano[0]["midazolamNavodila"];
-	  echo "Midazolam $dozaMg mg to je $dozaMl ml";
+	 /* echo "Midazolam $dozaMg mg to je $dozaMl ml";
 	  echo "<br>";
-	  echo $navodila;
+	  echo $navodila;*/
 	  echo"<script>premedikacijaFunction();</script>";
 	//var_dump( $this->vybrano);
 	}else{

@@ -1,6 +1,6 @@
 
 <div id='doziranje'  class='modal'>
-<form id='otroskaFrm' class="modal-content animate" name='otroskaForma' method='post' action='bolnik.php' autocomplete='off'> 
+<form id='otroskaFrm' class="modal-content animate" name='otroskaForma' method='post' action='../otroska/otroskaPremedikacija.php' autocomplete='off'> 
   <div class="container">
   	  <button type="button" onclick="document.getElementById('doziranje').style.display='none'"class="close" title="zapri">&times;</button>
       <h3>Otroška premedikacija</h3>
