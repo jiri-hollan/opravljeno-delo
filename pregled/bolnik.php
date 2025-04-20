@@ -16,4 +16,5 @@ $uname = "<div id='stanje' class='stanjeNe'>Niste prijavljeni</div>";
 
 }
 echo"$uname";
+
 ?>

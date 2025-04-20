@@ -8,6 +8,7 @@ echo'
 <meta charset="UTF-8">
 <title>Novi bolnik</title>
 <link rel="shortcut icon" href="../favicon.ico?'.time().'">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="js/vpis.js?'.time().'"></script>
 <script src="js/report.js?'.time().'"></script>
 <script src="js/prenos.js?'.time().'"></script>

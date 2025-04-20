@@ -36,10 +36,11 @@ function posli(){
 }
 
 function premedikacijaFunction(premedikacija, navodila){
-	document.getElementById('premedPredOp').innerText= premedikacija;
-	document.getElementById('navodila').innerText= navodila;
-	alert("premedikacija alert");
-     document.getElementById("navbar").style.display = "block";
+	document.getElementById('premedPredOp').value= premedikacija;
+	document.getElementById('navodila').value= navodila;
+	alert('premedikacija');
+	console.log(document.getElementById('navodila').value);
+    // document.getElementById("navbar").style.display = "block";
      document.getElementById("prva").style.display = "none"; 
      document.getElementById("druga").style.display = "block";
      document.getElementById("tretja").style.display = "none";
@@ -50,4 +51,31 @@ function premedikacijaFunction(premedikacija, navodila){
      document.getElementById("pomoc").style.display = "block";
      document.getElementById("submitFrm").style.display = "none";
 	 document.getElementById("najdiZapis").style.display = "none";
+}
+
+
+function ajax_get_premedikacija(elem) {
+	$elem = $(elem);
+	var ucinkovina = $elem.val();
+	var teza = $("#teza").val();
+	
+	$.ajax({
+		url: "/delo/otroska/otroskaPremedikacija.php",
+		data: {
+			"ucinkovina": ucinkovina,
+			"teza": teza
+		},
+		method: "GET",
+		dataType: "json",
+		cache: false,
+
+	})
+	.done(function( rsp ) {
+		if (rsp.error !== undefined && rsp.error.length !== 0) {
+			alert(rsp.error);
+		} else {
+			$("#navodila").val(rsp.navodila);
+		}
+		
+	});
 }

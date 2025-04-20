@@ -1,32 +1,36 @@
 <?php
+	
 require_once '../skupne/database.php';
-require_once 'sabloni/formaOtroskaPremedikacija.php';
-if(isset($_POST['ucinkovina'])&&isset($_POST['teza'])){
-	$ucinkovina=$_POST['ucinkovina'];
-	$teza=$_POST['teza'];
+
+if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])){
+	$ucinkovina=$_GET['ucinkovina'];
+	$teza=$_GET['teza'];
 	$poradi='teza';
 	/*	echo 'Teža= '.$teza;
-		echo'<br>';
+		echo'<br>';S
 		echo 'Učinkovina= '.$ucinkovina;	*/	
     //$prem=new Premedikace($ucinkovina, $teza);
 	//echo'<br>'. $prem->get_name();
 	switch ($ucinkovina) {
-  case 'midazolam':
-   $midazolam = new Midazolam($teza, $poradi);
-   $midazolam->izracunFunction();
-    break;
-  case 'dexmedetomidin':
-   $dexmedetomidin=new dexmedetomidin($teza, $poradi);
-   $dexmedetomidin->izracunFunction();
-    break;
-  case 'ketamin':
-   $ketamin=new ketamin($teza, $poradi);
-   $ketamin->izracunFunction();
-    break;
-  default:
-    echo "ni prepoznalo učinkovine";
+	  case 'midazolam':
+	   $midazolam = new Midazolam($teza, $poradi);
+	   $midazolam->izracunFunction();
+		die();
+		break;
+	  case 'dexmedetomidin':
+	   $dexmedetomidin=new dexmedetomidin($teza, $poradi);
+	   $dexmedetomidin->izracunFunction();
+		break;
+	  case 'ketamin':
+	   $ketamin=new ketamin($teza, $poradi);
+	   $ketamin->izracunFunction();
+		break;
+	  default:
+		echo "ni prepoznalo učinkovine";
+	} 
+} else {
+	require_once 'sabloni/formaOtroskaPremedikacija.php';
 }
-}//else{echo'Ni določena učinkovina ali teža';}
 //poskusni class Premedikace:
 class Premedikace {
 	public $ucinkovina = '';
@@ -83,10 +87,10 @@ public function izracunFunction() {
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['midazolamKoncentracija'],1);
 	  $premedikacija = "Midazolam $dozaMg mg to je $dozaMl ml";	  
 	  $navodila=$this->vybrano[0]["midazolamNavodila"];
-	  echo $premedikacija;
-	  echo "<br>";
-	  echo $navodila;
-	  echo"<script>premedikacijaFunction('$premedikacija', '$navodila');</script>";
+	  echo json_encode([
+			"premedikacija" => $premedikacija,
+			"navodila" => $navodila
+		]);
 	//var_dump( $this->vybrano);
 	}else{
 			 
@@ -129,9 +133,12 @@ public function izracunFunction() {
 	 $dozaMg=$this->vybrano[0]["dexmedetomidinDoza"]*$this->teza;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['dexmedetomidinKoncentracija'],1);
 	  $navodila=$this->vybrano[0]["dexmedetomidinNavodila"];
-	  echo "dexmedetomidin $dozaMg mg to je $dozaMl ml";
-	  echo "<br>";
-	  echo $navodila;
+	  $premedikacija = "Midazolam $dozaMg mg to je $dozaMl ml";	  
+	
+	  echo json_encode([
+			"premedikacija" => $premedikacija,
+			"navodila" => $navodila
+		]);
 	//var_dump( $this->vybrano);
 	}else{
 			 
@@ -159,12 +166,17 @@ public function izracunFunction() {
 	 $dozaMg=$this->vybrano[0]["ketaminDoza"]*$this->teza;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['ketaminKoncentracija'],1);
 	  $navodila=$this->vybrano[0]["ketaminNavodila"];
-	  echo "ketamin $dozaMg mg to je $dozaMl ml";
-	  echo "<br>";
-	  echo $navodila;
-	//var_dump( $this->vybrano);
-	}else{
-	echo "premedikacija z ketaminom še ni določena";		 
+
+	  $premedikacija = "Ketamin $dozaMg mg to je $dozaMl ml";	  
+	
+	  echo json_encode([
+			"premedikacija" => $premedikacija,
+			"navodila" => $navodila
+		]);
+	} else {
+		echo json_encode([
+			"error" => "Premedikacija še ni določena"
+		]);
 	}
   } //od izracunFunction
 }//od class Ketamin
@@ -185,6 +197,5 @@ class TableRows extends RecursiveIteratorIterator {
     }//od endChildren
 }// od class TableRows
 //CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
 
 ?>
