@@ -175,7 +175,7 @@ public function izracunFunction() {
 		]);
 	} else {
 		echo json_encode([
-			"error" => "Premedikacija še ni določena"
+			"error" => "Premedikacija s ketaminom še ni določena"
 		]);
 	}
   } //od izracunFunction
