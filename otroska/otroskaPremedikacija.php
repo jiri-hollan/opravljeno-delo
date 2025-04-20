@@ -86,7 +86,7 @@ public function izracunFunction() {
 	  echo $premedikacija;
 	  echo "<br>";
 	  echo $navodila;
-	  echo"<script>premedikacijaFunction();</script>";
+	  echo"<script>premedikacijaFunction('$premedikacija', '$navodila');</script>";
 	//var_dump( $this->vybrano);
 	}else{
 			 
