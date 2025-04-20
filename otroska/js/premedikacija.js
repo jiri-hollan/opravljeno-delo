@@ -35,9 +35,9 @@ function posli(){
 	document.getElementById('otroskaFrm').submit();
 }
 
-function premedikacijaFunction(){
-	document.getElementById('premedPredOp').innerText= "tu pride premedikacija";
-	document.getElementById('navodila').innerText= "tu pridejo navodila";
+function premedikacijaFunction(premedikacija, navodila){
+	document.getElementById('premedPredOp').innerText= premedikacija;
+	document.getElementById('navodila').innerText= navodila;
 	alert("premedikacija alert");
      document.getElementById("navbar").style.display = "block";
      document.getElementById("prva").style.display = "none"; 
