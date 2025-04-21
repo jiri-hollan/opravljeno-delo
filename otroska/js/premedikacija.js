@@ -75,6 +75,7 @@ function ajax_get_premedikacija(elem) {
 			alert(rsp.error);
 		} else {
 			$("#navodila").val(rsp.navodila);
+			$("#premedPredOp").val(rsp.premedikacija);
 		}
 		
 	});

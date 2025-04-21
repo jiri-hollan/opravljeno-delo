@@ -133,7 +133,7 @@ public function izracunFunction() {
 	 $dozaMg=$this->vybrano[0]["dexmedetomidinDoza"]*$this->teza;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['dexmedetomidinKoncentracija'],1);
 	  $navodila=$this->vybrano[0]["dexmedetomidinNavodila"];
-	  $premedikacija = "Midazolam $dozaMg mg to je $dozaMl ml";	  
+	  $premedikacija = "Dexmedetomidin $dozaMg mg to je $dozaMl ml";	  
 	
 	  echo json_encode([
 			"premedikacija" => $premedikacija,
