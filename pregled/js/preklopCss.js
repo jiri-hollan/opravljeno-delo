@@ -37,7 +37,7 @@ stevMaticna = document.getElementById("stevMaticna").value;
   document.getElementById("imeZdravnika").value = localStorage.getItem("imeZdravnika");
   document.getElementById("bolnikId").value = sessionStorage.getItem("bolnikId");
 document.getElementsByTagName('title')[0].innerHTML= priimek + " " + ime;
-
+otroskaVklopFunction();
      document.getElementById("navbar").style.display = "block";
      document.getElementById("prva").style.display = "none"; 
      document.getElementById("druga").style.display = "block";

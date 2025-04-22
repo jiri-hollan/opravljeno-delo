@@ -27,7 +27,7 @@
     <input id="datPregleda" type = "hidden" name = "datPregleda" readonly  >
     <br>
     <br>  
-    <button class="naprej" id="naprej" ime = naprej  onclick = "return osebniFunction()"><b>Naprej</b></button> 
+    <button class="naprej" id="naprej" ime = naprej  onclick = "return osebniFunction()" onclick = "	 otroskaVklopFunction()"><b>Naprej</b></button> 
  </fieldset>  
 <!-- ______________________________________________________________________________________
 
