@@ -2,6 +2,8 @@
  var a;
 //alert('report: '+sessionStorage.getItem("bolnikId"));
  function reportFunction(a){
+let modal = document.getElementById('doziranje');
+    modal.style.display = "none";
  formFunction(); 
  var x;	 
  var x1 = document.getElementById("frm")["oddelek"].value;
