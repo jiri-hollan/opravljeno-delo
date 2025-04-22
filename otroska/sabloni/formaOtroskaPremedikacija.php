@@ -20,10 +20,5 @@
   </div><!--container-->
 </form>
 
-<form id='ucinkovinaFrm' class="modal-content animate" name='ucinkovinaForma' method='post' action='bolnik.php' autocomplete='off'>
-  <div class="container">
-  <p>premedikacija</p>
 
-  </div><!--container-->
-</form>
 </div>
