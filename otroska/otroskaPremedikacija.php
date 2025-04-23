@@ -150,9 +150,10 @@ public function izracunFunction() {
 	if(count($this->vybrano)>0&& $this->vybrano[0]['ketaminKoncentracija']>0){
 	 $dozaMg=$this->vybrano[0]["ketaminDoza"]*$this->teza;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['ketaminKoncentracija'],1);
-	  $navodila=$this->vybrano[0]["ketaminNavodila"];
-
 	  $premedikacija = "Ketamin $dozaMg mg to je $dozaMl ml";	  
+	  $navodila=$this->vybrano[0]["ketaminNavodila"];
+	  $navodila= "$navodila oralno"; 
+	  
 	
 	  echo json_encode([
 			"premedikacija" => $premedikacija,
