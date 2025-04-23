@@ -172,7 +172,7 @@
 	<label for="premedVecer">Zvečer:..<textarea  id="premedVecer" class="premedikacija"  name="premedVecer" ></textarea></label>  
     <br>
 	<label for="premedPredOp">Pred op.:<textarea id="premedPredOp" class="premedikacija"  name="premedPredOp" ></textarea></label> <br> 
-    <textarea id="navodila" class="mikro"  name="navodila" placeholder="Navodila" rows="3" onchange="alert('prepis')" oninput="alert('prepis')"  onpropertychange="alert('prepis')" ></textarea>
+    <textarea id="navodila" class="mikro"  name="navodila" placeholder="Navodila" rows="3"  ></textarea>
    </div>
   </fieldset> 	
  </fieldset>	
