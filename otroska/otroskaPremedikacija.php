@@ -72,14 +72,6 @@ public function __construct( $teza, $poradi) {
 
 		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
-//echo $this->vybrano[1];
-//echo var_dump($this->vybrano);
-//  echo "<br>";
-//echo count($this->vybrano);
-//$dolzina=count($this->vybrano);
-//var_dump( $this->vybrano[0]);
-//echo "<br>";
- 
     }//od construct
 public function izracunFunction() {
 	if(count($this->vybrano)>0){
@@ -96,23 +88,9 @@ public function izracunFunction() {
 			 
 	}
   } //od izracunFunction
-	
-  public function tabulkaFunction() {
-	 if(count($this->vybrano)>0){
-//echo'Število izbranih zapisov= '. count($this->vybrano);	  
-  echo "<table id='osebe' style='border: solid 1px black;'>";
-/* nadpisi se morajo ujemati s prikazanimi stlpci v vyberFunction*/
- echo"<tr class='glavaTable'><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th></tr>";
-    foreach(new TableRows(new RecursiveArrayIterator($this->vybrano)) as $k=>$v) {
-        echo $v;
-   }//od foreach
-  }//od if(cout) 
-  else{
-  echo'v bazi ni odgovarajočih zapisov';  
-  }  
-  }	
-
 }//od class Midazolam
+/*...........................................................................*/
+
  class dexmedetomidin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
@@ -145,6 +123,7 @@ public function izracunFunction() {
 	}
   } //od izracunFunction
 }//od class dexmedetomidin
+/*............................................................................*/
 
  class Ketamin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
@@ -180,22 +159,4 @@ public function izracunFunction() {
 	}
   } //od izracunFunction
 }//od class Ketamin
-
-//CCCCCCCCCCCCCCC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-class TableRows extends RecursiveIteratorIterator {
-    function __construct($it) {
-        parent::__construct($it, self::LEAVES_ONLY);
-    }
-    function current() { 
-		 return "<td  >"  . parent::current() . "</td>";
-    }
-    function beginChildren() {
-        echo "<tr>";
-    }
-    function endChildren() {
-        echo "<td onclick=" . '"izberiStevilkoZdravnikaFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
-    }//od endChildren
-}// od class TableRows
-//CCCCCCCCCCCCCCC KONEC CLASS TABLE ROWS CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
 ?>
