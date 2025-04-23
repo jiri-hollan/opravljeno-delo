@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 23. apr 2025 ob 10.43
--- Različica strežnika: 10.4.19-MariaDB
--- Različica PHP: 8.0.7
+-- Čas nastanka: 23. apr 2025 ob 21.40
+-- Različica strežnika: 10.4.17-MariaDB
+-- Različica PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,9 +46,9 @@ CREATE TABLE `premedikacijatbl` (
 --
 
 INSERT INTO `premedikacijatbl` (`id`, `teza`, `midazolamDoza`, `midazolamKoncentracija`, `midazolamNavodila`, `dexmedetomidinDoza`, `dexmedetomidinKoncentracija`, `dexmedetomidinNavodila`, `ketaminDoza`, `ketaminKoncentracija`, `ketaminNavodila`) VALUES
-(1, 1, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml\r\n', '3.0', '10.0', '10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)', NULL, '0.0', NULL),
-(2, 5, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml', '3.0', '50.0', '50 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 1 ml 0,9% NaCl)', NULL, '0.0', NULL),
-(3, 20, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml', '3.0', '99.9', '100 mcg/ml (originalnega zdravila dexmedetomidin 100 mcg/ml ni potrebno redčiti)', NULL, '0.0', NULL);
+(1, 1, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml', '3.0', '10.0', '10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)', '5.0', '25.0', 'raztopina za injekcije 25 mg/ml'),
+(2, 5, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml', '3.0', '50.0', '50 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 1 ml 0,9% NaCl)', '5.0', '25.0', 'raztopina za injekcije 25mg/ml'),
+(3, 20, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml', '3.0', '99.9', '100 mcg/ml (originalnega zdravila dexmedetomidin 100 mcg/ml ni potrebno redčiti)', '5.0', '25.0', 'raztopina za injekcije 25mg/ml');
 
 --
 -- Indeksi zavrženih tabel
