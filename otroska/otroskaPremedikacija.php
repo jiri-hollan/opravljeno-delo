@@ -21,10 +21,12 @@ if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])&&isset($_GET['sprememba'])){
 	  case 'dexmedetomidin':
 	   $dexmedetomidin=new dexmedetomidin($teza, $sprememba, $poradi);
 	   $dexmedetomidin->izracunFunction();
+		die();
 		break;
 	  case 'ketamin':
 	   $ketamin=new ketamin($teza, $sprememba, $poradi);
 	   $ketamin->izracunFunction();
+		die();
 		break;
 	  default:
 		echo "ni prepoznalo učinkovine";
