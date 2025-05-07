@@ -5,6 +5,7 @@ require_once '../skupne/database.php';
 if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])){
 	$ucinkovina=$_GET['ucinkovina'];
 	$teza=$_GET['teza'];
+	$sprememba=$_GET['sprememba'];	
 	$poradi='teza';
 	/*	echo 'Teža= '.$teza;
 		echo'<br>';S
@@ -13,16 +14,16 @@ if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])){
 	//echo'<br>'. $prem->get_name();
 	switch ($ucinkovina) {
 	  case 'midazolam':
-	   $midazolam = new Midazolam($teza, $poradi);
+	   $midazolam = new Midazolam($teza, $sprememba, $poradi);
 	   $midazolam->izracunFunction();
 		die();
 		break;
 	  case 'dexmedetomidin':
-	   $dexmedetomidin=new dexmedetomidin($teza, $poradi);
+	   $dexmedetomidin=new dexmedetomidin($teza, $sprememba, $poradi);
 	   $dexmedetomidin->izracunFunction();
 		break;
 	  case 'ketamin':
-	   $ketamin=new ketamin($teza, $poradi);
+	   $ketamin=new ketamin($teza, $sprememba, $poradi);
 	   $ketamin->izracunFunction();
 		break;
 	  default:
