@@ -35,11 +35,13 @@ if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])){
 //poskusni class Premedikace:
 class Premedikace {
 	public $ucinkovina = '';
-	public $teza = '';	
-	public Function __construct($ucinkovina, $teza){
+	public $teza = '';
+	public $sprememba = '';
+	public Function __construct($ucinkovina, $teza, $sprememba){
 	$podminka = [];	
 	$this->ucinkovina = $ucinkovina;
 	$this->teza = $teza;
+	$this->sprememba = $sprememba;
 	$podminka["teza>="] = $this_teza;
 	echo 'Teža= '.$this->teza ;
 	echo'<br>';
@@ -68,8 +70,8 @@ public function __construct( $teza, $poradi) {
 }//od class VyberTezo
 //CCCCCCCCCCCCC KONEC  CLASS VyberTezo CCCCCCCCCCCCCCCCCCCCCCCCCCC
  class Midazolam extends VyberTezo {
-	    public function __construct( $teza, $poradi) {
-        parent::__construct( $teza, $poradi);
+	    public function __construct( $teza, $sprememba, $poradi) {
+        parent::__construct( $teza, $sprememba, $poradi);
 
 		$stolpci=["id", "teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
@@ -94,8 +96,8 @@ public function izracunFunction() {
 /*...........................................................................*/
 
  class dexmedetomidin extends VyberTezo {
-	 	     public function __construct( $teza, $poradi) {
-        parent::__construct( $teza, $poradi);
+	 	     public function __construct( $teza, $sprememba, $poradi) {
+        parent::__construct( $teza, $sprememba, $poradi);
 
 		$stolpci=["id", "teza", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
@@ -133,8 +135,8 @@ public function izracunFunction() {
 /*............................................................................*/
 
  class Ketamin extends VyberTezo {
-	 	     public function __construct( $teza, $poradi) {
-        parent::__construct( $teza, $poradi);
+	 	     public function __construct( $teza, $sprememba, $poradi) {
+        parent::__construct( $teza, $sprememba, $poradi);
 
 		$stolpci=["id", "teza", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
