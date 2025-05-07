@@ -13,7 +13,7 @@
       <!--<label for='tezaPremedikacijaId'><b>Teža je hidden</b></label><br>-->
       <input id='tezaPremedikacijaId' class='udaje' type = 'hidden' name='teza' value='1' hidden readonly>
 	  <br>
-	  <label for="sprememba">Sprememba doze:</label>
+	  <label for="sprememba">Sprememba doze: <span id="faktorId"></span></label>
 	  <input type="range" id="spremembaId" name="vol" min="0.5" max="2" step="0.1" value="1">
       <!--<button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>-->
       <div class="clearfix">
@@ -21,6 +21,13 @@
       </div>
   </div><!--container-->
 </form>
-
-
 </div>
+<script>
+var slider = document.getElementById("spremembaId");
+var output = document.getElementById("faktorId");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
