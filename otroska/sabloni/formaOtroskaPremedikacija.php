@@ -13,11 +13,11 @@
       <!--<label for='tezaPremedikacijaId'><b>Teža je hidden</b></label><br>-->
       <input id='tezaPremedikacijaId' class='udaje' type = 'hidden' name='teza' value='1' hidden readonly>
 	  <br>
-	  <label for="sprememba">Sprememba doze: <span id="faktorId"></span></label>
-	  <input type="range" id="sprememba" name="sprememba" min="0.5" max="2" step="0.1" value="1">
-      <!--<button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>-->
-      <div class="clearfix">
-       <!-- <button type="button" onclick="document.getElementById('doziranje').style.display='none'" class="cancelbtn">zapri</button>-->
+	  <label for='sprememba'>Sprememba doze: <span id='faktorId'></span></label>
+	  <input type='range' id='sprememba' name='sprememba' min='0.5' max='2' step='0.1' value='1'>
+      <!--<button type='submit'  class='potrdiBtn' name='submit'>potrdi</button>-->
+      <div class='clearfix'>
+       <!-- <button type='button' onclick='document.getElementById('doziranje').style.display='none'' class='cancelbtn'>zapri</button>-->
       </div>
   </div><!--container-->
 </form>
