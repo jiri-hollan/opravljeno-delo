@@ -2,7 +2,7 @@
 	
 require_once '../skupne/database.php';
 
-if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])){
+if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])&&isset($_GET['sprememba'])){
 	$ucinkovina=$_GET['ucinkovina'];
 	$teza=$_GET['teza'];
 	$sprememba=$_GET['sprememba'];	
@@ -57,7 +57,7 @@ abstract class VyberTezo {
 public $tabulka;
 public $teza;
 public $poradi;
-public function __construct( $teza, $poradi) {
+public function __construct( $teza,$sprememba, $poradi) {
 	    $this->tabulka="premedikacijaTbl";
 		$this->teza = $teza;
 		$this->poradi = $poradi;	
@@ -78,7 +78,7 @@ public function __construct( $teza, $poradi) {
     }//od construct
 public function izracunFunction() {
 	if(count($this->vybrano)>0){
-	 $dozaMg=$this->vybrano[0]["midazolamDoza"]*$this->teza;
+	 $dozaMg=$this->vybrano[0]["midazolamDoza"]*$this->teza*$this->sprememba;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['midazolamKoncentracija'],1);
 	  $premedikacija = "Midazolam $dozaMg mg to je $dozaMl ml";	  
 	  $navodila=$this->vybrano[0]["midazolamNavodila"];
