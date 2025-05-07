@@ -2,9 +2,9 @@
 	
 require_once '../skupne/database.php';
 
-if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])){
+if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])&&isset($_GET['sprememba'])){
 	$ucinkovina=$_GET['ucinkovina'];
-	$teza=$_GET['teza'];
+	$teza=$_GET['teza']*$_GET['sprememba'];
 	$poradi='teza';
 	/*	echo 'Teža= '.$teza;
 		echo'<br>';S
