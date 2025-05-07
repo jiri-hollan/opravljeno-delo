@@ -6,6 +6,7 @@ if(isset($_GET['ucinkovina'])&&isset($_GET['teza'])&&isset($_GET['sprememba'])){
 	$ucinkovina=$_GET['ucinkovina'];
 	$teza=$_GET['teza'];
 	$sprememba=$_GET['sprememba'];	
+	$teza=$teza*$sprememba;
 	$poradi='teza';
 	/*	echo 'Teža= '.$teza;
 		echo'<br>';S
@@ -48,6 +49,8 @@ class Premedikace {
 	echo 'Teža= '.$this->teza ;
 	echo'<br>';
 	echo 'Učinkovina= '.$this->ucinkovina;	
+	echo'<br>';
+	echo 'Sprememba= '.$this->sprememba;		
 	}
 	
 	function get_name() {
@@ -80,7 +83,7 @@ public function __construct( $teza,$sprememba, $poradi) {
     }//od construct
 public function izracunFunction() {
 	if(count($this->vybrano)>0){
-	 $dozaMg=$this->vybrano[0]["midazolamDoza"]*$this->teza*$this->sprememba;
+	 $dozaMg=$this->vybrano[0]["midazolamDoza"]*$this->teza;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['midazolamKoncentracija'],1);
 	  $premedikacija = "Midazolam $dozaMg mg to je $dozaMl ml";	  
 	  $navodila=$this->vybrano[0]["midazolamNavodila"];
