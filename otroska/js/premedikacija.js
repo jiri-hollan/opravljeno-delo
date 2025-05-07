@@ -58,12 +58,13 @@ function ajax_get_premedikacija(elem) {
 	$elem = $(elem);
 	var ucinkovina = $elem.val();
 	var teza = $("#teza").val();
-	
+	var sprememba = $("#sprememba").val();	
 	$.ajax({
 		url: "/delo/otroska/otroskaPremedikacija.php",
 		data: {
 			"ucinkovina": ucinkovina,
-			"teza": teza
+			"teza": teza,
+			"sprememba": sprememba
 		},
 		method: "GET",
 		dataType: "json",
