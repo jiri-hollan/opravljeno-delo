@@ -87,7 +87,7 @@ input.udaje {
   right: 0;
   bottom: 5px;
   width: 100%; /*  width */
-  height: 30%; /*  height */
+  height: 35%; /*  height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
@@ -156,4 +156,8 @@ hr {
   .cancelbtn, .potrdiBtn {
      width: 100%;
   }
+}
+
+#sprememba {
+  width: 90%;
 }
