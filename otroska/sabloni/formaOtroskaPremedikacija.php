@@ -14,7 +14,13 @@
       <input id='tezaPremedikacijaId' class='udaje' type = 'hidden' name='teza' value='1' hidden readonly>
 	  <br>
 	  <label for="sprememba">Sprememba doze: <span id="faktorId"></span></label>
-	  <input type="range" id="sprememba" name="sprememba" min="0.5" max="2" step="0.1" value="1">
+	  <input type="range" id="sprememba" name="sprememba" min="0.5" max="2" step="0.1" value="1" list="tickmarks">
+	  <datalist id="tickmarks">
+  <option value="0.5" label="0,5"></option>
+  <option value="1" label="1"></option>
+  <option value="1.5" label="1,5"></option>
+  <option value="2" label="2"></option>
+</datalist>
       <!--<button type='submit'  class="potrdiBtn" name='submit'>potrdi</button>-->
       <div class="clearfix">
        <!-- <button type="button" onclick="document.getElementById('doziranje').style.display='none'" class="cancelbtn">zapri</button>-->
