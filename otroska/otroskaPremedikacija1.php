@@ -70,7 +70,7 @@ public function __construct( $teza, $poradi) {
  class Midazolam extends VyberTezo {
 	    public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
-
+        $this->podminka+= ["ucinkovina=" => "midazolam"];
 		$stolpci=["id", "ucinkovina", "teza", "doza", "koncentracija", "navodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
     }//od construct
@@ -93,10 +93,10 @@ public function izracunFunction() {
 }//od class Midazolam
 /*...........................................................................*/
 
- class dexmedetomidin extends VyberTezo {
+ class Dexmedetomidin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
-
+        $this->podminka+= ["ucinkovina=" => "dexmedetomidin"];
 		$stolpci=["id", "ucinkovina", "teza", "doza", "koncentracija", "navodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
 //echo $this->vybrano[1];
@@ -135,7 +135,7 @@ public function izracunFunction() {
  class Ketamin extends VyberTezo {
 	 	     public function __construct( $teza, $poradi) {
         parent::__construct( $teza, $poradi);
-
+        $this->podminka+= ["ucinkovina=" => "ketamin"];
 		$stolpci=["id", "ucinkovina", "teza", "doza", "koncentracija", "navodila"];
         $this->vybrano=$this->vyber->otroska($this->tabulka,$stolpci, $this->podminka, $this->poradi );
 //echo $this->vybrano[1];
