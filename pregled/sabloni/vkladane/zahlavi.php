@@ -20,7 +20,7 @@ echo'
 <script src="js/obnovaForme.js?'.time().'"></script>
 <script src="js/vypocty.js?'.time().'"></script>
 <script src="js/sklepi.js?'.time().'"></script>
-<script src="../otroska/js/premedikacija.js?'.time().'"></script>
+<script src="../otroska/js/premedikacija1.js?'.time().'"></script>
 <link rel="stylesheet" type="text/css" href="css/novPolnjenje.css?'.time().'">
 <link rel="stylesheet" type="text/css" href="css/premedikacijaTisk.css?'.time().'">
 <link rel="stylesheet" type="text/css" href="css/premedikacijaPrenos.css?'.time().'">

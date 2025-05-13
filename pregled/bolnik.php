@@ -6,7 +6,7 @@ require_once('sklepVsi.php');
 require_once('../skupne/database.php');
 require_once ('sabloni/novPolnjenje.php');
 require_once('../otroska/sabloni/formaOtroskaPremedikacija.php');
-require_once('../otroska/otroskaPremedikacija.php');
+require_once('../otroska/otroskaPremedikacija1.php');
 require_once('sabloni/vkladane/zapati.php');
 
 if(!empty($_SESSION["uname"])){
