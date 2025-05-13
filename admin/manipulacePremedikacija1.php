@@ -24,40 +24,30 @@ switch ($akce) {
     vyberFunction($podminka=NULL);
     break;
 case "vloz":
+    $ucinkovina = test_input($_POST["ucinkovina"]); 
     $teza = test_input($_POST["teza"]); 
-    $midazolamDoza = test_input($_POST["midazolamDoza"]);
-    $midazolamKoncentracija = test_input($_POST["midazolamKoncentracija"]);
-    $midazolamNavodila = test_input($_POST["midazolamNavodila"]);
-    $dexmedetomidinDoza = test_input($_POST["dexmedetomidinDoza"]);
-    $dexmedetomidinKoncentracija = test_input($_POST["dexmedetomidinKoncentracija"]);
-    $dexmedetomidinNavodila = test_input($_POST["dexmedetomidinNavodila"]);
-    $ketaminDoza = test_input($_POST["ketaminDoza"]);
-    $ketaminKoncentracija = test_input($_POST["ketaminKoncentracija"]);
-    $ketaminNavodila = test_input($_POST["ketaminNavodila"]);
+    $doza = test_input($_POST["doza"]);
+    $koncentracija = test_input($_POST["koncentracija"]);
+    $navodila = test_input($_POST["navodila"]);
+    
 /*
-	"teza", "midazolamDoza", "midazolamKoncentracija", "midazolamNavodila", "dexmedetomidinDoza", "dexmedetomidinKoncentracija", "dexmedetomidinNavodila", "ketaminDoza", "ketaminKoncentracija", "ketaminNavodila"
-	
+	"ucinkovina", "teza", "doza", "koncentracija", "navodila"
 	*/
  
-    $data= array("teza"=>$teza, "midazolamDoza"=>$midazolamDoza, "midazolamKoncentracija"=>$midazolamKoncentracija, "midazolamNavodila"=>$midazolamNavodila, "dexmedetomidinDoza"=>$dexmedetomidinDoza, "dexmedetomidinKoncentracija"=>$dexmedetomidinKoncentracija, "dexmedetomidinNavodila"=>$dexmedetomidinNavodila, "ketaminDoza"=>$ketaminDoza, "ketaminKoncentracija"=>$ketaminKoncentracija, "ketaminNavodila"=>$ketaminNavodila);
+    $data= array("ucinkovina"=>$ucinkovina, "teza"=>$teza, "doza"=>$doza, "koncentracija"=>$koncentracija, "navodila"=>$navodila);
     vlozFunction($data);
     break;
 case "uredi":
     $tabulka="premedikacija1Tbl";
     $id=test_input($_POST["id"]);
+	$ucinkovina = test_input($_POST["ucinkovina"]); 	
 	$teza = test_input($_POST["teza"]); 	
-    $midazolamDoza = test_input($_POST["midazolamDoza"]);
-    $midazolamKoncentracija = test_input($_POST["midazolamKoncentracija"]);
-    $midazolamNavodila = test_input($_POST["midazolamNavodila"]);
-    $dexmedetomidinDoza = test_input($_POST["dexmedetomidinDoza"]);
-    $dexmedetomidinKoncentracija = test_input($_POST["dexmedetomidinKoncentracija"]);
-    $dexmedetomidinNavodila = test_input($_POST["dexmedetomidinNavodila"]);
-    $ketaminDoza = test_input($_POST["ketaminDoza"]);
-    $ketaminKoncentracija = test_input($_POST["ketaminKoncentracija"]);
-    $ketaminNavodila = test_input($_POST["ketaminNavodila"]);
+    $doza = test_input($_POST["doza"]);
+    $koncentracija = test_input($_POST["koncentracija"]);
+    $navodila = test_input($_POST["navodila"]);
 
 	$podminka = array("id"=>$id);
-     $data= array("teza"=>$teza, "midazolamDoza"=>$midazolamDoza, "midazolamKoncentracija"=>$midazolamKoncentracija, "midazolamNavodila"=>$midazolamNavodila, "dexmedetomidinDoza"=>$dexmedetomidinDoza, "dexmedetomidinKoncentracija"=>$dexmedetomidinKoncentracija, "dexmedetomidinNavodila"=>$dexmedetomidinNavodila, "ketaminDoza"=>$ketaminDoza, "ketaminKoncentracija"=>$ketaminKoncentracija, "ketaminNavodila"=>$ketaminNavodila);
+     $data= array("ucinkovina"=>$ucinkovina, "teza"=>$teza, "doza"=>$doza, "koncentracija"=>$koncentracija, "navodila"=>$navodila);
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
     break;
@@ -102,7 +92,7 @@ function vyberFunction($podminka){
 if(count($vybrano)>0){
  echo "<table id='osebe' style='border: solid 1px black;'>";
  
- echo "<tr><th>id</th><th>teza</th><th>midazolamDoza</th><th>midazolamKoncentracija</th><th>midazolamNavodila</th><th>dexmedetomidinDoza</th><th>dexmedetomidinKoncentracija</th><th>dexmedetomidinNavodila</th><th>ketaminDoza</th><th>ketaminKoncentracija</th><th>ketaminNavodila</th></tr>";
+ echo "<tr><th>id</th><th>ucinkovina</th><th>teza</th><th>doza</th><th>koncentracija</th><th>navodila</th></tr>";
 
  class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
