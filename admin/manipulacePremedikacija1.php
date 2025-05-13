@@ -1,7 +1,7 @@
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
-<h2>Otroška premedikacija1</h2>
+<h2>Otroška premedikacija</h2>
 <?php 
 require_once 'sabloni/izbira.php';
 /* V tom failu so funkcije za spreminjanje tabele databaze*/

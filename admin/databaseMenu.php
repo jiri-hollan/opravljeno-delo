@@ -31,7 +31,7 @@ echo '
 <li><a href="../admin/manipulaceSklepi.php?nazaj='.$nazaj.'">sklepi</a></li>
 <li><a href="../admin/manipulaceBolnisnice.php?nazaj='.$nazaj.'">bolnišnice</a></li>
 <li><a href="../admin/manipulaceOpravila.php?nazaj='.$nazaj.'">opravila</a></li>
-<li><a href="../admin/manipulacePremedikacija1.php?nazaj='.$nazaj.'">premedikacija1</a></li><br>
+<li><a href="../admin/manipulacePremedikacija1.php?nazaj='.$nazaj.'">premedikacija</a></li><br>
 </ul>
 <a href="../admin1/vertikalMenu.php?nazaj='.$nazaj.'">.</a>
 </div>
