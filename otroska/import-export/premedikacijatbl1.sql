@@ -41,15 +41,15 @@ CREATE TABLE `premedikacija1tbl` (
 --
 
 INSERT INTO `premedikacija1tbl` (`id`, `ucinkovina`, `teza`, `doza`, `koncentracija`, `navodila`) VALUES
-(1,midazolam,1, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml'),
+(1,'midazolam',1, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml'),
 
-(2,dexmedetomidin,1, '3.0', '10.0', , '10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)',),
+(2,'dexmedetomidin',1, '3.0', '10.0', '10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)'),
 
-(3,dexmedetomidin,1, '3.0', '10.0', , '50 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 1 ml 0,9% NaCl)',),
+(3,'dexmedetomidin',1, '3.0', '10.0', '50 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 1 ml 0,9% NaCl)'),
 
-(4,dexmedetomidin,1, '3.0', '10.0', ,  '100 mcg/ml (originalnega zdravila dexmedetomidin 100 mcg/ml ni potrebno redčiti)',),
+(4,'dexmedetomidin',1, '3.0', '10.0', '100 mcg/ml (originalnega zdravila dexmedetomidin 100 mcg/ml ni potrebno redčiti)'),
 
-(5,ketamin,1, '5.0', '25.0', 'raztopina za injekcije 25mg/ml'),
+(5,'ketamin',1, '5.0', '25.0', 'raztopina za injekcije 25mg/ml');
 
 
 --
@@ -70,7 +70,7 @@ ALTER TABLE `premedikacija1tbl`
 -- AUTO_INCREMENT tabele `premedikacija1tbl`
 --
 ALTER TABLE `premedikacija1tbl`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
