@@ -226,7 +226,7 @@ $definice= "
   `teza` int(3) DEFAULT NULL,
   `doza` decimal(3,1) DEFAULT NULL,
   `koncentracija` decimal(3,1) DEFAULT NULL,
-  `navodila` varchar(225) DEFAULT NULL,  
+  `navodila` varchar(225) DEFAULT NULL";  
 $databaseGloboka->naredi('premedikacija1Tbl', $definice);	
 break;
 /*
