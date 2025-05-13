@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `premedikacijatbl`
+-- Struktura tabele `premedikacijaTbl`
 --
 
-CREATE TABLE `premedikacija1tbl` (
+CREATE TABLE `premedikacija1Tbl` (
   `id` int(3) UNSIGNED NOT NULL,
   `ucinkovina` varchar(225) DEFAULT NULL,  
   `teza` int(3) DEFAULT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE `premedikacija1tbl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `premedikacija1tbl`
+-- Odloži podatke za tabelo `premedikacija1Tbl`
 --
 
-INSERT INTO `premedikacija1tbl` (`id`, `ucinkovina`, `teza`, `doza`, `koncentracija`, `navodila`) VALUES
+INSERT INTO `premedikacija1Tbl` (`id`, `ucinkovina`, `teza`, `doza`, `koncentracija`, `navodila`) VALUES
 (1,'midazolam',1, '0.5', '1.5', 'Midazolam sirup 1,5 mg/ml'),
 
 (2,'dexmedetomidin',1, '3.0', '10.0', '10 mcg/ml (1 ml originalnega zdravila dexmedetomidin 100 mcg/ml razredčimo z 9 ml 0,9% NaCl)'),
@@ -57,9 +57,9 @@ INSERT INTO `premedikacija1tbl` (`id`, `ucinkovina`, `teza`, `doza`, `koncentrac
 --
 
 --
--- Indeksi tabele `premedikacija1tbl`
+-- Indeksi tabele `premedikacija1Tbl`
 --
-ALTER TABLE `premedikacija1tbl`
+ALTER TABLE `premedikacija1Tbl`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -67,9 +67,9 @@ ALTER TABLE `premedikacija1tbl`
 --
 
 --
--- AUTO_INCREMENT tabele `premedikacija1tbl`
+-- AUTO_INCREMENT tabele `premedikacija1Tbl`
 --
-ALTER TABLE `premedikacija1tbl`
+ALTER TABLE `premedikacija1Tbl`
   MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
