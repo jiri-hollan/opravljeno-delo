@@ -20,7 +20,6 @@ echo '
 <input type="submit"  name="imeTable" value="opravilaTbl">
 <input type="submit"  name="imeTable" value="sklepiTbl">
 <input type="submit"  name="imeTable" value="bolnisniceTbl">
-<input type="submit"  name="imeTable" value="premedikacijaTbl">
 <input type="submit"  name="imeTable" value="premedikacija1Tbl">
 </form>
 ';
@@ -32,7 +31,6 @@ echo '
 <li><a href="../admin/manipulaceSklepi.php?nazaj='.$nazaj.'">sklepi</a></li>
 <li><a href="../admin/manipulaceBolnisnice.php?nazaj='.$nazaj.'">bolnišnice</a></li>
 <li><a href="../admin/manipulaceOpravila.php?nazaj='.$nazaj.'">opravila</a></li>
-<li><a href="../admin/manipulacePremedikacija.php?nazaj='.$nazaj.'">premedikacija</a></li>
 <li><a href="../admin/manipulacePremedikacija1.php?nazaj='.$nazaj.'">premedikacija1</a></li><br>
 </ul>
 <a href="../admin1/vertikalMenu.php?nazaj='.$nazaj.'">.</a>
