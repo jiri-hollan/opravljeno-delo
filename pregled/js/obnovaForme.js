@@ -23,15 +23,19 @@ function formNazajFunction(person1) {
 	  let text = sessionStorage.getItem("testJSON");
 //console.log(text);	
       let obj = JSON.parse(text);
-//alert (obj.izvidiInOpombe);	
+//alert (obj.stevMaticna);	
 var inputs = document.getElementById("frm").elements;
 for (i = 0; i < inputs.length; i++) {
   if (inputs[i].nodeName === "INPUT" ||inputs[i].nodeName === "TEXTAREA") {
 	 var kljuc=inputs[i].name;
-//alert (kljuc);
-//console.log(kljuc);
-	 if (obj[kljuc] !== undefined) {
+//alert (kljuc+obj[kljuc]);
+//console.log(kljuc+"="+typeof obj[kljuc]+"-"+obj[kljuc]);
+	 if (obj[kljuc] !== undefined && typeof obj[kljuc]== 'string') {
+//console.log(kljuc+"="+obj[kljuc]);		 
 		document.getElementsByName(kljuc)[0].value = obj[kljuc].replace(/\&quot;/g,'\\"').replace(/\&amp;/g, "&"); 
+	 }else{
+		 document.getElementsByName(kljuc)[0].value = obj[kljuc];
+//console.log("elze "+kljuc+"="+obj[kljuc]);		 
 	 }
 //alert(kljuc + ": " +person1[kljuc]);
 } // od if

@@ -103,13 +103,13 @@ class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current():mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren():void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren():void {
 		$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>

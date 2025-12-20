@@ -75,7 +75,20 @@ border-radius: 12%;
     background-color:black;
 	z-index: 61;
     text-align: center;
+	 animation-name: myAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
+
+@keyframes myAnimation {
+  0%   {background-color:red;}
+  25%  {background-color:yellow;}
+  50%  {background-color:blue; }
+  75%  {background-color:green;}
+  100% {background-color:red;}
+}
+
+
 #stanjeDa {
     color: white;	
     background-color: blue;;

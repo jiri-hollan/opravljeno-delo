@@ -1,6 +1,6 @@
 
 <div id='doziranje'  class='modal'>
-<form id='otroskaFrm' class="modal-content animate" name='otroskaForma' method='post' action='bolnik.php' autocomplete='off'> 
+<form id='otroskaFrm' class="modal-doza animate" name='otroskaForma' method='post' action='bolnik.php' autocomplete='off'> 
   <div class="container">
   	  <button type="button" onclick="document.getElementById('doziranje').style.display='none'"class="close" title="zapri">&times;</button>
       <h3>Otroška premedikacija</h3>
@@ -14,7 +14,7 @@
       <input id='tezaPremedikacijaId' class='udaje' type = 'hidden' name='teza' value='1' hidden readonly>
 
 	  <label for="sprememba">Sprememba doze: <span id="faktorId"></span></label>
-	  <input type="range" id="sprememba" name="sprememba" min="0.5" max="2" step="0.1" value="1" list="tickmarks">
+	  <input onchange="ajax_sprememba();" type="range" id="sprememba" name="sprememba" min="0.5" max="2" step="0.1" value="1" list="tickmarks">
 	  <datalist id="tickmarks">
 		<option value="0.5"></option>
 		<option value="1"></option>

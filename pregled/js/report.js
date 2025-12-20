@@ -1,3 +1,60 @@
+function osebniFunction()
+ {
+ var w = document.getElementById("frm")["ime"].value;
+ var x= document.getElementById("frm")["priimek"].value;
+ var y =  datRojstva;
+ var z = document.getElementById("frm")["stevMaticna"].value;
+
+  if (w == "") {
+    alert("Ime mora biti vpisano");
+    return false;
+  }
+    else if (x == "") {
+    alert("priimek mora biti vpisan");
+    return false;
+  }
+    else if (typeof y == "undefined") {
+    alert("datum rojstva mora biti vpisan");
+    return false;
+  }
+    else if (z == "") {
+    alert("matična številka mora biti vpisana");
+    return false;
+  }
+    else {
+
+priimek = document.getElementById("priimek").value;
+ime = document.getElementById("ime").value;
+//datRojstva = document.getElementById("datRojstva").value ;
+stevMaticna = document.getElementById("stevMaticna").value;
+  document.getElementById("osebni").innerHTML = priimek + " " + ime + "  " + "roj: " + datRojstva + "  mat. indeks: " + stevMaticna;
+  document.getElementById("imeZdravnika").value = localStorage.getItem("imeZdravnika");
+  document.getElementById("bolnikId").value = sessionStorage.getItem("bolnikId");
+document.getElementsByTagName('title')[0].innerHTML= priimek + " " + ime;
+otroskaVklopFunction();
+     document.getElementById("navbar").style.display = "block";
+     document.getElementById("prva").style.display = "none"; 
+     document.getElementById("druga").style.display = "block";
+     document.getElementById("tretja").style.display = "none";
+     document.getElementById("nazaj").style.display = "none";
+     document.getElementById("predogled").style.display = "block";
+     document.getElementById("novB").style.display = "block";
+     document.getElementById("natisni").style.display = "none";
+     document.getElementById("pomoc").style.display = "block";
+	 document.getElementById("najdiZapis").style.display = "none";	 
+     //document.getElementById("submitFrm").style.display = "none";
+	 if(document.getElementById("submitFrm")==undefined){}//alert("submitFrm nedefinirana 51");
+	  else{document.getElementById("submitFrm").style.display = "none";} 
+     //document.getElementById("prijavi").style.display = "none";
+     if(document.getElementById("prijavi")==undefined){}//alert("prijavi nedefinirana 54");
+     else{document.getElementById("prijavi").style.display = "none";}
+return false;
+
+     }
+}
+
+/**********************************reportFunction********************************************/
+
  var datRojstva;
  var a;
 //alert('report: '+sessionStorage.getItem("bolnikId"));
@@ -49,7 +106,7 @@ let modal = document.getElementById('doziranje');
   }else if (x10 == "") {
     alert("datum rojstva mora biti vpisan");
     return false;
- }else if (x11 == "") {
+  }else if (x11 == "") {
     alert("ovisnost mora biti opredeljena");
     return false;	
 	
@@ -188,29 +245,30 @@ document.getElementById("alergijaR").innerHTML= alergija;
 //....................EKG....................................................................
 
 var ekg = document.getElementById("ekg").value;
-ekg = opisFunction(ekg, "<hr>EKG:");
+ekg = opisFunction(ekg, "<hr>", "EKG:");
 //alert(ekg);
 //...........................RTG................................................................
 var rtg = document.getElementById("rtg").value;
-rtg = opisFunction(rtg, "<hr>RTG:");
+rtg = opisFunction(rtg, "<hr>", "RTG:");
 
 //..............pridružene bolezni........................................................
 var prid = document.getElementById("dgPridruzene").value;
-prid = opisFunction(prid, "<hr>Pridružene bolezni:" );
+prid = opisFunction(prid, "<hr>", "Pridružene bolezni:" );
 
 //................................... predhodna terapija.........................................
 var pred = document.getElementById("terPredhodna").value;
-pred = opisFunction(pred, "<hr>Predhodna terapija:" );
+pred = opisFunction(pred, "<hr>", "Predhodna terapija:" );
 
 //..................Izvidi in opombe...........................................................
 var izvidi = document.getElementById("izvidiInOpombe").value;
-
+izvidi = izvidi.replace(/^\s*$(?:\r\n?|\n)/gm, "");
 izvidi = izvidi.replace(/\n/g, "<br>&emsp;&emsp;");
-izvidi = izvidiFunction(izvidi, "<hr>");
+const novaLinija = (izvidi.match(new RegExp("<br>", "g")) || []).length;
+izvidi = izvidiFunction(izvidi, novaLinija );
 
 //..................Sklep...........................................................
 var sklep = document.getElementById("sklep").value;
-sklep = opisFunction(sklep, "Sklep:" );
+sklep = sklepFunction(sklep, "Sklep:" );
 
 
 //......................celi opis................................................................
@@ -264,39 +322,122 @@ switch (a) {
  //....konec report function..............................
  
 //....................................opisFunction ureja: ekg, RTG, Predhodna terapija, pridružrne bolezni..............
-function opisFunction(m,n)
+function opisFunction(m, l, n)
 {
-if (m.length > 0) {
-    m =  "<span class='nadpis'>" + n + "</span>"  + "<span class='besedilo'>" + m + "</span>" + "</br>";
-}
-else {
-  m = "";
+if (m.length == 0) {
+	  m = "";
+}else if (m.length > 120){
+	//alert(m.length + 'več kot 120 ' + m);
+	m = "<span class='izvid3'>" +  l + "</span><span class='nadpis'>" + n + "</span>"  +  "<span class='izvid3' class='besedilo'> &emsp;"  + m + "<br></span>"; 	  
+}else if (m.length > 100){
+	//alert(m.length + 'več kot 100 ' + m);
+	m = "<span class='izvid2'>" +  l + "</span><span class='nadpis'>" + n + "</span>"  +  "<span class='izvid2' class='besedilo'> &emsp;"  + m + "<br></span>"; 
+}else if (m.length > 70){
+	//alert(m.length + 'več kot 70 ' + m);
+	m = "<span class='izvid1'>" +  l + "</span><span class='nadpis'>" + n + "</span>"  +  "<span class='izvid1' class='besedilo'> &emsp;"  + m + "<br></span>"; 	
+}else {
+  m = "<span class='izvid0'>" +  l + "</span><span class='nadpis'>" + n + "</span>"  + "<span class='besedilo'>" + m + "</span>" + "</br>";
     }
 return m;
 
 }
  
 //............................................izvidiFunction ureja besedilni opis stanja...................................
-function izvidiFunction(m,n)
+function izvidiFunction(izvidi, novaLinija)
 {
-if (m.length > 0) {
-   m =  n + "<span class='besedilo'> &emsp;"  + m + "</span><br><br>";  
+let m =	izvidi.length + 30 * novaLinija;
+if (izvidi.length == 0) {
+	  m = "";
+}else if (m > 1600){
+//alert(m + 'več kot 1600 ' + izvidi);
+	izvidi = "<span class='izvid4' class='besedilo'><hr> &emsp;"  + izvidi + "<br></span>"; 	  
+}else if (m > 1400){
+//alert(m + 'več kot 1400 ' + izvidi);
+	izvidi =  "<span class='izvid3' class='besedilo'><hr> &emsp;"  + izvidi + "<br></span>"; 
+}else if (m  > 1200){
+//alert(m  + 'več kot 1200 ' + izvidi);
+	izvidi =  "<span class='izvid2' class='besedilo'><hr> &emsp;"  + izvidi + "<br></span>"; 
+}else if (m  > 800){
+//alert(m  + 'več kot 800 ' + izvidi);
+	izvidi =  "<span class='izvid1' class='besedilo'><hr> &emsp;"  + izvidi + "<br><br></span>"; 
+        
 }else {
-  m = "";
+//alert(m  + 'manj kot 800 ' + izvidi);
+	izvidi =  "<span class='izvid0'  class='besedilo'><hr> &emsp;"  + izvidi + "<br><br></span>"; 
+    }
+return izvidi;
+
+}
+//.......................................SklepFunction..............................
+function sklepFunction(m,n)
+{
+if (m.length == 0) {
+	  m = "";
+}else if (m.length > 265){
+	alert(m.length + 'več kot 265 ' + m);
+	m = "<span class='nadpis'>" + n + "</span>"  +  "<span class='izvid3' class='besedilo'> &emsp;"  + m + "<br></span>"; 	  
+}else if (m.length > 225){
+	alert(m.length + 'več kot 225 ' + m);
+	m = "<span class='nadpis'>" + n + "</span>"  +  "<span class='izvid2' class='besedilo'> &emsp;"  + m + "<br></span>"; 
+}else if (m.length > 200){
+	alert(m.length + 'več kot 200 ' + m);
+	m = "<span class='nadpis'>" + n + "</span>"  +  "<span class='izvid1' class='besedilo'> &emsp;"  + m + "<br></span>"; 	
+}else {
+  m = "<span class='nadpis'>" + n + "</span>"  + "<span class='besedilo'>" + m + "</span>" + "</br>";
     }
 return m;
 
 }
+//.....................................natisniFunction..............................
 function natisniFunction() {
   if (confirm("natisni! bolnik= " + document.title)){
   document.getElementById("navbar").style.display = "none"; 
   document.getElementById("stanje").style.display = "none"  
   window.print();
   ogledFunction();
-   }else {
+  }
+   else {
   ogledFunction();
-    }
+   }
 }
+
+/******************************vpisFunction********************************************/
+function vpisFunction() {
+	 document.getElementById("navbar").style.display = "block";
+     document.getElementById("prva").style.display = "block"; 
+     document.getElementById("druga").style.display = "none";
+     document.getElementById("tretja").style.display = "none";
+	 document.getElementById("cetrta").style.display = "none"; 
+     document.getElementById("nazaj").style.display = "none";
+	 document.getElementById("predogled").style.display = "none";
+     document.getElementById("novB").style.display = "block"; ;
+     document.getElementById("natisni").style.display = "none";		 
+     document.getElementById("pomoc").style.display = "none";
+     document.getElementById("prenos").style.display = "none";
+     document.getElementById("najdiZapis").style.display = "block";	 
+     //document.getElementById("submitFrm").style.display = "none";
+	  if(document.getElementById("submitFrm")==undefined){}//alert("submitFrm nedefinirana 15");
+	  else{document.getElementById("submitFrm").style.display = "none";} 	  
+
+      if(document.getElementById("prijavi")==undefined){}//alert("prijavi nedefinirana 17");
+      else{document.getElementById("prijavi").style.display = "none";}
+	danesFunction();
+	formNazajFunction();
+	administraceFunction();
+}
+
+/*****************************danes function*********************************************/
+ //izračun današnjeg datuma in prikaz v ljudski obliki. V <input> vložena pravilna oblika datuma za QLS
+var danes;
+function danesFunction() {
+    var d = new Date();   
+    danes = d.toLocaleString("sl-SI", {dateStyle: "medium",timeStyle: "short"});  
+    //document.forms["frm1"].elements["datPregleda"].value = danes; 
+    document.getElementById("lab6").innerHTML = "Datum pregleda:  " + danes;
+    document.getElementById("datPregleda").value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+ }
+
+/********************************nazajFunction****************************************/
 
 function nazajFunction() {
     //alert("poglej bolnik= " + document.title);
@@ -306,12 +447,21 @@ function nazajFunction() {
     document.getElementById("tretja").style.display = "none";
     document.getElementById("cetrta").style.display = "none"; 	
     document.getElementById("nazaj").style.display = "none";
+    document.getElementById("natisni").style.display = "none"; 	
     document.getElementById("predogled").style.display = "block";
-	document.getElementById("submitFrm").style.display = "none";
-	document.getElementById("najdiZapis").style.display = "none";
-}
+	document.getElementById("najdiZapis").style.display = "none";	
+	//document.getElementById("submitFrm").style.display = "none";
+	if(document.getElementById("submitFrm")==undefined){}//alert("submitFrm nedefinirana 356");
+	else{document.getElementById("submitFrm").style.display = "none";} 	
 
-function ogledFunction() {
+    //document.getElementById("prijavi").style.display = "none"; 
+    if(document.getElementById("prijavi")==undefined){}//alert("prijavi nedefinirana 359");
+    else{document.getElementById("prijavi").style.display = "none";}
+ }
+
+/*******************************ogledFunction**************************************/
+
+function ogledFunction() { 
   //alert("poglej bolnik= " + document.title);
   document.getElementById("navbar").style.display = "block"; 
   document.getElementById("prva").style.display = "none"; 
@@ -319,16 +469,41 @@ function ogledFunction() {
   document.getElementById("tretja").style.display = "block";
   document.getElementById("cetrta").style.display = "none"; 
   document.getElementById("predogled").style.display = "none";
+  document.getElementById("natisni").style.display = "block"; 
   document.getElementById("nazaj").style.display = "block";
   document.getElementById("prenos").style.display = "block";
-  document.getElementById("submitFrm").style.display = "block";
-  document.getElementById("najdiZapis").style.display = "none";  
-}
+  document.getElementById("najdiZapis").style.display = "none";   
+  //document.getElementById("submitFrm").style.display = "block";
+  if(document.getElementById("submitFrm")==undefined){}//alert("submitFrm nedefinirana 372");
+  else{document.getElementById("submitFrm").style.display = "block";}  
+
+  //document.getElementById("prijavi").style.display = "block";
+  if(document.getElementById("prijavi")==undefined){}//alert("prijavi nedefinirana 375");
+  else{document.getElementById("prijavi").style.display = "block";}
+ }
+
+/********************************pomocFunction***************************************/
 
 function pomocFunction() {
   var pot = "\\\\hospital.local\\dfs\\EIT\\premedikacija\\pregledani bolniki";
- prompt("Če ni nastavljena pot do  ciljne mape za PDF jo nastavi.\nSkopiraj spodnji naslov in ga prilepi kot pot.", pot );
+  prompt("Če ni nastavljena pot do  ciljne mape za PDF jo nastavi.\nSkopiraj spodnji naslov in ga prilepi kot pot.", pot );
+ }
+
+/***********************************administraceFunction*****************************************/
+
+function administraceFunction(){
+//alert("miš nekaj dela");	
+   $.ajax({
+     url : '../skupne/sessionKontrola.php',
+     type : 'POST',
+     success : function (result) {
+        console.log (result); // Here, you need to use response by PHP file.           
+		$("#prijavi").css("visibility", result); //prevzame display iz administracije
+     },
+     error : function () {
+        console.log ('error');
+     }
+
+   });
 }
-
-
 

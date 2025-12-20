@@ -87,7 +87,9 @@ public function izracunFunction() {
 		]);
 	//var_dump( $this->vybrano);
 	}else{
-			 
+		echo json_encode([
+		"error" => "za to težo ni navodil"
+		]);
 	}
   } //od izracunFunction
 }//od class Midazolam
@@ -126,7 +128,9 @@ public function izracunFunction() {
 		]);
 	//var_dump( $this->vybrano);
 	}else{
-			 
+		echo json_encode([
+		"error" => "za to težo ni navodil"
+		]);
 	}
   } //od izracunFunction
 }//od class dexmedetomidin
@@ -162,7 +166,7 @@ public function izracunFunction() {
 		]);
 	} else {
 		echo json_encode([
-			"error" => "Premedikacija s ketaminom še ni določena"
+		"error" => "za to težo ni navodil"
 		]);
 	}
   } //od izracunFunction

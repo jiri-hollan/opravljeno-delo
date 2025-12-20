@@ -1,3 +1,3 @@
 <?php
-$koren='delo';
+$koren='anestiz';
 ?>

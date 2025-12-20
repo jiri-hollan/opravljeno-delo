@@ -4,6 +4,8 @@ require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
 	public $pristop;
+	public $bolnisnica;
+	public $nameTable;
 	public function __construct($bolnisnica) {
  $this->bolnisnica = $bolnisnica;
  //$this->pregledovalciStatus = '1';

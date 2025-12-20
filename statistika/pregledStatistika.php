@@ -268,7 +268,8 @@ class poKriterijih {
 * brez kriterijev pokaže le število zapisov kje se $stolpec nahaja
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
-public $tabulka;
+   public $tabulka;
+   public $podminka;
 function __construct($tabulka, $stolpci, $grupa, $podminka, $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);
@@ -308,13 +309,13 @@ class DeloRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current(): string { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren(): void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren(): void {
       //echo '<td onclick="poDatumuFunction('."'vyber'".')">izberi</td></tr>';	  
         echo '</tr>';
     }//od endChildren
@@ -328,7 +329,8 @@ class poStarosti {
 * brez kriterijev pokaže le število zapisov kje se $stolpec nahaja
 *"SELECT $sloupceSQL, COUNT(*) AS steviloZapisov FROM $tabulka $podminkaSQL GROUP BY $grupaSQL ORDER BY $grupaSQL"
 *******************************************************************/
-public $tabulka;
+   public $tabulka;
+   public $podminka;
 function __construct($tabulka, $stolpci, $razvrstitev, $grupa, $podminka, $semafor){
 //$tabulka = 'bolnikTbl';
 //var_dump($grupa);

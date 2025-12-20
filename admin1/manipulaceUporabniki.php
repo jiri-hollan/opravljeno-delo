@@ -98,7 +98,7 @@ function vyberFunction($podminka){
 echo "<br>";
 if(count($vybrano)>0){
   echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član 3=vodstvo 2=admin</P>';
-  echo'<P><b>pristop:</b>1=na seznamu 2=vlaganje v bazo 3=pogled v bazo</P>';
+  echo'<P><b>pristop:</b>0=ni na seznamu pregledovalcev 1=na seznamu 2=vlaganje v bazo 3=pogled v bazo</P>';
   echo'<P><b>GDPR:</b>0=prevzame nastavitev programa(0 ali 1) 1=baza vedno dostopna 2=baza nedostopna</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
   echo "<tr class='glavaTable'><th>Id</th><th>e-mail</><th>uporabnik</th><th>geslo</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>stevilkaZdravnika</th><th>upstatus</th><th>pristop</th><th>GDPR</th></tr>";
@@ -107,13 +107,13 @@ class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current():mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren():void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren():void {
 		$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
@@ -172,7 +172,7 @@ function editFunction($podminka){
 
 }	 
      if($key=="upstatus"||$key=="pristop"||$key=="gdpr"||$key=="stevilkaZdravnika"){	
-	  echo " $key: <input name=$key value=$value \n></input>";
+	  echo "<br>$key: <input name=$key value=$value \n></input>";
 }	
 }//od foreach
    echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";

@@ -1,6 +1,6 @@
 <?php
      $a0= '
-      <li><a href="../navodila/navodilaKovid.php">Navodila</a> </li>
+      <li><a href="../navodila/menuNavodila.php">Navodila</a> </li>
       <li><span onclick=sbFunction("spomin")>Pregled</span>  </li>
 	  <li><a href="../frontend/interevropa.php">INTEREVROPA</a> </li>'; 
 	 $a1= '<li><a href="../oddelek/razpisMeseci.php?pogled=dez">Dežurstva</a> </li> 

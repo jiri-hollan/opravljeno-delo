@@ -98,13 +98,13 @@ if(count($vybrano)>0){
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current():mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren():void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren():void {
 		$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
@@ -164,7 +164,7 @@ function odstraniFunction($podminka){
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 }//od odstraniFunction
 echo'
-<script src="js/manipulacepremedikacija1.js?'.time().'">
+<script src="js/manipulacepremedikacija.js?'.time().'">
 </script>
 ';
 require_once '../skupne/sabloni/zapati.php';

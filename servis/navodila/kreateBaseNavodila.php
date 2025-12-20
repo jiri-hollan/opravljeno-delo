@@ -14,7 +14,7 @@ class NarediBazo {
 	public $username = '';
 	public $password = '';
 	public $dbname = '';
-	public $connn = '';
+	public $conn = '';
 	
 	public Function __construct(){
 	require_once '../../skupne/streznik.php';

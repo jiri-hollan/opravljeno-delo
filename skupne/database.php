@@ -4,7 +4,7 @@ class Database {
 	public $username = '';
 	public $password = '';
 	public $dbname = '';
-	public $connn = '';
+	public $conn = '';
 	public $bolnikObstaja= '';
 	public Function __construct(){
 	require 'streznik.php';

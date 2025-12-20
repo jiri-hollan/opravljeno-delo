@@ -4,8 +4,9 @@ class DatabaseS {
 	public $username = '';
 	public $password = '';
 	public $dbname = '';
-	public $connn = '';
+	public $conn = '';
 	public $bolnikObstaja= '';
+
 	public Function __construct(){
 	require '../skupne/streznik.php';
       //$this->servername = "sh17.neoserv.si";

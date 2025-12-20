@@ -3,6 +3,8 @@
 Class PoberZapis{
 	public $conn;
 	public $pristop;
+	public $nameTable;
+	
 	public function __construct($bolnisnica) {
  $this->conn = new DatabaseS();	
  $this->nameTable = 'opravilaTbl';

@@ -9,10 +9,10 @@ echo'
 <title>Novi bolnik</title>
 <link rel="shortcut icon" href="../favicon.ico?'.time().'">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="js/vpis.js?'.time().'"></script>
+<!--<script src="js/vpis.js?'.time().'"></script>-->
 <script src="js/report.js?'.time().'"></script>
 <script src="js/prenos.js?'.time().'"></script>
-<script src="js/preklopCss.js?'.time().'"></script>
+<!--<script src="js/preklopCss.js?'.time().'"></script>-->
 <script src="js/odjava.js?'.time().'"></script>
 <script src="js/evaluacija.js?'.time().'"></script>
 <script src="js/drugiIzvidi.js?'.time().'"></script>
@@ -20,11 +20,12 @@ echo'
 <script src="js/obnovaForme.js?'.time().'"></script>
 <script src="js/vypocty.js?'.time().'"></script>
 <script src="js/sklepi.js?'.time().'"></script>
-<script src="../otroska/js/premedikacija1.js?'.time().'"></script>
+<script src="../otroska/js/premedikacijaOtroska.js?'.time().'"></script>
 <link rel="stylesheet" type="text/css" href="css/novPolnjenje.css?'.time().'">
 <link rel="stylesheet" type="text/css" href="css/premedikacijaTisk.css?'.time().'">
 <link rel="stylesheet" type="text/css" href="css/premedikacijaPrenos.css?'.time().'">
 <link rel="stylesheet" type="text/css" href="../otroska/css/doziranje.css?'.time().'">
+<link rel="stylesheet" type="text/css" href="css/uporabnik.css?'.time().'">
 </head>
 <body onload="vpisFunction()">';
 ?>

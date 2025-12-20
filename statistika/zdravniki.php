@@ -44,13 +44,13 @@ class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current():mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren():void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren():void {
         echo "<td onclick=" . '"izberiStevilkoZdravnikaFunction('. "'vyber'".')"'.'"' . ">izberi</td></tr>" . "\n";
     }//od endChildren
 }// od class TableRows

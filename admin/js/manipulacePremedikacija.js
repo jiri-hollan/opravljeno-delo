@@ -54,5 +54,5 @@ var y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
- window.location.href = "manipulacepremedikacija1.php?akce=" + x.innerHTML + "&id=" + row_value;  
+ window.location.href = "manipulacepremedikacija.php?akce=" + x.innerHTML + "&id=" + row_value;  
 }//od function(e)

@@ -1,0 +1,46 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+	}
+
+#faktorId {
+	 font-size: 30px;
+}
+
+/* Set a style for all buttons */
+
+.knof{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.knof,.cancelbtn,.potrdiBtn:hover {
+  opacity:1;
+}
+
+#sprememba {
+  width: 40%;
+}
+
+#tezaPremedikacijaId {
+	font-size: 20px;
+	padding: 5px 5px;
+	margin: 5px 5px;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	outline: none;
+}
+.prikaz {
+	font-size: 20px; 
+ 	border: 3px solid #ccc; 
+	border-radius: 5px;
+	width: 50%;
+	min-height: 20px;
+	padding: 5px 5px;
+}

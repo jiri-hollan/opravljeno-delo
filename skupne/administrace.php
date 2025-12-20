@@ -10,7 +10,7 @@ class Administrace {
      $this->zaklad = new stdClass();	 
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/';
-		 echo"('KOREN: '.$koren)";
+		// echo"('KOREN: '.$koren)<br>";
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
@@ -18,28 +18,24 @@ class Administrace {
 	  $casoviLimit = 600;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {
 		  $uplinuliCas = time() - $_SESSION["casova_znamka"];
-		  if ($uplinuliCas > $casoviLimit) {
+		  if($uplinuliCas <= $casoviLimit){
+		      echo 'hidden';
+              $_SESSION["casova_znamka"] = time();			  
+//echo $uplinuliCas;
+		  }
+		  elseif ($uplinuliCas > $casoviLimit) {
+			  //echo ' čas je potekel: '.$uplinuliCas.' je več kot '.$casoviLimit; 
 			  session_unset();
 			  session_destroy();
-			  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=neaktivni');
+			  echo 'visible'; 
 			  exit();
-		  }
+		  }else{$_SESSION["casova_znamka"] = time();}
+	  }else{
+			  session_unset();
+			  session_destroy();
+			  echo 'visible';
+			  exit();		   
 	  }
-	  $_SESSION["casova_znamka"] = time();
-	  $prihlasen = $_SESSION['uporabnikPrihlasen'];
-	  if (empty($prihlasen)) {
-		  session_unset();
-		  session_destroy();
-	echo'<script>
-	sessionStorage.removeItem("testJSON");	
-	sessionStorage.removeItem("bolnikId"); 
-	</script>';	  
-		  
-		  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=odhlasit'); 
-		  exit();
-	  } else {
-		  $this->conn = new Database();
-	  }  
 	}//od construct	
 }//0d class administrace
 ?>	

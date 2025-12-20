@@ -6,6 +6,7 @@ require_once '../skupne/sabloni/zahlavi.php';
 <input type="hidden" id="akceId" name="akce" value="vyber">
 <p id="demo"></p>
 <button type="submit" name="submit" value="Submit"><h2>izberi uporabnika</h2></button>
+Če ni drugače, je geslo za reset: anestiz12345
 <!--submit iz js -->
 </form>
 <p id="demo3"></p>
@@ -71,13 +72,13 @@ function vyberFunction($podminka){
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current():mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren():void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren():void {
         echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
 		</tr>" . "\n";
 }// od function endChildren

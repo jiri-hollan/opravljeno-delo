@@ -184,8 +184,23 @@ position: relative;
 /* margin-top: 5px;
  margin-bottom:0px;*/
 }
-
-
+/*
+div.velka{
+  max-height: 200px;	
+}
+*/
+  .izvid1 {
+	font-size: 0.9em;  
+  }
+  .izvid2 {
+	font-size: 0.8em;  
+  }  
+  .izvid3 {
+	font-size: 0.7em;  
+  }  
+  .izvid4 {
+	font-size: 0.6em;  
+  }  
 #premedikacijaR {
     position: absolute;
     bottom: 1.5cm;

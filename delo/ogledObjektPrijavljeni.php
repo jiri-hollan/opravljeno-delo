@@ -230,13 +230,13 @@ foreach (json_decode($this->dataPreg) as $key) {
 	}
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current():mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren():void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren():void {
         echo "<td class='urediCls' onclick=" . '"izborOgledFunction('. "'edit'".')"'.'"' . ">edit</td>
 		<td class='odstraniCls' onclick=" . '"izborOgledFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>
 		

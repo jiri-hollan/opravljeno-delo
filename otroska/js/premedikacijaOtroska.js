@@ -30,11 +30,12 @@ window.onclick = function(event) {
 }//od window.onclick
 }//od function schovej
 
-
+/*
 function posli(){
 	document.getElementById('otroskaFrm').submit();
 }
-
+*/
+/*
 function premedikacijaFunction(premedikacija, navodila){
 	document.getElementById('premedPredOp').value= premedikacija;
 	document.getElementById('navodila').value= navodila;
@@ -52,15 +53,38 @@ function premedikacijaFunction(premedikacija, navodila){
      document.getElementById("submitFrm").style.display = "none";
 	 document.getElementById("najdiZapis").style.display = "none";
 }
-
+*/
+function ajax_sprememba(){
+	var ucinkovina = $(".ucinkovina:radio:checked").val();		
+//	var ucinkovina = $(":radio:checked").val();	
+//	var ucinkovina = $("input[name='ucinkovina']:checked").val();	
+	var teza = $("#tezaPremedikacijaId").val();
+	var sprememba = $("#sprememba").val();
+	ajax_aktualizuj(ucinkovina, teza, sprememba);	
+}
 
 function ajax_get_premedikacija(elem) {
 	$elem = $(elem);
 	var ucinkovina = $elem.val();
 	var teza = $("#teza").val();
 	var sprememba = $("#sprememba").val();	
-	$.ajax({
-		url: "/delo/otroska/otroskaPremedikacija1.php",
+		ajax_aktualizuj(ucinkovina, teza, sprememba);	
+}
+
+function ajax_aktualizuj(ucinkovina, teza, sprememba){
+//alert(window.location.hostname);
+	if(window.location.hostname=="localhost"){
+		koren="anestiz/";		
+	}else{
+		koren="";
+	}
+
+		$.ajax({
+//za web
+		//url: "/otroska/otroskaPremedikacija1.php",
+//za localhost
+		//url: "/anestiz/otroska/otroskaPremedikacija1.php",
+url: "/"+koren+"otroska/otroskaPremedikacija1.php",		
 		data: {
 			"ucinkovina": ucinkovina,
 			"teza": teza,

@@ -22,9 +22,9 @@ echo '<div id="kontejner">';
 <?php 
 echo '
 <input id="data" type="hidden" name="data" value="" style="width:90%;"></input><br>
-<label for "ustanova">bolnišnica:</label>
+<label for= "ustanova">bolnišnica:</label>
 <input id="ustanova" type="text" name="ustanova" value="" required ></input>
-<label for "stevMaticnaId">matična številka</label>
+<label for= "stevMaticnaId">matična številka</label>
 <input id="stevMaticnaId"  type="number" name="stevMaticna" required ></input>
 <input   type="hidden" name="doBaze" value="vyber" readonly ></input>
 <input   type="submit" ></input>

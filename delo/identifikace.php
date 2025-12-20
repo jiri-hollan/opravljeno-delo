@@ -1,6 +1,12 @@
 <?php
 class VyberUporabnika {
-public $podminka;
+   public $podminka;
+   public $tabulka;
+   public $stolpci;
+   public $vyber;
+   public $stevilkaZdravnika;
+   public $identifikace;
+
 function __construct($podminka="") {
 	    $this->podminka=$podminka;
 //echo('<br>VyberUporabnika podminka= ');		
